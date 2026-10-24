@@ -57,6 +57,16 @@ verification points. At authoring, the new workflow was prepared but had not
 been activated; its first successor handoff remains planned until a later real
 run verifies it. Passing unit tests does not establish live handoff success.
 
+The workflow also offers a 120-second bootstrap for live handoff verification.
+After the first long worker's observation commit is confirmed and it is waiting
+between cycles, that waiting run may be cancelled and replaced with the short
+bootstrap. If the next permitted batch is more than 120 seconds away, the
+bootstrap requests no routing data and immediately dispatches a successor.
+The successor uses the normal 16,200-second default because the handoff supplies
+no input override. This verifies the existing token's dispatch permission and
+concurrency transition without waiting 4.5 hours. This live bootstrap check was
+still pending when the option was added; its result must be recorded separately.
+
 ## Limits and interpretation
 
 This reduces dependence on repeated cron delivery, but GitHub can still delay

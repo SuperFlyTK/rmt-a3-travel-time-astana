@@ -2,6 +2,15 @@ name: Bounded resilient Astana collection
 
 on:
   workflow_dispatch:
+    inputs:
+      max_runtime_seconds:
+        description: Worker runtime; 120 is for a controlled handoff verification
+        required: true
+        type: choice
+        default: '16200'
+        options:
+          - '16200'
+          - '120'
 
 permissions:
   contents: write
@@ -36,7 +45,8 @@ jobs:
         env:
           ORS_KEY: ${{ secrets.ORS_KEY }}
           GH_TOKEN: ${{ github.token }}
-        run: python collector/cloud_worker.py --max-runtime-seconds 16200
+          MAX_RUNTIME_SECONDS: ${{ inputs.max_runtime_seconds || '16200' }}
+        run: python collector/cloud_worker.py --max-runtime-seconds "$MAX_RUNTIME_SECONDS"
       - name: Preserve evidence after a worker failure
         if: failure()
         uses: actions/upload-artifact@v4
