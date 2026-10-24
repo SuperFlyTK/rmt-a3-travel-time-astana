@@ -1,7 +1,7 @@
 {
-  "verified_at_utc": "2026-10-24T11:50:10.950050+00:00",
+  "verified_at_utc": "2026-10-24T12:12:29.099926+00:00",
   "report_file": "RMT_A3_Team_AkhanovYerdaulet_ShadiyarbekSyrym_SabyrzhanAkylbek.docx",
-  "report_sha256": "1529726622d95a074b7c5e89243df1e54f65cf11c92fd9c095f87ecbd5dc91f4",
+  "report_sha256": "4baf9713bfdc80f47c1059c3492ff1e9114607d3f0b147c9e1295316ddbdc122",
   "all_report_input_hashes_match_at_verification": true,
   "frozen_sample_rows": 68,
   "local_pilot_rows": 60,
@@ -10,17 +10,35 @@
   "initial_tomtom_dgis_pairs": 0,
   "separate_exploratory_google_ors_pairs": 20,
   "future_windows_recorded_in_report": 0,
-  "prose_words": 1855,
+  "prose_words": 1871,
   "figures": 11,
   "tables": 26,
   "rendered_pages": 25,
-  "visual_review": "All 25 pages inspected at original resolution by three reviewers; final label-only render changes checked and unchanged pages compared pixel-for-pixel.",
+  "visual_review": "Deadline revision: changed pages 3 and 21-25 inspected at original resolution; all other 19 pages byte-identical to the previously reviewed render. All 25 pages are verified.",
   "docx_table_cells_missing_from_pdf": 0,
   "tests": {
-    "command": ".venv/Scripts/python.exe -m unittest discover -s tests -v",
-    "passed": 69,
+    "command": ".venv/Scripts/python.exe -m unittest tests.test_cloud_worker tests.test_google_followup tests.test_google_followup_summary -v",
+    "passed": 40,
     "failed": 0,
-    "note": "Passed after collector and aggregate-summary changes. Subsequent changes affect report presentation and documentation only."
+    "note": "Relevant suites passed after deadline and early-window wake changes. Earlier full suite passed 69 tests before these three additional tests."
+  },
+  "submission_deadline": {
+    "recorded_at_utc": "2026-10-24T12:08:16.747876+00:00",
+    "user_confirmed_submission_deadline_local": "2026-10-25T18:00:00+05:00",
+    "submission_deadline_utc": "2026-10-25T13:00:00+00:00",
+    "collection_cutoff_utc": "2026-10-25T12:40:00+00:00",
+    "target_report_ready_local": "2026-10-25T17:50:00+05:00",
+    "original_protocol_file": "docs/protocol_versions/google_followup_before_submission_deadline.json",
+    "original_protocol_sha256": "d2587cf18abdec38e7c937efa50bf51559747e82221ed810258efd9896c3369d",
+    "reason": "User clarified submission is due 25 October by 18:00 Astana time. Shorten prospective collection and reserve twenty minutes for report review and delivery.",
+    "changes": [
+      "Remove the 25 October 22:00 off-peak window, which is after the deadline.",
+      "Shorten the 25 October evening window to 17:30-17:40 local time; wake the worker at its start.",
+      "Stop cloud collection by 25 October 17:40 local time; preserve original config and expectations as historical preregistration.",
+      "Retain original timestamps and recorded observations; no reconstruction or backdating of missing historical requests."
+    ],
+    "effective_before_first_followup_window": true,
+    "new_data_are_prospective": true
   },
   "cloud_execution": {
     "bootstrap": {

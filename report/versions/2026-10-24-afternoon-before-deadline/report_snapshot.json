@@ -1,0 +1,636 @@
+{
+  "generated_at_utc": "2026-10-24T11:47:41.893772+00:00",
+  "analysis_snapshot_utc": "2026-10-24T11:13:51.125096+00:00",
+  "report_file": "RMT_A3_Team_AkhanovYerdaulet_ShadiyarbekSyrym_SabyrzhanAkylbek.docx",
+  "report_sha256": "1529726622d95a074b7c5e89243df1e54f65cf11c92fd9c095f87ecbd5dc91f4",
+  "scope": "Amended Google–ORS control design; follow-up status in separate window summary; initial TomTom–2GIS comparison unperformed",
+  "current_research_question": "How do Google traffic-aware travel-time estimates differ from ORS control estimates on fixed Astana routes during peak and off-peak periods?",
+  "initial_research_question": "How do TomTom and 2GIS traffic-aware travel-time estimates diverge on fixed Astana routes during evening peak compared with off-peak periods?",
+  "followup_protocol": {
+    "schema_version": 1,
+    "approved_at_utc": "2026-10-24T11:32:30.838148+00:00",
+    "approval": "User explicitly approved Google traffic-aware + ORS control and aggregate-only Google retention in this chat before this protocol was recorded.",
+    "current_rq": "How do Google traffic-aware travel-time estimates differ from ORS control estimates on fixed Astana routes during peak and off-peak periods?",
+    "collection_end_utc": "2026-10-26T02:32:16.123968+00:00",
+    "timezone": "Asia/Almaty",
+    "windows": [
+      {
+        "id": "google-followup-20261024-peak",
+        "start_utc": "2026-10-24T12:30:00+00:00",
+        "end_utc": "2026-10-24T14:30:00+00:00",
+        "period": "peak"
+      },
+      {
+        "id": "google-followup-20261024-offpeak",
+        "start_utc": "2026-10-24T17:00:00+00:00",
+        "end_utc": "2026-10-24T19:00:00+00:00",
+        "period": "offpeak"
+      },
+      {
+        "id": "google-followup-20261025-morning",
+        "start_utc": "2026-10-25T05:00:00+00:00",
+        "end_utc": "2026-10-25T07:00:00+00:00",
+        "period": "offpeak"
+      },
+      {
+        "id": "google-followup-20261025-peak",
+        "start_utc": "2026-10-25T12:30:00+00:00",
+        "end_utc": "2026-10-25T14:30:00+00:00",
+        "period": "peak"
+      },
+      {
+        "id": "google-followup-20261025-offpeak",
+        "start_utc": "2026-10-25T17:00:00+00:00",
+        "end_utc": "2026-10-25T19:00:00+00:00",
+        "period": "offpeak"
+      }
+    ],
+    "routes_per_window": 20,
+    "routes_file": "data/routes.csv",
+    "routes_sha256": "236b48e847d473f25e9666f68e68908943a54833646073d3ff1bc756c3cbc4bd",
+    "google_total_request_budget": 121,
+    "google_already_reserved": 21,
+    "future_google_request_budget": 100,
+    "future_ors_request_budget": 100,
+    "google_secret_env": "GOOGLE_MAPS_DEMO_KEY",
+    "google_routing_preference": "TRAFFIC_AWARE_OPTIMAL",
+    "ors_live_traffic": false,
+    "max_pair_start_gap_seconds": 60,
+    "minimum_pair_interval_seconds": 2.1,
+    "main_ors_request_budget": 900,
+    "publish_google_raw": false,
+    "minimum_pairs_for_numeric_aggregates": 5,
+    "hypothesis": "Peak-window median absolute Google-ORS disagreement will exceed off-peak-window median absolute disagreement. The earlier 1.5 ratio is retained as a prospective descriptive reference, not a revised original ER.",
+    "analysis": "Compare published per-window aggregate metrics descriptively, retaining dates and sample counts. Do not treat 100 requests as independent samples or run the original route-by-day Wilcoxon without route-level Google evidence.",
+    "storage": "No individual Google route times, distances or geometry retained. Publish own aggregate benchmark statistics, request status/timestamps, permitted ORS evidence, code and complete request protocol.",
+    "limitations": "Google with traffic versus ORS without live traffic conflates providers and models. This cannot isolate a causal traffic effect or measure accuracy. Google numeric aggregates cannot be independently recalculated from saved Google raw outputs; repeating the protocol observes new live values.",
+    "execution": "One prospective batch per window, at its first eligible worker check. Record actual times; never backfill a missed window. Skip or stop when outside the window/end, budget exhausted or credential/rate limit occurs. Google-specific failures stop further Google follow-ups while permitted ORS collection continues.",
+    "original_preregistration": "b4614355903efdc800f870d2678d2416e0490f81",
+    "original_expected_results_unchanged": true,
+    "supersedes_for_new_traffic_comparison": "The initial TomTom-2GIS comparison remains unperformed. This is an explicitly dated Google-ORS control design, not relabelled earlier data.",
+    "sources": [
+      "https://developers.google.com/maps/demo-key",
+      "https://cloud.google.com/terms/maps-platform/demo-project-terms",
+      "https://cloud.google.com/maps-platform/terms"
+    ],
+    "routes_hash_rule": "sha256_after_crlf_to_lf",
+    "representation_amendment": "Before the first follow-up window, route hashing was normalized for Windows/Linux line endings; coordinates, windows and scientific expectations unchanged."
+  },
+  "followup_summary": {
+    "generated_at_utc": "2026-10-24T11:36:46.249129+00:00",
+    "planned_windows": 5,
+    "recorded_windows": 0,
+    "valid_windows": 0,
+    "n_valid_pairs": 0,
+    "groups": [
+      {
+        "period": "peak",
+        "planned_windows": 2,
+        "recorded_windows": 0,
+        "valid_windows": 0,
+        "n_valid_pairs": 0,
+        "median_of_window_median_absolute_differences_s": null
+      },
+      {
+        "period": "offpeak",
+        "planned_windows": 3,
+        "recorded_windows": 0,
+        "valid_windows": 0,
+        "n_valid_pairs": 0,
+        "median_of_window_median_absolute_differences_s": null
+      }
+    ],
+    "peak_minus_offpeak_window_median_s": null,
+    "peak_to_offpeak_window_median_ratio": null,
+    "inference": "not_run_aggregate_windows_do_not_recover_route_day_pairs",
+    "interpretation": "Descriptive window-level comparison only; traffic-aware Google versus non-live-traffic ORS control; no accuracy or causal claim. Original TomTom-2GIS expected results are not tested by these observations."
+  },
+  "prose_word_count": 1855,
+  "counting_rule": "Only authored continuous-prose paragraphs; excludes identity, headings, RQ, tables, captions, code, references and links.",
+  "figure_count": 11,
+  "table_count": 26,
+  "versions": {
+    "python": "3.12.14",
+    "python-docx": "1.2.0"
+  },
+  "input_sha256": {
+    "config/study.json": "014627af0d1e5ff75792e002ac518608f6fe111ef0519d1982113352bfa83653",
+    "docs/expected_results.json": "e1a7ad664d3f3a6caa524098fc4073812d29de0a88239a87f4e10181fec27d1a",
+    "docs/references.json": "f0fa3e0289395aa6d3ac92ce0b353dac658f33a602ca9bba9336f65a91aac683",
+    "docs/api_check.md": "c21d3c63f94b5c740c75583400b2b42168aa8149c3190349a399d04fbe6eb7d9",
+    "docs/research_log.md": "ff576d4e62c59a731e7458dc8fbcc618f9c9672e0cb781ec01726857a9052cf3",
+    "data/routes.csv": "f4b14c9bede5fee2260d2294d2e61556ac151f0fd9e29f08ab1df9e7c184cb17",
+    "results/summary.json": "2230e8b6443e854d9cdfe841f2fe13caab1ffb6e9ce084454a2f631aac14845f",
+    "results/observations.csv": "eb44e40c0340be9ad52aa5903e97626bbb2fe567ad83bb81799a2fbc378494a0",
+    "results/data_dictionary.csv": "fb5754e919c281e8309b1fbe9c8a6e36d652694ee8282ced2bec23c6707b39f4",
+    "results/cleaning_log.csv": "c29cec82be96c5389e4aead0f30a499fc1ded1ef5daf1c5a1bf462f4400721e7",
+    "results/coverage.csv": "bb47fa1bcc5e1274dd6ed9b6c1e42298c21b775174b060a60331b9b1ad8b5690",
+    "results/pairs.csv": "8d6d360e89b5f5e0724e480eb350819fbcf42403c27565233776fdb9d51626c1",
+    "figures/analysis_manifest.json": "83f36e8217f808ae91205af73a59160652dfe9e4b5311026998e2bbc36fa3e7e",
+    "figures/route_map_manifest.json": "b7646c8d93c0fb6fb3dc7ca6bd6f313d06e216e00c760482d4660c92ac2453c8",
+    "collector/collect.py": "7fd01e8b5f2d01d319020aa4a3f195454c7bb0738017f286edda66f0190f1679",
+    "analysis/process.py": "e73141a49583afd8487d18443ba09545a6313014b1800e23c05e93caa893ddc4",
+    "docs/reproduce_report.md": "f2de6212776af419ad72f40e54cb4519f9bef13b6108759fb00290f0befa7cbb",
+    "docs/cloud_run.json": "bcd0f83f53d90cfaf84bb2906d53bfcc25434019a7409b63f59b2f14b816a578",
+    "docs/cloud_runs.json": "df19e802a7500783a249f2f6622567ef7b2bc188da43300b4c38f1c88804efa8",
+    "docs/drive_delivery.json": "4c7de9eb062b20fe03c4e915ab820b6a76530d97dd2672fd618d42ee4615a836",
+    "docs/google_followup_protocol.json": "d2587cf18abdec38e7c937efa50bf51559747e82221ed810258efd9896c3369d",
+    "results/google_followup_summary.json": "a449a89375afa564c05f19550da1f02356f449e581ecd574bcb170b9adee060b",
+    "results/google_followup_period_summary.csv": "33e75258fada208994b0032d87c204b9183cd083ce5d77446eaabe4e8e01d305",
+    "analysis/google_followup_summary.py": "0b0fd2dbb18df5bbce3a0add619fc37b0f584d71a62aceaa2df5818aa8da0c0a",
+    "collector/google_followup.py": "c6f65aa224789959a7272509f14266472fd438710d72ecc3cd5f14c90bc61a91",
+    "docs/resilient_worker_verification.json": "1ef7f9d2dfc436b09dd16ac430f1ce09ebedbdb36972fd3dbbc47200f9d98660",
+    "docs/google_control_protocol.json": "a2df090c205f31dc8193ab711a9f0c476c398fed0e0b3337020ac4ea3b1df282",
+    "results/google_control_benchmark.csv": "55bf9f8f738dd47847db9f77a4eaa09b2a4b144a7ead0a7f25496288517b5f6f",
+    "collector/google_control_test.py": "5159ef6f4199a51c193fac6c4ed16a5fe4afbd29f7a8af89ccafb7dc9e18ef59",
+    "analysis/google_control_figure.py": "686369cb2a25b466418385e236a180ce878dee47e18d85a3b00bece6e3580f24",
+    "data/exploratory/google_request_status.csv": "2903cd448b55f9da4ec6c69a7a4458af618844df14386f8fab0b5605b23996f9",
+    "data/exploratory/ors/observations.csv": "51cd0e39354e7d896ef197da82b29f99dc689ade0ac458b57467492a8ac28277",
+    "figures/evidence_manifest.json": "b8d1299874f20b1fa35bcca549caccc7105ffdb44cb0346c9e1f0bad78857f22",
+    "figures/google_control_manifest.json": "afbf7302e377798735148bda05b18b5421dc22011c268afef7bf126657ad9ba8"
+  },
+  "figures": [
+    {
+      "number": 1,
+      "file": "figures/analysis_request_quality.png",
+      "caption": "Recorded request outcomes by provider and collection phase. Exact duplicate rows are counted once. HTTP success does not itself imply a usable route.",
+      "sources": [
+        "results/request_quality.csv"
+      ],
+      "n_records": 68,
+      "status": "created",
+      "sha256": "3fff7d9c61b13e62cc85fc0b24aadc7b27932e88e7b8166e053c2ab05d1aee56"
+    },
+    {
+      "number": 2,
+      "file": "figures/analysis_period_coverage.png",
+      "caption": "Usable observations classified by Asia/Almaty request time. Intervals include their start and exclude their end. A zero bar is observed absence, not a missing plot.",
+      "sources": [
+        "results/observations.csv"
+      ],
+      "n_records": 68,
+      "status": "created",
+      "sha256": "fb6ab2e367c9b20df592e1cf50607f5f53eb1a956fcd4f29a859c24f0b3ef85a"
+    },
+    {
+      "number": 3,
+      "file": "figures/analysis_provider_durations.png",
+      "caption": "Median recorded duration per provider and fixed origin–destination route. ORS is a control without live traffic. This instrument summary cannot establish peak traffic disagreement or travel-time accuracy.",
+      "sources": [
+        "results/observations.csv"
+      ],
+      "n_records": 68,
+      "status": "created",
+      "sha256": "c32548a55f5f2a5ec475c874eceaa0da51f762d52801426150ac6d7eb89ea707"
+    },
+    {
+      "number": 4,
+      "file": "figures/analysis_distance_duration.png",
+      "caption": "Recorded estimated durations plotted against returned route distances. Values are API outputs, not measured journeys. Repeated values may overlap; no jitter or artificial observations are added.",
+      "sources": [
+        "results/observations.csv"
+      ],
+      "n_records": 68,
+      "status": "created",
+      "sha256": "b9061742a83ee9e724bdb8a7d03ef6c606debcdca326541594b71c9af8c905db"
+    },
+    {
+      "number": 5,
+      "file": "figures/analysis_request_latency.png",
+      "caption": "Recorded API request latencies by request start time. Latency is instrument performance and is distinct from estimated journey duration. Failed requests remain eligible if their timing was recorded.",
+      "sources": [
+        "results/observations.csv"
+      ],
+      "n_records": 68,
+      "status": "created",
+      "sha256": "6ba01f68edfe101984ef494923a61d4bdae0fa28c3fd9687ce3d9830f53e901a"
+    },
+    {
+      "number": 6,
+      "file": "figures/analysis_recorded_extract.png",
+      "caption": "Verbatim selected raw fields from the first recorded CSV rows, retained in observations.csv with source filename and line number. The rendered table is an evidence view, not a screenshot of a separate application.",
+      "sources": [
+        "results/observations.csv"
+      ],
+      "n_records": 10,
+      "status": "created",
+      "sha256": "154f912f62de12287356338dd4aa6f7282c6a6b347544b1cade481960c192f65"
+    },
+    {
+      "number": 7,
+      "status": "created",
+      "file": "figures/route_map.png",
+      "path": "figures/route_map.png",
+      "caption": "ORS control route geometries for the complete pilot-1 cycle: 20 directed routes displayed as ten forward and ten reverse OD directions on identical scales. Lines are actual saved openrouteservice LineString responses, not live-traffic routes or observed GPS trajectories. Endpoint labels follow data/routes.csv; recommended routes are not constrained to specified arteries. Routing geometry attribution: openrouteservice.org by HeiGIT, CC BY-SA 4.0; map data and endpoints: OpenStreetMap contributors, ODbL 1.0.",
+      "source": "Saved ORS control geometry files and fixed OSM-derived OD register only",
+      "source_files": [
+        "data/routes.csv",
+        "data/raw/geometry/pilot-1_R01_ors.json",
+        "data/raw/geometry/pilot-1_R02_ors.json",
+        "data/raw/geometry/pilot-1_R03_ors.json",
+        "data/raw/geometry/pilot-1_R04_ors.json",
+        "data/raw/geometry/pilot-1_R05_ors.json",
+        "data/raw/geometry/pilot-1_R06_ors.json",
+        "data/raw/geometry/pilot-1_R07_ors.json",
+        "data/raw/geometry/pilot-1_R08_ors.json",
+        "data/raw/geometry/pilot-1_R09_ors.json",
+        "data/raw/geometry/pilot-1_R10_ors.json",
+        "data/raw/geometry/pilot-1_R11_ors.json",
+        "data/raw/geometry/pilot-1_R12_ors.json",
+        "data/raw/geometry/pilot-1_R13_ors.json",
+        "data/raw/geometry/pilot-1_R14_ors.json",
+        "data/raw/geometry/pilot-1_R15_ors.json",
+        "data/raw/geometry/pilot-1_R16_ors.json",
+        "data/raw/geometry/pilot-1_R17_ors.json",
+        "data/raw/geometry/pilot-1_R18_ors.json",
+        "data/raw/geometry/pilot-1_R19_ors.json",
+        "data/raw/geometry/pilot-1_R20_ors.json"
+      ],
+      "n_geometry_files": 20,
+      "cycle_id": "pilot-1",
+      "provider": "ors",
+      "route_ids": [
+        "R01",
+        "R02",
+        "R03",
+        "R04",
+        "R05",
+        "R06",
+        "R07",
+        "R08",
+        "R09",
+        "R10",
+        "R11",
+        "R12",
+        "R13",
+        "R14",
+        "R15",
+        "R16",
+        "R17",
+        "R18",
+        "R19",
+        "R20"
+      ],
+      "live_traffic": false,
+      "observed_gps": false,
+      "sources": [
+        "data/routes.csv",
+        "data/raw/geometry/pilot-1_R01_ors.json",
+        "data/raw/geometry/pilot-1_R02_ors.json",
+        "data/raw/geometry/pilot-1_R03_ors.json",
+        "data/raw/geometry/pilot-1_R04_ors.json",
+        "data/raw/geometry/pilot-1_R05_ors.json",
+        "data/raw/geometry/pilot-1_R06_ors.json",
+        "data/raw/geometry/pilot-1_R07_ors.json",
+        "data/raw/geometry/pilot-1_R08_ors.json",
+        "data/raw/geometry/pilot-1_R09_ors.json",
+        "data/raw/geometry/pilot-1_R10_ors.json",
+        "data/raw/geometry/pilot-1_R11_ors.json",
+        "data/raw/geometry/pilot-1_R12_ors.json",
+        "data/raw/geometry/pilot-1_R13_ors.json",
+        "data/raw/geometry/pilot-1_R14_ors.json",
+        "data/raw/geometry/pilot-1_R15_ors.json",
+        "data/raw/geometry/pilot-1_R16_ors.json",
+        "data/raw/geometry/pilot-1_R17_ors.json",
+        "data/raw/geometry/pilot-1_R18_ors.json",
+        "data/raw/geometry/pilot-1_R19_ors.json",
+        "data/raw/geometry/pilot-1_R20_ors.json"
+      ],
+      "source_manifest": "figures/route_map_manifest.json",
+      "category": "map",
+      "sha256": "495c0d4d72de4e4b1942083f7e8ccd96efaed35f63b723d1e13b3ce6cfc51b06"
+    },
+    {
+      "number": 8,
+      "file": "figures/pilot_console.png",
+      "caption": "Actual PowerShell view of the saved collector console log, showing the completed first ORS pilot cycle and the start of the second. Captured with .NET CopyFromScreen; this is a viewport excerpt, not a fabricated console.",
+      "sources": [
+        "docs/pilot_console.log"
+      ],
+      "status": "created",
+      "source_manifest": "figures/evidence_manifest.json",
+      "category": "evidence",
+      "sha256": "af99cc362f990e294e372ca0e3b9a9dcedd508a6133f6741895b3bdbf2dc354d"
+    },
+    {
+      "number": 9,
+      "file": "figures/raw_csv_screen.png",
+      "caption": "Actual PowerShell display of the original raw CSV header and first three records. The viewport wraps and clips long lines; the linked CSV contains the complete unchanged records.",
+      "sources": [
+        "data/raw/2026-10-24.csv"
+      ],
+      "status": "created",
+      "source_manifest": "figures/evidence_manifest.json",
+      "category": "evidence",
+      "sha256": "15f37b622e0a131c3b1e1543658136f6111fc48e8ba68a703cf06b82763569a3"
+    },
+    {
+      "number": 10,
+      "file": "figures/github_actions_success.png",
+      "caption": "Successful cloud collector run on GitHub-hosted infrastructure. The workflow was manually dispatched for verification; the same workflow has a fifteen-minute schedule and a fixed end time.",
+      "sources": [
+        "docs/cloud_run.json",
+        "docs/cloud_run.log"
+      ],
+      "status": "created",
+      "source_manifest": "figures/evidence_manifest.json",
+      "category": "evidence",
+      "sha256": "0086137f0b37ad34c2c8de842ca833df55aece70f2d7873873608338d82a791e"
+    },
+    {
+      "number": 11,
+      "status": "created",
+      "file": "figures/google_control_benchmark.png",
+      "caption": "Original aggregate disagreement metrics for one separate exploratory cycle. Google used TRAFFIC_AWARE_OPTIMAL; ORS has no live traffic. These are not accuracy measures or the primary peak-period comparison.",
+      "context": "summarizes the separate Google–ORS instrument comparison using aggregate metrics only",
+      "sources": [
+        "results/google_control_benchmark.csv"
+      ],
+      "source_manifest": "figures/google_control_manifest.json",
+      "source_sha256": "55bf9f8f738dd47847db9f77a4eaa09b2a4b144a7ead0a7f25496288517b5f6f",
+      "category": "exploratory",
+      "credit": "Team-computed comparative-test results; ORS control: © openrouteservice by HeiGIT | Data from OpenStreetMap",
+      "n_valid_pairs": 20,
+      "google_raw_retained": false,
+      "sha256": "a832d92b17dd213532b9965ad03b3a37303641a6b6dd50ec4a1be9dd72108331"
+    }
+  ],
+  "expected_results_comparison": [
+    {
+      "id": "ER1",
+      "expectation": "The peak to off-peak ratio of median absolute TomTom-2GIS difference is at least 1.5.",
+      "observed": "0 initial TomTom–2GIS pairs. The amended Google–ORS control design does not directly test this original expected result.",
+      "verdict": "cannot judge",
+      "evidence": "results/summary.json; results/pairs.csv"
+    },
+    {
+      "id": "ER2",
+      "expectation": "At least 70% of eligible primary pairs have lengths within 5% of their pair mean.",
+      "observed": "0 initial TomTom–2GIS pairs. The amended Google–ORS control design does not directly test this original expected result.",
+      "verdict": "cannot judge",
+      "evidence": "results/summary.json; results/pairs.csv"
+    },
+    {
+      "id": "ER3",
+      "expectation": "Median signed difference TomTom minus 2GIS is positive in the completed sample.",
+      "observed": "0 initial TomTom–2GIS pairs. The amended Google–ORS control design does not directly test this original expected result.",
+      "verdict": "cannot judge",
+      "evidence": "results/summary.json; results/pairs.csv"
+    },
+    {
+      "id": "ER4",
+      "expectation": "The peak IQR of signed differences exceeds the off-peak IQR.",
+      "observed": "0 initial TomTom–2GIS pairs. The amended Google–ORS control design does not directly test this original expected result.",
+      "verdict": "cannot judge",
+      "evidence": "results/summary.json; results/pairs.csv"
+    },
+    {
+      "id": "ER5",
+      "expectation": "Fewer than 2% of ORS instrument requests fail to return a valid route.",
+      "observed": "0/68 unique ORS requests failed the valid-route screen (0%).",
+      "verdict": "trending toward",
+      "evidence": "results/observations.csv; results/request_quality.csv"
+    },
+    {
+      "id": "ER6",
+      "expectation": "At least 95% of ORS instrument requests finish within 10 seconds.",
+      "observed": "68/68 unique ORS requests finished within 10 seconds (100%).",
+      "verdict": "trending toward",
+      "evidence": "results/observations.csv; figures/analysis_request_latency.png"
+    },
+    {
+      "id": "ER7",
+      "expectation": "All 20 routes produce at least one valid ORS result during the three pilot cycles.",
+      "observed": "20/20 routes have a usable pilot response; 3/3 pilot cycles are represented.",
+      "verdict": "trending toward",
+      "evidence": "results/observations.csv; figures/analysis_provider_durations.png"
+    },
+    {
+      "id": "ER8",
+      "expectation": "At least 90% of the 768 nominal ORS scheduled requests are recorded in the 48-hour window.",
+      "observed": "4 verified cron-triggered attempts; 4 manual workflow_dispatch verification records (collector phase scheduled); collection window still open.",
+      "verdict": "cannot judge",
+      "evidence": "results/observations.csv; docs/cloud_run.json; config/study.json"
+    }
+  ],
+  "summary": {
+    "schema_version": "1.0",
+    "generated_at_utc": "2026-10-24T11:13:51.125096+00:00",
+    "input_files": [
+      {
+        "file": "data/report_snapshots/2026-10-24-afternoon/raw/2026-10-24.csv",
+        "sha256": "0ff767576798c72aec0bc194bfed9a4dc110a566f8595fa22b9bd982c0635a8b",
+        "rows": 68
+      }
+    ],
+    "n_raw_rows": 68,
+    "n_exact_duplicates": 0,
+    "n_unique_requests": 68,
+    "n_usable_observations": 68,
+    "n_failed_requests": 0,
+    "n_pairs": 0,
+    "n_primary_pairs": 0,
+    "n_primary_length_comparable": 0,
+    "primary_length_comparable_pct": null,
+    "primary_pairs_by_period": {
+      "peak": 0,
+      "offpeak": 0,
+      "other": 0
+    },
+    "primary_pairs_by_phase": {},
+    "n_routes": 20,
+    "n_cycles": 5,
+    "first_request_utc": "2026-10-24T02:37:23.929322+00:00",
+    "last_request_utc": "2026-10-24T07:50:15.083095+00:00",
+    "max_primary_time_gap_s": null,
+    "n_pair_time_exclusions": 0,
+    "n_pair_boundary_exclusions": 0,
+    "primary_metrics": [],
+    "request_quality": [
+      {
+        "phase": "pilot",
+        "provider": "ors",
+        "n_requests": 60,
+        "n_http_ok": 60,
+        "n_failed": 0,
+        "failure_pct": 0.0,
+        "n_usable": 60
+      },
+      {
+        "phase": "scheduled",
+        "provider": "ors",
+        "n_requests": 8,
+        "n_http_ok": 8,
+        "n_failed": 0,
+        "failure_pct": 0.0,
+        "n_usable": 8
+      }
+    ],
+    "inference": [
+      {
+        "comparison": "tomtom-dgis",
+        "length_group": "all",
+        "status": "not_run_no_primary_comparison_pairs",
+        "method": "exact_two_sided_signed_rank_of_route_median_route_day_contrasts",
+        "n_route_days": 0,
+        "n_routes": 0,
+        "n_dates": 0,
+        "median_peak_minus_offpeak_s": null,
+        "p_value": null,
+        "rank_biserial": null,
+        "n_nonzero": null,
+        "w_plus": null,
+        "w_minus": null,
+        "interpretation": "Primary subset=all; length subsets exploratory. No ground-truth accuracy claim. No pilot inference."
+      },
+      {
+        "comparison": "tomtom-dgis",
+        "length_group": "comparable",
+        "status": "not_run_no_primary_comparison_pairs",
+        "method": "exact_two_sided_signed_rank_of_route_median_route_day_contrasts",
+        "n_route_days": 0,
+        "n_routes": 0,
+        "n_dates": 0,
+        "median_peak_minus_offpeak_s": null,
+        "p_value": null,
+        "rank_biserial": null,
+        "n_nonzero": null,
+        "w_plus": null,
+        "w_minus": null,
+        "interpretation": "Primary subset=all; length subsets exploratory. No ground-truth accuracy claim. No pilot inference."
+      },
+      {
+        "comparison": "tomtom-dgis",
+        "length_group": "noncomparable",
+        "status": "not_run_no_primary_comparison_pairs",
+        "method": "exact_two_sided_signed_rank_of_route_median_route_day_contrasts",
+        "n_route_days": 0,
+        "n_routes": 0,
+        "n_dates": 0,
+        "median_peak_minus_offpeak_s": null,
+        "p_value": null,
+        "rank_biserial": null,
+        "n_nonzero": null,
+        "w_plus": null,
+        "w_minus": null,
+        "interpretation": "Primary subset=all; length subsets exploratory. No ground-truth accuracy claim. No pilot inference."
+      }
+    ],
+    "rules": {
+      "timezone": "Asia/Almaty",
+      "period_intervals": {
+        "peak": [
+          [
+            "17:30",
+            "19:30"
+          ]
+        ],
+        "offpeak": [
+          [
+            "10:00",
+            "12:00"
+          ],
+          [
+            "22:00",
+            "24:00"
+          ]
+        ]
+      },
+      "period_end_exclusive": true,
+      "max_pair_gap_s": 60,
+      "length_difference_denominator": "pair_mean",
+      "length_comparable_max_pct": 5,
+      "length_comparability_proves_same_geometry": false,
+      "min_speed_kmh": 2,
+      "max_speed_kmh": 200,
+      "bootstrap_unit": "route",
+      "bootstrap_replicates": 2000,
+      "bootstrap_seed": 2424,
+      "bootstrap_min_routes": 8,
+      "bootstrap_min_dates": 2,
+      "pilot_inference": false,
+      "accuracy_estimable": false,
+      "ors_is_traffic_aware": false
+    },
+    "versions": {
+      "python": "3.12.14",
+      "platform": "Windows-11-10.0.26200-SP0",
+      "process_sha256": "e73141a49583afd8487d18443ba09545a6313014b1800e23c05e93caa893ddc4",
+      "tzdata": "2026.5"
+    }
+  },
+  "exploratory_comparison": {
+    "protocol": {
+      "protocol_id": "google-control-1",
+      "registered_at_utc": "2026-10-24T11:24:15.506607+00:00",
+      "purpose": "Exploratory instrument comparison after successful credential-only check; not a test of the original TomTom-2GIS peak hypothesis",
+      "rq": "How do Google traffic-aware estimates differ from the ORS control on twenty fixed Astana routes in this pilot?",
+      "providers": [
+        "google_demo",
+        "ors"
+      ],
+      "google_routing_preference": "TRAFFIC_AWARE_OPTIMAL",
+      "ors_live_traffic": false,
+      "routes_file": "data/routes.csv",
+      "routes_sha256": "f4b14c9bede5fee2260d2294d2e61556ac151f0fd9e29f08ab1df9e7c184cb17",
+      "max_pairs": 20,
+      "max_requests_per_provider": 20,
+      "pair_max_start_gap_seconds": 60,
+      "minimum_pair_interval_seconds": 2.1,
+      "publish_google_raw": false,
+      "google_processing": "Transient RAM only; no route ETA, distance, static duration or geometry stored individually",
+      "published_evidence": "Own aggregate benchmark metrics CSV; per-request status/timestamps; permitted ORS raw responses; code, fixed endpoints, request parameters and this protocol",
+      "metrics": [
+        "median signed Google-minus-ORS difference in seconds",
+        "median absolute difference",
+        "MAE as disagreement",
+        "RMSE as disagreement",
+        "mean symmetric absolute percentage difference",
+        "IQR of signed differences",
+        "count and percentage of route lengths within 5% of pair mean"
+      ],
+      "minimum_valid_pairs_for_numeric_aggregates": 5,
+      "inference": false,
+      "interpretation": "Traffic-aware output versus non-live-traffic control. No accuracy claim. Aggregate outputs cannot be independently recalculated from saved Google raw responses because those are not retained. Repeating the test uses new live outputs, not the same observations.",
+      "storage_basis": "GMP3.2.4 contemplates public benchmark results; GMP3.2.3 restricts saving/resharing Maps content. This protocol retains only its own aggregate comparative-test results.",
+      "terms_urls": [
+        "https://cloud.google.com/maps-platform/terms",
+        "https://cloud.google.com/terms/maps-platform/demo-project-terms",
+        "https://developers.google.com/maps/demo-key"
+      ],
+      "original_expectations_unchanged": true,
+      "scope": "One bounded pilot cycle; no recurring Google collection authorized by this protocol"
+    },
+    "metrics": {
+      "cycle_id": "google-control-1",
+      "start_utc": "2026-10-24T11:24:54.664964+00:00",
+      "end_utc": "2026-10-24T11:25:36.748530+00:00",
+      "n_attempted_pairs": "20",
+      "n_google_ok": "20",
+      "n_ors_ok": "20",
+      "max_request_start_gap_s": "0.031596",
+      "n_valid_pairs": "20",
+      "median_signed_difference_s": "730.5",
+      "median_absolute_difference_s": "730.5",
+      "mae_s": "741.715",
+      "rmse_s": "783.6274526201848",
+      "smape_pct": "57.57833809557495",
+      "iqr_signed_difference_s": "270.19999999999993",
+      "n_length_comparable": "15",
+      "length_comparable_pct": "75.0"
+    },
+    "n_valid_pairs": 20,
+    "n_attempted_pairs": 20
+  },
+  "validation": {
+    "visual_render_review": "completed",
+    "references": 10,
+    "verification_record": "docs/final_verification.json",
+    "rendered_pages": 25,
+    "missing_pdf_table_cells": 0,
+    "rendered_pdf_sha256": "be2300bed9ad9bdcbf32f628776de22900841f02df98db986a9de2e9b428f772",
+    "report_builder_sha256": "bfc49d3e09ca81b7edd3021867f6195c2027bf5ba45e674dfcc1247967321964",
+    "review_completed_at_utc": "2026-10-24T11:49:33.272434+00:00",
+    "visual_review_note": "All 25 full pages reviewed across the report owner, root and setup agents. After the final ORS snapshot label clarification, page 1 was reviewed again; pages 2 through 25 are byte-identical PNGs to the reviewed render."
+  }
+}

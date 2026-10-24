@@ -1,8 +1,8 @@
 {
-  "generated_at_utc": "2026-10-24T11:47:41.893772+00:00",
+  "generated_at_utc": "2026-10-24T12:09:52.390013+00:00",
   "analysis_snapshot_utc": "2026-10-24T11:13:51.125096+00:00",
   "report_file": "RMT_A3_Team_AkhanovYerdaulet_ShadiyarbekSyrym_SabyrzhanAkylbek.docx",
-  "report_sha256": "1529726622d95a074b7c5e89243df1e54f65cf11c92fd9c095f87ecbd5dc91f4",
+  "report_sha256": "4baf9713bfdc80f47c1059c3492ff1e9114607d3f0b147c9e1295316ddbdc122",
   "scope": "Amended Google–ORS control design; follow-up status in separate window summary; initial TomTom–2GIS comparison unperformed",
   "current_research_question": "How do Google traffic-aware travel-time estimates differ from ORS control estimates on fixed Astana routes during peak and off-peak periods?",
   "initial_research_question": "How do TomTom and 2GIS traffic-aware travel-time estimates diverge on fixed Astana routes during evening peak compared with off-peak periods?",
@@ -11,7 +11,7 @@
     "approved_at_utc": "2026-10-24T11:32:30.838148+00:00",
     "approval": "User explicitly approved Google traffic-aware + ORS control and aggregate-only Google retention in this chat before this protocol was recorded.",
     "current_rq": "How do Google traffic-aware travel-time estimates differ from ORS control estimates on fixed Astana routes during peak and off-peak periods?",
-    "collection_end_utc": "2026-10-26T02:32:16.123968+00:00",
+    "collection_end_utc": "2026-10-25T12:40:00+00:00",
     "timezone": "Asia/Almaty",
     "windows": [
       {
@@ -35,23 +35,17 @@
       {
         "id": "google-followup-20261025-peak",
         "start_utc": "2026-10-25T12:30:00+00:00",
-        "end_utc": "2026-10-25T14:30:00+00:00",
+        "end_utc": "2026-10-25T12:40:00+00:00",
         "period": "peak"
-      },
-      {
-        "id": "google-followup-20261025-offpeak",
-        "start_utc": "2026-10-25T17:00:00+00:00",
-        "end_utc": "2026-10-25T19:00:00+00:00",
-        "period": "offpeak"
       }
     ],
     "routes_per_window": 20,
     "routes_file": "data/routes.csv",
     "routes_sha256": "236b48e847d473f25e9666f68e68908943a54833646073d3ff1bc756c3cbc4bd",
-    "google_total_request_budget": 121,
+    "google_total_request_budget": 101,
     "google_already_reserved": 21,
-    "future_google_request_budget": 100,
-    "future_ors_request_budget": 100,
+    "future_google_request_budget": 80,
+    "future_ors_request_budget": 80,
     "google_secret_env": "GOOGLE_MAPS_DEMO_KEY",
     "google_routing_preference": "TRAFFIC_AWARE_OPTIMAL",
     "ors_live_traffic": false,
@@ -61,7 +55,7 @@
     "publish_google_raw": false,
     "minimum_pairs_for_numeric_aggregates": 5,
     "hypothesis": "Peak-window median absolute Google-ORS disagreement will exceed off-peak-window median absolute disagreement. The earlier 1.5 ratio is retained as a prospective descriptive reference, not a revised original ER.",
-    "analysis": "Compare published per-window aggregate metrics descriptively, retaining dates and sample counts. Do not treat 100 requests as independent samples or run the original route-by-day Wilcoxon without route-level Google evidence.",
+    "analysis": "Compare published per-window aggregate metrics descriptively, retaining dates and sample counts. Do not treat 80 requests as independent samples or run the original route-by-day Wilcoxon without route-level Google evidence.",
     "storage": "No individual Google route times, distances or geometry retained. Publish own aggregate benchmark statistics, request status/timestamps, permitted ORS evidence, code and complete request protocol.",
     "limitations": "Google with traffic versus ORS without live traffic conflates providers and models. This cannot isolate a causal traffic effect or measure accuracy. Google numeric aggregates cannot be independently recalculated from saved Google raw outputs; repeating the protocol observes new live values.",
     "execution": "One prospective batch per window, at its first eligible worker check. Record actual times; never backfill a missed window. Skip or stop when outside the window/end, budget exhausted or credential/rate limit occurs. Google-specific failures stop further Google follow-ups while permitted ORS collection continues.",
@@ -74,11 +68,29 @@
       "https://cloud.google.com/maps-platform/terms"
     ],
     "routes_hash_rule": "sha256_after_crlf_to_lf",
-    "representation_amendment": "Before the first follow-up window, route hashing was normalized for Windows/Linux line endings; coordinates, windows and scientific expectations unchanged."
+    "representation_amendment": "Before the first follow-up window, route hashing was normalized for Windows/Linux line endings; coordinates, windows and scientific expectations unchanged.",
+    "submission_deadline_amendment": {
+      "recorded_at_utc": "2026-10-24T12:08:16.747876+00:00",
+      "user_confirmed_submission_deadline_local": "2026-10-25T18:00:00+05:00",
+      "submission_deadline_utc": "2026-10-25T13:00:00+00:00",
+      "collection_cutoff_utc": "2026-10-25T12:40:00+00:00",
+      "target_report_ready_local": "2026-10-25T17:50:00+05:00",
+      "original_protocol_file": "docs/protocol_versions/google_followup_before_submission_deadline.json",
+      "original_protocol_sha256": "d2587cf18abdec38e7c937efa50bf51559747e82221ed810258efd9896c3369d",
+      "reason": "User clarified submission is due 25 October by 18:00 Astana time. Shorten prospective collection and reserve twenty minutes for report review and delivery.",
+      "changes": [
+        "Remove the 25 October 22:00 off-peak window, which is after the deadline.",
+        "Shorten the 25 October evening window to 17:30-17:40 local time; wake the worker at its start.",
+        "Stop cloud collection by 25 October 17:40 local time; preserve original config and expectations as historical preregistration.",
+        "Retain original timestamps and recorded observations; no reconstruction or backdating of missing historical requests."
+      ],
+      "effective_before_first_followup_window": true,
+      "new_data_are_prospective": true
+    }
   },
   "followup_summary": {
-    "generated_at_utc": "2026-10-24T11:36:46.249129+00:00",
-    "planned_windows": 5,
+    "generated_at_utc": "2026-10-24T12:09:50.506216+00:00",
+    "planned_windows": 4,
     "recorded_windows": 0,
     "valid_windows": 0,
     "n_valid_pairs": 0,
@@ -93,7 +105,7 @@
       },
       {
         "period": "offpeak",
-        "planned_windows": 3,
+        "planned_windows": 2,
         "recorded_windows": 0,
         "valid_windows": 0,
         "n_valid_pairs": 0,
@@ -105,7 +117,7 @@
     "inference": "not_run_aggregate_windows_do_not_recover_route_day_pairs",
     "interpretation": "Descriptive window-level comparison only; traffic-aware Google versus non-live-traffic ORS control; no accuracy or causal claim. Original TomTom-2GIS expected results are not tested by these observations."
   },
-  "prose_word_count": 1855,
+  "prose_word_count": 1871,
   "counting_rule": "Only authored continuous-prose paragraphs; excludes identity, headings, RQ, tables, captions, code, references and links.",
   "figure_count": 11,
   "table_count": 26,
@@ -118,7 +130,7 @@
     "docs/expected_results.json": "e1a7ad664d3f3a6caa524098fc4073812d29de0a88239a87f4e10181fec27d1a",
     "docs/references.json": "f0fa3e0289395aa6d3ac92ce0b353dac658f33a602ca9bba9336f65a91aac683",
     "docs/api_check.md": "c21d3c63f94b5c740c75583400b2b42168aa8149c3190349a399d04fbe6eb7d9",
-    "docs/research_log.md": "ff576d4e62c59a731e7458dc8fbcc618f9c9672e0cb781ec01726857a9052cf3",
+    "docs/research_log.md": "f6c7bfe7fb5642dbee55c91faac63076150a8af49ebb69400a1c5f547c09908c",
     "data/routes.csv": "f4b14c9bede5fee2260d2294d2e61556ac151f0fd9e29f08ab1df9e7c184cb17",
     "results/summary.json": "2230e8b6443e854d9cdfe841f2fe13caab1ffb6e9ce084454a2f631aac14845f",
     "results/observations.csv": "eb44e40c0340be9ad52aa5903e97626bbb2fe567ad83bb81799a2fbc378494a0",
@@ -133,17 +145,17 @@
     "docs/reproduce_report.md": "f2de6212776af419ad72f40e54cb4519f9bef13b6108759fb00290f0befa7cbb",
     "docs/cloud_run.json": "bcd0f83f53d90cfaf84bb2906d53bfcc25434019a7409b63f59b2f14b816a578",
     "docs/cloud_runs.json": "df19e802a7500783a249f2f6622567ef7b2bc188da43300b4c38f1c88804efa8",
-    "docs/drive_delivery.json": "4c7de9eb062b20fe03c4e915ab820b6a76530d97dd2672fd618d42ee4615a836",
-    "docs/google_followup_protocol.json": "d2587cf18abdec38e7c937efa50bf51559747e82221ed810258efd9896c3369d",
-    "results/google_followup_summary.json": "a449a89375afa564c05f19550da1f02356f449e581ecd574bcb170b9adee060b",
-    "results/google_followup_period_summary.csv": "33e75258fada208994b0032d87c204b9183cd083ce5d77446eaabe4e8e01d305",
+    "docs/drive_delivery.json": "594f34abc8abffea49785e887ab873ca3f0f1b95413e65c5057fe44742fb4c71",
+    "docs/google_followup_protocol.json": "28035fa2539fe70a420dca4cb7240075ac2567122c0b4cec853dcc003f36e5e1",
+    "results/google_followup_summary.json": "27c69ae51db6de35e93c4b5fba382f814249ef7fce15e77540d44113449a3e58",
+    "results/google_followup_period_summary.csv": "81d922bac883622f38ffa458f85d6638e64baa39c65b045e3f378e6bf2936a57",
     "analysis/google_followup_summary.py": "0b0fd2dbb18df5bbce3a0add619fc37b0f584d71a62aceaa2df5818aa8da0c0a",
-    "collector/google_followup.py": "c6f65aa224789959a7272509f14266472fd438710d72ecc3cd5f14c90bc61a91",
+    "collector/google_followup.py": "79ddfaf33f799605f3c56c5fb07ccd48e5cf8f2b90be49cad597bd4623c2735c",
     "docs/resilient_worker_verification.json": "1ef7f9d2dfc436b09dd16ac430f1ce09ebedbdb36972fd3dbbc47200f9d98660",
     "docs/google_control_protocol.json": "a2df090c205f31dc8193ab711a9f0c476c398fed0e0b3337020ac4ea3b1df282",
     "results/google_control_benchmark.csv": "55bf9f8f738dd47847db9f77a4eaa09b2a4b144a7ead0a7f25496288517b5f6f",
     "collector/google_control_test.py": "5159ef6f4199a51c193fac6c4ed16a5fe4afbd29f7a8af89ccafb7dc9e18ef59",
-    "analysis/google_control_figure.py": "686369cb2a25b466418385e236a180ce878dee47e18d85a3b00bece6e3580f24",
+    "analysis/google_control_figure.py": "041b489c3c77a0423752550a51cfa4968d4d38a5fd9ca2893c91db1730128015",
     "data/exploratory/google_request_status.csv": "2903cd448b55f9da4ec6c69a7a4458af618844df14386f8fab0b5605b23996f9",
     "data/exploratory/ors/observations.csv": "51cd0e39354e7d896ef197da82b29f99dc689ade0ac458b57467492a8ac28277",
     "figures/evidence_manifest.json": "b8d1299874f20b1fa35bcca549caccc7105ffdb44cb0346c9e1f0bad78857f22",
@@ -623,14 +635,7 @@
     "n_attempted_pairs": 20
   },
   "validation": {
-    "visual_render_review": "completed",
-    "references": 10,
-    "verification_record": "docs/final_verification.json",
-    "rendered_pages": 25,
-    "missing_pdf_table_cells": 0,
-    "rendered_pdf_sha256": "be2300bed9ad9bdcbf32f628776de22900841f02df98db986a9de2e9b428f772",
-    "report_builder_sha256": "bfc49d3e09ca81b7edd3021867f6195c2027bf5ba45e674dfcc1247967321964",
-    "review_completed_at_utc": "2026-10-24T11:49:33.272434+00:00",
-    "visual_review_note": "All 25 full pages reviewed across the report owner, root and setup agents. After the final ORS snapshot label clarification, page 1 was reviewed again; pages 2 through 25 are byte-identical PNGs to the reviewed render."
+    "visual_render_review": "completed: 25 pages; changed pages 3 and 21-25 inspected, 19 other pages byte-identical to prior reviewed render; missing table cells 0",
+    "references": 10
   }
 }

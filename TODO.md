@@ -3,7 +3,7 @@
 Google Demo with TRAFFIC_AWARE_OPTIMAL now works, the separate Google-ORS pilot is complete, the cloud worker is active, and the ZIP is on Drive. No payment or billing upgrade was made.
 
 1. Review the current report and its limitations before submission. The original TomTom-2GIS comparison was not performed. The user-approved current design compares Google with traffic to an ORS control without live traffic. It does not measure accuracy or isolate a causal traffic effect.
-2. Allow the five preregistered future windows to occur: 24 October peak 17:30–19:30 and off-peak 22:00–24:00; 25 October off-peak 10:00–12:00, peak 17:30–19:30 and off-peak 22:00–24:00, Astana time. Each window has at most twenty paired requests. Collection ends on 26 October at 07:32 Astana time; it may stop earlier on a quota or access error. Missing windows cannot be recreated later.
+2. Submission is due **25 October at 18:00 Astana time**. The amended windows are: 24 October peak 17:30–19:30 and off-peak 22:00–24:00; 25 October off-peak 10:00–12:00 and a short peak window 17:30–17:40. Each permits at most twenty paired requests, eighty in total. Cloud collection stops by 25 October at 17:40; it may stop earlier on a quota or access error. Prepare a submission-ready version from the first three windows in advance, and include the final evening batch only if it actually completes in time. Missing windows cannot be recreated later. Preserve the two-date limitation.
 3. After the relevant windows, retrieve and describe the actual aggregate results. Do not reconstruct individual Google estimates or run the original route/day Wilcoxon from window aggregates. The scripts explicitly keep inference disabled.
 
 ```powershell
