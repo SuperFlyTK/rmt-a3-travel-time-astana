@@ -17,7 +17,8 @@
     "worker-40090752863-20261024T114159Z",
     "worker-40090752863-20261024T115702Z",
     "worker-40090752863-20261024T121204Z",
-    "worker-40090752863-20261024T122705Z"
+    "worker-40090752863-20261024T122705Z",
+    "google-followup-20261024-peak"
   ],
   "reservations": {
     "preflight-astana-1": {
@@ -1798,7 +1799,7 @@
           "destination_source": "https://www.openstreetmap.org/node/12343653048"
         }
       ],
-      "status": "reserved",
+      "status": "completed",
       "reserved_at_utc": "2026-10-24T12:42:07.837921+00:00",
       "config_sha256": "13bbad038474fe8b63d1904825cd614d2805ca97b6cfda07f7d18b79f2c4955e",
       "spacing_s": 2.1,
@@ -1806,15 +1807,22 @@
       "protocol_sha256": "530fe72cbec4021bd6eacc9bb64ad4f3383f2c61db9386e465a0b6558a96fe88",
       "window_start_utc": "2026-10-24T12:30:00+00:00",
       "window_end_utc": "2026-10-24T14:30:00+00:00",
-      "period": "peak"
+      "period": "peak",
+      "started_at_utc": "2026-10-24T12:42:09.074510+00:00",
+      "recorded_attempts": 20,
+      "completed_at_utc": "2026-10-24T12:42:51.080951+00:00"
     }
   },
   "google_followup": {
     "windows": {
       "google-followup-20261024-peak": {
-        "status": "reserved",
+        "status": "completed",
         "cycle_id": "google-followup-20261024-peak",
-        "reserved_at_utc": "2026-10-24T12:42:07.837902+00:00"
+        "reserved_at_utc": "2026-10-24T12:42:07.837902+00:00",
+        "started_at_utc": "2026-10-24T12:42:09.074510+00:00",
+        "recorded_attempts": 20,
+        "completed_at_utc": "2026-10-24T12:42:51.080951+00:00",
+        "n_valid_pairs": 20
       }
     }
   }
