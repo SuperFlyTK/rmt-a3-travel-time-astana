@@ -46,7 +46,8 @@
     "worker-40109396997-20261024T182830Z",
     "worker-40109396997-20261024T184332Z",
     "worker-40109396997-20261024T185833Z",
-    "worker-40109396997-20261024T191335Z"
+    "worker-40109396997-20261024T191335Z",
+    "worker-40109396997-20261024T192836Z"
   ],
   "reservations": {
     "preflight-astana-1": {
@@ -3885,10 +3886,13 @@
           "destination_source": "https://www.openstreetmap.org/node/12343653048"
         }
       ],
-      "status": "reserved",
+      "status": "completed",
       "reserved_at_utc": "2026-10-24T19:28:36.873672+00:00",
       "config_sha256": "13bbad038474fe8b63d1904825cd614d2805ca97b6cfda07f7d18b79f2c4955e",
-      "spacing_s": 2.1
+      "spacing_s": 2.1,
+      "started_at_utc": "2026-10-24T19:28:38.076011+00:00",
+      "recorded_attempts": 4,
+      "completed_at_utc": "2026-10-24T19:28:45.024319+00:00"
     }
   },
   "google_followup": {
