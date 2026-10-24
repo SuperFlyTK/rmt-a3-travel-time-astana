@@ -1,0 +1,15 @@
+{
+  "checked_at_utc": "2026-10-24T11:19:46.220952+00:00",
+  "provider": "google_demo",
+  "route_id": "R01",
+  "purpose": "One credential/feature check; no numerical route outputs retained",
+  "routingPreference": "TRAFFIC_AWARE_OPTIMAL",
+  "http_code": 200,
+  "status": "available",
+  "returned_fields": [
+    "distanceMeters",
+    "duration",
+    "polyline",
+    "staticDuration"
+  ]
+}

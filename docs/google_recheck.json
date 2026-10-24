@@ -1,0 +1,11 @@
+{
+  "checked_at_utc": "2026-10-24T11:10:56.607140+00:00",
+  "provider": "google",
+  "purpose": "Credential recheck only; not a research observation",
+  "route_id": "R01",
+  "traffic_preference": "TRAFFIC_AWARE_OPTIMAL",
+  "http_code": 403,
+  "status": "PERMISSION_DENIED",
+  "reason_codes": [],
+  "message": "The caller does not have permission"
+}
