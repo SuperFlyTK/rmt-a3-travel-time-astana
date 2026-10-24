@@ -1,0 +1,50 @@
+name: Bounded resilient Astana collection
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+# Shared with the original collector. Never run two collectors simultaneously.
+# The original cron was temporarily disabled during migration to prevent a
+# local exploratory test from racing the shared quota state. It is the fallback
+# if the first worker cycle cannot be verified; do not run both collectors.
+concurrency:
+  group: route-collector
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Configure commit identity
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+      - name: Collect bounded prospective cycles
+        id: worker
+        env:
+          ORS_KEY: ${{ secrets.ORS_KEY }}
+          GH_TOKEN: ${{ github.token }}
+        run: python collector/cloud_worker.py --max-runtime-seconds 16200
+      - name: Preserve evidence after a worker failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: resilient-collector-recovery-${{ github.run_id }}
+          path: |
+            data/raw
+            data/collection_state.json
+            docs/research_log.md
+          if-no-files-found: warn
+          retention-days: 30

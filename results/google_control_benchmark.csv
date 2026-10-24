@@ -1,0 +1,2 @@
+cycle_id,start_utc,end_utc,n_attempted_pairs,n_google_ok,n_ors_ok,max_request_start_gap_s,n_valid_pairs,median_signed_difference_s,median_absolute_difference_s,mae_s,rmse_s,smape_pct,iqr_signed_difference_s,n_length_comparable,length_comparable_pct
+google-control-1,2026-10-24T11:24:54.664964+00:00,2026-10-24T11:25:36.748530+00:00,20,20,20,0.031596,20,730.5,730.5,741.715,783.6274526201848,57.57833809557495,270.19999999999993,15,75.0

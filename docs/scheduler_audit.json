@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "audited_at_utc": "2026-10-24T11:11:19Z",
+  "repository": "SuperFlyTK/rmt-a3-travel-time-astana",
+  "observed_workflow_state": "active",
+  "observed_actions_enabled": true,
+  "observed_default_branch": "main",
+  "original_cron": "*/15 * * * *",
+  "runs_observed": [
+    {"id": 40055914780, "event": "workflow_dispatch", "created_at_utc": "2026-10-24T02:51:30Z", "conclusion": "success", "research_requests": 4},
+    {"id": 40075684304, "event": "schedule", "created_at_utc": "2026-10-24T07:50:02Z", "job_started_at_utc": "2026-10-24T07:50:04Z", "job_completed_at_utc": "2026-10-24T07:50:18Z", "conclusion": "success", "research_requests": 4}
+  ],
+  "queued_running_cancelled_or_failed_runs_observed": 0,
+  "scheduled_run_routes": ["R05", "R06", "R07", "R08"],
+  "scheduled_run_route_statuses": ["ok", "ok", "ok", "ok"],
+  "reserved_requests_at_audit": 70,
+  "research_rows_at_audit": 68,
+  "diagnostic_requests_at_audit": 2,
+  "request_budget": 900,
+  "halted_at_audit": false,
+  "fixed_collection_end_utc": "2026-10-26T02:32:16.123968Z",
+  "diagnosis": "Missing or delayed creation of schedule-event runs; exact GitHub internal cause is not exposed. The observed scheduled job and collector succeeded.",
+  "github_status_at_audit": "All Systems Operational; no unresolved incident",
+  "coverage_bound_without_extra_runs": {"remaining_original_quarter_hour_slots": 158, "future_requests_at_four_per_slot": 632, "current_cloud_phase_rows": 8, "maximum_cloud_phase_rows": 640, "ER8_minimum": 692},
+  "implementation": {"workflow": ".github/workflows/collect_resilient.yml", "worker": "collector/cloud_worker.py", "maximum_worker_runtime_seconds": 16200, "job_timeout_minutes": 300, "routes_per_cycle": 4, "minimum_batch_start_separation_seconds": 900, "handoff_attempts": 3, "git_push_attempts": 3},
+  "activation_status": "Prepared; not activated by this audit. Original workflow subsequently disabled temporarily during migration to avoid a race with the separately reserved local exploratory test; re-enable it as fallback if new-worker activation fails. First cycle and later live successor handoff remain unverified.",
+  "sources": [
+    "https://github.com/SuperFlyTK/rmt-a3-travel-time-astana/actions/runs/40075684304",
+    "https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#schedule",
+    "https://docs.github.com/en/actions/reference/limits",
+    "https://docs.github.com/en/actions/how-tos/write-workflows/choose-when-workflows-run/trigger-a-workflow",
+    "https://www.githubstatus.com/api/v2/status.json"
+  ]
+}
