@@ -9,7 +9,8 @@
     "pilot-1",
     "pilot-2",
     "pilot-3",
-    "gh-40055914780"
+    "gh-40055914780",
+    "gh-40075684304"
   ],
   "reservations": {
     "preflight-astana-1": {
@@ -956,10 +957,13 @@
           "destination_source": "https://www.openstreetmap.org/node/2641042247"
         }
       ],
-      "status": "reserved",
+      "status": "completed",
       "reserved_at_utc": "2026-10-24T07:50:07.623210+00:00",
       "config_sha256": "13bbad038474fe8b63d1904825cd614d2805ca97b6cfda07f7d18b79f2c4955e",
-      "spacing_s": 2.1
+      "spacing_s": 2.1,
+      "started_at_utc": "2026-10-24T07:50:08.780143+00:00",
+      "recorded_attempts": 4,
+      "completed_at_utc": "2026-10-24T07:50:15.443210+00:00"
     }
   }
 }
