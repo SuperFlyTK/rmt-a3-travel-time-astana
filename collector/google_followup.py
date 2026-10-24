@@ -45,7 +45,7 @@ def route_hash(data):
 def load_protocol(root):
     data = (root / PROTOCOL).read_bytes()
     protocol = json.loads(data)
-    if (protocol["routes_per_window"] != 20 or len(protocol["windows"]) != 5
+    if (protocol["routes_per_window"] != 20 or not 1 <= len(protocol["windows"]) <= 5
             or protocol["publish_google_raw"] is not False
             or protocol["google_secret_env"] != "GOOGLE_MAPS_DEMO_KEY"
             or protocol["google_routing_preference"] != "TRAFFIC_AWARE_OPTIMAL"
@@ -56,7 +56,7 @@ def load_protocol(root):
     for window in protocol["windows"]:
         identifier = window["id"]
         if (identifier in ids or not identifier or not all(c.isalnum() or c in "-_" for c in identifier)
-                or not approved < stamp(window["start_utc"]) < stamp(window["end_utc"]) <= HARD_END):
+                or not approved < stamp(window["start_utc"]) < stamp(window["end_utc"]) <= min(HARD_END, stamp(protocol["collection_end_utc"]))):
             raise ValueError("invalid_followup_window")
         ids.add(identifier)
     return protocol, hashlib.sha256(data).hexdigest()

@@ -101,6 +101,35 @@ class WorkerTests(unittest.TestCase):
         with self.assertRaises(WorkerError):backend.collect_cycle('unit-fixture',HARD_END)
         self.assertEqual(events,['reserve','publish-reservation'])
 
+    def test_submission_deadline_can_shorten_but_never_extend_original_end(self):
+        config={'active_providers':['ors'],'routes_per_scheduled_run':4,'scheduled_interval_minutes':15,
+                'collection_end_utc':HARD_END.isoformat(),
+                'providers':{'ors':{'collection_approved':True,'study_request_budget':900}}}
+        cutoff=datetime(2026,10,25,12,40,tzinfo=timezone.utc)
+        protocol={'collection_end_utc':cutoff.isoformat(),'windows':[]}
+        self.assertEqual(inspect_protocol(config,{},protocol)['end'],cutoff)
+        protocol['collection_end_utc']='2027-01-01T00:00:00+00:00'
+        self.assertEqual(inspect_protocol(config,{},protocol)['end'],HARD_END)
+
+    def test_short_final_peak_window_wakes_before_ordinary_ors_batch(self):
+        clock=FakeClock(datetime(2026,10,25,12,29,tzinfo=timezone.utc))
+        peak_start=clock.now()+timedelta(minutes=1)
+        calls=[]
+        class Backend(FakeBackend):
+            def process_followup(self,cutoff):
+                if self.snapshot['followup_starts'] and self.clock.now()>=peak_start:
+                    calls.append(self.clock.now())
+                    self.snapshot['followup_starts']=[]
+                    self.clock.sleep(45)
+                    return True
+                return False
+        backend=Backend(clock,end=peak_start+timedelta(minutes=10),
+                        last_batch=clock.now()-timedelta(minutes=2),followup_starts=[peak_start])
+        outcome=run_worker(backend,clock,'test',1800)
+        self.assertEqual(calls,[peak_start])
+        self.assertEqual(backend.calls,[])
+        self.assertFalse(outcome['handoff'])
+
     def test_partial_attempt_is_published_even_after_collector_failure(self):
         events=[]
         class Backend(RepositoryBackend):

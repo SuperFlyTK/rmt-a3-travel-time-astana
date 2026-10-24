@@ -52,7 +52,7 @@ def aware_time(value):
     return parsed.astimezone(timezone.utc)
 
 
-def inspect_protocol(config, state):
+def inspect_protocol(config, state, followup_protocol=None):
     if config.get("active_providers") != ["ors"]:
         raise WorkerError("worker_requires_ors_only_protocol")
     if config.get("routes_per_scheduled_run") != ROUTES_PER_CYCLE:
@@ -63,6 +63,13 @@ def inspect_protocol(config, state):
     if provider.get("collection_approved") is not True:
         raise WorkerError("ors_collection_not_approved")
     end = min(aware_time(config["collection_end_utc"]), HARD_END)
+    followup_starts = []
+    if followup_protocol:
+        end = min(end, aware_time(followup_protocol["collection_end_utc"]))
+        consumed = state.get("google_followup", {}).get("windows", {})
+        followup_starts = [aware_time(window["start_utc"])
+                           for window in followup_protocol["windows"]
+                           if window["id"] not in consumed]
     budget = min(int(provider["study_request_budget"]), HARD_BUDGET)
     reserved = int(state.get("counts", {}).get("ors", 0))
     candidates = []
@@ -73,7 +80,8 @@ def inspect_protocol(config, state):
                 candidates.append(aware_time(value))
     return {"end": end, "reserved": reserved, "budget": budget,
             "halted": bool(state.get("halted_reason")),
-            "last_batch": max(candidates) if candidates else None}
+            "last_batch": max(candidates) if candidates else None,
+            "followup_starts": followup_starts}
 
 
 def stop_reason(snapshot, now):
@@ -89,6 +97,11 @@ def stop_reason(snapshot, now):
 def next_due(snapshot, now):
     previous = snapshot["last_batch"]
     return max(now, previous + timedelta(seconds=INTERVAL_SECONDS)) if previous else now
+
+
+def next_wake(snapshot, now):
+    # A short comparison window must not wait for the next rotating ORS batch.
+    return min([next_due(snapshot, now)] + [value for value in snapshot.get("followup_starts", []) if now < value < snapshot["end"]])
 
 
 def wait_until(clock, target, monotonic_deadline):
@@ -116,7 +129,7 @@ def run_worker(backend, clock, run_id, max_runtime_seconds=DEFAULT_RUNTIME_SECON
             # Follow-ups have independent windows and retain the ORS cursor.
             # Re-read their published shared budget/halt before an ordinary batch.
             continue
-        due = next_due(snapshot, clock.now())
+        due = next_wake(snapshot, clock.now())
         if (cutoff-due).total_seconds() < MIN_CYCLE_WINDOW_SECONDS:
             # The successor, if needed, waits for the same next due time.
             if snapshot["end"] <= runtime_end:
@@ -173,7 +186,9 @@ class RepositoryBackend:
         self.command(["git", "pull", "--ff-only", "origin", "main"], "git_sync")
         config = json.loads((self.root/"config/study.json").read_text(encoding="utf-8-sig"))
         state = json.loads((self.root/"data/collection_state.json").read_text(encoding="utf-8-sig"))
-        return inspect_protocol(config, state)
+        protocol_path = self.root/"docs/google_followup_protocol.json"
+        followup_protocol = json.loads(protocol_path.read_text(encoding="utf-8-sig")) if protocol_path.exists() else None
+        return inspect_protocol(config, state, followup_protocol)
 
     def commit_and_push(self, paths, message):
         self.command(["git", "add", "--all", "--", *paths], "git_stage")

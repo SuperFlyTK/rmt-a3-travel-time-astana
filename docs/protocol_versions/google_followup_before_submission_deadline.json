@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "approved_at_utc": "2026-10-24T11:32:30.838148+00:00",
+  "approval": "User explicitly approved Google traffic-aware + ORS control and aggregate-only Google retention in this chat before this protocol was recorded.",
+  "current_rq": "How do Google traffic-aware travel-time estimates differ from ORS control estimates on fixed Astana routes during peak and off-peak periods?",
+  "collection_end_utc": "2026-10-26T02:32:16.123968+00:00",
+  "timezone": "Asia/Almaty",
+  "windows": [
+    {
+      "id": "google-followup-20261024-peak",
+      "start_utc": "2026-10-24T12:30:00+00:00",
+      "end_utc": "2026-10-24T14:30:00+00:00",
+      "period": "peak"
+    },
+    {
+      "id": "google-followup-20261024-offpeak",
+      "start_utc": "2026-10-24T17:00:00+00:00",
+      "end_utc": "2026-10-24T19:00:00+00:00",
+      "period": "offpeak"
+    },
+    {
+      "id": "google-followup-20261025-morning",
+      "start_utc": "2026-10-25T05:00:00+00:00",
+      "end_utc": "2026-10-25T07:00:00+00:00",
+      "period": "offpeak"
+    },
+    {
+      "id": "google-followup-20261025-peak",
+      "start_utc": "2026-10-25T12:30:00+00:00",
+      "end_utc": "2026-10-25T14:30:00+00:00",
+      "period": "peak"
+    },
+    {
+      "id": "google-followup-20261025-offpeak",
+      "start_utc": "2026-10-25T17:00:00+00:00",
+      "end_utc": "2026-10-25T19:00:00+00:00",
+      "period": "offpeak"
+    }
+  ],
+  "routes_per_window": 20,
+  "routes_file": "data/routes.csv",
+  "routes_sha256": "236b48e847d473f25e9666f68e68908943a54833646073d3ff1bc756c3cbc4bd",
+  "google_total_request_budget": 121,
+  "google_already_reserved": 21,
+  "future_google_request_budget": 100,
+  "future_ors_request_budget": 100,
+  "google_secret_env": "GOOGLE_MAPS_DEMO_KEY",
+  "google_routing_preference": "TRAFFIC_AWARE_OPTIMAL",
+  "ors_live_traffic": false,
+  "max_pair_start_gap_seconds": 60,
+  "minimum_pair_interval_seconds": 2.1,
+  "main_ors_request_budget": 900,
+  "publish_google_raw": false,
+  "minimum_pairs_for_numeric_aggregates": 5,
+  "hypothesis": "Peak-window median absolute Google-ORS disagreement will exceed off-peak-window median absolute disagreement. The earlier 1.5 ratio is retained as a prospective descriptive reference, not a revised original ER.",
+  "analysis": "Compare published per-window aggregate metrics descriptively, retaining dates and sample counts. Do not treat 100 requests as independent samples or run the original route-by-day Wilcoxon without route-level Google evidence.",
+  "storage": "No individual Google route times, distances or geometry retained. Publish own aggregate benchmark statistics, request status/timestamps, permitted ORS evidence, code and complete request protocol.",
+  "limitations": "Google with traffic versus ORS without live traffic conflates providers and models. This cannot isolate a causal traffic effect or measure accuracy. Google numeric aggregates cannot be independently recalculated from saved Google raw outputs; repeating the protocol observes new live values.",
+  "execution": "One prospective batch per window, at its first eligible worker check. Record actual times; never backfill a missed window. Skip or stop when outside the window/end, budget exhausted or credential/rate limit occurs. Google-specific failures stop further Google follow-ups while permitted ORS collection continues.",
+  "original_preregistration": "b4614355903efdc800f870d2678d2416e0490f81",
+  "original_expected_results_unchanged": true,
+  "supersedes_for_new_traffic_comparison": "The initial TomTom-2GIS comparison remains unperformed. This is an explicitly dated Google-ORS control design, not relabelled earlier data.",
+  "sources": [
+    "https://developers.google.com/maps/demo-key",
+    "https://cloud.google.com/terms/maps-platform/demo-project-terms",
+    "https://cloud.google.com/maps-platform/terms"
+  ],
+  "routes_hash_rule": "sha256_after_crlf_to_lf",
+  "representation_amendment": "Before the first follow-up window, route hashing was normalized for Windows/Linux line endings; coordinates, windows and scientific expectations unchanged."
+}

@@ -78,6 +78,19 @@ class FollowupTests(unittest.TestCase):
         self.assertEqual(self.state["counts"],before["counts"])
         self.assertEqual(self.state["reservations"],{})
 
+    def test_deadline_amendment_accepts_four_windows_and_rejects_late_window(self):
+        self.protocol['windows']=self.protocol['windows'][:4]
+        cutoff=self.now+timedelta(days=1,minutes=10)
+        self.protocol['collection_end_utc']=cutoff.isoformat()
+        self.protocol['windows'][-1]['end_utc']=cutoff.isoformat()
+        path=self.root/followup.PROTOCOL
+        path.write_text(json.dumps(self.protocol),encoding='utf-8')
+        self.assertEqual(len(followup.load_protocol(self.root)[0]['windows']),4)
+        self.protocol['windows'][-1]['end_utc']=(cutoff+timedelta(seconds=1)).isoformat()
+        path.write_text(json.dumps(self.protocol),encoding='utf-8')
+        with self.assertRaisesRegex(ValueError,'invalid_followup_window'):
+            followup.load_protocol(self.root)
+
     def test_due_window_reserves_twenty_both_without_changing_rotation(self):
         action=self.prepare()
         self.assertEqual(action["cycle_id"],"window-0")

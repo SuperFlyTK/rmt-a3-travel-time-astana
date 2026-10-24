@@ -1,0 +1,18 @@
+{
+  "recorded_at_utc": "2026-10-24T12:08:16.747876+00:00",
+  "user_confirmed_submission_deadline_local": "2026-10-25T18:00:00+05:00",
+  "submission_deadline_utc": "2026-10-25T13:00:00+00:00",
+  "collection_cutoff_utc": "2026-10-25T12:40:00+00:00",
+  "target_report_ready_local": "2026-10-25T17:50:00+05:00",
+  "original_protocol_file": "docs/protocol_versions/google_followup_before_submission_deadline.json",
+  "original_protocol_sha256": "d2587cf18abdec38e7c937efa50bf51559747e82221ed810258efd9896c3369d",
+  "reason": "User clarified submission is due 25 October by 18:00 Astana time. Shorten prospective collection and reserve twenty minutes for report review and delivery.",
+  "changes": [
+    "Remove the 25 October 22:00 off-peak window, which is after the deadline.",
+    "Shorten the 25 October evening window to 17:30-17:40 local time; wake the worker at its start.",
+    "Stop cloud collection by 25 October 17:40 local time; preserve original config and expectations as historical preregistration.",
+    "Retain original timestamps and recorded observations; no reconstruction or backdating of missing historical requests."
+  ],
+  "effective_before_first_followup_window": true,
+  "new_data_are_prospective": true
+}
