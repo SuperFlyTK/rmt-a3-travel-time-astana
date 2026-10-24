@@ -1,7 +1,7 @@
 {
-  "next_route": 12,
+  "next_route": 16,
   "counts": {
-    "ors": 294,
+    "ors": 298,
     "google_demo": 61
   },
   "completed_cycles": [
@@ -4413,6 +4413,67 @@
       "started_at_utc": "2026-10-24T21:28:50.563282+00:00",
       "recorded_attempts": 4,
       "completed_at_utc": "2026-10-24T21:28:57.283843+00:00"
+    },
+    "worker-40128845599-20261024T214350Z": {
+      "cycle": "worker-40128845599-20261024T214350Z",
+      "mode": "scheduled",
+      "providers": [
+        "ors"
+      ],
+      "routes": [
+        {
+          "route_id": "R13",
+          "name": "Saryarka Avenue central OSM road node -> Nurly Zhol railway-station bus-stop vicinity",
+          "origin_lat": "51.1693654",
+          "origin_lon": "71.4080255",
+          "destination_lat": "51.1125215",
+          "destination_lon": "71.5327441",
+          "expected_length_m": "10754.5",
+          "expected_length_basis": "haversine_spherical_straight_line_lower_bound_R6371008.8m_not_observed_route_length",
+          "origin_source": "https://www.openstreetmap.org/node/5843971377",
+          "destination_source": "https://www.openstreetmap.org/node/4894180331"
+        },
+        {
+          "route_id": "R14",
+          "name": "Nurly Zhol railway-station bus-stop vicinity -> Saryarka Avenue central OSM road node",
+          "origin_lat": "51.1125215",
+          "origin_lon": "71.5327441",
+          "destination_lat": "51.1693654",
+          "destination_lon": "71.4080255",
+          "expected_length_m": "10754.5",
+          "expected_length_basis": "haversine_spherical_straight_line_lower_bound_R6371008.8m_not_observed_route_length",
+          "origin_source": "https://www.openstreetmap.org/node/4894180331",
+          "destination_source": "https://www.openstreetmap.org/node/5843971377"
+        },
+        {
+          "route_id": "R15",
+          "name": "Abay Avenue central OSM road node -> National EXPO Museum bus-stop vicinity",
+          "origin_lat": "51.1690436",
+          "origin_lon": "71.4321538",
+          "destination_lat": "51.0862285",
+          "destination_lon": "71.4163157",
+          "expected_length_m": "9274.7",
+          "expected_length_basis": "haversine_spherical_straight_line_lower_bound_R6371008.8m_not_observed_route_length",
+          "origin_source": "https://www.openstreetmap.org/node/3306022439",
+          "destination_source": "https://www.openstreetmap.org/node/13926684562"
+        },
+        {
+          "route_id": "R16",
+          "name": "National EXPO Museum bus-stop vicinity -> Abay Avenue central OSM road node",
+          "origin_lat": "51.0862285",
+          "origin_lon": "71.4163157",
+          "destination_lat": "51.1690436",
+          "destination_lon": "71.4321538",
+          "expected_length_m": "9274.7",
+          "expected_length_basis": "haversine_spherical_straight_line_lower_bound_R6371008.8m_not_observed_route_length",
+          "origin_source": "https://www.openstreetmap.org/node/13926684562",
+          "destination_source": "https://www.openstreetmap.org/node/3306022439"
+        }
+      ],
+      "status": "reserved",
+      "reserved_at_utc": "2026-10-24T21:43:50.911926+00:00",
+      "config_sha256": "13bbad038474fe8b63d1904825cd614d2805ca97b6cfda07f7d18b79f2c4955e",
+      "spacing_s": 2.1
     }
   },
   "google_followup": {
