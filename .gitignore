@@ -1,0 +1,17 @@
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.venv/
+__pycache__/
+work/
+tools/
+*.zip
+RMT_A1_*.pdf
+RMT_A2_*.pdf
+RMT_Assignment_*.pdf
+RMT_Assignment_*.docx
+работ*.docx
+API_checks.json
+README_SETUP.txt

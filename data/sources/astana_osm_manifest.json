@@ -1,0 +1,22 @@
+{
+  "source": "OpenStreetMap via Overpass API",
+  "endpoint": "https://overpass-api.de/api/interpreter",
+  "retrieval_started_utc": "2026-10-24T02:27:39.272580+00:00",
+  "retrieval_finished_utc": "2026-10-24T02:27:54.368219+00:00",
+  "http_status": 200,
+  "bbox_south_west_north_east": [
+    50.99,
+    71.25,
+    51.25,
+    71.7
+  ],
+  "query_file": "astana_overpass_query.txt",
+  "raw_file": "astana_osm_overpass.json",
+  "sha256": "64563755b3a74d7d13c1bcf43258ff02d5da6c4464d00cbfde9d96a5854a6de6",
+  "element_count": 421,
+  "osm_base_timestamp": "2026-10-24T02:26:03Z",
+  "license": "Open Database License (ODbL) 1.0",
+  "copyright_url": "https://www.openstreetmap.org/copyright",
+  "license_url": "https://opendatacommons.org/licenses/odbl/1-0/",
+  "attribution": "© OpenStreetMap contributors"
+}

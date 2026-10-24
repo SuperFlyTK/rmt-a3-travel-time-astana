@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "group": "SE-2424",
+  "team": "AkhanovYerdaulet_ShadiyarbekSyrym_SabyrzhanAkylbek",
+  "authors": "Akhanov Yerdaulet, Shadiyarbek Syrym, Sabyrzhan Akylbek",
+  "rq": "How do TomTom and 2GIS traffic-aware travel-time estimates diverge on fixed Astana routes during evening peak compared with off-peak periods?",
+  "rq_status": "Prospective question; primary collection blocked pending permissions. ORS-only instrument pilot does not answer it.",
+  "hypothesis_h1": "The magnitude of provider disagreement is greater during evening peak than off-peak periods.",
+  "hypothesis_h0": "The magnitude of provider disagreement does not differ between periods.",
+  "timezone": "Asia/Almaty",
+  "utc_offset_hours": 5,
+  "peak": [
+    "17:30",
+    "19:30"
+  ],
+  "off_peak": [
+    [
+      "10:00",
+      "12:00"
+    ],
+    [
+      "22:00",
+      "24:00"
+    ]
+  ],
+  "route_count": 20,
+  "routes_per_scheduled_run": 4,
+  "scheduled_interval_minutes": 15,
+  "collection_hours": 48,
+  "collection_start_utc": "2026-10-24T02:32:16.123968+00:00",
+  "collection_end_utc": "2026-10-26T02:32:16.123968+00:00",
+  "pilot_cycles": 3,
+  "pilot_pause_seconds": 300,
+  "planned_pilot_requests_per_provider": 60,
+  "planned_scheduled_requests_per_provider": 768,
+  "planned_manual_verification_requests_per_provider": 4,
+  "active_providers": [
+    "ors"
+  ],
+  "primary_pair": [
+    "tomtom",
+    "dgis"
+  ],
+  "primary_comparison_status": "blocked_permissions",
+  "pair_max_gap_seconds": 60,
+  "length_comparability_pct": 5,
+  "speed_screen_kmh": [
+    2,
+    200
+  ],
+  "speed_rule_note": "Below 2 km/h is a sensitivity screen, not proof of impossible congestion; original rows retained.",
+  "repository_url": "https://github.com/SuperFlyTK/rmt-a3-travel-time-astana",
+  "drive_url": "https://drive.google.com/drive/folders/1hEVyoDFR0XzRWSv3yIm2EGExC427-yE6",
+  "providers": {
+    "ors": {
+      "collection_approved": true,
+      "traffic_aware": false,
+      "study_request_budget": 900,
+      "minimum_interval_s": 2.1,
+      "license": "CC BY-SA 4.0; attribution required"
+    },
+    "tomtom": {
+      "collection_approved": false,
+      "traffic_aware": true,
+      "study_request_budget": 900,
+      "minimum_interval_s": 2.1,
+      "blocker": "Written benchmarking and storage permission not obtained"
+    },
+    "dgis": {
+      "collection_approved": false,
+      "traffic_aware": true,
+      "study_request_budget": 900,
+      "minimum_interval_s": 15.1,
+      "blocker": "Kazakhstan demo storage and public redistribution rights require confirmation"
+    },
+    "google": {
+      "collection_approved": false,
+      "traffic_aware": true,
+      "study_request_budget": 100,
+      "minimum_interval_s": 2.1,
+      "blocker": "403 PERMISSION_DENIED; trial prepayment outstanding"
+    },
+    "here": {
+      "collection_approved": false,
+      "traffic_aware": true,
+      "study_request_budget": 0,
+      "minimum_interval_s": 2.1,
+      "blocker": "No API key; billing details required"
+    }
+  },
+  "preregistered_at_utc": "2026-10-24T02:32:16.123968+00:00",
+  "design_amendments": [
+    "Provider choice follows verified access and publication terms; original A1 Google/Yandex and A2 Google/2GIS remain historical designs.",
+    "20 routes rotate in batches of 4 every 15 minutes: nominal per-route revisit 75 minutes; GitHub schedule delays recorded, not backfilled.",
+    "48-hour bounded window replaces 14-day A1 plan because of demo quotas; no quota-increasing retries.",
+    "ORS-only pilot tests software and evidence workflow; traffic-aware comparison remains unexecuted.",
+    "Same cycle and route with timestamp gap at most 60 seconds define a pair, not a calendar-minute bucket.",
+    "Length agreement within 5 percent is only a proxy, not proof of matching route geometry."
+  ]
+}

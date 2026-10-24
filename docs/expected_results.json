@@ -1,0 +1,97 @@
+{
+  "fixed_at_utc": "2026-10-24T02:32:16.123968+00:00",
+  "fixed_date": "24.10.2026",
+  "objectives_note": "O1-O5 are carried forward explicitly from A1. A2 has no separate numbered objectives list.",
+  "expected_results": [
+    {
+      "id": "ER1",
+      "expectation": "The peak to off-peak ratio of median absolute TomTom-2GIS difference is at least 1.5.",
+      "objective": "O4 Compare periods",
+      "falsification": "Ratio below 1.5 after both periods exist",
+      "confidence": "Low; directional H1 has no local pilot evidence",
+      "scope": "primary"
+    },
+    {
+      "id": "ER2",
+      "expectation": "At least 70% of eligible primary pairs have lengths within 5% of their pair mean.",
+      "objective": "O3 Quantify disagreement",
+      "falsification": "Proportion below 70%",
+      "confidence": "Low; endpoint equality need not produce the same path",
+      "scope": "primary"
+    },
+    {
+      "id": "ER3",
+      "expectation": "Median signed difference TomTom minus 2GIS is positive in the completed sample.",
+      "objective": "O3 Quantify disagreement",
+      "falsification": "Median at most zero",
+      "confidence": "Low; exploratory directional expectation, not prior fact",
+      "scope": "primary"
+    },
+    {
+      "id": "ER4",
+      "expectation": "The peak IQR of signed differences exceeds the off-peak IQR.",
+      "objective": "O5 Describe route and time variation",
+      "falsification": "Peak IQR at most the off-peak IQR",
+      "confidence": "Low; hypothesis about variation is unverified",
+      "scope": "primary"
+    },
+    {
+      "id": "ER5",
+      "expectation": "Fewer than 2% of ORS instrument requests fail to return a valid route.",
+      "objective": "O2 Collect auditable observations",
+      "falsification": "Failure proportion at least 2%",
+      "confidence": "Medium; one previous technical check succeeded",
+      "scope": "instrument"
+    },
+    {
+      "id": "ER6",
+      "expectation": "At least 95% of ORS instrument requests finish within 10 seconds.",
+      "objective": "O2 Collect auditable observations",
+      "falsification": "Proportion below 95%",
+      "confidence": "Medium; network and service delays can defeat it",
+      "scope": "instrument"
+    },
+    {
+      "id": "ER7",
+      "expectation": "All 20 routes produce at least one valid ORS result during the three pilot cycles.",
+      "objective": "O1 Fix routes and periods",
+      "falsification": "Fewer than 20 routes have any valid pilot observation",
+      "confidence": "Medium; public road endpoints still require routing verification",
+      "scope": "instrument"
+    },
+    {
+      "id": "ER8",
+      "expectation": "At least 90% of the 768 nominal ORS scheduled requests are recorded in the 48-hour window.",
+      "objective": "O2 Collect auditable observations",
+      "falsification": "Fewer than 692 attempts after the window ends",
+      "confidence": "Medium; Actions scheduling may delay or skip runs",
+      "scope": "instrument"
+    }
+  ],
+  "scenarios": [
+    {
+      "level": "bad",
+      "description": "Traffic-provider permissions remain unavailable; only control-instrument evidence exists and H1 cannot be tested."
+    },
+    {
+      "level": "bad",
+      "description": "At least 2% of ORS requests fail or fewer than 20 routes work; revise the instrument in a dated amendment."
+    },
+    {
+      "level": "medium",
+      "description": "All routes work but fewer than 90% of scheduled attempts are recorded; retain actual times and describe incomplete coverage."
+    },
+    {
+      "level": "medium",
+      "description": "Primary collection later becomes permitted but period contrast is below 1.5; report evidence against ER1 without editing it."
+    },
+    {
+      "level": "good",
+      "description": "The ORS pilot covers all routes and fewer than 2% of requests fail; the data pipeline is ready for a permitted primary comparison."
+    },
+    {
+      "level": "good",
+      "description": "A later permitted primary sample spans both periods and reaches the ER1 threshold with interpretable route-aware uncertainty."
+    }
+  ]
+}
