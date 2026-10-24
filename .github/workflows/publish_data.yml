@@ -1,0 +1,100 @@
+name: Publish route data
+
+on:
+  workflow_dispatch:
+  workflow_run:
+    workflows: [Bounded resilient Astana collection]
+    types: [completed]
+    branches: [main]
+  schedule:
+    - cron: '13 0-13 25 10 *'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: publish-route-data
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check publication window
+        id: window
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+        run: |
+          python - <<'PY'
+          import os
+          from datetime import datetime, timezone
+          event = os.environ['EVENT_NAME']
+          now = datetime.now(timezone.utc)
+          cutoff = datetime(2026, 10, 25, 13, 40, tzinfo=timezone.utc)
+          if event == 'workflow_run':
+              cutoff = datetime(2026, 10, 25, 16, 40, tzinfo=timezone.utc)
+          enabled = event == 'workflow_dispatch' or now <= cutoff
+          with open(os.environ['GITHUB_OUTPUT'], 'a', encoding='utf-8') as output:
+              output.write('enabled=' + str(enabled).lower() + '\n')
+          PY
+
+      - name: Read collected observations
+        if: steps.window.outputs.enabled == 'true'
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          path: source
+          persist-credentials: false
+
+      - name: Read public data repository
+        if: steps.window.outputs.enabled == 'true'
+        uses: actions/checkout@v4
+        with:
+          repository: SuperFlyTK/rmt-a3-astana-data
+          ref: main
+          path: published
+          ssh-key: ${{ secrets.DATA_REPOSITORY_DEPLOY_KEY }}
+          persist-credentials: true
+
+      - name: Export data tables
+        if: steps.window.outputs.enabled == 'true'
+        run: python source/analysis/export_public_data.py --root source --output published
+
+      - name: Publish changed data
+        if: steps.window.outputs.enabled == 'true'
+        working-directory: published
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import subprocess
+
+          allowed = [
+              'routes.csv',
+              'ors_observations.csv',
+              'ors_processed.csv',
+              'google_request_status.csv',
+              'google_ors_summary.csv',
+              'collection_windows.csv',
+              'selected_endpoints.csv',
+              'ors_pilot_routes.geojson',
+              'data_dictionary.csv',
+              'README.md',
+          ]
+          files = {p.relative_to(Path.cwd()).as_posix() for p in Path.cwd().rglob('*')
+                   if p.is_file() and '.git' not in p.relative_to(Path.cwd()).parts}
+          if files != set(allowed):
+              raise SystemExit('Public repository must contain exactly the approved data files.')
+          subprocess.run(['git', 'config', 'user.name', 'github-actions[bot]'], check=True)
+          subprocess.run(['git', 'config', 'user.email',
+                          '41898282+github-actions[bot]@users.noreply.github.com'], check=True)
+          subprocess.run(['git', 'add', '--', *allowed], check=True)
+          changed = subprocess.run(['git', 'diff', '--cached', '--quiet'])
+          if changed.returncode == 0:
+              print('Data already current.')
+          elif changed.returncode == 1:
+              subprocess.run(['git', 'commit', '-m', 'Update route observations'], check=True)
+              subprocess.run(['git', 'push', 'origin', 'HEAD:main'], check=True)
+          else:
+              raise SystemExit('Could not compare staged data.')
+          PY
