@@ -1,7 +1,7 @@
 {
-  "next_route": 8,
+  "next_route": 12,
   "counts": {
-    "ors": 230,
+    "ors": 234,
     "google_demo": 61
   },
   "completed_cycles": [
@@ -3373,6 +3373,67 @@
       "started_at_utc": "2026-10-24T17:28:25.778282+00:00",
       "recorded_attempts": 4,
       "completed_at_utc": "2026-10-24T17:28:32.714753+00:00"
+    },
+    "worker-40109396997-20261024T174326Z": {
+      "cycle": "worker-40109396997-20261024T174326Z",
+      "mode": "scheduled",
+      "providers": [
+        "ors"
+      ],
+      "routes": [
+        {
+          "route_id": "R09",
+          "name": "Bogenbay Batyr Avenue central OSM road node -> Kabanbay Batyr Avenue near airport T1",
+          "origin_lat": "51.1759492",
+          "origin_lon": "71.4119752",
+          "destination_lat": "51.0287707",
+          "destination_lon": "71.4632052",
+          "expected_length_m": "16751.9",
+          "expected_length_basis": "haversine_spherical_straight_line_lower_bound_R6371008.8m_not_observed_route_length",
+          "origin_source": "https://www.openstreetmap.org/node/2700917908",
+          "destination_source": "https://www.openstreetmap.org/node/7886353132"
+        },
+        {
+          "route_id": "R10",
+          "name": "Kabanbay Batyr Avenue near airport T1 -> Bogenbay Batyr Avenue central OSM road node",
+          "origin_lat": "51.0287707",
+          "origin_lon": "71.4632052",
+          "destination_lat": "51.1759492",
+          "destination_lon": "71.4119752",
+          "expected_length_m": "16751.9",
+          "expected_length_basis": "haversine_spherical_straight_line_lower_bound_R6371008.8m_not_observed_route_length",
+          "origin_source": "https://www.openstreetmap.org/node/7886353132",
+          "destination_source": "https://www.openstreetmap.org/node/2700917908"
+        },
+        {
+          "route_id": "R11",
+          "name": "Kenesary Street central OSM road node -> Syganak Street central OSM road node",
+          "origin_lat": "51.1653831",
+          "origin_lon": "71.4263266",
+          "destination_lat": "51.127132",
+          "destination_lon": "71.404443",
+          "expected_length_m": "4519.0",
+          "expected_length_basis": "haversine_spherical_straight_line_lower_bound_R6371008.8m_not_observed_route_length",
+          "origin_source": "https://www.openstreetmap.org/node/12343653048",
+          "destination_source": "https://www.openstreetmap.org/node/6539356792"
+        },
+        {
+          "route_id": "R12",
+          "name": "Syganak Street central OSM road node -> Kenesary Street central OSM road node",
+          "origin_lat": "51.127132",
+          "origin_lon": "71.404443",
+          "destination_lat": "51.1653831",
+          "destination_lon": "71.4263266",
+          "expected_length_m": "4519.0",
+          "expected_length_basis": "haversine_spherical_straight_line_lower_bound_R6371008.8m_not_observed_route_length",
+          "origin_source": "https://www.openstreetmap.org/node/6539356792",
+          "destination_source": "https://www.openstreetmap.org/node/12343653048"
+        }
+      ],
+      "status": "reserved",
+      "reserved_at_utc": "2026-10-24T17:43:26.099058+00:00",
+      "config_sha256": "13bbad038474fe8b63d1904825cd614d2805ca97b6cfda07f7d18b79f2c4955e",
+      "spacing_s": 2.1
     }
   },
   "google_followup": {
