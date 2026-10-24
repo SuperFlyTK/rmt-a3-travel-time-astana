@@ -1,0 +1,79 @@
+{
+  "checked_at_utc": "2026-10-24T03:05:21.296042+00:00",
+  "checks": [
+    {
+      "file": "README.md",
+      "url": "https://raw.githubusercontent.com/SuperFlyTK/rmt-a3-travel-time-astana/main/README.md",
+      "http_code": 200,
+      "final_url": "https://raw.githubusercontent.com/SuperFlyTK/rmt-a3-travel-time-astana/main/README.md",
+      "anonymous_request": true
+    },
+    {
+      "file": "RMT_A3_Team_AkhanovYerdaulet_ShadiyarbekSyrym_SabyrzhanAkylbek.docx",
+      "url": "https://raw.githubusercontent.com/SuperFlyTK/rmt-a3-travel-time-astana/main/RMT_A3_Team_AkhanovYerdaulet_ShadiyarbekSyrym_SabyrzhanAkylbek.docx",
+      "http_code": 200,
+      "final_url": "https://raw.githubusercontent.com/SuperFlyTK/rmt-a3-travel-time-astana/main/RMT_A3_Team_AkhanovYerdaulet_ShadiyarbekSyrym_SabyrzhanAkylbek.docx",
+      "anonymous_request": true,
+      "sha256": "4d0708d81d4aa3af9bd280603f6bc6149cad7f9c1d09493d58fa0be0aa912817",
+      "byte_identical_to_local": true
+    },
+    {
+      "file": "collector/collect.py",
+      "url": "https://raw.githubusercontent.com/SuperFlyTK/rmt-a3-travel-time-astana/main/collector/collect.py",
+      "http_code": 200,
+      "final_url": "https://raw.githubusercontent.com/SuperFlyTK/rmt-a3-travel-time-astana/main/collector/collect.py",
+      "anonymous_request": true
+    },
+    {
+      "file": "analysis/process.py",
+      "url": "https://raw.githubusercontent.com/SuperFlyTK/rmt-a3-travel-time-astana/main/analysis/process.py",
+      "http_code": 200,
+      "final_url": "https://raw.githubusercontent.com/SuperFlyTK/rmt-a3-travel-time-astana/main/analysis/process.py",
+      "anonymous_request": true
+    },
+    {
+      "file": "docs/expected_results.md",
+      "url": "https://raw.githubusercontent.com/SuperFlyTK/rmt-a3-travel-time-astana/main/docs/expected_results.md",
+      "http_code": 200,
+      "final_url": "https://raw.githubusercontent.com/SuperFlyTK/rmt-a3-travel-time-astana/main/docs/expected_results.md",
+      "anonymous_request": true
+    },
+    {
+      "file": "data/routes.csv",
+      "url": "https://raw.githubusercontent.com/SuperFlyTK/rmt-a3-travel-time-astana/main/data/routes.csv",
+      "http_code": 200,
+      "final_url": "https://raw.githubusercontent.com/SuperFlyTK/rmt-a3-travel-time-astana/main/data/routes.csv",
+      "anonymous_request": true
+    },
+    {
+      "file": "data/report_snapshot/raw/2026-10-24.csv",
+      "url": "https://raw.githubusercontent.com/SuperFlyTK/rmt-a3-travel-time-astana/main/data/report_snapshot/raw/2026-10-24.csv",
+      "http_code": 200,
+      "final_url": "https://raw.githubusercontent.com/SuperFlyTK/rmt-a3-travel-time-astana/main/data/report_snapshot/raw/2026-10-24.csv",
+      "anonymous_request": true,
+      "sha256": "bb5f11a930e60d04a90901a1d8595bc5c88d38de4eab6acc4bb6fc08558914e8",
+      "byte_identical_to_local": true
+    },
+    {
+      "file": "results/observations.csv",
+      "url": "https://raw.githubusercontent.com/SuperFlyTK/rmt-a3-travel-time-astana/main/results/observations.csv",
+      "http_code": 200,
+      "final_url": "https://raw.githubusercontent.com/SuperFlyTK/rmt-a3-travel-time-astana/main/results/observations.csv",
+      "anonymous_request": true
+    },
+    {
+      "file": "report/build_report.py",
+      "url": "https://raw.githubusercontent.com/SuperFlyTK/rmt-a3-travel-time-astana/main/report/build_report.py",
+      "http_code": 200,
+      "final_url": "https://raw.githubusercontent.com/SuperFlyTK/rmt-a3-travel-time-astana/main/report/build_report.py",
+      "anonymous_request": true
+    },
+    {
+      "file": ".github/workflows/collect.yml",
+      "url": "https://raw.githubusercontent.com/SuperFlyTK/rmt-a3-travel-time-astana/main/.github/workflows/collect.yml",
+      "http_code": 200,
+      "final_url": "https://raw.githubusercontent.com/SuperFlyTK/rmt-a3-travel-time-astana/main/.github/workflows/collect.yml",
+      "anonymous_request": true
+    }
+  ]
+}
