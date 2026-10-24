@@ -1,7 +1,7 @@
 {
-  "next_route": 0,
+  "next_route": 4,
   "counts": {
-    "ors": 102,
+    "ors": 106,
     "google_demo": 21
   },
   "completed_cycles": [
@@ -1419,6 +1419,67 @@
       "started_at_utc": "2026-10-24T11:57:03.678425+00:00",
       "recorded_attempts": 4,
       "completed_at_utc": "2026-10-24T11:57:10.507320+00:00"
+    },
+    "worker-40090752863-20261024T121204Z": {
+      "cycle": "worker-40090752863-20261024T121204Z",
+      "mode": "scheduled",
+      "providers": [
+        "ors"
+      ],
+      "routes": [
+        {
+          "route_id": "R01",
+          "name": "Turan Avenue near Khan Shatyr -> Kabanbay Batyr Avenue near airport T1",
+          "origin_lat": "51.1322667",
+          "origin_lon": "71.4066887",
+          "destination_lat": "51.0287707",
+          "destination_lon": "71.4632052",
+          "expected_length_m": "12166.6",
+          "expected_length_basis": "haversine_spherical_straight_line_lower_bound_R6371008.8m_not_observed_route_length",
+          "origin_source": "https://www.openstreetmap.org/node/4922159712",
+          "destination_source": "https://www.openstreetmap.org/node/7886353132"
+        },
+        {
+          "route_id": "R02",
+          "name": "Kabanbay Batyr Avenue near airport T1 -> Turan Avenue near Khan Shatyr",
+          "origin_lat": "51.0287707",
+          "origin_lon": "71.4632052",
+          "destination_lat": "51.1322667",
+          "destination_lon": "71.4066887",
+          "expected_length_m": "12166.6",
+          "expected_length_basis": "haversine_spherical_straight_line_lower_bound_R6371008.8m_not_observed_route_length",
+          "origin_source": "https://www.openstreetmap.org/node/7886353132",
+          "destination_source": "https://www.openstreetmap.org/node/4922159712"
+        },
+        {
+          "route_id": "R03",
+          "name": "Mangilik El Avenue near EXPO exhibition centre -> Nurly Zhol railway-station bus-stop vicinity",
+          "origin_lat": "51.0924613",
+          "origin_lon": "71.4257531",
+          "destination_lat": "51.1125215",
+          "destination_lon": "71.5327441",
+          "expected_length_m": "7796.3",
+          "expected_length_basis": "haversine_spherical_straight_line_lower_bound_R6371008.8m_not_observed_route_length",
+          "origin_source": "https://www.openstreetmap.org/node/2641042247",
+          "destination_source": "https://www.openstreetmap.org/node/4894180331"
+        },
+        {
+          "route_id": "R04",
+          "name": "Nurly Zhol railway-station bus-stop vicinity -> Mangilik El Avenue near EXPO exhibition centre",
+          "origin_lat": "51.1125215",
+          "origin_lon": "71.5327441",
+          "destination_lat": "51.0924613",
+          "destination_lon": "71.4257531",
+          "expected_length_m": "7796.3",
+          "expected_length_basis": "haversine_spherical_straight_line_lower_bound_R6371008.8m_not_observed_route_length",
+          "origin_source": "https://www.openstreetmap.org/node/4894180331",
+          "destination_source": "https://www.openstreetmap.org/node/2641042247"
+        }
+      ],
+      "status": "reserved",
+      "reserved_at_utc": "2026-10-24T12:12:04.181630+00:00",
+      "config_sha256": "13bbad038474fe8b63d1904825cd614d2805ca97b6cfda07f7d18b79f2c4955e",
+      "spacing_s": 2.1
     }
   }
 }
