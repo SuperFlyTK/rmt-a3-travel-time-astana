@@ -1,0 +1,5 @@
+{
+  "prose_words": 1691,
+  "required_minimum": 1200,
+  "exclusions": "Only authored continuous-prose paragraphs; excludes identity, headings, RQ, tables, captions, code, references and links."
+}

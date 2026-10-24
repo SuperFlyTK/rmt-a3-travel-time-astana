@@ -1,0 +1,30 @@
+{
+  "verified_at_utc": "2026-10-24T03:04:15.384952+00:00",
+  "report_file": "RMT_A3_Team_AkhanovYerdaulet_ShadiyarbekSyrym_SabyrzhanAkylbek.docx",
+  "report_sha256": "4d0708d81d4aa3af9bd280603f6bc6149cad7f9c1d09493d58fa0be0aa912817",
+  "all_report_input_hashes_match": true,
+  "frozen_sample_rows": 64,
+  "local_pilot_rows": 60,
+  "manual_cloud_verification_rows": 4,
+  "primary_comparison_pairs": 0,
+  "prose_words": 1691,
+  "figures": 10,
+  "tables": 23,
+  "rendered_pages": 22,
+  "visual_review": "All 22 pages reviewed; affected pages checked again after final table and journal edits.",
+  "docx_table_cells_missing_from_pdf": 0,
+  "tests": {
+    "command": ".venv/Scripts/python.exe -m unittest discover -s tests -v",
+    "passed": 32,
+    "failed": 0,
+    "note": "Passed after frozen-input analysis changes; later changes affect report presentation and documentation only."
+  },
+  "cloud_run": {
+    "url": "https://github.com/SuperFlyTK/rmt-a3-travel-time-astana/actions/runs/40055914780",
+    "event": "workflow_dispatch",
+    "conclusion": "success",
+    "schedule_enabled": true,
+    "cron_triggered_run_observed_at_audit": false
+  },
+  "scope": "ORS-only control without live traffic; primary research question remains unanswered."
+}

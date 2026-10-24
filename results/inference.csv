@@ -1,0 +1,4 @@
+comparison,length_group,status,method,n_route_days,n_routes,n_dates,median_peak_minus_offpeak_s,p_value,rank_biserial,n_nonzero,w_plus,w_minus,interpretation
+tomtom-dgis,all,not_run_no_primary_comparison_pairs,exact_two_sided_signed_rank_of_route_median_route_day_contrasts,0,0,0,,,,,,,Primary subset=all; length subsets exploratory. No ground-truth accuracy claim. No pilot inference.
+tomtom-dgis,comparable,not_run_no_primary_comparison_pairs,exact_two_sided_signed_rank_of_route_median_route_day_contrasts,0,0,0,,,,,,,Primary subset=all; length subsets exploratory. No ground-truth accuracy claim. No pilot inference.
+tomtom-dgis,noncomparable,not_run_no_primary_comparison_pairs,exact_two_sided_signed_rank_of_route_median_route_day_contrasts,0,0,0,,,,,,,Primary subset=all; length subsets exploratory. No ground-truth accuracy claim. No pilot inference.

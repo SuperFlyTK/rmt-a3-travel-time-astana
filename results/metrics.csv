@@ -1,0 +1,1 @@
+phase,provider_a,provider_b,comparison_role,period,length_group,n_pairs,n_routes,n_dates,mean_signed_diff_s,mae_s,rmse_s,median_abs_diff_s,q1_abs_diff_s,q3_abs_diff_s,iqr_abs_diff_s,smape_pct,median_time_gap_s,max_time_gap_s,median_length_diff_pct,median_abs_ci_low_s,median_abs_ci_high_s,mae_ci_low_s,mae_ci_high_s,ci_status,ci_method,bootstrap_replicates,bootstrap_seed

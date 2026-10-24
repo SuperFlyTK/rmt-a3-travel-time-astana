@@ -1,0 +1,52 @@
+{
+  "generated_at_utc": "2026-10-24T02:53:12.358983+00:00",
+  "inputs": [
+    {
+      "file": "data/report_snapshot/raw/2026-10-24.csv",
+      "sha256": "bb5f11a930e60d04a90901a1d8595bc5c88d38de4eab6acc4bb6fc08558914e8",
+      "rows": 64
+    }
+  ],
+  "versions": {
+    "python": "3.12.14",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "process_sha256": "e73141a49583afd8487d18443ba09545a6313014b1800e23c05e93caa893ddc4",
+    "tzdata": "2026.5"
+  },
+  "rules": {
+    "timezone": "Asia/Almaty",
+    "period_intervals": {
+      "peak": [
+        [
+          "17:30",
+          "19:30"
+        ]
+      ],
+      "offpeak": [
+        [
+          "10:00",
+          "12:00"
+        ],
+        [
+          "22:00",
+          "24:00"
+        ]
+      ]
+    },
+    "period_end_exclusive": true,
+    "max_pair_gap_s": 60,
+    "length_difference_denominator": "pair_mean",
+    "length_comparable_max_pct": 5,
+    "length_comparability_proves_same_geometry": false,
+    "min_speed_kmh": 2,
+    "max_speed_kmh": 200,
+    "bootstrap_unit": "route",
+    "bootstrap_replicates": 2000,
+    "bootstrap_seed": 2424,
+    "bootstrap_min_routes": 8,
+    "bootstrap_min_dates": 2,
+    "pilot_inference": false,
+    "accuracy_estimable": false,
+    "ors_is_traffic_aware": false
+  }
+}

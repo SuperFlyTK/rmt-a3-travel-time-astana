@@ -192,6 +192,35 @@ class AnalysisTests(unittest.TestCase):
             self.assertEqual(summary["primary_metrics"], [])
             self.assertTrue(all(item["p_value"] is None for item in summary["inference"]))
 
+    def test_frozen_raw_snapshot_excludes_later_live_observations(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            live = root / "data/raw"
+            frozen = root / "data/report_snapshot/raw"
+            live.mkdir(parents=True)
+            frozen.mkdir(parents=True)
+            source = live / "fixture.csv"
+            with source.open("w", newline="", encoding="utf-8") as handle:
+                writer = csv.DictWriter(handle, fieldnames=RAW_FIELDS, extrasaction="ignore")
+                writer.writeheader()
+                writer.writerow(row())
+            snapshot = frozen / source.name
+            snapshot.write_bytes(source.read_bytes())
+            snapshot_hash = hashlib.sha256(snapshot.read_bytes()).hexdigest()
+            with source.open("a", newline="", encoding="utf-8") as handle:
+                csv.DictWriter(handle, fieldnames=RAW_FIELDS, extrasaction="ignore").writerow(row("dgis"))
+            frozen_summary = run(root, replicates=100, raw_dir=Path("data/report_snapshot/raw"))
+            self.assertEqual(frozen_summary["n_raw_rows"], 1)
+            self.assertEqual(frozen_summary["n_primary_pairs"], 0)
+            self.assertEqual(frozen_summary["input_files"][0]["file"], "data/report_snapshot/raw/fixture.csv")
+            self.assertEqual(frozen_summary["input_files"][0]["sha256"], snapshot_hash)
+            with (root / "results/observations.csv").open(newline="", encoding="utf-8") as handle:
+                self.assertEqual(next(csv.DictReader(handle))["source_file"], "data/report_snapshot/raw/fixture.csv")
+            live_summary = run(root, replicates=100)
+            self.assertEqual(live_summary["n_raw_rows"], 2)
+            self.assertEqual(live_summary["n_primary_pairs"], 1)
+            self.assertEqual(hashlib.sha256(snapshot.read_bytes()).hexdigest(), snapshot_hash)
+
 
 if __name__ == "__main__":
     unittest.main()

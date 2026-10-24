@@ -1,0 +1,233 @@
+collect	Set up job	﻿2026-10-24T02:51:38.9444363Z Current runner version: '2.338.0'
+collect	Set up job	2026-10-24T02:51:38.9470221Z ##[group]Runner Image Provisioner
+collect	Set up job	2026-10-24T02:51:38.9471470Z Hosted Compute Agent
+collect	Set up job	2026-10-24T02:51:38.9472173Z Version: 20261012.601
+collect	Set up job	2026-10-24T02:51:38.9472863Z Commit: f3dc54e1fb89da6852db922499a0233137369e1d
+collect	Set up job	2026-10-24T02:51:38.9473626Z Build Date: 2026-10-12T17:48:21Z
+collect	Set up job	2026-10-24T02:51:38.9474333Z Worker ID: {a34aa896-60d3-403e-b85a-b1ba4b128a46}
+collect	Set up job	2026-10-24T02:51:38.9475092Z Region: westus
+collect	Set up job	2026-10-24T02:51:38.9475703Z Cloud: Azure
+collect	Set up job	2026-10-24T02:51:38.9476275Z ##[endgroup]
+collect	Set up job	2026-10-24T02:51:38.9477789Z ##[group]Operating System
+collect	Set up job	2026-10-24T02:51:38.9478468Z Ubuntu
+collect	Set up job	2026-10-24T02:51:38.9479036Z 24.04.5
+collect	Set up job	2026-10-24T02:51:38.9479637Z LTS
+collect	Set up job	2026-10-24T02:51:38.9480157Z ##[endgroup]
+collect	Set up job	2026-10-24T02:51:38.9481292Z ##[group]Runner Image
+collect	Set up job	2026-10-24T02:51:38.9481974Z Image: ubuntu-24.04
+collect	Set up job	2026-10-24T02:51:38.9482577Z Version: 20261012.334.1
+collect	Set up job	2026-10-24T02:51:38.9483804Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261012.334/images/ubuntu/Ubuntu2404-Readme.md
+collect	Set up job	2026-10-24T02:51:38.9485557Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261012.334
+collect	Set up job	2026-10-24T02:51:38.9486623Z ##[endgroup]
+collect	Set up job	2026-10-24T02:51:38.9487826Z ##[group]GITHUB_TOKEN Permissions
+collect	Set up job	2026-10-24T02:51:38.9490013Z Actions: write
+collect	Set up job	2026-10-24T02:51:38.9490640Z Contents: write
+collect	Set up job	2026-10-24T02:51:38.9491515Z Metadata: read
+collect	Set up job	2026-10-24T02:51:38.9492105Z ##[endgroup]
+collect	Set up job	2026-10-24T02:51:38.9494430Z Secret source: Actions
+collect	Set up job	2026-10-24T02:51:38.9495382Z Cache mode: write
+collect	Set up job	2026-10-24T02:51:38.9496116Z Prepare workflow directory
+collect	Set up job	2026-10-24T02:51:38.9859327Z Prepare all required actions
+collect	Set up job	2026-10-24T02:51:38.9932433Z Getting action download info
+collect	Set up job	2026-10-24T02:51:39.3430527Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+collect	Set up job	2026-10-24T02:51:39.4328259Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+collect	Set up job	2026-10-24T02:51:39.5085141Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+collect	Set up job	2026-10-24T02:51:39.7264206Z Complete job name: collect
+collect	Run actions/checkout@v4	﻿2026-10-24T02:51:39.8062314Z ##[group]Run actions/checkout@v4
+collect	Run actions/checkout@v4	2026-10-24T02:51:39.8063204Z with:
+collect	Run actions/checkout@v4	2026-10-24T02:51:39.8063628Z   ref: main
+collect	Run actions/checkout@v4	2026-10-24T02:51:39.8064185Z   repository: SuperFlyTK/rmt-a3-travel-time-astana
+collect	Run actions/checkout@v4	2026-10-24T02:51:39.8068994Z   token: ***
+collect	Run actions/checkout@v4	2026-10-24T02:51:39.8069460Z   ssh-strict: true
+collect	Run actions/checkout@v4	2026-10-24T02:51:39.8069968Z   ssh-user: git
+collect	Run actions/checkout@v4	2026-10-24T02:51:39.8070507Z   persist-credentials: true
+collect	Run actions/checkout@v4	2026-10-24T02:51:39.8071354Z   clean: true
+collect	Run actions/checkout@v4	2026-10-24T02:51:39.8071872Z   sparse-checkout-cone-mode: true
+collect	Run actions/checkout@v4	2026-10-24T02:51:39.8072399Z   fetch-depth: 1
+collect	Run actions/checkout@v4	2026-10-24T02:51:39.8072828Z   fetch-tags: false
+collect	Run actions/checkout@v4	2026-10-24T02:51:39.8073277Z   show-progress: true
+collect	Run actions/checkout@v4	2026-10-24T02:51:39.8073783Z   lfs: false
+collect	Run actions/checkout@v4	2026-10-24T02:51:39.8074480Z   submodules: false
+collect	Run actions/checkout@v4	2026-10-24T02:51:39.8074937Z   set-safe-directory: true
+collect	Run actions/checkout@v4	2026-10-24T02:51:39.8075454Z   allow-unsafe-pr-checkout: false
+collect	Run actions/checkout@v4	2026-10-24T02:51:39.8076335Z ##[endgroup]
+collect	Run actions/checkout@v4	2026-10-24T02:51:39.9094917Z Syncing repository: SuperFlyTK/rmt-a3-travel-time-astana
+collect	Run actions/checkout@v4	2026-10-24T02:51:39.9097685Z ##[group]Getting Git version info
+collect	Run actions/checkout@v4	2026-10-24T02:51:39.9099281Z Working directory is '/home/runner/work/rmt-a3-travel-time-astana/rmt-a3-travel-time-astana'
+collect	Run actions/checkout@v4	2026-10-24T02:51:39.9101542Z [command]/usr/bin/git version
+collect	Run actions/checkout@v4	2026-10-24T02:51:39.9172254Z git version 2.55.0
+collect	Run actions/checkout@v4	2026-10-24T02:51:39.9198205Z ##[endgroup]
+collect	Run actions/checkout@v4	2026-10-24T02:51:39.9216354Z Temporarily overriding HOME='/home/runner/work/_temp/17ce1dae-409d-4773-beb6-346fb9cfa9b7' before making global git config changes
+collect	Run actions/checkout@v4	2026-10-24T02:51:39.9219075Z Adding repository directory to the temporary git global config as a safe directory
+collect	Run actions/checkout@v4	2026-10-24T02:51:39.9222545Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/rmt-a3-travel-time-astana/rmt-a3-travel-time-astana
+collect	Run actions/checkout@v4	2026-10-24T02:51:39.9282273Z Deleting the contents of '/home/runner/work/rmt-a3-travel-time-astana/rmt-a3-travel-time-astana'
+collect	Run actions/checkout@v4	2026-10-24T02:51:39.9302926Z ##[group]Initializing the repository
+collect	Run actions/checkout@v4	2026-10-24T02:51:39.9305423Z [command]/usr/bin/git init /home/runner/work/rmt-a3-travel-time-astana/rmt-a3-travel-time-astana
+collect	Run actions/checkout@v4	2026-10-24T02:51:39.9411710Z hint: Using 'master' as the name for the initial branch. This default branch name
+collect	Run actions/checkout@v4	2026-10-24T02:51:39.9413520Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+collect	Run actions/checkout@v4	2026-10-24T02:51:39.9414559Z hint: to use in all of your new repositories, which will suppress this warning,
+collect	Run actions/checkout@v4	2026-10-24T02:51:39.9415846Z hint: call:
+collect	Run actions/checkout@v4	2026-10-24T02:51:39.9416311Z hint:
+collect	Run actions/checkout@v4	2026-10-24T02:51:39.9416904Z hint: 	git config --global init.defaultBranch <name>
+collect	Run actions/checkout@v4	2026-10-24T02:51:39.9418030Z hint:
+collect	Run actions/checkout@v4	2026-10-24T02:51:39.9419494Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+collect	Run actions/checkout@v4	2026-10-24T02:51:39.9421492Z hint: 'development'. The just-created branch can be renamed via this command:
+collect	Run actions/checkout@v4	2026-10-24T02:51:39.9422918Z hint:
+collect	Run actions/checkout@v4	2026-10-24T02:51:39.9423740Z hint: 	git branch -m <name>
+collect	Run actions/checkout@v4	2026-10-24T02:51:39.9424644Z hint:
+collect	Run actions/checkout@v4	2026-10-24T02:51:39.9425773Z hint: Disable this message with "git config set advice.defaultBranchName false"
+collect	Run actions/checkout@v4	2026-10-24T02:51:39.9427847Z Initialized empty Git repository in /home/runner/work/rmt-a3-travel-time-astana/rmt-a3-travel-time-astana/.git/
+collect	Run actions/checkout@v4	2026-10-24T02:51:39.9431772Z [command]/usr/bin/git remote add origin https://github.com/SuperFlyTK/rmt-a3-travel-time-astana
+collect	Run actions/checkout@v4	2026-10-24T02:51:39.9489196Z ##[endgroup]
+collect	Run actions/checkout@v4	2026-10-24T02:51:39.9490557Z ##[group]Disabling automatic garbage collection
+collect	Run actions/checkout@v4	2026-10-24T02:51:39.9494481Z [command]/usr/bin/git config --local gc.auto 0
+collect	Run actions/checkout@v4	2026-10-24T02:51:39.9528515Z ##[endgroup]
+collect	Run actions/checkout@v4	2026-10-24T02:51:39.9529968Z ##[group]Setting up auth
+collect	Run actions/checkout@v4	2026-10-24T02:51:39.9536185Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+collect	Run actions/checkout@v4	2026-10-24T02:51:39.9570527Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+collect	Run actions/checkout@v4	2026-10-24T02:51:40.0005405Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+collect	Run actions/checkout@v4	2026-10-24T02:51:40.0054902Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+collect	Run actions/checkout@v4	2026-10-24T02:51:40.0308017Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+collect	Run actions/checkout@v4	2026-10-24T02:51:40.0355892Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+collect	Run actions/checkout@v4	2026-10-24T02:51:40.0618246Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+collect	Run actions/checkout@v4	2026-10-24T02:51:40.0671198Z ##[endgroup]
+collect	Run actions/checkout@v4	2026-10-24T02:51:40.0672565Z ##[group]Fetching the repository
+collect	Run actions/checkout@v4	2026-10-24T02:51:40.0686667Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +refs/heads/main*:refs/remotes/origin/main* +refs/tags/main*:refs/tags/main*
+collect	Run actions/checkout@v4	2026-10-24T02:51:40.7748690Z From https://github.com/SuperFlyTK/rmt-a3-travel-time-astana
+collect	Run actions/checkout@v4	2026-10-24T02:51:40.7749911Z  * [new branch]      main       -> origin/main
+collect	Run actions/checkout@v4	2026-10-24T02:51:40.7754007Z ##[endgroup]
+collect	Run actions/checkout@v4	2026-10-24T02:51:40.7755286Z ##[group]Determining the checkout info
+collect	Run actions/checkout@v4	2026-10-24T02:51:40.7766688Z [command]/usr/bin/git branch --list --remote origin/main
+collect	Run actions/checkout@v4	2026-10-24T02:51:40.7801657Z   origin/main
+collect	Run actions/checkout@v4	2026-10-24T02:51:40.7812317Z ##[endgroup]
+collect	Run actions/checkout@v4	2026-10-24T02:51:40.7814528Z [command]/usr/bin/git sparse-checkout disable
+collect	Run actions/checkout@v4	2026-10-24T02:51:40.7872782Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+collect	Run actions/checkout@v4	2026-10-24T02:51:40.7952045Z ##[group]Checking out the ref
+collect	Run actions/checkout@v4	2026-10-24T02:51:40.7955171Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+collect	Run actions/checkout@v4	2026-10-24T02:51:40.8156426Z Switched to a new branch 'main'
+collect	Run actions/checkout@v4	2026-10-24T02:51:40.8162513Z branch 'main' set up to track 'origin/main'.
+collect	Run actions/checkout@v4	2026-10-24T02:51:40.8170272Z ##[endgroup]
+collect	Run actions/checkout@v4	2026-10-24T02:51:40.8214278Z [command]/usr/bin/git log -1 --format=%H
+collect	Run actions/checkout@v4	2026-10-24T02:51:40.8241181Z 68d2021ed4633b55534e561983feca11374feab1
+collect	Run actions/setup-python@v5	﻿2026-10-24T02:51:40.8644143Z ##[group]Run actions/setup-python@v5
+collect	Run actions/setup-python@v5	2026-10-24T02:51:40.8645000Z with:
+collect	Run actions/setup-python@v5	2026-10-24T02:51:40.8645490Z   python-version: 3.11
+collect	Run actions/setup-python@v5	2026-10-24T02:51:40.8646117Z   check-latest: false
+collect	Run actions/setup-python@v5	2026-10-24T02:51:40.8656753Z   token: ***
+collect	Run actions/setup-python@v5	2026-10-24T02:51:40.8657325Z   update-environment: true
+collect	Run actions/setup-python@v5	2026-10-24T02:51:40.8658021Z   allow-prereleases: false
+collect	Run actions/setup-python@v5	2026-10-24T02:51:40.8658694Z   freethreaded: false
+collect	Run actions/setup-python@v5	2026-10-24T02:51:40.8659273Z ##[endgroup]
+collect	Run actions/setup-python@v5	2026-10-24T02:51:40.9950705Z ##[group]Installed versions
+collect	Run actions/setup-python@v5	2026-10-24T02:51:41.0056196Z (node:2317) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+collect	Run actions/setup-python@v5	2026-10-24T02:51:41.0060285Z (Use `node --trace-deprecation ...` to show where the warning was created)
+collect	Run actions/setup-python@v5	2026-10-24T02:51:41.0063132Z Successfully set up CPython (3.11.17)
+collect	Run actions/setup-python@v5	2026-10-24T02:51:41.0065402Z ##[endgroup]
+collect	Configure commit identity	﻿2026-10-24T02:51:41.0284134Z ##[group]Run git config user.name "github-actions[bot]"
+collect	Configure commit identity	2026-10-24T02:51:41.0286001Z ^[[36;1mgit config user.name "github-actions[bot]"^[[0m
+collect	Configure commit identity	2026-10-24T02:51:41.0290543Z ^[[36;1mgit config user.email "41898282+github-actions[bot]@users.noreply.github.com"^[[0m
+collect	Configure commit identity	2026-10-24T02:51:41.0620512Z shell: /usr/bin/bash -e {0}
+collect	Configure commit identity	2026-10-24T02:51:41.0622021Z env:
+collect	Configure commit identity	2026-10-24T02:51:41.0623178Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.17/x64
+collect	Configure commit identity	2026-10-24T02:51:41.0625124Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib/pkgconfig
+collect	Configure commit identity	2026-10-24T02:51:41.0627065Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+collect	Configure commit identity	2026-10-24T02:51:41.0628815Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+collect	Configure commit identity	2026-10-24T02:51:41.0630559Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+collect	Configure commit identity	2026-10-24T02:51:41.0632412Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib
+collect	Configure commit identity	2026-10-24T02:51:41.0633798Z ##[endgroup]
+collect	Reserve the request budget	﻿2026-10-24T02:51:41.0875335Z ##[group]Run python collector/collect.py --mode scheduled --cycle-label "gh-${GITHUB_RUN_ID}" --reserve-only
+collect	Reserve the request budget	2026-10-24T02:51:41.0878461Z ^[[36;1mpython collector/collect.py --mode scheduled --cycle-label "gh-${GITHUB_RUN_ID}" --reserve-only^[[0m
+collect	Reserve the request budget	2026-10-24T02:51:41.0941044Z shell: /usr/bin/bash -e {0}
+collect	Reserve the request budget	2026-10-24T02:51:41.0942017Z env:
+collect	Reserve the request budget	2026-10-24T02:51:41.0943023Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.17/x64
+collect	Reserve the request budget	2026-10-24T02:51:41.0944758Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib/pkgconfig
+collect	Reserve the request budget	2026-10-24T02:51:41.0946502Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+collect	Reserve the request budget	2026-10-24T02:51:41.0948058Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+collect	Reserve the request budget	2026-10-24T02:51:41.0949606Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+collect	Reserve the request budget	2026-10-24T02:51:41.0951394Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib
+collect	Reserve the request budget	2026-10-24T02:51:41.0952758Z ##[endgroup]
+collect	Reserve the request budget	2026-10-24T02:51:41.3639389Z {"cycle": "gh-40055914780", "reserved_requests_per_provider": 4, "providers": ["ors"]}
+collect	Persist budget before network requests	﻿2026-10-24T02:51:41.3844523Z ##[group]Run git add data/collection_state.json
+collect	Persist budget before network requests	2026-10-24T02:51:41.3845661Z ^[[36;1mgit add data/collection_state.json^[[0m
+collect	Persist budget before network requests	2026-10-24T02:51:41.3846740Z ^[[36;1mgit commit -m "Reserve scheduled request budget"^[[0m
+collect	Persist budget before network requests	2026-10-24T02:51:41.3847788Z ^[[36;1mgit push origin HEAD:main^[[0m
+collect	Persist budget before network requests	2026-10-24T02:51:41.3913299Z shell: /usr/bin/bash -e {0}
+collect	Persist budget before network requests	2026-10-24T02:51:41.3914208Z env:
+collect	Persist budget before network requests	2026-10-24T02:51:41.3915129Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.17/x64
+collect	Persist budget before network requests	2026-10-24T02:51:41.3916319Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib/pkgconfig
+collect	Persist budget before network requests	2026-10-24T02:51:41.3917507Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+collect	Persist budget before network requests	2026-10-24T02:51:41.3918611Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+collect	Persist budget before network requests	2026-10-24T02:51:41.3919727Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+collect	Persist budget before network requests	2026-10-24T02:51:41.3921025Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib
+collect	Persist budget before network requests	2026-10-24T02:51:41.3922056Z ##[endgroup]
+collect	Persist budget before network requests	2026-10-24T02:51:41.4157491Z [main 7149982] Reserve scheduled request budget
+collect	Persist budget before network requests	2026-10-24T02:51:41.4159396Z  1 file changed, 63 insertions(+), 2 deletions(-)
+collect	Persist budget before network requests	2026-10-24T02:51:42.7252295Z To https://github.com/SuperFlyTK/rmt-a3-travel-time-astana
+collect	Persist budget before network requests	2026-10-24T02:51:42.7252936Z    68d2021..7149982  HEAD -> main
+collect	Collect raw measurements	﻿2026-10-24T02:51:42.7346789Z ##[group]Run python collector/collect.py --mode scheduled --execute-reservation "$RESERVATION_ID"
+collect	Collect raw measurements	2026-10-24T02:51:42.7347520Z ^[[36;1mpython collector/collect.py --mode scheduled --execute-reservation "$RESERVATION_ID"^[[0m
+collect	Collect raw measurements	2026-10-24T02:51:42.7414467Z shell: /usr/bin/bash -e {0}
+collect	Collect raw measurements	2026-10-24T02:51:42.7414737Z env:
+collect	Collect raw measurements	2026-10-24T02:51:42.7415013Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.17/x64
+collect	Collect raw measurements	2026-10-24T02:51:42.7415465Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib/pkgconfig
+collect	Collect raw measurements	2026-10-24T02:51:42.7415903Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+collect	Collect raw measurements	2026-10-24T02:51:42.7416292Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+collect	Collect raw measurements	2026-10-24T02:51:42.7416677Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+collect	Collect raw measurements	2026-10-24T02:51:42.7417089Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib
+collect	Collect raw measurements	2026-10-24T02:51:42.7418085Z   ORS_KEY: ***
+collect	Collect raw measurements	2026-10-24T02:51:42.7418312Z   RESERVATION_ID: gh-40055914780
+collect	Collect raw measurements	2026-10-24T02:51:42.7418570Z ##[endgroup]
+collect	Collect raw measurements	2026-10-24T02:51:43.6389178Z {"cycle": "gh-40055914780", "route": "R01", "statuses": {"ors": "ok"}}
+collect	Collect raw measurements	2026-10-24T02:51:45.5795248Z {"cycle": "gh-40055914780", "route": "R02", "statuses": {"ors": "ok"}}
+collect	Collect raw measurements	2026-10-24T02:51:47.9344552Z {"cycle": "gh-40055914780", "route": "R03", "statuses": {"ors": "ok"}}
+collect	Collect raw measurements	2026-10-24T02:51:49.9238308Z {"cycle": "gh-40055914780", "route": "R04", "statuses": {"ors": "ok"}}
+collect	Collect raw measurements	2026-10-24T02:51:49.9262844Z {"cycle": "gh-40055914780", "requests": 4, "success": 4, "csv": "data/raw/2026-10-24.csv"}
+collect	Commit observations	﻿2026-10-24T02:51:49.9402677Z ##[group]Run git add --all -- data/collection_state.json docs/research_log.md
+collect	Commit observations	2026-10-24T02:51:49.9403241Z ^[[36;1mgit add --all -- data/collection_state.json docs/research_log.md^[[0m
+collect	Commit observations	2026-10-24T02:51:49.9403629Z ^[[36;1mif [ -d data/raw ]; then^[[0m
+collect	Commit observations	2026-10-24T02:51:49.9403901Z ^[[36;1m  git add data/raw^[[0m
+collect	Commit observations	2026-10-24T02:51:49.9404126Z ^[[36;1mfi^[[0m
+collect	Commit observations	2026-10-24T02:51:49.9404356Z ^[[36;1mif ! git diff --cached --quiet; then^[[0m
+collect	Commit observations	2026-10-24T02:51:49.9404727Z ^[[36;1m  git commit -m "Record scheduled route observations"^[[0m
+collect	Commit observations	2026-10-24T02:51:49.9405078Z ^[[36;1m  git push origin HEAD:main^[[0m
+collect	Commit observations	2026-10-24T02:51:49.9405330Z ^[[36;1mfi^[[0m
+collect	Commit observations	2026-10-24T02:51:49.9469806Z shell: /usr/bin/bash -e {0}
+collect	Commit observations	2026-10-24T02:51:49.9470104Z env:
+collect	Commit observations	2026-10-24T02:51:49.9470376Z   pythonLocation: /opt/hostedtoolcache/Python/3.11.17/x64
+collect	Commit observations	2026-10-24T02:51:49.9471079Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib/pkgconfig
+collect	Commit observations	2026-10-24T02:51:49.9471530Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+collect	Commit observations	2026-10-24T02:51:49.9471940Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+collect	Commit observations	2026-10-24T02:51:49.9472328Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.11.17/x64
+collect	Commit observations	2026-10-24T02:51:49.9472710Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.11.17/x64/lib
+collect	Commit observations	2026-10-24T02:51:49.9473039Z ##[endgroup]
+collect	Commit observations	2026-10-24T02:51:49.9706181Z [main e6f59a1] Record scheduled route observations
+collect	Commit observations	2026-10-24T02:51:49.9707010Z  11 files changed, 20 insertions(+), 3 deletions(-)
+collect	Commit observations	2026-10-24T02:51:49.9707741Z  create mode 100644 data/raw/geometry/gh-40055914780_R01_ors.json
+collect	Commit observations	2026-10-24T02:51:49.9708395Z  create mode 100644 data/raw/geometry/gh-40055914780_R02_ors.json
+collect	Commit observations	2026-10-24T02:51:49.9708840Z  create mode 100644 data/raw/geometry/gh-40055914780_R03_ors.json
+collect	Commit observations	2026-10-24T02:51:49.9709247Z  create mode 100644 data/raw/geometry/gh-40055914780_R04_ors.json
+collect	Commit observations	2026-10-24T02:51:49.9709996Z  create mode 100644 data/raw/responses/gh-40055914780_R01_ors.json
+collect	Commit observations	2026-10-24T02:51:49.9710749Z  create mode 100644 data/raw/responses/gh-40055914780_R02_ors.json
+collect	Commit observations	2026-10-24T02:51:49.9711755Z  create mode 100644 data/raw/responses/gh-40055914780_R03_ors.json
+collect	Commit observations	2026-10-24T02:51:49.9712543Z  create mode 100644 data/raw/responses/gh-40055914780_R04_ors.json
+collect	Commit observations	2026-10-24T02:51:51.1411442Z To https://github.com/SuperFlyTK/rmt-a3-travel-time-astana
+collect	Commit observations	2026-10-24T02:51:51.1412646Z    7149982..e6f59a1  HEAD -> main
+collect	Post Run actions/setup-python@v5	﻿2026-10-24T02:51:51.1596125Z Post job cleanup.
+collect	Post Run actions/setup-python@v5	2026-10-24T02:51:51.2742672Z (node:2362) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+collect	Post Run actions/setup-python@v5	2026-10-24T02:51:51.2743585Z (Use `node --trace-deprecation ...` to show where the warning was created)
+collect	Post Run actions/checkout@v4	﻿2026-10-24T02:51:51.2925874Z Post job cleanup.
+collect	Post Run actions/checkout@v4	2026-10-24T02:51:51.3875218Z [command]/usr/bin/git version
+collect	Post Run actions/checkout@v4	2026-10-24T02:51:51.3930529Z git version 2.55.0
+collect	Post Run actions/checkout@v4	2026-10-24T02:51:51.3980207Z Temporarily overriding HOME='/home/runner/work/_temp/9af9c83b-cefc-4936-b31e-9330f7d840ca' before making global git config changes
+collect	Post Run actions/checkout@v4	2026-10-24T02:51:51.3982391Z Adding repository directory to the temporary git global config as a safe directory
+collect	Post Run actions/checkout@v4	2026-10-24T02:51:51.3987220Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/rmt-a3-travel-time-astana/rmt-a3-travel-time-astana
+collect	Post Run actions/checkout@v4	2026-10-24T02:51:51.4035133Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+collect	Post Run actions/checkout@v4	2026-10-24T02:51:51.4078442Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+collect	Post Run actions/checkout@v4	2026-10-24T02:51:51.4342360Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+collect	Post Run actions/checkout@v4	2026-10-24T02:51:51.4370621Z http.https://github.com/.extraheader
+collect	Post Run actions/checkout@v4	2026-10-24T02:51:51.4382952Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+collect	Post Run actions/checkout@v4	2026-10-24T02:51:51.4422052Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+collect	Post Run actions/checkout@v4	2026-10-24T02:51:51.4683861Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+collect	Post Run actions/checkout@v4	2026-10-24T02:51:51.4721869Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+collect	Complete job	﻿2026-10-24T02:51:51.5146965Z Cleaning up orphan processes
+collect	Complete job	2026-10-24T02:51:51.5421326Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-python@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

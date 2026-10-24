@@ -70,10 +70,14 @@ def quantile(values, probability):
     return ordered[low] + (ordered[high] - ordered[low]) * (position - low)
 
 
-def read_raw(raw_dir):
+def read_raw(raw_dir, root=None):
     observations = []
     manifest = []
     for path in sorted(raw_dir.glob("*.csv")):
+        try:
+            source_path = path.resolve().relative_to(root.resolve()).as_posix() if root else path.name
+        except ValueError:
+            source_path = path.resolve().as_posix()
         digest = hashlib.sha256(path.read_bytes()).hexdigest()
         count = 0
         with path.open(newline="", encoding="utf-8-sig") as handle:
@@ -83,10 +87,10 @@ def read_raw(raw_dir):
                 raise ValueError(f"{path.name}: missing required columns {sorted(missing)}")
             for line, item in enumerate(reader, start=2):
                 row = {field: (item.get(field) or "").strip() for field in RAW_FIELDS}
-                row.update(source_file=path.name, source_line=line)
+                row.update(source_file=source_path, source_line=line)
                 observations.append(row)
                 count += 1
-        manifest.append({"file": path.name, "sha256": digest, "rows": count})
+        manifest.append({"file": source_path, "sha256": digest, "rows": count})
     return observations, manifest
 
 
@@ -344,7 +348,7 @@ def dictionary_table(raw_rows, observations, pairs):
         "request_id": ("nominal", "identifier", "Unique collector request ID"), "latency_s": ("ratio", "seconds", ">=0 finite"),
         "geometry_file": ("nominal", "relative path", "Saved geometry; optional, absence not a synthetic geometry"),
         "raw_file": ("nominal", "relative path", "Saved sanitized provider response"), "phase": ("nominal", "category", "pilot | scheduled | manual"),
-        "source_file": ("nominal", "filename", "Source raw CSV"), "source_line": ("ratio", "line", ">=2, header is line 1"),
+        "source_file": ("nominal", "path", "Actual input CSV, repository-relative when inside the root"), "source_line": ("ratio", "line", ">=2, header is line 1"),
         "period": ("nominal", "category", "peak [17:30,19:30); offpeak [10:00,12:00) or [22:00,24:00); other"),
         "date_astana": ("interval", "local date", "Calendar date in Asia/Almaty"), "speed_kmh": ("ratio", "km/h", "distance_m/duration_s*3.6; valid 2..200 inclusive"),
         "usable": ("nominal", "boolean", "Passed all rules needed for pairing"), "exclusion_reason": ("nominal", "codes", "Semicolon-separated validation flags; blank if usable"),
@@ -378,8 +382,15 @@ def write_csv(path, rows, fieldnames):
         writer.writerows(rows)
 
 
-def run(root, seed=2424, replicates=2000):
-    raw_rows, manifest = read_raw(root / "data" / "raw")
+def run(root, seed=2424, replicates=2000, raw_dir=None):
+    root = Path(root).resolve()
+    chosen_raw = Path(raw_dir) if raw_dir is not None else Path("data/raw")
+    if not chosen_raw.is_absolute():
+        chosen_raw = root / chosen_raw
+    chosen_raw = chosen_raw.resolve()
+    if raw_dir is not None and not chosen_raw.is_dir():
+        raise FileNotFoundError(f"Requested raw input directory does not exist: {chosen_raw}")
+    raw_rows, manifest = read_raw(chosen_raw, root)
     observations, cleaning = validate_rows(raw_rows)
     pairs, pair_exclusions = build_pairs(observations)
     metrics = metric_table(pairs, seed, replicates)
@@ -443,12 +454,14 @@ def run(root, seed=2424, replicates=2000):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[1])
+    parser.add_argument("--raw-dir", type=Path, default=None,
+                        help="Read only this CSV directory; relative paths resolve under --root. Default: data/raw")
     parser.add_argument("--seed", type=int, default=2424)
     parser.add_argument("--bootstrap-replicates", type=int, default=2000)
     args = parser.parse_args()
     if args.bootstrap_replicates < 100:
         parser.error("Use at least 100 bootstrap replicates.")
-    result = run(args.root, args.seed, args.bootstrap_replicates)
+    result = run(args.root, args.seed, args.bootstrap_replicates, raw_dir=args.raw_dir)
     print(json.dumps({k: result[k] for k in ["n_raw_rows", "n_usable_observations", "n_pairs", "n_primary_pairs", "primary_pairs_by_period"]}))
 
 

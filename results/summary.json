@@ -1,0 +1,146 @@
+{
+  "schema_version": "1.0",
+  "generated_at_utc": "2026-10-24T02:53:12.358983+00:00",
+  "input_files": [
+    {
+      "file": "data/report_snapshot/raw/2026-10-24.csv",
+      "sha256": "bb5f11a930e60d04a90901a1d8595bc5c88d38de4eab6acc4bb6fc08558914e8",
+      "rows": 64
+    }
+  ],
+  "n_raw_rows": 64,
+  "n_exact_duplicates": 0,
+  "n_unique_requests": 64,
+  "n_usable_observations": 64,
+  "n_failed_requests": 0,
+  "n_pairs": 0,
+  "n_primary_pairs": 0,
+  "n_primary_length_comparable": 0,
+  "primary_length_comparable_pct": null,
+  "primary_pairs_by_period": {
+    "peak": 0,
+    "offpeak": 0,
+    "other": 0
+  },
+  "primary_pairs_by_phase": {},
+  "n_routes": 20,
+  "n_cycles": 4,
+  "first_request_utc": "2026-10-24T02:37:23.929322+00:00",
+  "last_request_utc": "2026-10-24T02:51:49.115212+00:00",
+  "max_primary_time_gap_s": null,
+  "n_pair_time_exclusions": 0,
+  "n_pair_boundary_exclusions": 0,
+  "primary_metrics": [],
+  "request_quality": [
+    {
+      "phase": "pilot",
+      "provider": "ors",
+      "n_requests": 60,
+      "n_http_ok": 60,
+      "n_failed": 0,
+      "failure_pct": 0.0,
+      "n_usable": 60
+    },
+    {
+      "phase": "scheduled",
+      "provider": "ors",
+      "n_requests": 4,
+      "n_http_ok": 4,
+      "n_failed": 0,
+      "failure_pct": 0.0,
+      "n_usable": 4
+    }
+  ],
+  "inference": [
+    {
+      "comparison": "tomtom-dgis",
+      "length_group": "all",
+      "status": "not_run_no_primary_comparison_pairs",
+      "method": "exact_two_sided_signed_rank_of_route_median_route_day_contrasts",
+      "n_route_days": 0,
+      "n_routes": 0,
+      "n_dates": 0,
+      "median_peak_minus_offpeak_s": null,
+      "p_value": null,
+      "rank_biserial": null,
+      "n_nonzero": null,
+      "w_plus": null,
+      "w_minus": null,
+      "interpretation": "Primary subset=all; length subsets exploratory. No ground-truth accuracy claim. No pilot inference."
+    },
+    {
+      "comparison": "tomtom-dgis",
+      "length_group": "comparable",
+      "status": "not_run_no_primary_comparison_pairs",
+      "method": "exact_two_sided_signed_rank_of_route_median_route_day_contrasts",
+      "n_route_days": 0,
+      "n_routes": 0,
+      "n_dates": 0,
+      "median_peak_minus_offpeak_s": null,
+      "p_value": null,
+      "rank_biserial": null,
+      "n_nonzero": null,
+      "w_plus": null,
+      "w_minus": null,
+      "interpretation": "Primary subset=all; length subsets exploratory. No ground-truth accuracy claim. No pilot inference."
+    },
+    {
+      "comparison": "tomtom-dgis",
+      "length_group": "noncomparable",
+      "status": "not_run_no_primary_comparison_pairs",
+      "method": "exact_two_sided_signed_rank_of_route_median_route_day_contrasts",
+      "n_route_days": 0,
+      "n_routes": 0,
+      "n_dates": 0,
+      "median_peak_minus_offpeak_s": null,
+      "p_value": null,
+      "rank_biserial": null,
+      "n_nonzero": null,
+      "w_plus": null,
+      "w_minus": null,
+      "interpretation": "Primary subset=all; length subsets exploratory. No ground-truth accuracy claim. No pilot inference."
+    }
+  ],
+  "rules": {
+    "timezone": "Asia/Almaty",
+    "period_intervals": {
+      "peak": [
+        [
+          "17:30",
+          "19:30"
+        ]
+      ],
+      "offpeak": [
+        [
+          "10:00",
+          "12:00"
+        ],
+        [
+          "22:00",
+          "24:00"
+        ]
+      ]
+    },
+    "period_end_exclusive": true,
+    "max_pair_gap_s": 60,
+    "length_difference_denominator": "pair_mean",
+    "length_comparable_max_pct": 5,
+    "length_comparability_proves_same_geometry": false,
+    "min_speed_kmh": 2,
+    "max_speed_kmh": 200,
+    "bootstrap_unit": "route",
+    "bootstrap_replicates": 2000,
+    "bootstrap_seed": 2424,
+    "bootstrap_min_routes": 8,
+    "bootstrap_min_dates": 2,
+    "pilot_inference": false,
+    "accuracy_estimable": false,
+    "ors_is_traffic_aware": false
+  },
+  "versions": {
+    "python": "3.12.14",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "process_sha256": "e73141a49583afd8487d18443ba09545a6313014b1800e23c05e93caa893ddc4",
+    "tzdata": "2026.5"
+  }
+}

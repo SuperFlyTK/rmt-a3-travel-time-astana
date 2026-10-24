@@ -1,0 +1,10 @@
+{
+  "frozen_at_utc": "2026-10-24T02:53:12.003897+00:00",
+  "files": [
+    {
+      "source": "data/raw/2026-10-24.csv",
+      "snapshot": "data/report_snapshot/raw/2026-10-24.csv",
+      "sha256": "bb5f11a930e60d04a90901a1d8595bc5c88d38de4eab6acc4bb6fc08558914e8"
+    }
+  ]
+}

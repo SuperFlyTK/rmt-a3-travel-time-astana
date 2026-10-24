@@ -1,0 +1,1 @@
+timestamp_utc,timestamp_astana,date_astana,phase,cycle_id,route_id,provider_a,provider_b,comparison_role,period,time_gap_s,duration_a_s,duration_b_s,distance_a_m,distance_b_m,mean_duration_s,signed_diff_s,abs_diff_s,relative_diff_pct,smape_pct,length_diff_pct,length_comparable

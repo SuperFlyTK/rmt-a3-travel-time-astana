@@ -1,0 +1,436 @@
+{
+  "generated_at_utc": "2026-10-24T08:02:00.774216+05:00",
+  "analysis_snapshot_utc": "2026-10-24T07:53:12.358983+05:00",
+  "report_file": "RMT_A3_Team_AkhanovYerdaulet_ShadiyarbekSyrym_SabyrzhanAkylbek.docx",
+  "report_sha256": "4d0708d81d4aa3af9bd280603f6bc6149cad7f9c1d09493d58fa0be0aa912817",
+  "scope": "ORS-only instrument pilot; primary comparison not performed",
+  "prose_word_count": 1691,
+  "counting_rule": "Only authored continuous-prose paragraphs; excludes identity, headings, RQ, tables, captions, code, references and links.",
+  "figure_count": 10,
+  "table_count": 23,
+  "versions": {
+    "python": "3.12.14",
+    "python-docx": "1.2.0"
+  },
+  "input_sha256": {
+    "config/study.json": "014627af0d1e5ff75792e002ac518608f6fe111ef0519d1982113352bfa83653",
+    "docs/expected_results.json": "e1a7ad664d3f3a6caa524098fc4073812d29de0a88239a87f4e10181fec27d1a",
+    "docs/references.json": "f0fa3e0289395aa6d3ac92ce0b353dac658f33a602ca9bba9336f65a91aac683",
+    "docs/api_check.md": "bb67119a36ef79211399f5e04be65144b235bff0e153b061aef273b2b8748c56",
+    "docs/research_log.md": "78578a01b9a442bd1fa28a9fd9a469c8592276a1b8e7a2702f3d8602ad565341",
+    "data/routes.csv": "f4b14c9bede5fee2260d2294d2e61556ac151f0fd9e29f08ab1df9e7c184cb17",
+    "results/summary.json": "0ab5cb1d8502a8ad946504c1b529f53a83fb08c0363f50d56ed5e2e75da1ed5f",
+    "results/observations.csv": "e6360960ae38f1762e52e490b9bc44cddad17fecac2b09564c9a9932669125bb",
+    "results/data_dictionary.csv": "3bfe1ac71681c79e839b4995df8a20c3aa4460d41632dfd6bf7dc955d78bdd4c",
+    "results/cleaning_log.csv": "834ca92a166e6b854a7a113e387bf47cd74352a24e7f02945c7d8b77151f0801",
+    "results/coverage.csv": "5fb719ab7f26fcb43b6917ea6b3597d281ce6d2707e4bd882f81448530563387",
+    "results/pairs.csv": "8d6d360e89b5f5e0724e480eb350819fbcf42403c27565233776fdb9d51626c1",
+    "figures/analysis_manifest.json": "da08e2ab1bf465f36d3256df143c0931ccb27d463c4e041185e45e0e50357233",
+    "figures/route_map_manifest.json": "b7646c8d93c0fb6fb3dc7ca6bd6f313d06e216e00c760482d4660c92ac2453c8",
+    "collector/collect.py": "7fd01e8b5f2d01d319020aa4a3f195454c7bb0738017f286edda66f0190f1679",
+    "analysis/process.py": "e73141a49583afd8487d18443ba09545a6313014b1800e23c05e93caa893ddc4",
+    "docs/reproduce_report.md": "c4cba8c58e1feaff496545639e63a2a013b5ec4102eb951b9c624d71e3faacaa",
+    "docs/cloud_run.json": "bcd0f83f53d90cfaf84bb2906d53bfcc25434019a7409b63f59b2f14b816a578",
+    "figures/evidence_manifest.json": "b8d1299874f20b1fa35bcca549caccc7105ffdb44cb0346c9e1f0bad78857f22"
+  },
+  "figures": [
+    {
+      "number": 1,
+      "file": "figures/analysis_request_quality.png",
+      "caption": "Recorded request outcomes by provider and collection phase. Exact duplicate rows are counted once. HTTP success does not itself imply a usable route.",
+      "sources": [
+        "results/request_quality.csv"
+      ],
+      "n_records": 64,
+      "status": "created",
+      "sha256": "a9c570ec137295963e5d46a083d3e084b003f9237db78abe741bcf01a9aef48f"
+    },
+    {
+      "number": 2,
+      "file": "figures/analysis_period_coverage.png",
+      "caption": "Usable observations classified by Asia/Almaty request time. Intervals include their start and exclude their end. A zero bar is observed absence, not a missing plot.",
+      "sources": [
+        "results/observations.csv"
+      ],
+      "n_records": 64,
+      "status": "created",
+      "sha256": "98ea906480f9cb58e2b89562364edac2cc3e39606b2e06ec6ee1e9b3d5e78e1b"
+    },
+    {
+      "number": 3,
+      "file": "figures/analysis_provider_durations.png",
+      "caption": "Median recorded duration per provider and fixed origin–destination route. ORS is a control without live traffic. This instrument summary cannot establish peak traffic disagreement or travel-time accuracy.",
+      "sources": [
+        "results/observations.csv"
+      ],
+      "n_records": 64,
+      "status": "created",
+      "sha256": "c32548a55f5f2a5ec475c874eceaa0da51f762d52801426150ac6d7eb89ea707"
+    },
+    {
+      "number": 4,
+      "file": "figures/analysis_distance_duration.png",
+      "caption": "Recorded estimated durations plotted against returned route distances. Values are API outputs, not measured journeys. Repeated values may overlap; no jitter or artificial observations are added.",
+      "sources": [
+        "results/observations.csv"
+      ],
+      "n_records": 64,
+      "status": "created",
+      "sha256": "c4bb6d4cf5ebe6a55e658619c77f4a73e4c2569e00cd3d2574deba4bd09f21eb"
+    },
+    {
+      "number": 5,
+      "file": "figures/analysis_request_latency.png",
+      "caption": "Recorded API request latencies by request start time. Latency is instrument performance and is distinct from estimated journey duration. Failed requests remain eligible if their timing was recorded.",
+      "sources": [
+        "results/observations.csv"
+      ],
+      "n_records": 64,
+      "status": "created",
+      "sha256": "f4b6fa0f3181e6d98e846016d16cc45c18f6fb8ef5e8902ad9030e78b846e252"
+    },
+    {
+      "number": 6,
+      "file": "figures/analysis_recorded_extract.png",
+      "caption": "Verbatim selected raw fields from the first recorded CSV rows, retained in observations.csv with source filename and line number. The rendered table is an evidence view, not a screenshot of a separate application.",
+      "sources": [
+        "results/observations.csv"
+      ],
+      "n_records": 10,
+      "status": "created",
+      "sha256": "154f912f62de12287356338dd4aa6f7282c6a6b347544b1cade481960c192f65"
+    },
+    {
+      "number": 7,
+      "status": "created",
+      "file": "figures/route_map.png",
+      "path": "figures/route_map.png",
+      "caption": "ORS control route geometries for the complete pilot-1 cycle: 20 directed routes displayed as ten forward and ten reverse OD directions on identical scales. Lines are actual saved openrouteservice LineString responses, not live-traffic routes or observed GPS trajectories. Endpoint labels follow data/routes.csv; recommended routes are not constrained to specified arteries. Routing geometry attribution: openrouteservice.org by HeiGIT, CC BY-SA 4.0; map data and endpoints: OpenStreetMap contributors, ODbL 1.0.",
+      "source": "Saved ORS control geometry files and fixed OSM-derived OD register only",
+      "source_files": [
+        "data/routes.csv",
+        "data/raw/geometry/pilot-1_R01_ors.json",
+        "data/raw/geometry/pilot-1_R02_ors.json",
+        "data/raw/geometry/pilot-1_R03_ors.json",
+        "data/raw/geometry/pilot-1_R04_ors.json",
+        "data/raw/geometry/pilot-1_R05_ors.json",
+        "data/raw/geometry/pilot-1_R06_ors.json",
+        "data/raw/geometry/pilot-1_R07_ors.json",
+        "data/raw/geometry/pilot-1_R08_ors.json",
+        "data/raw/geometry/pilot-1_R09_ors.json",
+        "data/raw/geometry/pilot-1_R10_ors.json",
+        "data/raw/geometry/pilot-1_R11_ors.json",
+        "data/raw/geometry/pilot-1_R12_ors.json",
+        "data/raw/geometry/pilot-1_R13_ors.json",
+        "data/raw/geometry/pilot-1_R14_ors.json",
+        "data/raw/geometry/pilot-1_R15_ors.json",
+        "data/raw/geometry/pilot-1_R16_ors.json",
+        "data/raw/geometry/pilot-1_R17_ors.json",
+        "data/raw/geometry/pilot-1_R18_ors.json",
+        "data/raw/geometry/pilot-1_R19_ors.json",
+        "data/raw/geometry/pilot-1_R20_ors.json"
+      ],
+      "n_geometry_files": 20,
+      "cycle_id": "pilot-1",
+      "provider": "ors",
+      "route_ids": [
+        "R01",
+        "R02",
+        "R03",
+        "R04",
+        "R05",
+        "R06",
+        "R07",
+        "R08",
+        "R09",
+        "R10",
+        "R11",
+        "R12",
+        "R13",
+        "R14",
+        "R15",
+        "R16",
+        "R17",
+        "R18",
+        "R19",
+        "R20"
+      ],
+      "live_traffic": false,
+      "observed_gps": false,
+      "sources": [
+        "data/routes.csv",
+        "data/raw/geometry/pilot-1_R01_ors.json",
+        "data/raw/geometry/pilot-1_R02_ors.json",
+        "data/raw/geometry/pilot-1_R03_ors.json",
+        "data/raw/geometry/pilot-1_R04_ors.json",
+        "data/raw/geometry/pilot-1_R05_ors.json",
+        "data/raw/geometry/pilot-1_R06_ors.json",
+        "data/raw/geometry/pilot-1_R07_ors.json",
+        "data/raw/geometry/pilot-1_R08_ors.json",
+        "data/raw/geometry/pilot-1_R09_ors.json",
+        "data/raw/geometry/pilot-1_R10_ors.json",
+        "data/raw/geometry/pilot-1_R11_ors.json",
+        "data/raw/geometry/pilot-1_R12_ors.json",
+        "data/raw/geometry/pilot-1_R13_ors.json",
+        "data/raw/geometry/pilot-1_R14_ors.json",
+        "data/raw/geometry/pilot-1_R15_ors.json",
+        "data/raw/geometry/pilot-1_R16_ors.json",
+        "data/raw/geometry/pilot-1_R17_ors.json",
+        "data/raw/geometry/pilot-1_R18_ors.json",
+        "data/raw/geometry/pilot-1_R19_ors.json",
+        "data/raw/geometry/pilot-1_R20_ors.json"
+      ],
+      "source_manifest": "figures/route_map_manifest.json",
+      "category": "map",
+      "sha256": "495c0d4d72de4e4b1942083f7e8ccd96efaed35f63b723d1e13b3ce6cfc51b06"
+    },
+    {
+      "number": 8,
+      "file": "figures/pilot_console.png",
+      "caption": "Actual PowerShell view of the saved collector console log, showing the completed first ORS pilot cycle and the start of the second. Captured with .NET CopyFromScreen; this is a viewport excerpt, not a fabricated console.",
+      "sources": [
+        "docs/pilot_console.log"
+      ],
+      "status": "created",
+      "source_manifest": "figures/evidence_manifest.json",
+      "category": "evidence",
+      "sha256": "af99cc362f990e294e372ca0e3b9a9dcedd508a6133f6741895b3bdbf2dc354d"
+    },
+    {
+      "number": 9,
+      "file": "figures/raw_csv_screen.png",
+      "caption": "Actual PowerShell display of the original raw CSV header and first three records. The viewport wraps and clips long lines; the linked CSV contains the complete unchanged records.",
+      "sources": [
+        "data/raw/2026-10-24.csv"
+      ],
+      "status": "created",
+      "source_manifest": "figures/evidence_manifest.json",
+      "category": "evidence",
+      "sha256": "15f37b622e0a131c3b1e1543658136f6111fc48e8ba68a703cf06b82763569a3"
+    },
+    {
+      "number": 10,
+      "file": "figures/github_actions_success.png",
+      "caption": "Successful cloud collector run on GitHub-hosted infrastructure. The workflow was manually dispatched for verification; the same workflow has a fifteen-minute schedule and a fixed end time.",
+      "sources": [
+        "docs/cloud_run.json",
+        "docs/cloud_run.log"
+      ],
+      "status": "created",
+      "source_manifest": "figures/evidence_manifest.json",
+      "category": "evidence",
+      "sha256": "0086137f0b37ad34c2c8de842ca833df55aece70f2d7873873608338d82a791e"
+    }
+  ],
+  "expected_results_comparison": [
+    {
+      "id": "ER1",
+      "expectation": "The peak to off-peak ratio of median absolute TomTom-2GIS difference is at least 1.5.",
+      "observed": "0 primary pairs; no permitted traffic-aware comparison.",
+      "verdict": "cannot judge",
+      "evidence": "results/summary.json; results/pairs.csv"
+    },
+    {
+      "id": "ER2",
+      "expectation": "At least 70% of eligible primary pairs have lengths within 5% of their pair mean.",
+      "observed": "0 primary pairs; no permitted traffic-aware comparison.",
+      "verdict": "cannot judge",
+      "evidence": "results/summary.json; results/pairs.csv"
+    },
+    {
+      "id": "ER3",
+      "expectation": "Median signed difference TomTom minus 2GIS is positive in the completed sample.",
+      "observed": "0 primary pairs; no permitted traffic-aware comparison.",
+      "verdict": "cannot judge",
+      "evidence": "results/summary.json; results/pairs.csv"
+    },
+    {
+      "id": "ER4",
+      "expectation": "The peak IQR of signed differences exceeds the off-peak IQR.",
+      "observed": "0 primary pairs; no permitted traffic-aware comparison.",
+      "verdict": "cannot judge",
+      "evidence": "results/summary.json; results/pairs.csv"
+    },
+    {
+      "id": "ER5",
+      "expectation": "Fewer than 2% of ORS instrument requests fail to return a valid route.",
+      "observed": "0/64 unique ORS requests failed the valid-route screen (0%).",
+      "verdict": "trending toward",
+      "evidence": "results/observations.csv; results/request_quality.csv"
+    },
+    {
+      "id": "ER6",
+      "expectation": "At least 95% of ORS instrument requests finish within 10 seconds.",
+      "observed": "64/64 unique ORS requests finished within 10 seconds (100%).",
+      "verdict": "trending toward",
+      "evidence": "results/observations.csv; figures/analysis_request_latency.png"
+    },
+    {
+      "id": "ER7",
+      "expectation": "All 20 routes produce at least one valid ORS result during the three pilot cycles.",
+      "observed": "20/20 routes have a usable pilot response; 3/3 pilot cycles are represented.",
+      "verdict": "trending toward",
+      "evidence": "results/observations.csv; figures/analysis_provider_durations.png"
+    },
+    {
+      "id": "ER8",
+      "expectation": "At least 90% of the 768 nominal ORS scheduled requests are recorded in the 48-hour window.",
+      "observed": "0 verified cron-triggered attempts; 4 manual workflow_dispatch verification records (collector phase scheduled); collection window still open.",
+      "verdict": "cannot judge",
+      "evidence": "results/observations.csv; docs/cloud_run.json; config/study.json"
+    }
+  ],
+  "summary": {
+    "schema_version": "1.0",
+    "generated_at_utc": "2026-10-24T07:53:12.358983+05:00",
+    "input_files": [
+      {
+        "file": "data/report_snapshot/raw/2026-10-24.csv",
+        "sha256": "bb5f11a930e60d04a90901a1d8595bc5c88d38de4eab6acc4bb6fc08558914e8",
+        "rows": 64
+      }
+    ],
+    "n_raw_rows": 64,
+    "n_exact_duplicates": 0,
+    "n_unique_requests": 64,
+    "n_usable_observations": 64,
+    "n_failed_requests": 0,
+    "n_pairs": 0,
+    "n_primary_pairs": 0,
+    "n_primary_length_comparable": 0,
+    "primary_length_comparable_pct": null,
+    "primary_pairs_by_period": {
+      "peak": 0,
+      "offpeak": 0,
+      "other": 0
+    },
+    "primary_pairs_by_phase": {},
+    "n_routes": 20,
+    "n_cycles": 4,
+    "first_request_utc": "2026-10-24T07:37:23.929322+05:00",
+    "last_request_utc": "2026-10-24T07:51:49.115212+05:00",
+    "max_primary_time_gap_s": null,
+    "n_pair_time_exclusions": 0,
+    "n_pair_boundary_exclusions": 0,
+    "primary_metrics": [],
+    "request_quality": [
+      {
+        "phase": "pilot",
+        "provider": "ors",
+        "n_requests": 60,
+        "n_http_ok": 60,
+        "n_failed": 0,
+        "failure_pct": 0.0,
+        "n_usable": 60
+      },
+      {
+        "phase": "scheduled",
+        "provider": "ors",
+        "n_requests": 4,
+        "n_http_ok": 4,
+        "n_failed": 0,
+        "failure_pct": 0.0,
+        "n_usable": 4
+      }
+    ],
+    "inference": [
+      {
+        "comparison": "tomtom-dgis",
+        "length_group": "all",
+        "status": "not_run_no_primary_comparison_pairs",
+        "method": "exact_two_sided_signed_rank_of_route_median_route_day_contrasts",
+        "n_route_days": 0,
+        "n_routes": 0,
+        "n_dates": 0,
+        "median_peak_minus_offpeak_s": null,
+        "p_value": null,
+        "rank_biserial": null,
+        "n_nonzero": null,
+        "w_plus": null,
+        "w_minus": null,
+        "interpretation": "Primary subset=all; length subsets exploratory. No ground-truth accuracy claim. No pilot inference."
+      },
+      {
+        "comparison": "tomtom-dgis",
+        "length_group": "comparable",
+        "status": "not_run_no_primary_comparison_pairs",
+        "method": "exact_two_sided_signed_rank_of_route_median_route_day_contrasts",
+        "n_route_days": 0,
+        "n_routes": 0,
+        "n_dates": 0,
+        "median_peak_minus_offpeak_s": null,
+        "p_value": null,
+        "rank_biserial": null,
+        "n_nonzero": null,
+        "w_plus": null,
+        "w_minus": null,
+        "interpretation": "Primary subset=all; length subsets exploratory. No ground-truth accuracy claim. No pilot inference."
+      },
+      {
+        "comparison": "tomtom-dgis",
+        "length_group": "noncomparable",
+        "status": "not_run_no_primary_comparison_pairs",
+        "method": "exact_two_sided_signed_rank_of_route_median_route_day_contrasts",
+        "n_route_days": 0,
+        "n_routes": 0,
+        "n_dates": 0,
+        "median_peak_minus_offpeak_s": null,
+        "p_value": null,
+        "rank_biserial": null,
+        "n_nonzero": null,
+        "w_plus": null,
+        "w_minus": null,
+        "interpretation": "Primary subset=all; length subsets exploratory. No ground-truth accuracy claim. No pilot inference."
+      }
+    ],
+    "rules": {
+      "timezone": "Asia/Almaty",
+      "period_intervals": {
+        "peak": [
+          [
+            "17:30",
+            "19:30"
+          ]
+        ],
+        "offpeak": [
+          [
+            "10:00",
+            "12:00"
+          ],
+          [
+            "22:00",
+            "24:00"
+          ]
+        ]
+      },
+      "period_end_exclusive": true,
+      "max_pair_gap_s": 60,
+      "length_difference_denominator": "pair_mean",
+      "length_comparable_max_pct": 5,
+      "length_comparability_proves_same_geometry": false,
+      "min_speed_kmh": 2,
+      "max_speed_kmh": 200,
+      "bootstrap_unit": "route",
+      "bootstrap_replicates": 2000,
+      "bootstrap_seed": 2424,
+      "bootstrap_min_routes": 8,
+      "bootstrap_min_dates": 2,
+      "pilot_inference": false,
+      "accuracy_estimable": false,
+      "ors_is_traffic_aware": false
+    },
+    "versions": {
+      "python": "3.12.14",
+      "platform": "Windows-11-10.0.26200-SP0",
+      "process_sha256": "e73141a49583afd8487d18443ba09545a6313014b1800e23c05e93caa893ddc4",
+      "tzdata": "2026.5"
+    }
+  },
+  "validation": {
+    "visual_render_review": "completed",
+    "references": 10,
+    "verification_record": "docs/final_verification.json",
+    "rendered_pages": 22,
+    "missing_pdf_table_cells": 0
+  }
+}

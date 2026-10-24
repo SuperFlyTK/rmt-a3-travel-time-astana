@@ -8,6 +8,10 @@ Twenty directed origin-destination pairs were selected from public OpenStreetMap
 
 ## Reproduce
 
+The delivered report uses a frozen sample of 64 ORS observations: 60 local pilot requests and 4 requests from a manually triggered GitHub Actions verification run. The collector labels that cloud run with its `scheduled` collection phase; it does not prove a cron event has fired. To reproduce the delivered sample exactly, follow [the frozen-snapshot instructions](docs/reproduce_report.md). The commands below instead analyze all observations currently present in the live data folder.
+
+The frozen CSV is stored without Git newline conversion, so its SHA-256 matches its manifest on every platform. Other input hashes in the report snapshot describe the Windows workspace bytes at build time; Git or another operating system may change text line endings without changing data values. The preregistration checker compares normalized line endings explicitly.
+
 Use Python 3.11 or newer. On Windows:
 
 ```powershell

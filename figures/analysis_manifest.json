@@ -1,11 +1,11 @@
 {
-  "generated_at_utc": "2026-10-24T02:39:50.910534+00:00",
+  "generated_at_utc": "2026-10-24T02:53:14.677547+00:00",
   "python_version": "3.12.14",
   "matplotlib_version": "3.11.2",
-  "script_sha256": "6a8646e8b95653db91006ece46c83232f4057a8ed71ac936c897238d6f1854ba",
+  "script_sha256": "e8a25cf8c176c1325c187ee6f6ce007652ba2b095900260abd519ca1644a2937",
   "input_hashes": {
-    "request_quality.csv": "9f49c018a31ec0e47a60f9440307a461e3d42469b90062e50cab55a089822559",
-    "observations.csv": "31403b7d374c91769c666eadb8db597ba1e8ca44f0c28956f42b071d75bde2bb",
+    "request_quality.csv": "23b363fdf7c54fd9752cbc3a4c5f0bedd1a20d4ea8b7473b15b103db12e62da5",
+    "observations.csv": "e6360960ae38f1762e52e490b9bc44cddad17fecac2b09564c9a9932669125bb",
     "pairs.csv": "8d6d360e89b5f5e0724e480eb350819fbcf42403c27565233776fdb9d51626c1",
     "pair_exclusions.csv": "b7565d7af6857e5646e1f67f46e2da4f4ba675d03aeb3b4ba1e035c47d47df6a"
   },
@@ -16,7 +16,7 @@
       "sources": [
         "results/request_quality.csv"
       ],
-      "n_records": 20,
+      "n_records": 64,
       "status": "created"
     },
     {
@@ -25,7 +25,7 @@
       "sources": [
         "results/observations.csv"
       ],
-      "n_records": 20,
+      "n_records": 64,
       "status": "created"
     },
     {
@@ -34,7 +34,7 @@
       "sources": [
         "results/observations.csv"
       ],
-      "n_records": 20,
+      "n_records": 64,
       "status": "created"
     },
     {
@@ -43,7 +43,7 @@
       "sources": [
         "results/observations.csv"
       ],
-      "n_records": 20,
+      "n_records": 64,
       "status": "created"
     },
     {
@@ -52,7 +52,7 @@
       "sources": [
         "results/observations.csv"
       ],
-      "n_records": 20,
+      "n_records": 64,
       "status": "created"
     },
     {
