@@ -1,7 +1,7 @@
 {
-  "next_route": 4,
+  "next_route": 8,
   "counts": {
-    "ors": 146,
+    "ors": 150,
     "google_demo": 41
   },
   "completed_cycles": [
@@ -2071,6 +2071,67 @@
       "started_at_utc": "2026-10-24T13:27:59.532780+00:00",
       "recorded_attempts": 4,
       "completed_at_utc": "2026-10-24T13:28:06.548576+00:00"
+    },
+    "worker-40090752863-20261024T134300Z": {
+      "cycle": "worker-40090752863-20261024T134300Z",
+      "mode": "scheduled",
+      "providers": [
+        "ors"
+      ],
+      "routes": [
+        {
+          "route_id": "R05",
+          "name": "Turan Avenue near Khan Shatyr -> Saryarka Avenue central OSM road node",
+          "origin_lat": "51.1322667",
+          "origin_lon": "71.4066887",
+          "destination_lat": "51.1693654",
+          "destination_lon": "71.4080255",
+          "expected_length_m": "4126.2",
+          "expected_length_basis": "haversine_spherical_straight_line_lower_bound_R6371008.8m_not_observed_route_length",
+          "origin_source": "https://www.openstreetmap.org/node/4922159712",
+          "destination_source": "https://www.openstreetmap.org/node/5843971377"
+        },
+        {
+          "route_id": "R06",
+          "name": "Saryarka Avenue central OSM road node -> Turan Avenue near Khan Shatyr",
+          "origin_lat": "51.1693654",
+          "origin_lon": "71.4080255",
+          "destination_lat": "51.1322667",
+          "destination_lon": "71.4066887",
+          "expected_length_m": "4126.2",
+          "expected_length_basis": "haversine_spherical_straight_line_lower_bound_R6371008.8m_not_observed_route_length",
+          "origin_source": "https://www.openstreetmap.org/node/5843971377",
+          "destination_source": "https://www.openstreetmap.org/node/4922159712"
+        },
+        {
+          "route_id": "R07",
+          "name": "Mangilik El Avenue near EXPO exhibition centre -> Abay Avenue central OSM road node",
+          "origin_lat": "51.0924613",
+          "origin_lon": "71.4257531",
+          "destination_lat": "51.1690436",
+          "destination_lon": "71.4321538",
+          "expected_length_m": "8527.3",
+          "expected_length_basis": "haversine_spherical_straight_line_lower_bound_R6371008.8m_not_observed_route_length",
+          "origin_source": "https://www.openstreetmap.org/node/2641042247",
+          "destination_source": "https://www.openstreetmap.org/node/3306022439"
+        },
+        {
+          "route_id": "R08",
+          "name": "Abay Avenue central OSM road node -> Mangilik El Avenue near EXPO exhibition centre",
+          "origin_lat": "51.1690436",
+          "origin_lon": "71.4321538",
+          "destination_lat": "51.0924613",
+          "destination_lon": "71.4257531",
+          "expected_length_m": "8527.3",
+          "expected_length_basis": "haversine_spherical_straight_line_lower_bound_R6371008.8m_not_observed_route_length",
+          "origin_source": "https://www.openstreetmap.org/node/3306022439",
+          "destination_source": "https://www.openstreetmap.org/node/2641042247"
+        }
+      ],
+      "status": "reserved",
+      "reserved_at_utc": "2026-10-24T13:43:00.136729+00:00",
+      "config_sha256": "13bbad038474fe8b63d1904825cd614d2805ca97b6cfda07f7d18b79f2c4955e",
+      "spacing_s": 2.1
     }
   },
   "google_followup": {
