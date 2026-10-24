@@ -1,0 +1,3 @@
+period,planned_windows,recorded_windows,valid_windows,n_valid_pairs,median_of_window_median_absolute_differences_s
+peak,2,0,0,0,
+offpeak,3,0,0,0,

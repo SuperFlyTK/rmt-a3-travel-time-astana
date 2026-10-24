@@ -1,0 +1,19 @@
+{
+  "figures": [
+    {
+      "status": "created",
+      "file": "figures/google_control_benchmark.png",
+      "caption": "Original aggregate disagreement metrics for one separate exploratory cycle. Google used TRAFFIC_AWARE_OPTIMAL; ORS has no live traffic. These are not accuracy measures or the primary peak-period comparison.",
+      "context": "summarizes the separate Google–ORS instrument comparison using aggregate metrics only",
+      "sources": [
+        "results/google_control_benchmark.csv"
+      ],
+      "source_manifest": "figures/google_control_manifest.json",
+      "source_sha256": "55bf9f8f738dd47847db9f77a4eaa09b2a4b144a7ead0a7f25496288517b5f6f",
+      "category": "exploratory",
+      "credit": "Team-computed comparative-test results; ORS control: © openrouteservice by HeiGIT | Data from OpenStreetMap",
+      "n_valid_pairs": 20,
+      "google_raw_retained": false
+    }
+  ]
+}

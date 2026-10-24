@@ -1,2 +1,3 @@
 # Preserve the exact frozen CSV bytes for its published SHA-256 manifest.
 /data/report_snapshot/raw/*.csv -text
+/data/report_snapshots/**/raw/*.csv -text

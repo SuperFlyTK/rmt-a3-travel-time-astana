@@ -1,10 +1,10 @@
 {
-  "generated_at_utc": "2026-10-24T02:53:12.358983+00:00",
+  "generated_at_utc": "2026-10-24T11:13:51.125096+00:00",
   "inputs": [
     {
-      "file": "data/report_snapshot/raw/2026-10-24.csv",
-      "sha256": "bb5f11a930e60d04a90901a1d8595bc5c88d38de4eab6acc4bb6fc08558914e8",
-      "rows": 64
+      "file": "data/report_snapshots/2026-10-24-afternoon/raw/2026-10-24.csv",
+      "sha256": "0ff767576798c72aec0bc194bfed9a4dc110a566f8595fa22b9bd982c0635a8b",
+      "rows": 68
     }
   ],
   "versions": {

@@ -1,17 +1,17 @@
 {
   "schema_version": "1.0",
-  "generated_at_utc": "2026-10-24T02:53:12.358983+00:00",
+  "generated_at_utc": "2026-10-24T11:13:51.125096+00:00",
   "input_files": [
     {
-      "file": "data/report_snapshot/raw/2026-10-24.csv",
-      "sha256": "bb5f11a930e60d04a90901a1d8595bc5c88d38de4eab6acc4bb6fc08558914e8",
-      "rows": 64
+      "file": "data/report_snapshots/2026-10-24-afternoon/raw/2026-10-24.csv",
+      "sha256": "0ff767576798c72aec0bc194bfed9a4dc110a566f8595fa22b9bd982c0635a8b",
+      "rows": 68
     }
   ],
-  "n_raw_rows": 64,
+  "n_raw_rows": 68,
   "n_exact_duplicates": 0,
-  "n_unique_requests": 64,
-  "n_usable_observations": 64,
+  "n_unique_requests": 68,
+  "n_usable_observations": 68,
   "n_failed_requests": 0,
   "n_pairs": 0,
   "n_primary_pairs": 0,
@@ -24,9 +24,9 @@
   },
   "primary_pairs_by_phase": {},
   "n_routes": 20,
-  "n_cycles": 4,
+  "n_cycles": 5,
   "first_request_utc": "2026-10-24T02:37:23.929322+00:00",
-  "last_request_utc": "2026-10-24T02:51:49.115212+00:00",
+  "last_request_utc": "2026-10-24T07:50:15.083095+00:00",
   "max_primary_time_gap_s": null,
   "n_pair_time_exclusions": 0,
   "n_pair_boundary_exclusions": 0,
@@ -44,11 +44,11 @@
     {
       "phase": "scheduled",
       "provider": "ors",
-      "n_requests": 4,
-      "n_http_ok": 4,
+      "n_requests": 8,
+      "n_http_ok": 8,
       "n_failed": 0,
       "failure_pct": 0.0,
-      "n_usable": 4
+      "n_usable": 8
     }
   ],
   "inference": [

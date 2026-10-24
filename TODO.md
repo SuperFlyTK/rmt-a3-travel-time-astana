@@ -1,23 +1,24 @@
-# What remains for the team
+# Remaining review and future-data work
 
-The delivered pilot demonstrates the instrument using ORS only. It is not a completed traffic-aware provider comparison.
+Google Demo with TRAFFIC_AWARE_OPTIMAL now works, the separate Google-ORS pilot is complete, the cloud worker is active, and the ZIP is on Drive. No payment or billing upgrade was made.
 
-1. Review the report, actual timestamps, findings, source references and course requirements before submitting it. The original RQ is still prospective.
-2. Obtain written TomTom permission for comparison with competitors and the required storage/publication rights, or choose another provider that permits this study. Current terms: https://docs.tomtom.com/legal/terms-and-conditions (clauses 11.4, 11.6.1, 11.6.10).
-3. Confirm the applicable Kazakhstan 2GIS demo licence permits retaining and publicly publishing routing measurements and geometry. A successful API call alone is not this permission. No unsupported rights are asserted.
-4. Google Cloud still requires a prepayment and the last check returned 403. No payment or upgrade was made. HERE requires billing details and has no key. These actions were skipped.
-5. If a traffic-aware provider becomes usable and its data use is permitted, make a dated protocol amendment before enabling it. Recheck quotas and run one credential check. Add the matching GitHub Secret to the workflow's environment mapping as well as approving the provider in the configuration: the current workflow injects only ORS_KEY. Do not silently relabel the ORS control as traffic-aware or edit pre-registered expectations.
-6. Upload `RMT_A3_drive_mirror.zip` to the prepared Drive folder. Check repository, report links and Drive from a private browser window. The folder must remain accessible through exams.
-7. After collection, pull remote observations and rebuild locally:
+1. Review the current report and its limitations before submission. The original TomTom-2GIS comparison was not performed. The user-approved current design compares Google with traffic to an ORS control without live traffic. It does not measure accuracy or isolate a causal traffic effect.
+2. Allow the five preregistered future windows to occur: 24 October peak 17:30–19:30 and off-peak 22:00–24:00; 25 October off-peak 10:00–12:00, peak 17:30–19:30 and off-peak 22:00–24:00, Astana time. Each window has at most twenty paired requests. Collection ends on 26 October at 07:32 Astana time; it may stop earlier on a quota or access error. Missing windows cannot be recreated later.
+3. After the relevant windows, retrieve and describe the actual aggregate results. Do not reconstruct individual Google estimates or run the original route/day Wilcoxon from window aggregates. The scripts explicitly keep inference disabled.
 
 ```powershell
 cd C:\rmt3
 git pull --ff-only
 .\.venv\Scripts\python.exe analysis/process.py
 .\.venv\Scripts\python.exe analysis/figures.py
+.\.venv\Scripts\python.exe analysis/google_control_figure.py
+.\.venv\Scripts\python.exe analysis/google_followup_summary.py
 .\.venv\Scripts\python.exe report/build_report.py
 ```
 
-Only test peak versus off-peak after a permitted primary sample contains the required periods and independent route/day coverage. The code deliberately suppresses pilot inference. If remaining exclusively ORS, interpret only instrument and control observations.
+These commands create a newer report from available data. For the exact delivered main sample, follow `docs/reproduce_report.md`. Review the rebuilt DOCX layout and figures before submission. The current report and original morning version remain documented by their snapshot files.
 
-Never put `.env`, secret values or the virtual environment in the Drive archive. The scheduled collection has a fixed forty-eight-hour end and request budget; it does not run forever.
+4. The Drive archive is already uploaded and publicly readable at https://drive.google.com/file/d/1qFbs-NPxApQqgvHte2qbVkNL96yaXeB4/view . It is a delivery snapshot and does not update itself whenever new API data arrives. Replace it with a newly reviewed archive after a future report revision.
+5. Only if returning to the original TomTom/2GIS design: obtain the applicable comparison, retention and publication rights and record a new amendment before collecting. HERE still has no key; the standard Google key still has 403, but the distinct Demo Key is the active source for the bounded tests.
+
+Never upload `.env`, API keys or the virtual environment. Preserve the initial expected-results files and frozen samples. The original ER8 coverage threshold was missed by sparse cron delivery; extra exploratory requests must not be used to disguise this gap.

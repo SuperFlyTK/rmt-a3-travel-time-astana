@@ -17,6 +17,7 @@ from pathlib import Path
 import re
 import statistics
 import sys
+from zoneinfo import ZoneInfo
 
 from docx import Document
 from docx.enum.table import WD_TABLE_ALIGNMENT, WD_CELL_VERTICAL_ALIGNMENT
@@ -57,6 +58,46 @@ def number(value, digits=2):
 
 def truth(value):
     return str(value).lower() in {'true', '1', 'yes'}
+
+
+def local_period(timestamp, config):
+    local = datetime.fromisoformat(timestamp).astimezone(ZoneInfo(config['timezone']))
+    minute = local.hour * 60 + local.minute
+    as_minute = lambda value: sum(int(part) * weight for part, weight in zip(value.split(':'), (60, 1)))
+    for label, intervals in [('peak', [config['peak']]), ('offpeak', config['off_peak'])]:
+        if any(as_minute(start) <= minute < as_minute(end) for start, end in intervals):
+            return local, label
+    return local, 'other'
+
+
+def exploratory_evidence(root, required):
+    """Read only published aggregate metrics; Google response values are absent."""
+    result_path = root / 'results/google_control_benchmark.csv'
+    if not result_path.is_file():
+        return None
+    protocol_path = root / 'docs/google_control_protocol.json'
+    if not protocol_path.is_file():
+        raise SystemExit('Exploratory results require their dated protocol.')
+    protocol = read_json(protocol_path)
+    rows = read_csv(result_path)
+    if len(rows) != 1 or protocol.get('publish_google_raw') is not False:
+        raise SystemExit('Unexpected exploratory result or retention protocol.')
+    row = rows[0]
+    count = int(row['n_valid_pairs'])
+    attempts = int(row['n_attempted_pairs'])
+    if not 0 <= count <= min(int(row['n_google_ok']), int(row['n_ors_ok'])) <= attempts <= protocol['max_pairs']:
+        raise SystemExit('Inconsistent exploratory counts.')
+    if row['cycle_id'] != protocol['protocol_id']:
+        raise SystemExit('Exploratory results and protocol identifiers disagree.')
+    if datetime.fromisoformat(protocol['registered_at_utc']) >= datetime.fromisoformat(row['start_utc']):
+        raise SystemExit('Exploratory protocol was not fixed before this cycle.')
+    for path in ['docs/google_control_protocol.json', 'results/google_control_benchmark.csv',
+                 'collector/google_control_test.py', 'analysis/google_control_figure.py',
+                 'data/exploratory/google_request_status.csv', 'data/exploratory/ors/observations.csv']:
+        if not (root / path).is_file():
+            raise SystemExit('Missing exploratory evidence: ' + path)
+        required.append(path)
+    return {'protocol': protocol, 'metrics': row, 'n_valid_pairs': count, 'n_attempted_pairs': attempts}
 
 
 def set_font(run, size=None, bold=None):
@@ -225,7 +266,7 @@ def evaluate_expectations(expected, observations, summary, config, manual_cycles
     for entry in expected['expected_results']:
         eid = entry['id']; verdict = 'cannot judge'
         evidence = 'results/summary.json; results/pairs.csv'
-        finding = f'{summary["n_primary_pairs"]} primary pairs; no permitted traffic-aware comparison.'
+        finding = f'{summary["n_primary_pairs"]} primary pairs; no permitted primary TomTom–2GIS comparison.'
         if eid == 'ER5':
             finding = f'{invalid}/{n} unique ORS requests failed the valid-route screen ({number(100*invalid/n) if n else "not estimable"}%).'
             if n:
@@ -264,10 +305,27 @@ def build(root, output):
         required.append('docs/reproduce_report.md')
     if (root / 'docs/cloud_run.json').is_file():
         required.append('docs/cloud_run.json')
+    if (root / 'docs/cloud_runs.json').is_file():
+        required.append('docs/cloud_runs.json')
+    if (root / 'docs/drive_delivery.json').is_file():
+        required.append('docs/drive_delivery.json')
+    if (root / 'docs/google_followup_protocol.json').is_file():
+        required.append('docs/google_followup_protocol.json')
+    for path in ['results/google_followup_summary.json', 'results/google_followup_period_summary.csv',
+                 'results/google_followup_benchmark.csv', 'analysis/google_followup_summary.py',
+                 'collector/google_followup.py', 'docs/resilient_worker_verification.json']:
+        if (root / path).is_file():
+            required.append(path)
     missing = [p for p in required if not (root / p).is_file()]
     if missing:
         raise SystemExit('Required evidence absent: ' + ', '.join(missing))
     config = read_json(root / 'config/study.json')
+    followup = read_json(root / 'docs/google_followup_protocol.json') if (root / 'docs/google_followup_protocol.json').is_file() else None
+    followup_summary = read_json(root / 'results/google_followup_summary.json') if (root / 'results/google_followup_summary.json').is_file() else None
+    if followup_summary and (root / 'results/google_followup_benchmark.csv').is_file():
+        if len(read_csv(root / 'results/google_followup_benchmark.csv')) != followup_summary['recorded_windows']:
+            raise SystemExit('Follow-up summary is stale; run analysis/google_followup_summary.py.')
+    current_rq = followup['current_rq'] if followup else config['rq']
     expected = read_json(root / 'docs/expected_results.json')
     summary = read_json(root / 'results/summary.json')
     refs = read_json(root / 'docs/references.json')
@@ -276,13 +334,19 @@ def build(root, output):
     cleaning = read_csv(root / 'results/cleaning_log.csv')
     coverage = read_csv(root / 'results/coverage.csv')
     routes = read_csv(root / 'data/routes.csv')
+    exploratory = exploratory_evidence(root, required)
     manifest = read_json(root / 'figures/analysis_manifest.json')
     figures = [entry for entry in manifest['figures'] if entry['status'] == 'created']
     analysis_order = ['analysis_request_quality.png', 'analysis_period_coverage.png',
                       'analysis_provider_durations.png', 'analysis_distance_duration.png',
                       'analysis_request_latency.png', 'analysis_recorded_extract.png']
     figures.sort(key=lambda e: analysis_order.index(Path(e['file']).name) if Path(e['file']).name in analysis_order else 100)
-    for manifest_path, category in [('figures/route_map_manifest.json', 'map'), ('figures/evidence_manifest.json', 'evidence')]:
+    extra_manifests = [('figures/route_map_manifest.json', 'map'), ('figures/evidence_manifest.json', 'evidence')]
+    if exploratory:
+        if not (root / 'figures/google_control_manifest.json').is_file():
+            raise SystemExit('Run analysis/google_control_figure.py before building the exploratory report.')
+        extra_manifests.append(('figures/google_control_manifest.json', 'exploratory'))
+    for manifest_path, category in extra_manifests:
         if not (root / manifest_path).exists():
             continue
         supplemental = read_json(root / manifest_path)
@@ -306,14 +370,14 @@ def build(root, output):
         raise SystemExit('Summary and observations disagree; rerun analysis on the same snapshot.')
     if config['active_providers'] != ['ors'] or summary['n_primary_pairs']:
         raise SystemExit('This report narrative is for the ORS-only instrument pilot. Review it before enabling a primary comparison.')
-    if len(config['rq'].split()) > 25:
+    if len(current_rq.split()) > 25:
         raise SystemExit('Research question exceeds 25 words.')
     for entry in figures:
         if not (root / entry['file']).is_file():
             raise SystemExit('Missing figure: ' + entry['file'])
     manual_cycles, cron_cycles = set(), set()
-    if (root / 'docs/cloud_run.json').is_file():
-        cloud_run = read_json(root / 'docs/cloud_run.json')
+    run_records = read_json(root / 'docs/cloud_runs.json')['runs'] if (root / 'docs/cloud_runs.json').is_file() else ([read_json(root / 'docs/cloud_run.json')] if (root / 'docs/cloud_run.json').is_file() else [])
+    for cloud_run in run_records:
         run_match = re.search(r'/actions/runs/(\d+)(?:/|$)', cloud_run.get('url', ''))
         if run_match:
             cycle_id = 'gh-' + run_match.group(1)
@@ -322,6 +386,10 @@ def build(root, output):
             elif cloud_run.get('event') == 'schedule':
                 cron_cycles.add(cycle_id)
     er = evaluate_expectations(expected, observations, summary, config, manual_cycles, cron_cycles)
+    if followup:
+        for entry in er:
+            if entry['id'] in {'ER1', 'ER2', 'ER3', 'ER4'}:
+                entry['observed'] = f'{summary["n_primary_pairs"]} initial TomTom–2GIS pairs. The amended Google–ORS control design does not directly test this original expected result.'
     repo = config['repository_url'].rstrip('/')
     public = lambda path: repo + '/blob/main/' + path
     tree = lambda path: repo + '/tree/main/' + path
@@ -341,42 +409,89 @@ def build(root, output):
     w = Writer()
     w.p(IDENTITY, count=False)
     w.p('Astana route estimate methodology', count=False, style='Title')
-    w.p('Status: executed ORS instrument pilot; the primary traffic-aware comparison has not been performed.', count=False)
-    w.p(f'Evidence snapshot: {summary["generated_at_utc"]}. Public repository: {repo}', count=False)
+    status = 'Status: executed ORS instrument pilot' + (' and separate exploratory Google–ORS test' if exploratory else '')
+    if followup:
+        status += '; ' + ('Google–ORS window summaries included' if followup_summary and followup_summary['recorded_windows'] else 'Google–ORS period comparison planned') + '; initial TomTom–2GIS comparison unperformed.'
+    else:
+        status += '; the primary TomTom–2GIS comparison has not been performed.'
+    w.p(status, count=False)
+    w.p(f'ORS analysis snapshot: {summary["generated_at_utc"]}. Public repository: {repo}', count=False)
 
     w.h('Segment 1. Methodology', 1)
     w.h('T1 Declare basic information')
-    w.p(config['rq'], count=False)
-    w.p('The question isolates disagreement between services for common endpoints and time periods. Its strength is an observable comparison with a fixed unit and a clear temporal contrast. Its weakness is that services can recommend different streets and apply undisclosed models. Neither estimate is an observed journey. The original Assignment 2 Google Maps–2GIS design was amended after access and publication checks. TomTom–2GIS remains the prospective question, while the completed work concerns the ORS instrument. This distinction prevents successful software operation from being presented as an answer about congestion.')
-    drive_status = 'Archive upload verified' if config.get('drive_archive_uploaded') else 'Archive upload pending verification at this snapshot'
+    w.p(current_rq, count=False)
+    if followup:
+        w.p('The amended question compares traffic-aware Google estimates with an ORS control that lacks live traffic. Common endpoints and defined periods make disagreement observable, but provider models and recommended streets also differ. Neither service supplies observed journeys. After the initial TomTom–2GIS design remained unperformed, the team approved this dated Google–ORS design and its aggregate-only retention. The completed exploratory cycle establishes a descriptive starting point; it does not answer the peak-versus-off-peak question.')
+        w.p('Dated amendment: ' + followup['approved_at_utc'] + '. Initial preregistered question, retained for provenance: ' + config['rq'], count=False)
+    else:
+        w.p('The question isolates disagreement for common endpoints and time periods. Its strength is an observable comparison with a fixed unit and temporal contrast. Its weakness is that services can recommend different streets and apply undisclosed models. Neither estimate is an observed journey. The Assignment 2 Google Maps–2GIS design was amended after access and publication checks. TomTom–2GIS remains the prospective question. The completed ORS instrument' + (' and separate Google–ORS exploratory test do not answer that question.' if exploratory else ' does not answer that question.'))
+    drive_delivery = read_json(root / 'docs/drive_delivery.json') if (root / 'docs/drive_delivery.json').is_file() else {}
+    drive_status = 'Archive available; anyone with the link can read it' if drive_delivery.get('uploaded') else 'Archive upload pending verification at this snapshot'
     w.table(['Item', 'Entry'], [['Group and team', config['group'] + ' | ' + config['team']], ['Repository', repo], ['Drive folder', config['drive_url'] + '\n' + drive_status], ['Folders', 'collector/: extraction; config/: fixed design; data/routes.csv: sample; data/raw/: original observations; analysis/: processing; results/: working data; figures/: evidence; report/: reproducible document; docs/: provenance and journal']], [3.4, 13.6])
     w.h('T2 Record your Approach Card')
-    w.p('The approach is quantitative secondary-data analysis using repeated observations. Researchers select requests but do not manipulate road conditions, allocate traffic treatments or recruit drivers. It is therefore an observational comparison, not an experiment. Repeated endpoints reduce spatial inconsistency and make variation auditable. However, purposive route selection and a short observation window limit generalisation. Repeated requests on one route are dependent; their number cannot be treated as the number of independent roads. ORS offers a practical control for the collection workflow but lacks the live-traffic signal required by the main question.')
+    w.p('The approach is quantitative secondary-data analysis using repeated observations. Researchers select requests but do not manipulate road conditions, allocate traffic treatments or recruit drivers. It is therefore observational. Repeated endpoints reduce spatial inconsistency. Purposive route selection and a short window limit generalisation, while repeated requests on one route remain dependent. ORS supplies a control without live traffic; Google uses a traffic-aware request preference. This contrast measures disagreement between complete service outputs, not the isolated causal effect of traffic.' if followup else 'The approach is quantitative secondary-data analysis using repeated observations. Researchers select requests but do not manipulate road conditions, allocate traffic treatments or recruit drivers. It is therefore an observational comparison, not an experiment. Repeated endpoints reduce spatial inconsistency and make variation auditable. However, purposive route selection and a short observation window limit generalisation. Repeated requests on one route are dependent; their number cannot be treated as the number of independent roads. ORS offers a practical control for the collection workflow but lacks the live-traffic signal required by the main question.')
     w.table(['Dimension', 'Declared approach'], [['Data and purpose', 'Numerical API estimates; descriptive agreement planned; instrument feasibility observed'], ['Design', 'Observational repeated measures; secondary data; prospective paired comparison'], ['Strength', 'Fixed OD identifiers, timestamps and preserved failures support reproduction'], ['Weakness', 'No ground truth; proprietary provider behavior; dependent routes and short duration']], [3.4, 13.6])
     w.h('T3 Concept table')
     w.table(['Concept', 'Operational definition', 'Measure and unit'], [['Travel-time disagreement', 'For paired estimates A and B, d=A−B and m=(A+B)/2', 'd and |d| in seconds; 100d/m and 100|d|/m in percent'], ['Traffic period', 'Classify request timestamp in Asia/Almaty; start included, end excluded', 'Nominal: peak, offpeak, other'], ['Route comparability', '100|LA−LB|/((LA+LB)/2) ≤ 5; length proxy only', 'Ratio: percent; nominal: comparable yes/no'], ['Instrument reliability', 'Valid route responses and elapsed request time', 'Ratio: success proportion, latency seconds']], [3.1, 8.8, 5.1])
     w.h('T4 What exactly was observed')
-    w.table(['Observation element', 'Entry'], [['Unit', 'One provider response for a fixed OD pair at a recorded request start'], ['Observed', 'ORS estimate, distance, geometry, status, timestamps and elapsed request time'], ['Not observed', 'Actual trips, driver behavior, live traffic or TomTom–2GIS disagreement'], ['Comparison unit planned', 'Same route and cycle, provider request starts ≤ 60 seconds apart; same period and date']], [4.3, 12.7])
+    w.table(['Observation element', 'Entry'], [['Unit', 'One provider response for a fixed OD pair at a recorded request start'], ['Observed', 'ORS estimate, distance, geometry, status, timestamps and elapsed request time' + ('; separate aggregate Google–ORS disagreement' if exploratory else '')], ['Not observed', 'Actual trips, driver behavior, independently measured traffic conditions or TomTom–2GIS disagreement'], ['Comparison unit planned', 'Same route and cycle, provider request starts ≤ 60 seconds apart; same period and date']], [4.3, 12.7])
     w.h('T5 Define your Research strategy')
-    w.p('The strategy is a bounded Astana case study with purposive sampling of public arterial corridors and landmarks. Common endpoints specify the requested journey rather than forcing a common returned path. A practical consequence is that analysis must preserve both all eligible pairs and a length-comparable subset. Similar distance alone cannot prove street-level equivalence. The design therefore keeps geometry where its licence permits, records route definitions separately, and avoids interpreting differences as provider error. The instrument phase can proceed independently without changing the predeclared traffic hypotheses.')
+    w.p('The strategy is a bounded Astana case study with purposive sampling of public arterial corridors and landmarks. Common endpoints specify a requested journey, not a common returned path. Similar distance cannot prove street-level equivalence. The initial design planned pair-level sensitivity analysis; the amended protocol instead reports aggregate disagreement and the proportion of lengths within five percent of the pair mean. Permitted ORS geometry remains available, while Google individual outputs are transient. Differences cannot be interpreted as provider error.' if followup else 'The strategy is a bounded Astana case study with purposive sampling of public arterial corridors and landmarks. Common endpoints specify the requested journey rather than forcing a common returned path. A practical consequence is that analysis must preserve both all eligible pairs and a length-comparable subset. Similar distance alone cannot prove street-level equivalence. The design therefore keeps geometry where its licence permits, records route definitions separately, and avoids interpreting differences as provider error. The instrument phase can proceed independently without changing the predeclared traffic hypotheses.')
     w.h('T6 Define sample, dataset or cases')
-    w.table(['Item', 'Entry'], [['Population or case set', 'Fixed public OD pairs on selected Astana arterial corridors; not all city trips'], ['Planned sample', f'{len(routes)} routes; {config["pilot_cycles"]} full pilot cycles; {config["planned_scheduled_requests_per_provider"]} nominal scheduled ORS requests'], ['Achieved snapshot', f'{summary["n_raw_rows"]} raw rows; {summary["n_unique_requests"]} unique requests; {summary["n_usable_observations"]} usable observations; {summary["n_primary_pairs"]} primary pairs'], ['Selection strategy', 'Purposive route and endpoint selection against public-road and corridor criteria'], ['Source', public('data/routes.csv') + '\n' + tree('data/sources')]], [4.1, 12.9])
+    w.table(['Item', 'Entry'], [['Population or case set', 'Fixed public OD pairs on selected Astana arterial corridors; not all city trips'], ['Planned sample', f'{len(routes)} routes; {config["pilot_cycles"]} full pilot cycles; {config["planned_scheduled_requests_per_provider"]} nominal scheduled ORS requests'], ['Achieved ORS snapshot', f'{summary["n_raw_rows"]} raw rows; {summary["n_unique_requests"]} unique requests; {summary["n_usable_observations"]} usable observations; {summary["n_primary_pairs"]} initial TomTom–2GIS pairs'], ['Selection strategy', 'Purposive route and endpoint selection against public-road and corridor criteria'], ['Source', public('data/routes.csv') + '\n' + tree('data/sources')]], [4.1, 12.9])
     w.p('Coordinates were fixed before research collection using public OpenStreetMap endpoint records. Reverse directions are distinct cases because access and road direction can differ. The expected-length column is a spherical straight-line lower bound, not a measured driving distance. It supports a geographic plausibility check and must not be substituted for the returned route length. The sample contains named corridors rather than personal origins. Selection does not give every Astana journey a known probability of inclusion, so the intended conclusions remain conditional on these cases.')
+    if followup:
+        window_rows = []
+        for window in followup['windows']:
+            window_start = datetime.fromisoformat(window['start_utc']).astimezone(ZoneInfo(followup['timezone']))
+            window_end = datetime.fromisoformat(window['end_utc']).astimezone(ZoneInfo(followup['timezone']))
+            window_rows.append([window_start.strftime('%d %b %Y'), window_start.strftime('%H:%M') + '–' + window_end.strftime('%H:%M'), window['period'], str(followup['routes_per_window'])])
+        w.table(['Amended Google–ORS date', 'Local eligibility window', 'Period', 'Planned pairs'], window_rows, [4.5, 5.5, 4, 3])
+        w.p(f'One prospective batch of {followup["routes_per_window"]} pairs is eligible in each window, at the first available worker check; the total cap is {followup["future_google_request_budget"]} further Google requests. Actual timestamps determine coverage. Missed windows are not backfilled. Planning a batch does not count it as observed; actual counts appear in Segment 4.', count=False)
+        w.p('Amended protocol and storage rules: ' + public('docs/google_followup_protocol.json'), count=False)
     w.h('T7 Procedure actually followed')
-    w.p(f'First, the team reviewed the earlier assignments, checked credential access with public example coordinates and separated those tests from research data. Second, it inspected provider documentation and publication terms. This led to disabling the traffic-provider adapters before the research collection. Third, route definitions, period rules and expectations were fixed on {expected["fixed_date"]}. Fourth, the ORS collector recorded the pilot requests using a schema that also records unsuccessful attempts. Fifth, the processing script produced an audited working file, coverage tables and the original figures below. The journal identifies the operator and any later changes.')
+    w.p(f'First, the team reviewed earlier assignments and separated credential checks from research data. Second, it inspected documentation and publication terms, then disabled the original TomTom and 2GIS adapters. Third, route definitions, period rules and expectations were fixed on {expected["fixed_date"]}. Fourth, the ORS collector recorded pilot requests and unsuccessful attempts. Fifth, processing produced an audited working file, coverage tables and original figures. The journal identifies the operator and later changes.')
     w.p(f'The pilot plan uses {config["pilot_cycles"]} complete cycles with {config["pilot_pause_seconds"]} seconds between the end of one cycle and the next. The scheduled plan rotates {config["routes_per_scheduled_run"]} routes every {config["scheduled_interval_minutes"]} minutes within a bounded {config["collection_hours"]}-hour window. Each route therefore has a nominal {config["scheduled_interval_minutes"]*len(routes)//config["routes_per_scheduled_run"]}-minute revisit. Scheduler delays remain visible through actual request times. No past observation is backfilled. Reproduction uses the versioned configuration and dependency file; Python {summary["versions"]["python"]} processed this snapshot. A future provider pair must use the same endpoints, car mode and closely aligned request starts.')
     for index, entry in enumerate(figures, 1):
-        w.figure(root, entry, index)
+        if entry.get('category') != 'exploratory':
+            w.figure(root, entry, index)
+    if exploratory:
+        ep = exploratory['protocol']; em = exploratory['metrics']
+        local_start, start_period = local_period(em['start_utc'], config)
+        local_end, end_period = local_period(em['end_utc'], config)
+        period_note = start_period if start_period == end_period else f'{start_period} to {end_period}'
+        w.p(f'A separate protocol was recorded at {ep["registered_at_utc"]}, after a successful Google Demo credential check and before the exploratory cycle. It paired the same public endpoints with Google {ep["google_routing_preference"]} and the ORS control. Requests ran concurrently, with a maximum permitted start gap of {ep["pair_max_start_gap_seconds"]} seconds. The bounded cycle is descriptive; its {exploratory["n_valid_pairs"]} valid pairs are separate from the {summary["n_raw_rows"]}-record ORS snapshot and do not enter the primary expected-results tests.')
+        w.p(f'Local cycle: {local_start:%d %B %Y %H:%M:%S} to {local_end:%H:%M:%S} ({config["timezone"]}); classified period: {period_note}.', count=False)
+        w.table(['Exploratory aggregate', 'Recorded result'], [
+            ['Attempted / valid pairs', f'{exploratory["n_attempted_pairs"]} / {exploratory["n_valid_pairs"]}; successful Google responses {em["n_google_ok"]}, ORS responses {em["n_ors_ok"]}'],
+            ['Cycle interval (UTC)', em['start_utc'] + '\nto ' + em['end_utc']],
+            ['Largest request-start gap', number(em['max_request_start_gap_s'], 3) + ' s'],
+            ['Median signed / absolute difference', number(em['median_signed_difference_s']) + ' / ' + number(em['median_absolute_difference_s']) + ' s; signed = Google minus ORS'],
+            ['MAE / RMSE as disagreement', number(em['mae_s']) + ' / ' + number(em['rmse_s']) + ' s'],
+            ['Mean symmetric absolute difference', number(em['smape_pct']) + '%'],
+            ['IQR of signed differences', number(em['iqr_signed_difference_s']) + ' s'],
+            ['Lengths within 5% of pair mean', str(em['n_length_comparable']) + ' pairs (' + number(em['length_comparable_pct']) + '%); not proof of identical paths'],
+        ], [6, 11])
+        w.p('Protocol: ' + public('docs/google_control_protocol.json') + '\nAggregate evidence: ' + public('results/google_control_benchmark.csv'), count=False)
+        for index, entry in enumerate(figures, 1):
+            if entry.get('category') == 'exploratory':
+                w.figure(root, entry, index)
     w.h('T8 Ethics, privacy and data handling')
     w.p('No human participant supplies a personal journey or identity, so participant consent is not applicable to this public-coordinate instrument. API access still has contractual conditions. Technical success was insufficient to authorize a public comparison: TomTom requires written approval for benchmarking, while the applicable 2GIS Kazakhstan demo redistribution terms remain unresolved. ORS results are shared under current CC BY-SA terms with attribution. Secrets remain outside version control. The team retains failed requests and exclusion reasons to make limitations visible, while avoiding account identifiers and credential-bearing URLs in public evidence.')
+    if exploratory:
+        w.p('Google terms address publication of comparative-test results in section 3.2.4 and separately restrict storage of Maps content in section 3.2.3. The exploratory protocol therefore processes Google values transiently and publishes original aggregate metrics, status records and request methods. Individual Google estimates and geometry are not retained. Those aggregates cannot be recalculated from saved Google responses; repeating the protocol samples new live outputs.')
     w.table(['Item', 'Entry'], [['Consent', 'Not applicable: no recruited people or personal journeys'], ['Anonymization', 'Public route identifiers only; no individual tracks'], ['Not collected', 'Names of drivers, home addresses, device identifiers or actual travel histories'], ['Storage, access and retention', 'Private local secrets; public licensed research files and code. Public links must remain available through exam weeks.'], ['Accepted risk', 'Model estimates may be incomplete or inconsistent; records describe agreement and instrument behavior, not navigation advice']], [4.4, 12.6])
     w.h('T9 Expected Results')
     w.p('The expectation record is fixed before the first research observation. Earlier credential checks established access only and did not supply Astana outcomes. Expectations about provider disagreement remain unchanged when collection becomes restricted. Instrument expectations are separately falsifiable through valid-response counts, latency and route coverage. The six scenarios describe possible outcomes rather than simulated findings. A later amendment must carry its own date and reason; it cannot silently replace the existing thresholds after results become visible. Objectives retain the earlier project sequence, which Assignment 2 did not separately renumber.')
+    if followup:
+        w.p('The table below preserves the original expected-results wording. ER1–ER4 concern the initial TomTom–2GIS design and are not directly tested by Google–ORS control data. ER5–ER8 still describe the recorded ORS instrument. The dated amendment gives a separate descriptive expectation: ' + followup['hypothesis'], count=False)
     w.table(['No.', 'Expected result', 'Objective', 'Falsification', 'Confidence and reason'], [[e['id'], e['expectation'], e['objective'], e['falsification'], e['confidence']] for e in expected['expected_results']], [1, 5.4, 2.5, 3.8, 4.3])
     w.table(['Outcome', 'Possible scenario'], [[s['level'], s['description']] for s in expected['scenarios']], [2.5, 14.5])
     w.p(f'Fixed date: {expected["fixed_date"]}. Timestamp: {expected["fixed_at_utc"]}. Expected-results file SHA-256: {prereg_sha}. Preregistration commit: b4614355903efdc800f870d2678d2416e0490f81.', count=False)
     w.h('T10 State your method-related expectations')
-    w.table(['Method', 'Declaration before analysis'], [['Data analytics / secondary data', 'Primary expectation: larger median absolute disagreement during evening peak. Instrument expectations: <2% invalid routes, ≥95% requests within 10 s, all 20 pilot routes represented. Missing optional baselines, failed responses, duplicates and implausible implied speeds are recorded. API agreement cannot establish actual travel-time accuracy.']], [4.3, 12.7])
+    method_expectation = 'Current descriptive expectation: larger per-window median absolute Google–ORS disagreement during peak; the initial 1.5 ratio is a prospective reference, not a rewritten ER. No route/day significance test is supported by aggregate-only Google retention. ' if followup else 'Primary expectation: larger median absolute disagreement during evening peak. '
+    method_expectation += 'Instrument expectations: <2% invalid routes, ≥95% requests within 10 s, all 20 pilot routes represented. Missing optional baselines, failed responses, duplicates and implausible implied speeds are recorded. API agreement cannot establish actual travel-time accuracy.'
+    w.table(['Method', 'Declaration before analysis'], [['Data analytics / secondary data', method_expectation]], [4.3, 12.7])
 
     w.h('Segment 2. Data Collection Instrument', 1)
     w.h('T1 Provenance information')
@@ -386,17 +501,24 @@ def build(root, output):
     w.p('This is an original study informed by earlier methods, rather than a full or partial replication of one published protocol. The team combines its question, route set, collection controls and evidence pipeline. No paper supplies an exact template whose result is being reproduced. Derrow-Pinion et al. (2021) and Soon et al. (2023) provide forecasting context, not evidence that the reviewed providers deploy identical algorithms. The ten-paper Assignment 2 corpus is retained so that design provenance remains traceable without claiming implementation details that those sources do not establish.')
     w.table(['Declaration', 'What was developed'], [['Original study', 'Astana question, purposive sample, auditable collection instrument and descriptive analysis. No single published study was used as the replication template.']], [3.4, 13.6])
     w.h('T3 Your research is original study')
-    w.table(['Element', 'Entry'], [['Question or hypothesis', config['rq'] + '\nH1: ' + config['hypothesis_h1'] + '\nH0: ' + config['hypothesis_h0']], ['Methodology and design', 'Observational repeated secondary-data comparison; ORS-only instrument pilot executed'], ['Population, sample and size', f'{len(routes)} fixed Astana OD routes; {len(ors_rows)} unique ORS requests at snapshot'], ['Instrument', 'Versioned collector, route CSV, configuration and raw request records'], ['Technical procedure', 'HTTP requests with timeout and no redirects; recorded errors; immutable raw inputs'], ['Analysis', 'Validation, missingness and descriptive instrument summaries; paired metrics defined prospectively'], ['Main reported result', f'{len(usable)} usable ORS observations; primary traffic comparison not performed']], [4.3, 12.7])
+    question_declaration = current_rq + '\nDescriptive expectation: ' + followup['hypothesis'] if followup else config['rq'] + '\nH1: ' + config['hypothesis_h1'] + '\nH0: ' + config['hypothesis_h0']
+    analysis_declaration = 'ORS validation and missingness; descriptive per-window Google–ORS aggregate comparisons; no route/day inference from aggregate-only results' if followup else 'Validation, missingness and descriptive instrument summaries; primary paired metrics defined prospectively'
+    w.table(['Element', 'Entry'], [['Question or hypothesis', question_declaration], ['Methodology and design', 'Observational repeated secondary-data comparison; ORS instrument pilot executed' + ('; separate bounded Google–ORS exploratory test' if exploratory else '')], ['Population, sample and size', f'{len(routes)} fixed Astana OD routes; {len(ors_rows)} unique ORS requests at snapshot' + (f'; {exploratory["n_valid_pairs"]} separate exploratory pairs' if exploratory else '')], ['Instrument', 'Versioned collector, route CSV, configuration and raw request records'], ['Technical procedure', 'HTTP requests with timeout and no redirects; recorded errors; immutable licensed raw inputs'], ['Analysis', analysis_declaration], ['Main reported result', f'{len(usable)} usable ORS observations; initial TomTom–2GIS comparison not performed' + ('; separate exploratory aggregate disagreement reported in Segment 1 T7' if exploratory else '')]], [4.3, 12.7])
     w.h('T4 Your research is partial replication')
     w.p('Not applicable. No partial-replication claim is made; adaptations are declared in the provenance table.', count=False)
 
     w.h('Segment 3. Research Evidence', 1)
     w.h('T1 Instrument register')
-    w.table(['Instrument', 'Platform', 'Collects or defines', 'Public link'], [['Collector', 'Python CLI', 'Estimates, geometry, status and timing', public('collector/collect.py')], ['Route register', 'CSV', 'Fixed OD coordinates and source links', public('data/routes.csv')], ['Scheduled workflow', 'GitHub Actions', 'Bounded recurring collection and logs', tree('.github/workflows')], ['Processing', 'Python', 'Audited observations and descriptive summaries', public('analysis/process.py')]], [2.3, 2.3, 4.1, 8.3])
+    instruments = [['ORS collector', 'Python CLI', 'Licensed estimates, geometry, status and timing', public('collector/collect.py')], ['Route register', 'CSV', 'Fixed OD coordinates and source links', public('data/routes.csv')], ['Scheduled workflow', 'GitHub Actions', 'Bounded recurring collection and logs', tree('.github/workflows')], ['Processing', 'Python', 'Audited ORS observations and descriptive summaries', public('analysis/process.py')]]
+    if followup:
+        instruments.append(['Google–ORS follow-up', 'Python / Actions', 'One bounded batch per window; aggregate metrics and request status', public('collector/google_followup.py')])
+    w.table(['Instrument', 'Platform', 'Collects or defines', 'Public link'], instruments, [2.3, 2.3, 4.1, 8.3])
     w.h('T2 Log journal and data storage')
     w.p('The storage layout separates original records from the working copy used for interpretation. Raw CSV rows retain source files and request identifiers; processing adds validation decisions instead of overwriting observations. A version manifest records input hashes and software versions. This makes a later report reproducible even when new scheduled records arrive. The research journal records what was done, by whom, what failed and what changed. The current report is a dated snapshot, while the processed observations and documented procedures form the evidence base for Assignment 4.')
     if (root / 'docs/reproduce_report.md').is_file():
         w.p('Exact snapshot reproduction uses frozen inputs rather than later arriving raw files. Follow the saved instructions and input hashes at ' + public('docs/reproduce_report.md'), count=False)
+    if exploratory:
+        w.p('The frozen ORS analysis remains independently recalculable. The separate exploratory archive contains Google request status and timestamps, ORS responses and original aggregate metrics. Its Google numerical inputs are intentionally absent, so its aggregate recalculation has a different reproducibility limit.', count=False)
     w.table(['Item', 'Location and purpose'], [['Research journal', public('docs/research_log.md')], ['Raw data', tree('data/raw') + '\nOriginal CSV plus licensed ORS response and geometry files'], ['Working copy', public('results/observations.csv') + '\nAudited observations; raw values retained'], ['Version record', public('results/version_manifest.json')], ['Public repository', repo], ['Cloud folder', config['drive_url'] + '\n' + drive_status]], [3.3, 13.7])
     w.h('T3 Artefacts you developed')
     w.table(['Artefact', 'Study role', 'Public link', 'Evidence'], [['Collector and pilot runner', 'Execute fixed requests and preserve failures', tree('collector'), 'Raw files and research journal'], ['Analysis and figures', 'Audit data and generate original evidence', tree('analysis'), 'Results CSV and numbered figures'], ['Report builder', 'Bind narrative to a reproducible snapshot', public('report/build_report.py'), 'Report snapshot and word count'], ['Protocol and expectations', 'Record rules fixed before research collection', tree('docs'), 'Timestamp, file hash and preregistration commit']], [2.7, 4.3, 6.5, 3.5])
@@ -404,7 +526,9 @@ def build(root, output):
     w.p('The selected method is Data analytics / secondary data, so Block E applies. Technical execution supports extraction; it does not turn this study into model training or an experimental treatment comparison.', count=False)
     w.h('E.0 Requirements', 3)
     w.p('For a conceptual road graph G=(V,E) at a fixed traffic snapshot, path cost is T(P,t)=Σ w_e(t), summed over edges e in P; each weight is in seconds. Route selection seeks a permitted low-cost path. This abstraction explains why endpoints alone do not determine an estimate: road access, path choice and time weights may differ. It does not identify TomTom or 2GIS source code. ORS documentation describes a speed model based on mapped road properties; its public service does not supply live traffic. The study evaluates returned quantities without reverse-engineering a proprietary solver.')
-    w.p('For an eligible pair, signed difference is A minus B and absolute difference removes its direction. MAE averages absolute differences, whereas RMSE gives larger differences greater influence. Relative difference uses the pair mean as denominator, avoiding a claim that either provider is the reference truth. Quartiles describe spread. Planned uncertainty procedures preserve route clusters rather than treating repeated requests as independent. The pilot receives descriptive summaries only. With no primary pairs, disagreement statistics and peak contrasts remain unestimated, rather than being filled with zeros or inferred from ORS variability.')
+    metrics_prose = 'For an eligible pair, signed difference is A minus B and absolute difference removes its direction. MAE averages absolute differences, whereas RMSE gives larger differences greater influence. Relative difference uses the pair mean as denominator, avoiding a claim that either provider is the reference truth. Quartiles describe spread. '
+    metrics_prose += 'The initial design specified route-cluster uncertainty procedures. The amended design retains only Google aggregates and therefore compares dated window summaries descriptively; it cannot reproduce the original route-by-day Wilcoxon analysis. A hundred planned requests do not become a hundred independent cases. The current other-period pilot supplies no peak-versus-off-peak contrast.' if followup else 'Planned uncertainty procedures preserve route clusters rather than treating repeated requests as independent. The pilot receives descriptive summaries only. With no primary pairs, primary disagreement statistics and peak contrasts remain unestimated, rather than being filled with zeros or inferred from ORS variability.'
+    w.p(metrics_prose)
     w.table(['Quantity', 'Definition', 'Interpretation'], [['Signed difference', 'd=A−B; seconds', 'Positive means A gives the longer estimate'], ['Absolute difference and MAE', '|d|; MAE=Σ|d|/n', 'Magnitude and average magnitude of disagreement'], ['RMSE', 'sqrt(Σd²/n); seconds', 'Quadratic summary sensitive to large differences'], ['Relative difference / sMAPE', '100d/m; 100|d|/m; m=(A+B)/2', 'Symmetric percentage disagreement'], ['IQR', 'Q3−Q1; linear-interpolated sample quartiles', 'Spread of the stated distribution'], ['Length comparison', '100|LA−LB|/((LA+LB)/2)', '≤5% length agreement is not geometric identity']], [4.2, 6.1, 6.7])
     collector_text = (root / 'collector/collect.py').read_text(encoding='utf-8')
     snippet_start = collector_text.index("    if provider=='ors':", collector_text.index('def extract('))
@@ -414,16 +538,23 @@ def build(root, output):
     p = w.doc.add_paragraph(); p.paragraph_format.space_after = Pt(8)
     r = p.add_run(snippet); r.font.name = 'Consolas'; r.font.size = Pt(9)
     w.h('E.1 Source register', 3)
-    w.table(['Source', 'Owner', 'Access date', 'Version', 'Licence / scope', 'Full URL'], [['ORS results', 'HeiGIT', ACCESS, 'Directions v2; build metadata in saved response', 'CC BY-SA 4.0; attribution; active instrument', 'https://account.heigit.org/info/tos'], ['Endpoint facts', 'OpenStreetMap contributors', ACCESS, 'Saved Overpass extract and manifest', 'ODbL; public geographic data', 'https://www.openstreetmap.org/copyright'], ['TomTom docs', 'TomTom', ACCESS, 'Routing v1', 'Documentation only; comparison/storage blocked', 'https://docs.tomtom.com/legal/terms-and-conditions'], ['2GIS docs', '2GIS', ACCESS, 'Routing 7.0.0 global', 'Documentation only; applicable demo rights unresolved', 'https://docs.2gis.com/en/api/navigation/routing/overview'], ['Study records', 'Project team', ACCESS, summary['generated_at_utc'], 'Derived ORS outputs retain CC BY-SA attribution', tree('data')]], [2, 2, 1.8, 3, 4, 4.2])
+    sources = [['ORS results', 'HeiGIT', ACCESS, 'Directions v2; build metadata in saved response', 'CC BY-SA 4.0; attribution; active instrument', 'https://account.heigit.org/info/tos'], ['Endpoint facts', 'OpenStreetMap contributors', ACCESS, 'Saved Overpass extract and manifest', 'ODbL; public geographic data', 'https://www.openstreetmap.org/copyright'], ['TomTom docs', 'TomTom', ACCESS, 'Routing v1', 'Documentation only; comparison/storage blocked', 'https://docs.tomtom.com/legal/terms-and-conditions'], ['2GIS docs', '2GIS', ACCESS, 'Routing 7.0.0 global', 'Documentation only; applicable demo rights unresolved', 'https://docs.2gis.com/en/api/navigation/routing/overview'], ['Study records', 'Project team', ACCESS, summary['generated_at_utc'], 'Derived ORS outputs retain CC BY-SA attribution', tree('data')]]
+    if exploratory:
+        sources.append(['Google test', 'Google / project team', ACCESS, 'Routes v2; Demo key', 'Original benchmark aggregates only; no saved Google response values', 'https://cloud.google.com/maps-platform/terms'])
+    w.table(['Source', 'Owner', 'Access date', 'Version', 'Licence / scope', 'Full URL'], sources, [2, 2, 1.8, 3, 4, 4.2])
     w.h('E.2 Data dictionary', 3)
     w.p('The dictionary distinguishes absent optional fields from missing measurements. An empty no-traffic duration is expected for ORS and is not replaced by a fabricated baseline. Empty error and exclusion fields indicate a successful unflagged record, not poor data quality. Missing counts use each named dataset as their denominator. A paired dataset with no records has no observed missingness percentage. The inventory includes every raw, audited and paired column generated by the processing script.', count=True)
     w.table(['Dataset / column', 'Type', 'Unit', 'Considered values or range', 'Missing count / %'], [[r['dataset'] + '\n' + r['column'], r['type'], r['unit'], r['considered_values_or_range'], f'{r["missing_count"]} / ' + (f'{r["missing_pct"]}%' if r['missing_pct'] != '' else 'N/A') + f' (n={r["n_rows"]})'] for r in dictionary], [4.4, 1.7, 2.3, 5.7, 2.9])
+    if exploratory:
+        w.p('The separate one-row aggregate CSV uses counts for attempted/successful/valid pairs and length-comparable pairs; seconds for request gaps and difference summaries; percentages for sMAPE and length comparability; UTC timestamps for cycle bounds; and a nominal cycle identifier. Its metric definitions are in the dated protocol and aggregate() function, outside the ORS observation dictionary.', count=False)
     w.h('E.3 Cleaning log', 3)
     w.table(['Step', 'Rule applied', 'Rows before / after', 'What it revealed'], [[r['step'], r['rule'], r['rows_before'] + ' / ' + r['rows_after'], r['finding'] + '\nAffected rows: ' + r['affected_rows']] for r in cleaning], [2.8, 6.9, 2.4, 4.9])
     w.h('E.4 Evidence to present', 3)
     w.table(['Evidence', 'Public location', 'Visible content'], [['Initial extract', tree('data/raw'), 'Original chronological request rows and licensed ORS responses'], ['Processed file', public('results/observations.csv'), 'Source links, values and validation decisions'], ['Codings', public('analysis/process.py'), 'Cleaning, grouping and metric definitions'], ['Figures', public('figures/analysis_manifest.json'), 'Input provenance and captions for original visual evidence']], [3.1, 8.4, 5.5])
     w.h('E.5 Describe the time or category coverage of the final dataset', 3)
-    w.p(f'The recorded request interval is {first} to {last} in UTC. Usable observations cover {len(local_dates)} local date(s): {", ".join(local_dates) or "none"}. Classification produces {periods["peak"]} peak, {periods["offpeak"]} off-peak and {periods["other"]} other-period observations. These are coverage counts for the instrument, not evidence of congestion. The period table retains phase and provider so pilot activity cannot masquerade as scheduled coverage. Absent primary pairs prevent any comparison between peak and off-peak disagreement, regardless of how many ORS timestamps exist.')
+    coverage_prose = f'The recorded ORS interval is {first} to {last} in UTC. Usable observations cover {len(local_dates)} local date(s): {", ".join(local_dates) or "none"}. Classification produces {periods["peak"]} peak, {periods["offpeak"]} off-peak and {periods["other"]} other-period observations. These are instrument coverage counts, not evidence of congestion. Phase and provider remain explicit so pilot activity cannot masquerade as scheduled coverage. '
+    coverage_prose += 'The separate Google–ORS exploratory cycle is also in the other period. Its pilot data and the amended window-level summary remain separate from this ORS table; actual follow-up coverage is reported in Segment 4.' if followup else 'Absent primary pairs prevent any comparison between peak and off-peak disagreement, regardless of how many ORS timestamps exist.'
+    w.p(coverage_prose)
     w.table(['Phase', 'Local date', 'Period', 'Provider', 'Usable observations'], [[r['phase'] + (' (manual workflow_dispatch verification)' if r['phase'] == 'scheduled' and manual_cloud_n == scheduled_n else ''), r['date_astana'], r['period'], r['provider'], r['n_usable']] for r in coverage], [3, 3.6, 3.5, 3.5, 3.4])
 
     w.h('Segment 4. Expected Against Observed. Preliminary comparison', 1)
@@ -432,12 +563,32 @@ def build(root, output):
     scheduled_display = f'{cron_n} verified cron; {manual_cloud_n} manual workflow_dispatch test records (phase: scheduled)'
     if scheduled_n > cron_n + manual_cloud_n:
         scheduled_display += f'; {scheduled_n-cron_n-manual_cloud_n} trigger unverified'
-    w.table(['Data to be collected', 'Planned', 'Collected at snapshot'], [['Route definitions', str(config['route_count']), str(len(routes))], ['ORS pilot requests', str(config['planned_pilot_requests_per_provider']), str(pilot_n)], ['ORS pilot routes with usable response', str(config['route_count']), str(valid_pilot_routes)], ['Scheduled ORS requests', str(config['planned_scheduled_requests_per_provider']) + ' nominal over 48 hours', scheduled_display], ['Primary traffic-provider pairs', 'Prospective; collection disabled pending permissions', str(summary['n_primary_pairs'])], ['Primary peak and off-peak coverage', 'Both required for H1', primary_period_text]], [5.8, 5.6, 5.6])
+    completion_rows = [['Route definitions', str(config['route_count']), str(len(routes))], ['ORS pilot requests', str(config['planned_pilot_requests_per_provider']), str(pilot_n)], ['ORS pilot routes with usable response', str(config['route_count']), str(valid_pilot_routes)], ['Scheduled ORS requests', str(config['planned_scheduled_requests_per_provider']) + ' nominal over 48 hours', scheduled_display], ['Initial TomTom–2GIS pairs', 'Unperformed; original permissions unresolved', str(summary['n_primary_pairs'])], ['Initial TomTom–2GIS period coverage', 'Both required for the original H1', primary_period_text]]
+    if followup:
+        followup_actual = f'{followup_summary["recorded_windows"]} recorded windows; {followup_summary["valid_windows"]} valid windows; {followup_summary["n_valid_pairs"]} pairs in valid windows' if followup_summary else 'Window summary not yet available'
+        completion_rows.append(['Amended Google–ORS follow-up', f'{len(followup["windows"])} windows; at most {followup["future_google_request_budget"]} pairs', followup_actual])
+    w.table(['Data to be collected', 'Planned', 'Collected at snapshot'], completion_rows, [5.8, 5.6, 5.6])
+    if followup and followup_summary:
+        w.table(['Amended period', 'Planned / recorded windows', 'Valid windows', 'Pairs in valid windows', 'Median of window median |d| (s)'], [[g['period'], str(g['planned_windows']) + ' / ' + str(g['recorded_windows']), str(g['valid_windows']), str(g['n_valid_pairs']), number(g['median_of_window_median_absolute_differences_s'])] for g in followup_summary['groups']], [2.5, 3.8, 2.7, 3.4, 4.6])
+        w.p('Follow-up summary timestamp: ' + followup_summary['generated_at_utc'] + '. Window summaries require at least five valid pairs. The period statistic is a median of window medians, not a pooled route-level median. Source: ' + public('results/google_followup_period_summary.csv'), count=False)
+        if all(g['valid_windows'] > 0 for g in followup_summary['groups']):
+            w.p('Descriptive peak minus off-peak difference between window-median summaries: ' + number(followup_summary['peak_minus_offpeak_window_median_s']) + ' s; peak/off-peak ratio: ' + number(followup_summary['peak_to_offpeak_window_median_ratio']) + '. No route/day significance test or causal interpretation is supported.', count=False)
+        else:
+            w.p('Peak/off-peak difference and ratio are not estimable until both periods have valid windows. No missing period is represented by zero.', count=False)
+    if exploratory:
+        w.p(f'Separate exploratory protocol: at most {exploratory["protocol"]["max_pairs"]} Google–ORS pairs planned; {exploratory["n_attempted_pairs"]} attempted and {exploratory["n_valid_pairs"]} valid. These are excluded from the completion counts and ER verdicts above.', count=False)
     w.h('T2 Comparison')
     w.table(['Expected result', 'What actual data shows', 'Verdict', 'Evidence location'], [[e['id'] + ': ' + e['expectation'], e['observed'], e['verdict'], e['evidence']] for e in er], [5.4, 5.2, 2.1, 4.3])
     w.h('T3 Answer in continuous text')
-    w.p('The first records test whether the instrument can produce traceable, usable data. They cannot answer the traffic-provider question. The no-traffic field is unavailable as a separate ORS measurement, and all primary disagreement measures lack an eligible provider pair. These are substantive limits of the available instrument, not evidence that traffic effects or provider differences are absent. Pilot success is assessed against the predeclared reliability expectations; it is not a conclusion that one route service is more accurate or that an observed estimate matches a real trip.')
-    w.p('Access and terms behaved differently from the initial assumption that a working key would be sufficient for research publication. The amendment on 24 October 2026 consequently restricted active collection to ORS and reduced the scheduled workload to rotating batches. The primary hypotheses, fixed endpoints, time classification and falsification thresholds remain unchanged. Any later traffic-provider collection requires documented permission and a dated activation decision. Earlier ORS observations will retain their control status. This preserves comparability of the instrument record while acknowledging that a permitted, paired traffic sample is still required before the main study can be interpreted.')
+    if followup:
+        period_readiness = 'Both periods have valid window summaries, so their contrast can be described without route/day inference.' if followup_summary and all(g['valid_windows'] > 0 for g in followup_summary['groups']) else 'The amended period contrast is not yet estimable because both periods do not have valid window summaries.'
+        w.p('The ORS records test extraction, completeness, timing and provenance against ER5–ER8. The separate Google–ORS pilot demonstrates measurable output disagreement, but all its pairs fall outside the defined peak and off-peak windows. ' + period_readiness + ' ER1–ER4 remain untested expectations for the initial TomTom–2GIS design. The absence of that comparison is not evidence of equal services, absent congestion or accurate journey prediction.')
+        w.p('Access and publication terms changed the feasible design. The main collector remains an ORS instrument, while the later approved protocol adds five bounded Google–ORS windows under aggregate-only retention. This is an explicit change of comparator and analysis, not a retrospective rewriting of the original expectations. The route set and period definitions remain fixed. Future interpretation will compare per-window summaries descriptively, retain actual dates and sample counts, and report missed windows instead of filling them.')
+    else:
+        w.p('The first records test whether the instrument can produce traceable, usable data. They cannot answer the traffic-provider question. The no-traffic field is unavailable as a separate ORS measurement, and all primary disagreement measures lack an eligible provider pair. These are substantive limits of the available instrument, not evidence that traffic effects or provider differences are absent. Pilot success is assessed against the predeclared reliability expectations; it is not a conclusion that one route service is more accurate or that an observed estimate matches a real trip.')
+        w.p('Access and terms behaved differently from the assumption that a working key would suffice for publication. The initial amendment on 24 October 2026 restricted the main collector to ORS and reduced its scheduled workload to rotating batches. The primary hypotheses, fixed endpoints, time classification and falsification thresholds remain unchanged. Earlier ORS observations retain their control status. A permitted TomTom–2GIS sample covering both periods is still required before the main study can be interpreted.')
+    if exploratory:
+        w.p(f'The dated Google pilot protocol produced {exploratory["n_valid_pairs"]} valid exploratory pairs. Its median Google-minus-ORS difference was {number(exploratory["metrics"]["median_signed_difference_s"])} seconds. This is disagreement under the chosen request settings, not measured error. Different paths, speed models and traffic inputs can all contribute; ORS is not a Google traffic-off counterfactual. One cycle cannot test a peak-versus-off-peak hypothesis. Retaining only aggregate Google results also prevents independent numerical reconstruction from saved responses. The bounded test is not a test of either the initial or amended period hypothesis.')
     w.p('The earlier literature supports this restraint. Bastarianto et al. (2025) and Valero et al. (2025) distinguish calculated from reported journeys; neither kind can simply be treated as error-free truth. Boeing and Zhou (2026) and Verma et al. (2025) demonstrate useful reference comparisons without removing that distinction. Mansurova et al. (2025) provide local bus data, but its mode and stopping behavior do not validate private-car estimates. Future interpretation must therefore separate model agreement, sampling coverage and independent journey validation instead of using one as a substitute for another.')
 
     w.h('References', 1)
@@ -459,6 +610,12 @@ def build(root, output):
         ('TomTom', 'Portal terms and conditions', 'https://docs.tomtom.com/legal/terms-and-conditions'),
         ('TomTom', 'Pricing', 'https://docs.tomtom.com/pricing'),
     ]
+    if exploratory:
+        official.extend([
+            ('Google', 'Google Maps Platform terms', 'https://cloud.google.com/maps-platform/terms'),
+            ('Google', 'Maps Platform Demo Project terms', 'https://cloud.google.com/terms/maps-platform/demo-project-terms'),
+            ('Google', 'Maps Demo Key', 'https://developers.google.com/maps/demo-key'),
+        ])
     for owner, title, url in official:
         bibliography.append(f'{owner} (2026) {title}. Available at: {url} (Accessed: {ACCESS}).')
     for citation in sorted(bibliography, key=str.casefold):
@@ -474,20 +631,25 @@ def build(root, output):
     output.parent.mkdir(parents=True, exist_ok=True)
     w.doc.core_properties.title = 'Assignment 3: Astana route-estimate instrument and methodology'
     w.doc.core_properties.author = config['authors']
-    w.doc.core_properties.subject = 'ORS instrument pilot; prospective traffic-provider comparison'
+    w.doc.core_properties.subject = 'Amended Google–ORS control comparison; executed instrument pilot' if followup else 'ORS instrument pilot; prospective primary comparison' + ('; separate Google–ORS exploratory comparison' if exploratory else '')
     w.doc.save(output)
     report_dir = root / 'report'; report_dir.mkdir(exist_ok=True)
     evidence_hashes = {path: digest(root / path) for path in required}
     snapshot = {'generated_at_utc': datetime.now(timezone.utc).isoformat(),
                 'analysis_snapshot_utc': summary['generated_at_utc'],
                 'report_file': output.name, 'report_sha256': digest(output),
-                'scope': 'ORS-only instrument pilot; primary comparison not performed',
+                'scope': 'Amended Google–ORS control design; follow-up status in separate window summary; initial TomTom–2GIS comparison unperformed' if followup else 'ORS instrument pilot; primary comparison not performed' + ('; separate Google–ORS exploratory comparison' if exploratory else ''),
+                'current_research_question': current_rq,
+                'initial_research_question': config['rq'],
+                'followup_protocol': followup,
+                'followup_summary': followup_summary,
                 'prose_word_count': prose_words,
                 'counting_rule': 'Only authored continuous-prose paragraphs; excludes identity, headings, RQ, tables, captions, code, references and links.',
                 'figure_count': len(w.figures), 'table_count': w.table_count,
                 'versions': {'python': sys.version.split()[0], 'python-docx': importlib.metadata.version('python-docx')},
                 'input_sha256': evidence_hashes, 'figures': w.figures,
                 'expected_results_comparison': er, 'summary': summary,
+                'exploratory_comparison': exploratory,
                 'validation': {'visual_render_review': 'pending separate render review', 'references': len(refs)}}
     (report_dir / 'report_snapshot.json').write_text(json.dumps(snapshot, ensure_ascii=False, indent=2), encoding='utf-8')
     (report_dir / 'report_prose.txt').write_text('\n\n'.join(w.prose), encoding='utf-8')

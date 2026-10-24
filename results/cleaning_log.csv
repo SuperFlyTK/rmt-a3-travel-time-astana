@@ -1,16 +1,16 @@
 step,rule,rows_before,rows_after,affected_rows,finding
-0,Read all top-level raw CSV files; originals unchanged,64,64,0,All exclusions remain visible in observations.csv
-1,exact_duplicate,64,64,0,0 flagged; 0 newly excluded from usable observations
-2,conflicting_duplicate_identity,64,64,0,0 flagged; 0 newly excluded from usable observations
-3,duplicate_request_id,64,64,0,0 flagged; 0 newly excluded from usable observations
-4,invalid_timestamp,64,64,0,0 flagged; 0 newly excluded from usable observations
-5,timestamp_disagreement,64,64,0,0 flagged; 0 newly excluded from usable observations
-6,unknown_provider,64,64,0,0 flagged; 0 newly excluded from usable observations
-7,missing_identity,64,64,0,0 flagged; 0 newly excluded from usable observations
-8,unknown_phase,64,64,0,0 flagged; 0 newly excluded from usable observations
-9,request_failed,64,64,0,0 flagged; 0 newly excluded from usable observations
-10,invalid_duration,64,64,0,0 flagged; 0 newly excluded from usable observations
-11,invalid_distance,64,64,0,0 flagged; 0 newly excluded from usable observations
-12,speed_outside_2_200_kmh,64,64,0,0 flagged; 0 newly excluded from usable observations
-13,invalid_latency,64,64,0,0 flagged; 0 newly excluded from usable observations
-14,Optional no-traffic duration must be positive and finite when supplied,64,64,0,Baseline is not used in paired agreement metrics; raw value retained
+0,Read all top-level raw CSV files; originals unchanged,68,68,0,All exclusions remain visible in observations.csv
+1,exact_duplicate,68,68,0,0 flagged; 0 newly excluded from usable observations
+2,conflicting_duplicate_identity,68,68,0,0 flagged; 0 newly excluded from usable observations
+3,duplicate_request_id,68,68,0,0 flagged; 0 newly excluded from usable observations
+4,invalid_timestamp,68,68,0,0 flagged; 0 newly excluded from usable observations
+5,timestamp_disagreement,68,68,0,0 flagged; 0 newly excluded from usable observations
+6,unknown_provider,68,68,0,0 flagged; 0 newly excluded from usable observations
+7,missing_identity,68,68,0,0 flagged; 0 newly excluded from usable observations
+8,unknown_phase,68,68,0,0 flagged; 0 newly excluded from usable observations
+9,request_failed,68,68,0,0 flagged; 0 newly excluded from usable observations
+10,invalid_duration,68,68,0,0 flagged; 0 newly excluded from usable observations
+11,invalid_distance,68,68,0,0 flagged; 0 newly excluded from usable observations
+12,speed_outside_2_200_kmh,68,68,0,0 flagged; 0 newly excluded from usable observations
+13,invalid_latency,68,68,0,0 flagged; 0 newly excluded from usable observations
+14,Optional no-traffic duration must be positive and finite when supplied,68,68,0,Baseline is not used in paired agreement metrics; raw value retained

@@ -1,0 +1,23 @@
+{
+  "checked_at_utc": "2026-10-24T11:13:48.793057+00:00",
+  "runs": [
+    {
+      "conclusion": "success",
+      "createdAt": "2026-10-24T07:50:02Z",
+      "databaseId": 40075684304,
+      "event": "schedule",
+      "status": "completed",
+      "url": "https://github.com/SuperFlyTK/rmt-a3-travel-time-astana/actions/runs/40075684304",
+      "workflowName": "Collect Astana route observations"
+    },
+    {
+      "conclusion": "success",
+      "createdAt": "2026-10-24T02:51:30Z",
+      "databaseId": 40055914780,
+      "event": "workflow_dispatch",
+      "status": "completed",
+      "url": "https://github.com/SuperFlyTK/rmt-a3-travel-time-astana/actions/runs/40055914780",
+      "workflowName": "Collect Astana route observations"
+    }
+  ]
+}

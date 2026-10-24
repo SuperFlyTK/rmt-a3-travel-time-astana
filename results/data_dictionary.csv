@@ -1,44 +1,44 @@
 dataset,column,type,unit,considered_values_or_range,n_rows,missing_count,missing_pct
-raw,timestamp_utc,interval,ISO 8601 UTC,Timezone-aware request start,64,0,0.0
-raw,timestamp_astana,interval,ISO 8601 Asia/Almaty,Same instant in Astana; UTC+05 for study dates,64,0,0.0
-raw,cycle_id,nominal,identifier,One collection cycle,64,0,0.0
-raw,route_id,nominal,identifier,Fixed OD route register,64,0,0.0
-raw,provider,nominal,category,tomtom | dgis | ors,64,0,0.0
-raw,duration_s,ratio,seconds,>0 finite; estimated travel time,64,0,0.0
-raw,duration_no_traffic_s,ratio,seconds,">0 finite when returned; provider-specific baseline, not interchangeable",64,64,100.0
-raw,distance_m,ratio,metres,>0 finite; provider returned route length,64,0,0.0
-raw,status,nominal,category,ok | http_error | transport_error | invalid_response,64,0,0.0
-raw,http_code,nominal,HTTP status,100..599 or missing if transport failed,64,0,0.0
-raw,error,nominal,text,Sanitized collector error; blank on success,64,64,100.0
-raw,request_id,nominal,identifier,Unique collector request ID,64,0,0.0
-raw,latency_s,ratio,seconds,>=0 finite,64,0,0.0
-raw,geometry_file,nominal,relative path,"Saved geometry; optional, absence not a synthetic geometry",64,0,0.0
-raw,raw_file,nominal,relative path,Saved sanitized provider response,64,0,0.0
-raw,phase,nominal,category,pilot | scheduled | manual,64,0,0.0
-observations,timestamp_utc,interval,ISO 8601 UTC,Timezone-aware request start,64,0,0.0
-observations,timestamp_astana,interval,ISO 8601 Asia/Almaty,Same instant in Astana; UTC+05 for study dates,64,0,0.0
-observations,cycle_id,nominal,identifier,One collection cycle,64,0,0.0
-observations,route_id,nominal,identifier,Fixed OD route register,64,0,0.0
-observations,provider,nominal,category,tomtom | dgis | ors,64,0,0.0
-observations,duration_s,ratio,seconds,>0 finite; estimated travel time,64,0,0.0
-observations,duration_no_traffic_s,ratio,seconds,">0 finite when returned; provider-specific baseline, not interchangeable",64,64,100.0
-observations,distance_m,ratio,metres,>0 finite; provider returned route length,64,0,0.0
-observations,status,nominal,category,ok | http_error | transport_error | invalid_response,64,0,0.0
-observations,http_code,nominal,HTTP status,100..599 or missing if transport failed,64,0,0.0
-observations,error,nominal,text,Sanitized collector error; blank on success,64,64,100.0
-observations,request_id,nominal,identifier,Unique collector request ID,64,0,0.0
-observations,latency_s,ratio,seconds,>=0 finite,64,0,0.0
-observations,geometry_file,nominal,relative path,"Saved geometry; optional, absence not a synthetic geometry",64,0,0.0
-observations,raw_file,nominal,relative path,Saved sanitized provider response,64,0,0.0
-observations,phase,nominal,category,pilot | scheduled | manual,64,0,0.0
-observations,source_file,nominal,path,"Actual input CSV, repository-relative when inside the root",64,0,0.0
-observations,source_line,ratio,line,">=2, header is line 1",64,0,0.0
-observations,period,nominal,category,"peak [17:30,19:30); offpeak [10:00,12:00) or [22:00,24:00); other",64,0,0.0
-observations,date_astana,interval,local date,Calendar date in Asia/Almaty,64,0,0.0
-observations,speed_kmh,ratio,km/h,distance_m/duration_s*3.6; valid 2..200 inclusive,64,0,0.0
-observations,usable,nominal,boolean,Passed all rules needed for pairing,64,0,0.0
-observations,exclusion_reason,nominal,codes,Semicolon-separated validation flags; blank if usable,64,64,100.0
-observations,duplicate_kind,nominal,category,exact | conflicting_identity | blank,64,64,100.0
+raw,timestamp_utc,interval,ISO 8601 UTC,Timezone-aware request start,68,0,0.0
+raw,timestamp_astana,interval,ISO 8601 Asia/Almaty,Same instant in Astana; UTC+05 for study dates,68,0,0.0
+raw,cycle_id,nominal,identifier,One collection cycle,68,0,0.0
+raw,route_id,nominal,identifier,Fixed OD route register,68,0,0.0
+raw,provider,nominal,category,tomtom | dgis | ors,68,0,0.0
+raw,duration_s,ratio,seconds,>0 finite; estimated travel time,68,0,0.0
+raw,duration_no_traffic_s,ratio,seconds,">0 finite when returned; provider-specific baseline, not interchangeable",68,68,100.0
+raw,distance_m,ratio,metres,>0 finite; provider returned route length,68,0,0.0
+raw,status,nominal,category,ok | http_error | transport_error | invalid_response,68,0,0.0
+raw,http_code,nominal,HTTP status,100..599 or missing if transport failed,68,0,0.0
+raw,error,nominal,text,Sanitized collector error; blank on success,68,68,100.0
+raw,request_id,nominal,identifier,Unique collector request ID,68,0,0.0
+raw,latency_s,ratio,seconds,>=0 finite,68,0,0.0
+raw,geometry_file,nominal,relative path,"Saved geometry; optional, absence not a synthetic geometry",68,0,0.0
+raw,raw_file,nominal,relative path,Saved sanitized provider response,68,0,0.0
+raw,phase,nominal,category,pilot | scheduled | manual,68,0,0.0
+observations,timestamp_utc,interval,ISO 8601 UTC,Timezone-aware request start,68,0,0.0
+observations,timestamp_astana,interval,ISO 8601 Asia/Almaty,Same instant in Astana; UTC+05 for study dates,68,0,0.0
+observations,cycle_id,nominal,identifier,One collection cycle,68,0,0.0
+observations,route_id,nominal,identifier,Fixed OD route register,68,0,0.0
+observations,provider,nominal,category,tomtom | dgis | ors,68,0,0.0
+observations,duration_s,ratio,seconds,>0 finite; estimated travel time,68,0,0.0
+observations,duration_no_traffic_s,ratio,seconds,">0 finite when returned; provider-specific baseline, not interchangeable",68,68,100.0
+observations,distance_m,ratio,metres,>0 finite; provider returned route length,68,0,0.0
+observations,status,nominal,category,ok | http_error | transport_error | invalid_response,68,0,0.0
+observations,http_code,nominal,HTTP status,100..599 or missing if transport failed,68,0,0.0
+observations,error,nominal,text,Sanitized collector error; blank on success,68,68,100.0
+observations,request_id,nominal,identifier,Unique collector request ID,68,0,0.0
+observations,latency_s,ratio,seconds,>=0 finite,68,0,0.0
+observations,geometry_file,nominal,relative path,"Saved geometry; optional, absence not a synthetic geometry",68,0,0.0
+observations,raw_file,nominal,relative path,Saved sanitized provider response,68,0,0.0
+observations,phase,nominal,category,pilot | scheduled | manual,68,0,0.0
+observations,source_file,nominal,path,"Actual input CSV, repository-relative when inside the root",68,0,0.0
+observations,source_line,ratio,line,">=2, header is line 1",68,0,0.0
+observations,period,nominal,category,"peak [17:30,19:30); offpeak [10:00,12:00) or [22:00,24:00); other",68,0,0.0
+observations,date_astana,interval,local date,Calendar date in Asia/Almaty,68,0,0.0
+observations,speed_kmh,ratio,km/h,distance_m/duration_s*3.6; valid 2..200 inclusive,68,0,0.0
+observations,usable,nominal,boolean,Passed all rules needed for pairing,68,0,0.0
+observations,exclusion_reason,nominal,codes,Semicolon-separated validation flags; blank if usable,68,68,100.0
+observations,duplicate_kind,nominal,category,exact | conflicting_identity | blank,68,68,100.0
 pairs,timestamp_utc,interval,ISO 8601 UTC,Timezone-aware request start,0,0,
 pairs,timestamp_astana,interval,ISO 8601 Asia/Almaty,Same instant in Astana; UTC+05 for study dates,0,0,
 pairs,date_astana,interval,local date,Calendar date in Asia/Almaty,0,0,

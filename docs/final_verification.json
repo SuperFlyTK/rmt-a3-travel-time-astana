@@ -1,30 +1,212 @@
 {
-  "verified_at_utc": "2026-10-24T03:04:15.384952+00:00",
+  "verified_at_utc": "2026-10-24T11:50:10.950050+00:00",
   "report_file": "RMT_A3_Team_AkhanovYerdaulet_ShadiyarbekSyrym_SabyrzhanAkylbek.docx",
-  "report_sha256": "4d0708d81d4aa3af9bd280603f6bc6149cad7f9c1d09493d58fa0be0aa912817",
-  "all_report_input_hashes_match": true,
-  "frozen_sample_rows": 64,
+  "report_sha256": "1529726622d95a074b7c5e89243df1e54f65cf11c92fd9c095f87ecbd5dc91f4",
+  "all_report_input_hashes_match_at_verification": true,
+  "frozen_sample_rows": 68,
   "local_pilot_rows": 60,
   "manual_cloud_verification_rows": 4,
-  "primary_comparison_pairs": 0,
-  "prose_words": 1691,
-  "figures": 10,
-  "tables": 23,
-  "rendered_pages": 22,
-  "visual_review": "All 22 pages reviewed; affected pages checked again after final table and journal edits.",
+  "actual_cron_rows": 4,
+  "initial_tomtom_dgis_pairs": 0,
+  "separate_exploratory_google_ors_pairs": 20,
+  "future_windows_recorded_in_report": 0,
+  "prose_words": 1855,
+  "figures": 11,
+  "tables": 26,
+  "rendered_pages": 25,
+  "visual_review": "All 25 pages inspected at original resolution by three reviewers; final label-only render changes checked and unchanged pages compared pixel-for-pixel.",
   "docx_table_cells_missing_from_pdf": 0,
   "tests": {
     "command": ".venv/Scripts/python.exe -m unittest discover -s tests -v",
-    "passed": 32,
+    "passed": 69,
     "failed": 0,
-    "note": "Passed after frozen-input analysis changes; later changes affect report presentation and documentation only."
+    "note": "Passed after collector and aggregate-summary changes. Subsequent changes affect report presentation and documentation only."
   },
-  "cloud_run": {
-    "url": "https://github.com/SuperFlyTK/rmt-a3-travel-time-astana/actions/runs/40055914780",
-    "event": "workflow_dispatch",
-    "conclusion": "success",
-    "schedule_enabled": true,
-    "cron_triggered_run_observed_at_audit": false
+  "cloud_execution": {
+    "bootstrap": {
+      "conclusion": "success",
+      "createdAt": "2026-10-24T11:38:47Z",
+      "event": "workflow_dispatch",
+      "headSha": "2edd6993c065c0bcf5c8c710dcb5388c217d351d",
+      "jobs": [
+        {
+          "completedAt": "2026-10-24T11:39:11Z",
+          "conclusion": "success",
+          "databaseId": 120862710467,
+          "name": "collect",
+          "startedAt": "2026-10-24T11:39:02Z",
+          "status": "completed",
+          "steps": [
+            {
+              "completedAt": "2026-10-24T11:39:04Z",
+              "conclusion": "success",
+              "name": "Set up job",
+              "number": 1,
+              "startedAt": "2026-10-24T11:39:03Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-24T11:39:05Z",
+              "conclusion": "success",
+              "name": "Run actions/checkout@v4",
+              "number": 2,
+              "startedAt": "2026-10-24T11:39:04Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-24T11:39:05Z",
+              "conclusion": "success",
+              "name": "Run actions/setup-python@v5",
+              "number": 3,
+              "startedAt": "2026-10-24T11:39:05Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-24T11:39:05Z",
+              "conclusion": "success",
+              "name": "Configure commit identity",
+              "number": 4,
+              "startedAt": "2026-10-24T11:39:05Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-24T11:39:08Z",
+              "conclusion": "success",
+              "name": "Collect bounded prospective cycles",
+              "number": 5,
+              "startedAt": "2026-10-24T11:39:05Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-24T11:39:08Z",
+              "conclusion": "skipped",
+              "name": "Preserve evidence after a worker failure",
+              "number": 6,
+              "startedAt": "2026-10-24T11:39:08Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-24T11:39:08Z",
+              "conclusion": "success",
+              "name": "Post Run actions/setup-python@v5",
+              "number": 11,
+              "startedAt": "2026-10-24T11:39:08Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-24T11:39:08Z",
+              "conclusion": "success",
+              "name": "Post Run actions/checkout@v4",
+              "number": 12,
+              "startedAt": "2026-10-24T11:39:08Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-24T11:39:08Z",
+              "conclusion": "success",
+              "name": "Complete job",
+              "number": 13,
+              "startedAt": "2026-10-24T11:39:08Z",
+              "status": "completed"
+            }
+          ],
+          "url": "https://github.com/SuperFlyTK/rmt-a3-travel-time-astana/actions/runs/40090732972/job/120862710467"
+        }
+      ],
+      "status": "completed",
+      "url": "https://github.com/SuperFlyTK/rmt-a3-travel-time-astana/actions/runs/40090732972"
+    },
+    "successor": {
+      "conclusion": "",
+      "createdAt": "2026-10-24T11:39:08Z",
+      "event": "workflow_dispatch",
+      "headSha": "2edd6993c065c0bcf5c8c710dcb5388c217d351d",
+      "jobs": [
+        {
+          "completedAt": "0001-01-01T00:00:00Z",
+          "conclusion": "",
+          "databaseId": 120862743913,
+          "name": "collect",
+          "startedAt": "2026-10-24T11:39:13Z",
+          "status": "in_progress",
+          "steps": [
+            {
+              "completedAt": "2026-10-24T11:39:17Z",
+              "conclusion": "success",
+              "name": "Set up job",
+              "number": 1,
+              "startedAt": "2026-10-24T11:39:14Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-24T11:39:20Z",
+              "conclusion": "success",
+              "name": "Run actions/checkout@v4",
+              "number": 2,
+              "startedAt": "2026-10-24T11:39:17Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-24T11:39:20Z",
+              "conclusion": "success",
+              "name": "Run actions/setup-python@v5",
+              "number": 3,
+              "startedAt": "2026-10-24T11:39:20Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-24T11:39:20Z",
+              "conclusion": "success",
+              "name": "Configure commit identity",
+              "number": 4,
+              "startedAt": "2026-10-24T11:39:20Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "0001-01-01T00:00:00Z",
+              "conclusion": "",
+              "name": "Collect bounded prospective cycles",
+              "number": 5,
+              "startedAt": "2026-10-24T11:39:20Z",
+              "status": "in_progress"
+            },
+            {
+              "completedAt": "0001-01-01T00:00:00Z",
+              "conclusion": "",
+              "name": "Preserve evidence after a worker failure",
+              "number": 6,
+              "startedAt": "0001-01-01T00:00:00Z",
+              "status": "pending"
+            },
+            {
+              "completedAt": "0001-01-01T00:00:00Z",
+              "conclusion": "",
+              "name": "Post Run actions/setup-python@v5",
+              "number": 11,
+              "startedAt": "0001-01-01T00:00:00Z",
+              "status": "pending"
+            },
+            {
+              "completedAt": "0001-01-01T00:00:00Z",
+              "conclusion": "",
+              "name": "Post Run actions/checkout@v4",
+              "number": 12,
+              "startedAt": "0001-01-01T00:00:00Z",
+              "status": "pending"
+            }
+          ],
+          "url": "https://github.com/SuperFlyTK/rmt-a3-travel-time-astana/actions/runs/40090752863/job/120862743913"
+        }
+      ],
+      "status": "in_progress",
+      "url": "https://github.com/SuperFlyTK/rmt-a3-travel-time-astana/actions/runs/40090752863"
+    },
+    "first_live_cycle": "worker-40089934882-20261024T112657Z",
+    "first_live_cycle_rows": 4,
+    "original_cron_disabled": true,
+    "google_followup_windows_not_yet_started": true,
+    "note": "Earlier worker runs were intentionally cancelled after idle-state verification to deploy the approved follow-up; no data was backfilled."
   },
-  "scope": "ORS-only control without live traffic; primary research question remains unanswered."
+  "scope": "Amended Google\u2013ORS control design; follow-up status in separate window summary; initial TomTom\u20132GIS comparison unperformed",
+  "retention": "Google per-route numeric outputs and geometry are transient; own comparative aggregates and request statuses are retained. User approved this amendment."
 }
