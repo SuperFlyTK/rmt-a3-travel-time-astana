@@ -29,6 +29,7 @@ class FakeBackend:
         self.snapshot.update(changes)
         self.calls=[]
     def inspect(self):return dict(self.snapshot)
+    def process_followup(self,cutoff):return False
     def collect_cycle(self,cycle,cutoff):
         self.calls.append(self.clock.now())
         self.snapshot['last_batch']=self.clock.now()

@@ -44,6 +44,7 @@ jobs:
         id: worker
         env:
           ORS_KEY: ${{ secrets.ORS_KEY }}
+          GOOGLE_MAPS_DEMO_KEY: ${{ secrets.GOOGLE_MAPS_DEMO_KEY }}
           GH_TOKEN: ${{ github.token }}
           MAX_RUNTIME_SECONDS: ${{ inputs.max_runtime_seconds || '16200' }}
         run: python collector/cloud_worker.py --max-runtime-seconds "$MAX_RUNTIME_SECONDS"
@@ -54,7 +55,9 @@ jobs:
           name: resilient-collector-recovery-${{ github.run_id }}
           path: |
             data/raw
+            data/followup
             data/collection_state.json
+            results/google_followup_benchmark.csv
             docs/research_log.md
           if-no-files-found: warn
           retention-days: 30

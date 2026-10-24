@@ -109,7 +109,13 @@ def run_worker(backend, clock, run_id, max_runtime_seconds=DEFAULT_RUNTIME_SECON
         reason = stop_reason(snapshot, clock.now())
         if reason:
             return {"reason": reason, "cycles": completed, "handoff": False}
+        if clock.monotonic() >= monotonic_deadline or clock.now() >= runtime_end:
+            return {"reason": "bounded_worker_runtime_complete", "cycles": completed, "handoff": True}
         cutoff = min(runtime_end, snapshot["end"])
+        if backend.process_followup(cutoff):
+            # Follow-ups have independent windows and retain the ORS cursor.
+            # Re-read their published shared budget/halt before an ordinary batch.
+            continue
         due = next_due(snapshot, clock.now())
         if (cutoff-due).total_seconds() < MIN_CYCLE_WINDOW_SECONDS:
             # The successor, if needed, waits for the same next due time.
@@ -125,6 +131,9 @@ def run_worker(backend, clock, run_id, max_runtime_seconds=DEFAULT_RUNTIME_SECON
         reason = stop_reason(snapshot, clock.now())
         if reason:
             return {"reason": reason, "cycles": completed, "handoff": False}
+        cutoff = min(runtime_end, snapshot["end"])
+        if backend.process_followup(cutoff):
+            continue
         if next_due(snapshot, clock.now()) > clock.now():
             continue
         cutoff = min(runtime_end, snapshot["end"])
@@ -225,6 +234,40 @@ class RepositoryBackend:
             # Also preserve a partial attempt when the strict deadline kills a
             # collector. Reserved requests are never refunded automatically.
             self.publish_observations()
+
+    def process_followup(self, cutoff):
+        if (cutoff-self.clock.now()).total_seconds() < 90:
+            return False
+        if not (self.root/"docs/google_followup_protocol.json").exists():
+            return False
+        result = self.command([sys.executable, "-m", "collector.google_followup", "--reserve-due",
+                               "--deadline", cutoff.isoformat()], "prepare_google_followup")
+        action = json.loads(result.stdout)
+        if action["changed"]:
+            self.commit_and_push(["data/collection_state.json"], "Reserve or close prospective comparison window")
+        cycle = action.get("cycle_id")
+        emit("google_followup_checked", action="reserved" if cycle else "no_due_window_or_already_consumed")
+        if not cycle:
+            return False
+        end = min(cutoff, aware_time(action["deadline_utc"]))
+        try:
+            # A window deadline stops new starts in the child; allow already
+            # in-flight metadata to finish. The harder worker/study cutoff kills
+            # the process if necessary and prevents another local cycle.
+            remaining = (cutoff-self.clock.now()).total_seconds()-1
+            if remaining > 0:
+                try:
+                    self.command([sys.executable, "-m", "collector.google_followup", "--execute", cycle,
+                                  "--deadline", end.isoformat()], "execute_google_followup", timeout=min(900, remaining))
+                except WorkerError as error:
+                    if str(error) != "execute_google_followup_timeout" or remaining > 900:
+                        raise
+                    emit("google_followup_deadline_reached", cycle=cycle)
+        finally:
+            paths = [path for path in ("data/collection_state.json", "data/followup",
+                                      "results/google_followup_benchmark.csv") if (self.root/path).exists()]
+            self.commit_and_push(paths, "Record aggregate-only Google ORS comparison window")
+        return True
 
     def queued_successor_exists(self):
         repo = os.environ.get("GITHUB_REPOSITORY", "")

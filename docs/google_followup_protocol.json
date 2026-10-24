@@ -39,7 +39,7 @@
   ],
   "routes_per_window": 20,
   "routes_file": "data/routes.csv",
-  "routes_sha256": "f4b14c9bede5fee2260d2294d2e61556ac151f0fd9e29f08ab1df9e7c184cb17",
+  "routes_sha256": "236b48e847d473f25e9666f68e68908943a54833646073d3ff1bc756c3cbc4bd",
   "google_total_request_budget": 121,
   "google_already_reserved": 21,
   "future_google_request_budget": 100,
@@ -64,5 +64,7 @@
     "https://developers.google.com/maps/demo-key",
     "https://cloud.google.com/terms/maps-platform/demo-project-terms",
     "https://cloud.google.com/maps-platform/terms"
-  ]
+  ],
+  "routes_hash_rule": "sha256_after_crlf_to_lf",
+  "representation_amendment": "Before the first follow-up window, route hashing was normalized for Windows/Linux line endings; coordinates, windows and scientific expectations unchanged."
 }
