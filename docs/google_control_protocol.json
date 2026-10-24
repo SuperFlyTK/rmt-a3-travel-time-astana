@@ -1,0 +1,41 @@
+{
+  "protocol_id": "google-control-1",
+  "registered_at_utc": "2026-10-24T11:24:15.506607+00:00",
+  "purpose": "Exploratory instrument comparison after successful credential-only check; not a test of the original TomTom-2GIS peak hypothesis",
+  "rq": "How do Google traffic-aware estimates differ from the ORS control on twenty fixed Astana routes in this pilot?",
+  "providers": [
+    "google_demo",
+    "ors"
+  ],
+  "google_routing_preference": "TRAFFIC_AWARE_OPTIMAL",
+  "ors_live_traffic": false,
+  "routes_file": "data/routes.csv",
+  "routes_sha256": "f4b14c9bede5fee2260d2294d2e61556ac151f0fd9e29f08ab1df9e7c184cb17",
+  "max_pairs": 20,
+  "max_requests_per_provider": 20,
+  "pair_max_start_gap_seconds": 60,
+  "minimum_pair_interval_seconds": 2.1,
+  "publish_google_raw": false,
+  "google_processing": "Transient RAM only; no route ETA, distance, static duration or geometry stored individually",
+  "published_evidence": "Own aggregate benchmark metrics CSV; per-request status/timestamps; permitted ORS raw responses; code, fixed endpoints, request parameters and this protocol",
+  "metrics": [
+    "median signed Google-minus-ORS difference in seconds",
+    "median absolute difference",
+    "MAE as disagreement",
+    "RMSE as disagreement",
+    "mean symmetric absolute percentage difference",
+    "IQR of signed differences",
+    "count and percentage of route lengths within 5% of pair mean"
+  ],
+  "minimum_valid_pairs_for_numeric_aggregates": 5,
+  "inference": false,
+  "interpretation": "Traffic-aware output versus non-live-traffic control. No accuracy claim. Aggregate outputs cannot be independently recalculated from saved Google raw responses because those are not retained. Repeating the test uses new live outputs, not the same observations.",
+  "storage_basis": "GMP3.2.4 contemplates public benchmark results; GMP3.2.3 restricts saving/resharing Maps content. This protocol retains only its own aggregate comparative-test results.",
+  "terms_urls": [
+    "https://cloud.google.com/maps-platform/terms",
+    "https://cloud.google.com/terms/maps-platform/demo-project-terms",
+    "https://developers.google.com/maps/demo-key"
+  ],
+  "original_expectations_unchanged": true,
+  "scope": "One bounded pilot cycle; no recurring Google collection authorized by this protocol"
+}
