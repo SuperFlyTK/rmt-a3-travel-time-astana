@@ -2,16 +2,18 @@
 from __future__ import annotations
 import argparse
 from concurrent.futures import ThreadPoolExecutor
+from contextlib import contextmanager
 import csv
 from datetime import datetime, timezone, timedelta
 import hashlib
+from http.client import HTTPException
 import json
 import os
 from pathlib import Path
 import sys
 import time
 from urllib.error import HTTPError, URLError
-from urllib.parse import urlencode
+from urllib.parse import urlencode, quote, quote_plus
 from urllib.request import Request, HTTPRedirectHandler, build_opener
 import uuid
 
@@ -38,11 +40,14 @@ def load_keys():
 
 def scrub(value, secrets):
     if isinstance(value,dict):
-        return {k:scrub(v,secrets) for k,v in value.items() if k.lower() not in {'key','api_key','apikey','authorization'}}
+        forbidden={'key','api_key','apikey','authorization','x-goog-api-key','access_token','token'}
+        return {scrub(k,secrets):scrub(v,secrets) for k,v in value.items() if k.lower() not in forbidden}
     if isinstance(value,list): return [scrub(v,secrets) for v in value]
     if isinstance(value,str):
         for secret in secrets:
-            if secret: value=value.replace(secret,'[REDACTED]')
+            if secret:
+                for representation in {secret,quote(secret,safe=''),quote_plus(secret)}:
+                    value=value.replace(representation,'[REDACTED]')
     return value
 
 def build_request(provider, route, key):
@@ -52,6 +57,7 @@ def build_request(provider, route, key):
     body=None
     if provider=='ors':
         url='https://api.heigit.org/openrouteservice/v2/directions/driving-car/geojson'
+        headers['Accept']='application/geo+json'
         headers['Authorization']=key
         body={'coordinates':[[a[1],a[0]],[b[1],b[0]]],'instructions':False,'units':'m'}
     elif provider=='tomtom':
@@ -111,80 +117,176 @@ def fetch(provider, route, key, cycle, phase, directory, secrets):
     except HTTPError as error:
         row.update(status='http_error',http_code=error.code,error=f'HTTP_{error.code}')
         error.close()
-    except (URLError,TimeoutError,OSError): row.update(status='transport_error',error='TransportError')
+    except (URLError,TimeoutError,OSError,HTTPException): row.update(status='transport_error',error='TransportError')
     except (KeyError,IndexError,TypeError,ValueError): row.update(status='invalid_response',error='UnexpectedSchema')
     row['latency_s']=round(time.monotonic()-before,3)
     return row
 
 def log(who,what,wrong,changed):
     path=ROOT/'docs/research_log.md'
+    path.parent.mkdir(parents=True,exist_ok=True)
     with path.open('a',encoding='utf-8') as f:
         f.write(f'| {datetime.now(ASTANA).isoformat(timespec="seconds")} | {who} | {what} | {wrong} | {changed} |\n')
+
+def atomic_state(path,state):
+    """Never expose a half-written budget after process or machine interruption."""
+    path.parent.mkdir(parents=True,exist_ok=True)
+    temporary=path.with_name(f'.{path.name}.{uuid.uuid4().hex}.tmp')
+    try:
+        with temporary.open('w',encoding='utf-8') as handle:
+            json.dump(state,handle,indent=2)
+            handle.flush()
+            os.fsync(handle.fileno())
+        temporary.replace(path)
+    finally:
+        temporary.unlink(missing_ok=True)
+
+
+@contextmanager
+def collection_lock():
+    """Fail closed on overlapping local collectors; inspect a crash-stale lock."""
+    lock=ROOT/'data/.collector.lock'
+    lock.parent.mkdir(parents=True,exist_ok=True)
+    try:
+        handle=lock.open('x',encoding='utf-8')
+    except FileExistsError:
+        raise SystemExit('Another collector holds data/.collector.lock; inspect before removing a stale lock')
+    try:
+        with handle:
+            handle.write(json.dumps({'pid':os.getpid(),'created_at_utc':datetime.now(timezone.utc).isoformat()}))
+        yield
+    finally:
+        lock.unlink(missing_ok=True)
+
+
+def output_flag(name,value):
+    path=os.environ.get('GITHUB_OUTPUT')
+    if path:
+        with open(path,'a',encoding='utf-8') as handle:handle.write(f'{name}={value}\n')
+
+
+def reserve_plan(state,config,routes,mode,cycle,config_hash):
+    """Conservatively reserve the entire plan before any HTTP request.
+
+    Unused reservations are never refunded automatically. Actions commits this
+    state to the remote repository before execution, surviving runner loss.
+    """
+    if state.get('halted_reason'):
+        raise SystemExit('Collection is halted after a credential, billing, or rate-limit response; inspect state')
+    reservations=state.setdefault('reservations',{})
+    if cycle in reservations or cycle in state.setdefault('completed_cycles',[]):
+        raise SystemExit('Cycle already reserved or completed; duplicate collection prevented')
+    if mode in {'scheduled','manual'}:
+        start=state.get('next_route',0)
+        selected=[routes[(start+i)%len(routes)] for i in range(config['routes_per_scheduled_run'])]
+    elif mode=='preflight':selected=routes[:1]
+    else:selected=routes
+    providers=config['active_providers']
+    if not providers or not selected:raise SystemExit('No configured providers or routes; no requests sent')
+    for p in providers:
+        if config['providers'][p]['collection_approved'] is not True:
+            raise SystemExit('Provider collection is not approved in versioned config')
+        if state['counts'].get(p,0)+len(selected)>config['providers'][p]['study_request_budget']:
+            raise SystemExit('Study request budget exhausted; no requests sent')
+    plan={'cycle':cycle,'mode':mode,'providers':providers,'routes':selected,'status':'reserved',
+          'reserved_at_utc':datetime.now(timezone.utc).isoformat(),'config_sha256':config_hash,
+          'spacing_s':max(config['providers'][p]['minimum_interval_s'] for p in providers)}
+    reservations[cycle]=plan
+    for p in providers:state['counts'][p]=state['counts'].get(p,0)+len(selected)
+    if mode in {'scheduled','manual'}:state['next_route']=(state.get('next_route',0)+len(selected))%len(routes)
+    return plan
+
+
+def execute_plan(state,plan,config,statepath,config_hash):
+    if plan['status']!='reserved':raise SystemExit('Reservation already started or completed; never replay requests')
+    if plan['config_sha256']!=config_hash:raise SystemExit('Configuration changed since reservation; no requests sent')
+    if any(config['providers'][p]['collection_approved'] is not True for p in plan['providers']):
+        raise SystemExit('Provider collection is no longer approved; no requests sent')
+    keys=load_keys()
+    if any(not keys[p] for p in plan['providers']):raise SystemExit('A configured credential is absent; no requests sent')
+    plan['status']='started'
+    plan['started_at_utc']=datetime.now(timezone.utc).isoformat()
+    atomic_state(statepath,state)
+    mode,cycle,routes,providers=plan['mode'],plan['cycle'],plan['routes'],plan['providers']
+    now=datetime.now(timezone.utc)
+    directory=ROOT/('data/preflight' if mode=='preflight' else 'data/raw')
+    directory.mkdir(parents=True,exist_ok=True)
+    csvpath=directory/f'{now:%Y-%m-%d}.csv'
+    rows=[]
+    for index,route in enumerate(routes):
+        tick=time.monotonic()
+        with ThreadPoolExecutor(max_workers=len(providers)) as executor:
+            requests=[executor.submit(fetch,p,route,keys[p],cycle,mode,directory,list(keys.values())) for p in providers]
+            pair=[task.result() for task in requests]
+        with csvpath.open('a',encoding='utf-8',newline='') as handle:
+            writer=csv.DictWriter(handle,fieldnames=FIELDS)
+            if handle.tell()==0:writer.writeheader()
+            writer.writerows(pair)
+            handle.flush()
+            os.fsync(handle.fileno())
+        rows.extend(pair)
+        plan['recorded_attempts']=len(rows)
+        atomic_state(statepath,state)
+        print(json.dumps({'cycle':cycle,'route':route['route_id'],'statuses':{r['provider']:r['status'] for r in pair}}),flush=True)
+        if any(r['http_code'] in (401,402,403,429) for r in pair):
+            state['halted_reason']='credential_billing_or_rate_limit_response'
+            output_flag('halted','true')
+            log('collector',f'{cycle}: stopped after {len(rows)} recorded attempts','Credential/billing/rate-limit response','Collection halted; reserved budget retained; no automatic retries')
+            break
+        if index<len(routes)-1:time.sleep(max(0,plan['spacing_s']-(time.monotonic()-tick)))
+    state['completed_cycles'].append(cycle)
+    plan['status']='completed'
+    plan['completed_at_utc']=datetime.now(timezone.utc).isoformat()
+    atomic_state(statepath,state)
+    success=sum(r['status']=='ok' for r in rows)
+    log('GitHub Actions' if os.environ.get('GITHUB_ACTIONS') else 'local collector',f'{cycle}; {len(rows)} recorded attempts; {success} API responses with expected schema',f'{len(rows)-success} unsuccessful requests','Raw values retained; full plan reserved before HTTP; unused reservation not refunded')
+    print(json.dumps({'cycle':cycle,'requests':len(rows),'success':success,'csv':csvpath.relative_to(ROOT).as_posix()}))
+
 
 def main():
     ap=argparse.ArgumentParser()
     ap.add_argument('--mode',choices=['pilot','scheduled','manual','preflight'],default='manual')
     ap.add_argument('--cycle-label',default='')
     ap.add_argument('--dry-run',action='store_true')
+    ap.add_argument('--reserve-only',action='store_true')
+    ap.add_argument('--execute-reservation',default='')
     args=ap.parse_args()
-    config=json.loads((ROOT/'config/study.json').read_text(encoding='utf-8'))
+    if args.execute_reservation and (args.reserve_only or args.dry_run):ap.error('Reservation execution cannot be combined with reserve-only/dry-run')
+    config_bytes=(ROOT/'config/study.json').read_bytes()
+    config=json.loads(config_bytes.decode('utf-8-sig'))
+    config_hash=hashlib.sha256(config_bytes).hexdigest()
     now=datetime.now(timezone.utc)
     end=datetime.fromisoformat(config['collection_end_utc'])
     if args.mode in {'scheduled','manual'} and now>=end:
         print('Collection window ended. No requests sent.')
-        if os.environ.get('GITHUB_OUTPUT'):
-            with open(os.environ['GITHUB_OUTPUT'],'a') as f:f.write('expired=true\n')
+        output_flag('expired','true')
         return
-    routes=list(csv.DictReader((ROOT/'data/routes.csv').open(encoding='utf-8-sig',newline='')))
-    statepath=ROOT/'data/collection_state.json'
-    state=json.loads(statepath.read_text()) if statepath.exists() else {'next_route':0,'counts':{},'completed_cycles':[]}
-    if args.mode in {'scheduled','manual'}:
-        start=state['next_route']
-        routes=[routes[(start+i)%len(routes)] for i in range(config['routes_per_scheduled_run'])]
-    elif args.mode=='preflight':routes=routes[:1]
-    providers=config['active_providers']
-    for provider in providers:
-        if config['providers'][provider]['collection_approved'] is not True:
-            raise SystemExit('Provider collection is not approved in versioned config')
-    keys=load_keys()
-    if any(not keys[p] for p in providers):raise SystemExit('A configured credential is absent; no requests sent')
-    cycle=args.cycle_label or f'{args.mode}-{now:%Y%m%dT%H%M%SZ}-{os.environ.get("GITHUB_RUN_ID",uuid.uuid4().hex[:8])}'
-    if not all(c.isalnum() or c in '-_' for c in cycle):raise SystemExit('Unsafe cycle identifier')
-    if cycle in state['completed_cycles']:raise SystemExit('Cycle already recorded; duplicate collection prevented')
-    for p in providers:
-        if state['counts'].get(p,0)+len(routes)>config['providers'][p]['study_request_budget']:
-            raise SystemExit('Study request budget exhausted; no requests sent')
-    if args.dry_run:
-        print(json.dumps({'mode':args.mode,'routes':[r['route_id'] for r in routes],'providers':providers,'cycle':cycle}))
-        return
-    directory=ROOT/('data/preflight' if args.mode=='preflight' else 'data/raw')
-    directory.mkdir(parents=True,exist_ok=True)
-    csvpath=directory/f'{now:%Y-%m-%d}.csv'
-    rows=[]
-    spacing=max(config['providers'][p]['minimum_interval_s'] for p in providers)
-    for index,route in enumerate(routes):
-        tick=time.monotonic()
-        with ThreadPoolExecutor(max_workers=len(providers)) as executor:
-            requests=[executor.submit(fetch,p,route,keys[p],cycle,args.mode,directory,list(keys.values())) for p in providers]
-            pair=[task.result() for task in requests]
-        with csvpath.open('a',encoding='utf-8',newline='') as f:
-            writer=csv.DictWriter(f,fieldnames=FIELDS)
-            if f.tell()==0:writer.writeheader()
-            writer.writerows(pair)
-        rows.extend(pair)
-        for p in providers:state['counts'][p]=state['counts'].get(p,0)+1
-        # Persist attempted-request budget even if a later request crashes.
-        statepath.write_text(json.dumps(state,indent=2),encoding='utf-8')
-        print(json.dumps({'cycle':cycle,'route':route['route_id'],'statuses':{r['provider']:r['status'] for r in pair}}),flush=True)
-        if any(r['http_code'] in (401,402,403,429) for r in pair):
-            log('collector',f'{cycle}: stopped after {len(rows)} attempts','Credential/billing/rate-limit response','No retries; inspect status before restarting')
-            break
-        if index<len(routes)-1:time.sleep(max(0,spacing-(time.monotonic()-tick)))
-    if args.mode in {'scheduled','manual'}:state['next_route']=(state['next_route']+len(routes))%config['route_count']
-    state['completed_cycles'].append(cycle)
-    statepath.write_text(json.dumps(state,indent=2),encoding='utf-8')
-    success=sum(r['status']=='ok' for r in rows)
-    log('GitHub Actions' if os.environ.get('GITHUB_ACTIONS') else 'local collector',f'{cycle}; {len(rows)} requests; {success} usable API responses',f'{len(rows)-success} unsuccessful requests','Raw values retained; no cleaning in collector')
-    print(json.dumps({'cycle':cycle,'requests':len(rows),'success':success,'csv':csvpath.relative_to(ROOT).as_posix()}))
+    with collection_lock():
+        statepath=ROOT/'data/collection_state.json'
+        state=json.loads(statepath.read_text()) if statepath.exists() else {'next_route':0,'counts':{},'completed_cycles':[]}
+        if args.execute_reservation:
+            plan=state.get('reservations',{}).get(args.execute_reservation)
+            if not plan:raise SystemExit('Unknown reservation; no requests sent')
+            if state.get('halted_reason'):raise SystemExit('Collection is halted; no requests sent')
+            if plan['mode'] in {'scheduled','manual'} and now>=end:
+                output_flag('expired','true')
+                print('Collection window ended. Reserved budget retained; no requests sent.')
+                return
+            execute_plan(state,plan,config,statepath,config_hash)
+            return
+        with (ROOT/'data/routes.csv').open(encoding='utf-8-sig',newline='') as handle:routes=list(csv.DictReader(handle))
+        cycle=args.cycle_label or f'{args.mode}-{now:%Y%m%dT%H%M%SZ}-{os.environ.get("GITHUB_RUN_ID",uuid.uuid4().hex[:8])}'
+        if not cycle or not all(c.isalnum() or c in '-_' for c in cycle):raise SystemExit('Unsafe cycle identifier')
+        if not routes:raise SystemExit('Route register is empty; no requests sent')
+        plan=reserve_plan(state,config,routes,args.mode,cycle,config_hash)
+        if args.dry_run:
+            print(json.dumps({'mode':args.mode,'routes':[r['route_id'] for r in plan['routes']],'providers':plan['providers'],'cycle':cycle}))
+            return
+        atomic_state(statepath,state)
+        if args.reserve_only:
+            output_flag('reservation_id',cycle)
+            print(json.dumps({'cycle':cycle,'reserved_requests_per_provider':len(plan['routes']),'providers':plan['providers']}))
+            return
+        execute_plan(state,plan,config,statepath,config_hash)
 
 if __name__=='__main__':main()

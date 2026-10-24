@@ -1,0 +1,852 @@
+{
+  "status": "ok",
+  "message-type": "work",
+  "message-version": "1.0.0",
+  "message": {
+    "indexed": {
+      "date-parts": [
+        [
+          2026,
+          5,
+          15
+        ]
+      ],
+      "date-time": "2026-05-15T03:03:08Z",
+      "timestamp": 1778814188808,
+      "version": "3.51.4"
+    },
+    "reference-count": 55,
+    "publisher": "Elsevier BV",
+    "license": [
+      {
+        "start": {
+          "date-parts": [
+            [
+              2025,
+              9,
+              1
+            ]
+          ],
+          "date-time": "2025-09-01T00:00:00Z",
+          "timestamp": 1756684800000
+        },
+        "content-version": "tdm",
+        "delay-in-days": 0,
+        "URL": "https://www.elsevier.com/tdm/userlicense/1.0/"
+      },
+      {
+        "start": {
+          "date-parts": [
+            [
+              2025,
+              9,
+              1
+            ]
+          ],
+          "date-time": "2025-09-01T00:00:00Z",
+          "timestamp": 1756684800000
+        },
+        "content-version": "tdm",
+        "delay-in-days": 0,
+        "URL": "https://www.elsevier.com/legal/tdmrep-license"
+      },
+      {
+        "start": {
+          "date-parts": [
+            [
+              2025,
+              6,
+              13
+            ]
+          ],
+          "date-time": "2025-06-13T00:00:00Z",
+          "timestamp": 1749772800000
+        },
+        "content-version": "vor",
+        "delay-in-days": 0,
+        "URL": "http://creativecommons.org/licenses/by/4.0/"
+      }
+    ],
+    "funder": [
+      {
+        "DOI": "10.13039/501100009509",
+        "name": "Kementerian Riset Teknologi Dan Pendidikan Tinggi Republik Indonesia",
+        "doi-asserted-by": "publisher",
+        "id": [
+          {
+            "id": "10.13039/501100009509",
+            "id-type": "DOI",
+            "asserted-by": "publisher"
+          }
+        ]
+      },
+      {
+        "DOI": "10.13039/100014013",
+        "name": "UK Research and Innovation",
+        "doi-asserted-by": "publisher",
+        "award": [
+          "MR/T020423/1-NEXUS"
+        ],
+        "award-info": [
+          {
+            "award-number": [
+              "MR/T020423/1-NEXUS"
+            ]
+          }
+        ],
+        "id": [
+          {
+            "id": "10.13039/100014013",
+            "id-type": "DOI",
+            "asserted-by": "publisher"
+          }
+        ]
+      },
+      {
+        "DOI": "10.13039/501100019899",
+        "name": "Kementerian Keuangan Republik Indonesia",
+        "doi-asserted-by": "publisher",
+        "award": [
+          "1772/J5/KM.01.00/2021"
+        ],
+        "award-info": [
+          {
+            "award-number": [
+              "1772/J5/KM.01.00/2021"
+            ]
+          }
+        ],
+        "id": [
+          {
+            "id": "10.13039/501100019899",
+            "id-type": "DOI",
+            "asserted-by": "publisher"
+          }
+        ]
+      }
+    ],
+    "content-domain": {
+      "domain": [
+        "elsevier.com",
+        "sciencedirect.com"
+      ],
+      "crossmark-restriction": true
+    },
+    "short-container-title": [
+      "Case Studies on Transport Policy"
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          2025,
+          9
+        ]
+      ]
+    },
+    "DOI": "10.1016/j.cstp.2025.101508",
+    "type": "journal-article",
+    "created": {
+      "date-parts": [
+        [
+          2025,
+          6,
+          13
+        ]
+      ],
+      "date-time": "2025-06-13T12:07:16Z",
+      "timestamp": 1749816436000
+    },
+    "page": "101508",
+    "update-policy": "https://doi.org/10.1016/elsevier_cm_policy",
+    "source": "Crossref",
+    "is-referenced-by-count": 5,
+    "special_numbering": "C",
+    "title": [
+      "‘Mind the Gap’—The impact of discrepancies between Google Maps API and reported travel data in the Global South"
+    ],
+    "prefix": "10.1016",
+    "volume": "21",
+    "author": [
+      {
+        "ORCID": "https://orcid.org/0000-0002-1004-6980",
+        "authenticated-orcid": false,
+        "given": "Faza Fawzan",
+        "family": "Bastarianto",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-8922-0901",
+        "authenticated-orcid": false,
+        "given": "Thomas O.",
+        "family": "Hancock",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0001-7387-4516",
+        "authenticated-orcid": false,
+        "given": "Anugrah",
+        "family": "Ilahi",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-8904-0513",
+        "authenticated-orcid": false,
+        "given": "Ed",
+        "family": "Manley",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-8886-8976",
+        "authenticated-orcid": false,
+        "given": "Charisma Farheen",
+        "family": "Choudhury",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "role": "author",
+            "vocabulary": "crossref"
+          }
+        ]
+      }
+    ],
+    "member": "78",
+    "reference": [
+      {
+        "key": "10.1016/j.cstp.2025.101508_b1",
+        "series-title": "Long-distance trips and mode choice in illinois",
+        "author": "Auld",
+        "year": "2016"
+      },
+      {
+        "issue": "3",
+        "key": "10.1016/j.cstp.2025.101508_b2",
+        "doi-asserted-by": "crossref",
+        "first-page": "788",
+        "DOI": "10.3390/su11030788",
+        "article-title": "A tour-based mode choice model for commuters in Indonesia",
+        "volume": "11",
+        "author": "Bastarianto",
+        "year": "2019",
+        "journal-title": "Sustainability"
+      },
+      {
+        "issue": "3",
+        "key": "10.1016/j.cstp.2025.101508_b3",
+        "doi-asserted-by": "crossref",
+        "first-page": "583",
+        "DOI": "10.1007/s11116-017-9798-7",
+        "article-title": "New appraisal values of travel time saving and reliability in great britain",
+        "volume": "46",
+        "author": "Batley",
+        "year": "2017",
+        "journal-title": "Transportation"
+      },
+      {
+        "issue": "1",
+        "key": "10.1016/j.cstp.2025.101508_b4",
+        "doi-asserted-by": "crossref",
+        "first-page": "87",
+        "DOI": "10.1016/j.cstp.2018.12.002",
+        "article-title": "Influence of pricing on mode choice decision in Jakarta: A random regret minimization model",
+        "volume": "7",
+        "author": "Belgiawan",
+        "year": "2019",
+        "journal-title": "Case Stud. Transp. Policy"
+      },
+      {
+        "key": "10.1016/j.cstp.2025.101508_b5",
+        "series-title": "Discrete Choice Analysis",
+        "author": "Ben-Akiva",
+        "year": "1985"
+      },
+      {
+        "key": "10.1016/j.cstp.2025.101508_b6",
+        "doi-asserted-by": "crossref",
+        "first-page": "1",
+        "DOI": "10.1016/j.trb.2013.09.009",
+        "article-title": "The value of service reliability",
+        "volume": "58",
+        "author": "Benezech",
+        "year": "2013",
+        "journal-title": "Transp. Res. Part B: Methodol."
+      },
+      {
+        "key": "10.1016/j.cstp.2025.101508_b7",
+        "article-title": "Exploring non-mandatory travel behavior in Jakarta city: Travel time, trip frequency, and socio-demographic influences",
+        "volume": "21",
+        "author": "Benita",
+        "year": "2023",
+        "journal-title": "Transp. Res. Interdiscip. Perspect."
+      },
+      {
+        "key": "10.1016/j.cstp.2025.101508_b8",
+        "series-title": "Laporan Pengukuran Capaian Indikator Kinerja Transportasi Jabodetabek Tahun 2023",
+        "author": "BPTJ",
+        "year": "2023"
+      },
+      {
+        "key": "10.1016/j.cstp.2025.101508_b9",
+        "doi-asserted-by": "crossref",
+        "first-page": "374",
+        "DOI": "10.1016/j.trb.2017.06.016",
+        "article-title": "Mode choice with latent availability and consideration: Theory and a case study",
+        "volume": "123",
+        "author": "Calastri",
+        "year": "2019",
+        "journal-title": "Transp. Res. Part B: Methodol."
+      },
+      {
+        "key": "10.1016/j.cstp.2025.101508_b10",
+        "doi-asserted-by": "crossref",
+        "first-page": "534",
+        "DOI": "10.1016/j.trpro.2023.12.074",
+        "article-title": "Considerations on how to conduct a survey about long-distance travel with reduced memory effect",
+        "volume": "76",
+        "author": "Christensen",
+        "year": "2024",
+        "journal-title": "Transp. Res. Procedia"
+      },
+      {
+        "key": "10.1016/j.cstp.2025.101508_b11",
+        "doi-asserted-by": "crossref",
+        "first-page": "913",
+        "DOI": "10.1016/j.trb.2009.04.002",
+        "article-title": "A headway-based approach to eliminate bus bunching: Systematic analysis and comparisons",
+        "volume": "43",
+        "author": "Daganzo",
+        "year": "2009",
+        "journal-title": "Transp. Res. Part B: Methodol."
+      },
+      {
+        "key": "10.1016/j.cstp.2025.101508_b12",
+        "article-title": "An outliers detection and elimination framework in classification task of data mining",
+        "volume": "6",
+        "author": "Dash",
+        "year": "2023",
+        "journal-title": "Decis. Anal. J."
+      },
+      {
+        "key": "10.1016/j.cstp.2025.101508_b13",
+        "doi-asserted-by": "crossref",
+        "DOI": "10.1016/j.jtrangeo.2022.103325",
+        "article-title": "Trip deprivation among older adults in the context of the capability approach",
+        "volume": "100",
+        "author": "Deka",
+        "year": "2022",
+        "journal-title": "J. Transp. Geogr."
+      },
+      {
+        "key": "10.1016/j.cstp.2025.101508_b14",
+        "series-title": "Public Transportation Quality of Service",
+        "first-page": "49",
+        "article-title": "Designing a survey for public transport users",
+        "author": "dell’Olio",
+        "year": "2018"
+      },
+      {
+        "key": "10.1016/j.cstp.2025.101508_b15",
+        "series-title": "The Australian Transport Assessment and Planning Guidelines",
+        "author": "Douglas",
+        "year": "2018"
+      },
+      {
+        "issue": "1",
+        "key": "10.1016/j.cstp.2025.101508_b16",
+        "doi-asserted-by": "crossref",
+        "first-page": "84",
+        "DOI": "10.3141/2239-10",
+        "article-title": "Methodological issues in developing mode choice models for Dhaka, Bangladesh",
+        "volume": "2239",
+        "author": "Enam",
+        "year": "2011",
+        "journal-title": "Transp. Res. Rec.: J. Transp. Res. Board"
+      },
+      {
+        "key": "10.1016/j.cstp.2025.101508_b17",
+        "series-title": "Geographically Weighted Regression",
+        "author": "Fotheringham",
+        "year": "2002"
+      },
+      {
+        "issue": "2",
+        "key": "10.1016/j.cstp.2025.101508_b18",
+        "doi-asserted-by": "crossref",
+        "first-page": "41",
+        "DOI": "10.5198/jtlu.v7i2.701",
+        "article-title": "Temporal transferability of models of mode-destination choice for the greater Toronto and Hamilton area",
+        "volume": "7",
+        "author": "Fox",
+        "year": "2014",
+        "journal-title": "J. Transp. Land Use"
+      },
+      {
+        "key": "10.1016/j.cstp.2025.101508_b19",
+        "doi-asserted-by": "crossref",
+        "first-page": "53",
+        "DOI": "10.5194/isprs-archives-XLVIII-4-W7-2023-53-2023",
+        "article-title": "A comparative study of methods for drive time estimation on geospatial big data: A case study in usa",
+        "volume": "XLVIII-4/W7-2023",
+        "author": "Fu",
+        "year": "2023",
+        "journal-title": "Int. Arch. Photogramm. Remote. Sens. Spat. Inf. Sci."
+      },
+      {
+        "key": "10.1016/j.cstp.2025.101508_b20",
+        "series-title": "Directions API overview — google for developers",
+        "author": "Google Developers",
+        "year": "2023"
+      },
+      {
+        "key": "10.1016/j.cstp.2025.101508_b21",
+        "series-title": "Geocoding API overview — google for developers",
+        "author": "Google Developers",
+        "year": "2023"
+      },
+      {
+        "key": "10.1016/j.cstp.2025.101508_b22",
+        "series-title": "Google maps platform documentation — distance matrix API — google for developers",
+        "author": "Google Developers",
+        "year": "2023"
+      },
+      {
+        "key": "10.1016/j.cstp.2025.101508_b23",
+        "doi-asserted-by": "crossref",
+        "first-page": "37",
+        "DOI": "10.1016/j.tranpol.2018.04.012",
+        "article-title": "Accessibility, affordability and equity: Assessing ‘pro-poor’ public transport subsidies in bogotá",
+        "volume": "68",
+        "author": "Guzman",
+        "year": "2018",
+        "journal-title": "Transp. Policy"
+      },
+      {
+        "key": "10.1016/j.cstp.2025.101508_b24",
+        "doi-asserted-by": "crossref",
+        "DOI": "10.32866/5772",
+        "article-title": "Using the average wage rate to assess the merit of value of travel time savings: A concern and clarification",
+        "author": "Hensher",
+        "year": "2019",
+        "journal-title": "Transp. Find."
+      },
+      {
+        "key": "10.1016/j.cstp.2025.101508_b25",
+        "doi-asserted-by": "crossref",
+        "first-page": "59",
+        "DOI": "10.1016/j.jairtraman.2004.09.001",
+        "article-title": "Mixed logit modelling of airport choice in multi-airport regions",
+        "volume": "11",
+        "author": "Hess",
+        "year": "2005",
+        "journal-title": "J. Air Transp. Manag."
+      },
+      {
+        "key": "10.1016/j.cstp.2025.101508_b26",
+        "series-title": "Transforming the Future of Infrastructure Through Smarter Information",
+        "article-title": "Assessing the discrepancies between recorded and commonly assumed journey times in London",
+        "author": "Hillel",
+        "year": "2016"
+      },
+      {
+        "key": "10.1016/j.cstp.2025.101508_b27",
+        "series-title": "Mobility Jakarta Stated and Revealed Preference Survey",
+        "author": "Ilahi",
+        "year": "2020"
+      },
+      {
+        "key": "10.1016/j.cstp.2025.101508_b28",
+        "first-page": "398",
+        "article-title": "Understanding travel and mode choice with emerging modes; a pooled SP and RP model in Greater Jakarta, Indonesia",
+        "volume": "150",
+        "author": "Ilahi",
+        "year": "2021",
+        "journal-title": "Transp. Res. Part A: Policy Pr."
+      },
+      {
+        "key": "10.1016/j.cstp.2025.101508_b29",
+        "series-title": "Jabodetabek Commuter Survey 2019",
+        "author": "Indonesia",
+        "year": "2019"
+      },
+      {
+        "key": "10.1016/j.cstp.2025.101508_b30",
+        "series-title": "DKI Jakarta Governor Regulation No. 79 of 2016 on Passenger Transport Fares by Public Bus",
+        "author": "Jakarta Province",
+        "year": "2016"
+      },
+      {
+        "key": "10.1016/j.cstp.2025.101508_b31",
+        "first-page": "275",
+        "article-title": "Public transport experienced service reliability: Integrating travel time and travel conditions",
+        "volume": "117",
+        "author": "Jenelius",
+        "year": "2018",
+        "journal-title": "Transp. Res. Part A: Policy Pr."
+      },
+      {
+        "key": "10.1016/j.cstp.2025.101508_b32",
+        "series-title": "Project Completion Report, The JABODETABEK Urban Transportation Policy Integration Project Phase 2 in the Republic of Indonesia",
+        "author": "JICA",
+        "year": "2019"
+      },
+      {
+        "key": "10.1016/j.cstp.2025.101508_b33",
+        "doi-asserted-by": "crossref",
+        "first-page": "123",
+        "DOI": "10.1016/j.trd.2019.08.023",
+        "article-title": "Development of a driving cycle for Istanbul bus rapid transit based on real-world data using stratified sampling method",
+        "volume": "75",
+        "author": "Kaymaz",
+        "year": "2019",
+        "journal-title": "Transp. Res. Part D: Transp. Environ."
+      },
+      {
+        "key": "10.1016/j.cstp.2025.101508_b34",
+        "first-page": "575",
+        "article-title": "A study of stratified sampling in variance reduction techniques for parametric yield estimation",
+        "volume": "45",
+        "author": "Keramat",
+        "year": "1998",
+        "journal-title": "IEEE Trans. Circuits Syst. II"
+      },
+      {
+        "issue": "3",
+        "key": "10.1016/j.cstp.2025.101508_b35",
+        "doi-asserted-by": "crossref",
+        "first-page": "166",
+        "DOI": "10.1080/19427867.2018.1546806",
+        "article-title": "An empirical investigation of values of travel time savings from stated preference data and revealed preference data",
+        "volume": "12",
+        "author": "Li",
+        "year": "2018",
+        "journal-title": "Transp. Lett."
+      },
+      {
+        "key": "10.1016/j.cstp.2025.101508_b36",
+        "doi-asserted-by": "crossref",
+        "first-page": "488",
+        "DOI": "10.1080/01441647.2016.1252447",
+        "article-title": "The unmet travel needs of the older population: a review of the literature",
+        "volume": "37",
+        "author": "Luiu",
+        "year": "2016",
+        "journal-title": "Transp. Rev."
+      },
+      {
+        "key": "10.1016/j.cstp.2025.101508_b37",
+        "first-page": "82",
+        "article-title": "How do activities conducted while commuting influence mode choice? using revealed preference models to inform public transportation advantage and autonomous vehicle scenarios",
+        "volume": "124",
+        "author": "Malokin",
+        "year": "2019",
+        "journal-title": "Transp. Res. Part A: Policy Pr."
+      },
+      {
+        "key": "10.1016/j.cstp.2025.101508_b38",
+        "doi-asserted-by": "crossref",
+        "first-page": "1977",
+        "DOI": "10.2307/1914121",
+        "article-title": "The estimation of choice probabilities from choice based samples",
+        "volume": "45",
+        "author": "Manski",
+        "year": "1977",
+        "journal-title": "Econometrica"
+      },
+      {
+        "key": "10.1016/j.cstp.2025.101508_b39",
+        "doi-asserted-by": "crossref",
+        "DOI": "10.1016/j.cities.2020.102868",
+        "article-title": "Jakarta: A city of cities",
+        "volume": "106",
+        "author": "Martinez",
+        "year": "2020",
+        "journal-title": "Cities"
+      },
+      {
+        "key": "10.1016/j.cstp.2025.101508_b40",
+        "series-title": "Conditional logit analysis of qualitative choice behavior",
+        "author": "McFadden",
+        "year": "1972"
+      },
+      {
+        "key": "10.1016/j.cstp.2025.101508_b41",
+        "series-title": "Regulation of The Minister of Transportation of The Republic of Indonesia PM 35 of 2016 on Fares for Transporting People By Train Economy Class Services To Carry Out Public Service Obligations",
+        "author": "Ministry of Transportation",
+        "year": "2016"
+      },
+      {
+        "issue": "3",
+        "key": "10.1016/j.cstp.2025.101508_b42",
+        "first-page": "734",
+        "article-title": "A comprehensive perspective of unreliable public transport services’ costs",
+        "volume": "16",
+        "author": "Muñoz",
+        "year": "2020",
+        "journal-title": "Transp. A: Transp. Sci."
+      },
+      {
+        "key": "10.1016/j.cstp.2025.101508_b43",
+        "doi-asserted-by": "crossref",
+        "first-page": "1129",
+        "DOI": "10.1007/s11116-014-9558-x",
+        "article-title": "Transport, unmet activity needs and wellbeing in later life: exploring the links",
+        "volume": "42",
+        "author": "Nordbakke",
+        "year": "2014",
+        "journal-title": "Transportation"
+      },
+      {
+        "key": "10.1016/j.cstp.2025.101508_b44",
+        "doi-asserted-by": "crossref",
+        "first-page": "24",
+        "DOI": "10.1016/j.compenvurbsys.2018.01.011",
+        "article-title": "MEILI: A travel diary collection, annotation and automation system",
+        "volume": "70",
+        "author": "Prelipcean",
+        "year": "2018",
+        "journal-title": "Comput. Environ. Urban Syst."
+      },
+      {
+        "key": "10.1016/j.cstp.2025.101508_b45",
+        "doi-asserted-by": "crossref",
+        "first-page": "246",
+        "DOI": "10.1080/19427867.2019.1584694",
+        "article-title": "Assessment of transport equity to central business district (CBD) in sydney, Australia",
+        "volume": "12",
+        "author": "Qi",
+        "year": "2019",
+        "journal-title": "Transp. Lett."
+      },
+      {
+        "key": "10.1016/j.cstp.2025.101508_b46",
+        "doi-asserted-by": "crossref",
+        "first-page": "290",
+        "DOI": "10.1016/j.ssci.2015.07.027",
+        "article-title": "The german naturalistic cycling study – comparing cycling speed of riders of different e-bikes and conventional bicycles",
+        "volume": "92",
+        "author": "Schleinitz",
+        "year": "2017",
+        "journal-title": "Saf. Sci."
+      },
+      {
+        "key": "10.1016/j.cstp.2025.101508_b47",
+        "series-title": "Qualitative Choice Analysis",
+        "author": "Train",
+        "year": "1986"
+      },
+      {
+        "issue": "4",
+        "key": "10.1016/j.cstp.2025.101508_b48",
+        "doi-asserted-by": "crossref",
+        "first-page": "1469",
+        "DOI": "10.1111/j.1468-2354.2007.00471.x",
+        "article-title": "Vehicle choice behavior and the declining market share of U.S. automakers",
+        "volume": "48",
+        "author": "Train",
+        "year": "2007",
+        "journal-title": "Internat. Econom. Rev."
+      },
+      {
+        "issue": "2",
+        "key": "10.1016/j.cstp.2025.101508_b49",
+        "first-page": "15434",
+        "article-title": "Travel time estimation by means of google API data",
+        "volume": "53",
+        "author": "Wagner",
+        "year": "2020",
+        "journal-title": "IFAC- Pap."
+      },
+      {
+        "key": "10.1016/j.cstp.2025.101508_b50",
+        "doi-asserted-by": "crossref",
+        "first-page": "335",
+        "DOI": "10.1016/j.aap.2012.02.001",
+        "article-title": "Motorcycle and scooter speeds approaching urban intersections",
+        "volume": "48",
+        "author": "Walton",
+        "year": "2012",
+        "journal-title": "Accid. Anal. & Amp; Prev."
+      },
+      {
+        "key": "10.1016/j.cstp.2025.101508_b51",
+        "doi-asserted-by": "crossref",
+        "first-page": "51",
+        "DOI": "10.1017/bca.2018.21",
+        "article-title": "Valuing changes in time use in low- and middle-income countries",
+        "volume": "10(Suppl 1)",
+        "author": "Whittington D",
+        "year": "2019",
+        "journal-title": "J. Benefit- Cost Anal."
+      },
+      {
+        "key": "10.1016/j.cstp.2025.101508_b52",
+        "doi-asserted-by": "crossref",
+        "DOI": "10.32866/5115",
+        "article-title": "Comparing google maps and uber movement travel time data",
+        "author": "Wu",
+        "year": "2018",
+        "journal-title": "Transp. Find."
+      },
+      {
+        "key": "10.1016/j.cstp.2025.101508_b53",
+        "doi-asserted-by": "crossref",
+        "first-page": "203",
+        "DOI": "10.1016/j.trd.2016.06.005",
+        "article-title": "Traffic and emissions impact of congestion charging in the central Beijing urban area: A simulation analysis",
+        "volume": "51",
+        "author": "Wu",
+        "year": "2017",
+        "journal-title": "Transp. Res. Part D: Transp. Environ."
+      },
+      {
+        "key": "10.1016/j.cstp.2025.101508_b54",
+        "article-title": "Modeling departure time choice of car commuters in Dhaka, Bangladesh",
+        "author": "Zannat",
+        "year": "2021",
+        "journal-title": "Transp. Res. Rec.: J. Transp. Res. Board"
+      },
+      {
+        "key": "10.1016/j.cstp.2025.101508_b55",
+        "doi-asserted-by": "crossref",
+        "first-page": "223",
+        "DOI": "10.1016/j.tranpol.2023.01.017",
+        "article-title": "The role of transport infrastructure in economic growth: Empirical evidence in the UK",
+        "volume": "133",
+        "author": "Zhang",
+        "year": "2023",
+        "journal-title": "Transp. Policy"
+      }
+    ],
+    "container-title": [
+      "Case Studies on Transport Policy"
+    ],
+    "original-title": [],
+    "language": "en",
+    "link": [
+      {
+        "URL": "https://api.elsevier.com/content/article/PII:S2213624X25001452?httpAccept=text/xml",
+        "content-type": "text/xml",
+        "content-version": "vor",
+        "intended-application": "text-mining"
+      },
+      {
+        "URL": "https://api.elsevier.com/content/article/PII:S2213624X25001452?httpAccept=text/plain",
+        "content-type": "text/plain",
+        "content-version": "vor",
+        "intended-application": "text-mining"
+      }
+    ],
+    "deposited": {
+      "date-parts": [
+        [
+          2026,
+          1,
+          28
+        ]
+      ],
+      "date-time": "2026-01-28T20:21:00Z",
+      "timestamp": 1769631660000
+    },
+    "score": 1,
+    "resource": {
+      "primary": {
+        "URL": "https://linkinghub.elsevier.com/retrieve/pii/S2213624X25001452"
+      }
+    },
+    "subtitle": [],
+    "short-title": [],
+    "issued": {
+      "date-parts": [
+        [
+          2025,
+          9
+        ]
+      ]
+    },
+    "references-count": 55,
+    "alternative-id": [
+      "S2213624X25001452"
+    ],
+    "URL": "https://doi.org/10.1016/j.cstp.2025.101508",
+    "relation": {},
+    "ISSN": [
+      "2213-624X"
+    ],
+    "issn-type": [
+      {
+        "value": "2213-624X",
+        "type": "print"
+      }
+    ],
+    "subject": [],
+    "published": {
+      "date-parts": [
+        [
+          2025,
+          9
+        ]
+      ]
+    },
+    "assertion": [
+      {
+        "value": "Elsevier",
+        "name": "publisher",
+        "label": "This article is maintained by"
+      },
+      {
+        "value": "‘Mind the Gap’—The impact of discrepancies between Google Maps API and reported travel data in the Global South",
+        "name": "articletitle",
+        "label": "Article Title"
+      },
+      {
+        "value": "Case Studies on Transport Policy",
+        "name": "journaltitle",
+        "label": "Journal Title"
+      },
+      {
+        "value": "https://doi.org/10.1016/j.cstp.2025.101508",
+        "name": "articlelink",
+        "label": "CrossRef DOI link to publisher maintained version"
+      },
+      {
+        "value": "article",
+        "name": "content_type",
+        "label": "Content Type"
+      },
+      {
+        "value": "© 2025 The Authors. Published by Elsevier Ltd on behalf of World Conference on Transport Research Society.",
+        "name": "copyright",
+        "label": "Copyright"
+      }
+    ],
+    "article-number": "101508"
+  }
+}

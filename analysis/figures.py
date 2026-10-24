@@ -13,6 +13,7 @@ import json
 import math
 import platform
 import statistics
+import textwrap
 from collections import Counter, defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
@@ -34,6 +35,13 @@ def read_csv(path):
 
 def truth(value):
     return str(value).lower() == "true"
+
+
+def time_formatter(times):
+    """Show seconds when a short collection span would repeat minute labels."""
+    span=(max(times)-min(times)).total_seconds()
+    pattern="%d %b\n%H:%M:%S" if span < 120 else "%d %b\n%H:%M"
+    return mdates.DateFormatter(pattern,tz=times[0].tzinfo)
 
 
 def render(root):
@@ -58,6 +66,8 @@ def render(root):
         manifest.append({"file": f"figures/{filename}", "caption": caption, "sources": sources, "n_records": n, "status": "created"})
 
     def skip(filename, reason):
+        # A rerun must not leave an earlier plot masquerading as current evidence.
+        (output / filename).unlink(missing_ok=True)
         manifest.append({"file": f"figures/{filename}", "status": "skipped", "reason": reason})
 
     if quality:
@@ -71,7 +81,8 @@ def render(root):
             ax.text(i, a+b, f"n={a+b}", ha="center", va="bottom", fontsize=9)
         ax.set(ylabel="Recorded unique requests", title=f"{phase_label}: request outcomes")
         ax.set_ylim(0, max(a+b for a, b in zip(ok, failed))*1.16 or 1)
-        ax.legend(frameon=False)
+        ax.set_title(f"{phase_label}: request outcomes",pad=38)
+        ax.legend(frameon=False,loc="lower right",bbox_to_anchor=(1,1.01),ncol=2,borderaxespad=0,fontsize=9)
         save(fig, "analysis_request_quality.png", "Recorded request outcomes by provider and collection phase. Exact duplicate rows are counted once. HTTP success does not itself imply a usable route.", ["results/request_quality.csv"], sum(a+b for a, b in zip(ok, failed)))
     else:
         skip("analysis_request_quality.png", "No recorded requests")
@@ -127,6 +138,7 @@ def render(root):
         if latency_rows:
             fig, ax = plt.subplots(figsize=(8.2, 4.6))
             plotted = 0
+            plotted_times=[]
             for provider in providers:
                 selected = [r for r in latency_rows if r["provider"] == provider]
                 xs, ys = [], []
@@ -143,9 +155,9 @@ def render(root):
                 if xs:
                     ax.scatter(xs, ys, color=COLORS.get(provider), s=24, alpha=.7, label=provider)
                     plotted += len(xs)
+                    plotted_times.extend(xs)
             if plotted:
-                tz = datetime.fromisoformat(usable[0]["timestamp_astana"]).tzinfo
-                ax.xaxis.set_major_formatter(mdates.DateFormatter("%d %b\n%H:%M", tz=tz))
+                ax.xaxis.set_major_formatter(time_formatter(plotted_times))
                 ax.set(xlabel="Request start, Astana local time", ylabel="Recorded request latency (seconds)", title=f"{phase_label}: request timing")
                 ax.legend(frameon=False)
                 save(fig, "analysis_request_latency.png", "Recorded API request latencies by request start time. Latency is instrument performance and is distinct from estimated journey duration. Failed requests remain eligible if their timing was recorded.", ["results/observations.csv"], plotted)
@@ -157,21 +169,28 @@ def render(root):
 
         sample = observations[:10]
         columns = ["cycle_id", "route_id", "provider", "duration_s", "distance_m", "status", "phase"]
-        fig, ax = plt.subplots(figsize=(11.5, max(3.6, .34*len(sample)+1.4)))
+        # Author at the report's display width: large source canvases otherwise
+        # make a narrow auto-sized table unreadable after document scaling.
+        wrap_widths=[11,8,10,12,12,10,10]
+        cells=[["\n".join(textwrap.wrap(str(r.get(column,"")),width=width,break_long_words=True,break_on_hyphens=False))
+                for column,width in zip(columns,wrap_widths)] for r in sample]
+        row_lines=[max((cell.count("\n")+1 for cell in line),default=1) for line in cells]
+        fig, ax = plt.subplots(figsize=(6.5, max(2.0,.30*(sum(row_lines)+1)+.7)))
         ax.axis("off")
-        cells = [[str(r.get(column, "")) for column in columns] for r in sample]
-        table = ax.table(cellText=cells, colLabels=columns, cellLoc="left", colLoc="left", loc="center")
+        widths=[.15,.12,.13,.17,.17,.13,.13]
+        table = ax.table(cellText=cells, colLabels=columns, colWidths=widths,
+                         cellLoc="left", colLoc="left", bbox=[0,0,1,.95])
         table.auto_set_font_size(False)
-        table.set_fontsize(8)
-        table.scale(1, 1.6)
-        table.auto_set_column_width(range(len(columns)))
+        table.set_fontsize(11)
         for (i, _), cell in table.get_celld().items():
+            cell.PAD=.07
+            cell.set_height((1 if i==0 else row_lines[i-1])/(sum(row_lines)+1))
             if i == 0:
                 cell.set_facecolor("#183C50")
-                cell.set_text_props(color="white", weight="bold")
+                cell.set_text_props(color="white", weight="bold",fontsize=10)
             else:
                 cell.set_facecolor("#EDF3F5" if i % 2 else "white")
-        ax.set_title(f"{phase_label}: first {len(sample)} recorded rows", pad=15)
+        ax.set_title(f"{phase_label}: first {len(sample)} recorded rows", pad=10,fontsize=12)
         save(fig, "analysis_recorded_extract.png", "Verbatim selected raw fields from the first recorded CSV rows, retained in observations.csv with source filename and line number. The rendered table is an evidence view, not a screenshot of a separate application.", ["results/observations.csv"], len(sample))
     else:
         for name in ["provider_durations", "distance_duration", "request_latency", "recorded_extract"]:
@@ -214,7 +233,7 @@ def render(root):
         ax.scatter(times, [float(p["time_gap_s"]) for p in ordered], color="#167D9A", s=25, alpha=.75)
         ax.axhline(60, color="#C85745", linestyle="--", lw=1.3, label="Pairing limit: 60 seconds")
         ax.set(ylabel="Request-start separation (seconds)", xlabel="Request midpoint, Astana local time", title=f"{phase_label}: synchronization evidence", ylim=(-1, 66))
-        ax.xaxis.set_major_formatter(mdates.DateFormatter("%d %b\n%H:%M", tz=times[0].tzinfo))
+        ax.xaxis.set_major_formatter(time_formatter(times))
         ax.legend(frameon=False, fontsize=8)
         save(fig, "analysis_synchronization.png", "Observed start-time separations for accepted primary pairs. Pair exclusions are separately retained in results/pair_exclusions.csv; the plot does not imply every raw request was paired.", ["results/pairs.csv", "results/pair_exclusions.csv"], len(primary))
 
@@ -225,7 +244,7 @@ def render(root):
             ax.plot(route_times, [float(p["signed_diff_s"]) for p in selected], marker="o", ms=3, lw=.9, alpha=.65)
         ax.axhline(0, color="#6B7280", lw=1)
         ax.set(xlabel="Request midpoint, Astana local time", ylabel="TomTom − 2GIS (seconds)", title=f"{phase_label}: signed disagreement over recorded cycles")
-        ax.xaxis.set_major_formatter(mdates.DateFormatter("%d %b\n%H:%M", tz=times[0].tzinfo))
+        ax.xaxis.set_major_formatter(time_formatter(times))
         save(fig, "analysis_signed_timeline.png", "Signed TomTom−2GIS time differences over recorded cycles. Each line connects observations of one fixed origin–destination route; positive values indicate a longer TomTom estimate. No interpolation is used in calculations.", ["results/pairs.csv"], len(primary))
     else:
         for name in ["paired_estimates", "route_disagreement", "length_comparability", "synchronization", "signed_timeline"]:

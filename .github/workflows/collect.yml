@@ -20,23 +20,51 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Collect raw measurements
-        id: collect
-        env:
-          ORS_KEY: ${{ secrets.ORS_KEY }}
-        run: python collector/collect.py --mode scheduled
-      - name: Commit observations
-        if: always()
+      - name: Configure commit identity
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/raw data/collection_state.json docs/research_log.md
+      - name: Reserve the request budget
+        id: reserve
+        run: python collector/collect.py --mode scheduled --cycle-label "gh-${GITHUB_RUN_ID}" --reserve-only
+      - name: Persist budget before network requests
+        if: steps.reserve.outputs.reservation_id != ''
+        run: |
+          git add data/collection_state.json
+          git commit -m "Reserve scheduled request budget"
+          git push origin HEAD:main
+      - name: Collect raw measurements
+        id: collect
+        if: steps.reserve.outputs.reservation_id != ''
+        timeout-minutes: 5
+        env:
+          ORS_KEY: ${{ secrets.ORS_KEY }}
+          RESERVATION_ID: ${{ steps.reserve.outputs.reservation_id }}
+        run: python collector/collect.py --mode scheduled --execute-reservation "$RESERVATION_ID"
+      - name: Commit observations
+        if: always()
+        run: |
+          git add --all -- data/collection_state.json docs/research_log.md
+          if [ -d data/raw ]; then
+            git add data/raw
+          fi
           if ! git diff --cached --quiet; then
             git commit -m "Record scheduled route observations"
             git push origin HEAD:main
           fi
+      - name: Preserve raw observations if publication fails
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: collector-recovery-${{ github.run_id }}
+          path: |
+            data/raw
+            data/collection_state.json
+            docs/research_log.md
+          if-no-files-found: warn
+          retention-days: 30
       - name: Disable schedule after collection window
-        if: steps.collect.outputs.expired == 'true'
+        if: always() && (steps.reserve.outputs.expired == 'true' || steps.collect.outputs.expired == 'true' || steps.collect.outputs.halted == 'true')
         env:
           GH_TOKEN: ${{ github.token }}
         run: gh workflow disable collect.yml

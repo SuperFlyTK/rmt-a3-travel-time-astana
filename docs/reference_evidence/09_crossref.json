@@ -1,0 +1,299 @@
+{
+  "status": "ok",
+  "message-type": "work",
+  "message-version": "1.0.0",
+  "message": {
+    "indexed": {
+      "date-parts": [
+        [
+          2026,
+          9,
+          27
+        ]
+      ],
+      "date-time": "2026-09-27T03:24:07Z",
+      "timestamp": 1790479447518,
+      "version": "4.1.0"
+    },
+    "reference-count": 7,
+    "publisher": "Network Design Lab - Transport Findings",
+    "license": [
+      {
+        "start": {
+          "date-parts": [
+            [
+              2025,
+              8,
+              19
+            ]
+          ],
+          "date-time": "2025-08-19T00:00:00Z",
+          "timestamp": 1755561600000
+        },
+        "content-version": "unspecified",
+        "delay-in-days": 0,
+        "URL": "https://creativecommons.org/licenses/by-sa/4.0"
+      }
+    ],
+    "content-domain": {
+      "domain": [],
+      "crossmark-restriction": false
+    },
+    "short-container-title": [],
+    "DOI": "10.32866/001c.143380",
+    "type": "journal-article",
+    "created": {
+      "date-parts": [
+        [
+          2025,
+          8,
+          19
+        ]
+      ],
+      "date-time": "2025-08-19T17:28:29Z",
+      "timestamp": 1755624509000
+    },
+    "source": "Crossref",
+    "is-referenced-by-count": 2,
+    "title": [
+      "Exploring the (Mis)match between Reported and Calculated Commute Travel Times"
+    ],
+    "prefix": "10.32866",
+    "author": [
+      {
+        "ORCID": "https://orcid.org/0009-0005-2647-1067",
+        "authenticated-orcid": false,
+        "given": "Adele",
+        "family": "Valero",
+        "sequence": "first",
+        "affiliation": [
+          {
+            "id": [
+              {
+                "id": "https://ror.org/01pxwe438",
+                "id-type": "ROR",
+                "asserted-by": "publisher"
+              }
+            ],
+            "name": "McGill University",
+            "department": [
+              "School of Urban Planning"
+            ]
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-1464-2640",
+        "authenticated-orcid": false,
+        "given": "Hisham",
+        "family": "Negm",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "id": [
+              {
+                "id": "https://ror.org/01pxwe438",
+                "id-type": "ROR",
+                "asserted-by": "publisher"
+              }
+            ],
+            "name": "McGill University",
+            "department": [
+              "School of Urban Planning"
+            ]
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-0942-4016",
+        "authenticated-orcid": true,
+        "given": "Ahmed",
+        "family": "El-Geneidy",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "id": [
+              {
+                "id": "https://ror.org/01pxwe438",
+                "id-type": "ROR",
+                "asserted-by": "publisher"
+              }
+            ],
+            "name": "McGill University",
+            "department": [
+              "School of Urban Planning"
+            ]
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "member": "18111",
+    "published-online": {
+      "date-parts": [
+        [
+          2025,
+          8,
+          19
+        ]
+      ]
+    },
+    "reference": [
+      {
+        "key": "ref1",
+        "doi-asserted-by": "publisher",
+        "first-page": "101508",
+        "DOI": "10.1016/j.cstp.2025.101508",
+        "article-title": "'Mind the Gap'—The impact of discrepancies between Google Maps API and reported travel data in the Global South",
+        "volume": "21",
+        "author": "F. Bastarianto",
+        "year": "2025",
+        "journal-title": "Case Studies on Transport Policy"
+      },
+      {
+        "issue": "1",
+        "key": "ref2",
+        "doi-asserted-by": "publisher",
+        "first-page": "85",
+        "DOI": "10.1007/s12469-022-00298-0",
+        "article-title": "Perceived and actual travel times in a multi-modal urban public transport network: comparing survey and AVL data",
+        "volume": "14",
+        "author": "T. Brands",
+        "year": "2022",
+        "journal-title": "Public Transport"
+      },
+      {
+        "key": "ref3",
+        "doi-asserted-by": "publisher",
+        "first-page": "1",
+        "DOI": "10.1016/j.tbs.2017.07.001",
+        "article-title": "Keeping track of time: A Smartphone-based analysis of travel time perception in a suburban environment",
+        "volume": "9",
+        "author": "X. Delclòs-Alió",
+        "year": "2017",
+        "journal-title": "Travel Behaviour and Society"
+      },
+      {
+        "key": "ref4",
+        "series-title": "Transforming the Future of Infrastructure through Smarter Information: Proceedings of the International Conference on Smart Infrastructure and Construction, June 2016",
+        "doi-asserted-by": "publisher",
+        "first-page": "759",
+        "DOI": "10.17863/CAM.7981",
+        "article-title": "Assessing the discrepancies between recorded and commonly assumed journey times in London",
+        "author": "T. Hillel",
+        "year": "2016"
+      },
+      {
+        "issue": "4",
+        "key": "ref5",
+        "doi-asserted-by": "publisher",
+        "first-page": "443",
+        "DOI": "10.1080/01441647.2013.815288",
+        "article-title": "Quantifying the Difference Between Self-Reported and Global Positioning Systems-Measured Journey Durations: A Systematic Review",
+        "volume": "33",
+        "author": "P. Kelly",
+        "year": "2013",
+        "journal-title": "Transport Reviews"
+      },
+      {
+        "key": "ref6",
+        "article-title": "R: A Language and Environment for Statistical Computing",
+        "author": "R Core Team",
+        "year": "2023"
+      },
+      {
+        "issue": "3",
+        "key": "ref7",
+        "doi-asserted-by": "publisher",
+        "first-page": "945",
+        "DOI": "10.1007/s11116-016-9757-8",
+        "article-title": "Accuracy and bias of subjective travel time estimates",
+        "volume": "45",
+        "author": "E. Tenenboim",
+        "year": "2018",
+        "journal-title": "Transportation"
+      }
+    ],
+    "container-title": [
+      "Findings"
+    ],
+    "original-title": [],
+    "language": "en",
+    "link": [
+      {
+        "URL": "https://findingspress.org/article/143380-exploring-the-mis-match-between-reported-and-calculated-commute-travel-times",
+        "content-type": "unspecified",
+        "content-version": "vor",
+        "intended-application": "similarity-checking"
+      }
+    ],
+    "deposited": {
+      "date-parts": [
+        [
+          2025,
+          8,
+          21
+        ]
+      ],
+      "date-time": "2025-08-21T21:43:15Z",
+      "timestamp": 1755812595000
+    },
+    "score": 1,
+    "resource": {
+      "primary": {
+        "URL": "https://findingspress.org/article/143380-exploring-the-mis-match-between-reported-and-calculated-commute-travel-times"
+      }
+    },
+    "subtitle": [],
+    "short-title": [],
+    "issued": {
+      "date-parts": [
+        [
+          2025,
+          8,
+          19
+        ]
+      ]
+    },
+    "references-count": 7,
+    "URL": "https://doi.org/10.32866/001c.143380",
+    "relation": {},
+    "ISSN": [
+      "2652-8800"
+    ],
+    "issn-type": [
+      {
+        "value": "2652-8800",
+        "type": "electronic"
+      }
+    ],
+    "subject": [],
+    "published": {
+      "date-parts": [
+        [
+          2025,
+          8,
+          19
+        ]
+      ]
+    }
+  },
+  "_public_copy_note": "Abstract omitted; bibliographic metadata retained."
+}

@@ -1,0 +1,65 @@
+{"cycle": "pilot-1", "route": "R01", "statuses": {"ors": "ok"}}
+{"cycle": "pilot-1", "route": "R02", "statuses": {"ors": "ok"}}
+{"cycle": "pilot-1", "route": "R03", "statuses": {"ors": "ok"}}
+{"cycle": "pilot-1", "route": "R04", "statuses": {"ors": "ok"}}
+{"cycle": "pilot-1", "route": "R05", "statuses": {"ors": "ok"}}
+{"cycle": "pilot-1", "route": "R06", "statuses": {"ors": "ok"}}
+{"cycle": "pilot-1", "route": "R07", "statuses": {"ors": "ok"}}
+{"cycle": "pilot-1", "route": "R08", "statuses": {"ors": "ok"}}
+{"cycle": "pilot-1", "route": "R09", "statuses": {"ors": "ok"}}
+{"cycle": "pilot-1", "route": "R10", "statuses": {"ors": "ok"}}
+{"cycle": "pilot-1", "route": "R11", "statuses": {"ors": "ok"}}
+{"cycle": "pilot-1", "route": "R12", "statuses": {"ors": "ok"}}
+{"cycle": "pilot-1", "route": "R13", "statuses": {"ors": "ok"}}
+{"cycle": "pilot-1", "route": "R14", "statuses": {"ors": "ok"}}
+{"cycle": "pilot-1", "route": "R15", "statuses": {"ors": "ok"}}
+{"cycle": "pilot-1", "route": "R16", "statuses": {"ors": "ok"}}
+{"cycle": "pilot-1", "route": "R17", "statuses": {"ors": "ok"}}
+{"cycle": "pilot-1", "route": "R18", "statuses": {"ors": "ok"}}
+{"cycle": "pilot-1", "route": "R19", "statuses": {"ors": "ok"}}
+{"cycle": "pilot-1", "route": "R20", "statuses": {"ors": "ok"}}
+{"cycle": "pilot-1", "requests": 20, "success": 20, "csv": "data/raw/2026-10-24.csv"}
+Five-minute pause before next pilot cycle
+{"cycle": "pilot-2", "route": "R01", "statuses": {"ors": "ok"}}
+{"cycle": "pilot-2", "route": "R02", "statuses": {"ors": "ok"}}
+{"cycle": "pilot-2", "route": "R03", "statuses": {"ors": "ok"}}
+{"cycle": "pilot-2", "route": "R04", "statuses": {"ors": "ok"}}
+{"cycle": "pilot-2", "route": "R05", "statuses": {"ors": "ok"}}
+{"cycle": "pilot-2", "route": "R06", "statuses": {"ors": "ok"}}
+{"cycle": "pilot-2", "route": "R07", "statuses": {"ors": "ok"}}
+{"cycle": "pilot-2", "route": "R08", "statuses": {"ors": "ok"}}
+{"cycle": "pilot-2", "route": "R09", "statuses": {"ors": "ok"}}
+{"cycle": "pilot-2", "route": "R10", "statuses": {"ors": "ok"}}
+{"cycle": "pilot-2", "route": "R11", "statuses": {"ors": "ok"}}
+{"cycle": "pilot-2", "route": "R12", "statuses": {"ors": "ok"}}
+{"cycle": "pilot-2", "route": "R13", "statuses": {"ors": "ok"}}
+{"cycle": "pilot-2", "route": "R14", "statuses": {"ors": "ok"}}
+{"cycle": "pilot-2", "route": "R15", "statuses": {"ors": "ok"}}
+{"cycle": "pilot-2", "route": "R16", "statuses": {"ors": "ok"}}
+{"cycle": "pilot-2", "route": "R17", "statuses": {"ors": "ok"}}
+{"cycle": "pilot-2", "route": "R18", "statuses": {"ors": "ok"}}
+{"cycle": "pilot-2", "route": "R19", "statuses": {"ors": "ok"}}
+{"cycle": "pilot-2", "route": "R20", "statuses": {"ors": "ok"}}
+{"cycle": "pilot-2", "requests": 20, "success": 20, "csv": "data/raw/2026-10-24.csv"}
+Five-minute pause before next pilot cycle
+{"cycle": "pilot-3", "route": "R01", "statuses": {"ors": "ok"}}
+{"cycle": "pilot-3", "route": "R02", "statuses": {"ors": "ok"}}
+{"cycle": "pilot-3", "route": "R03", "statuses": {"ors": "ok"}}
+{"cycle": "pilot-3", "route": "R04", "statuses": {"ors": "ok"}}
+{"cycle": "pilot-3", "route": "R05", "statuses": {"ors": "ok"}}
+{"cycle": "pilot-3", "route": "R06", "statuses": {"ors": "ok"}}
+{"cycle": "pilot-3", "route": "R07", "statuses": {"ors": "ok"}}
+{"cycle": "pilot-3", "route": "R08", "statuses": {"ors": "ok"}}
+{"cycle": "pilot-3", "route": "R09", "statuses": {"ors": "ok"}}
+{"cycle": "pilot-3", "route": "R10", "statuses": {"ors": "ok"}}
+{"cycle": "pilot-3", "route": "R11", "statuses": {"ors": "ok"}}
+{"cycle": "pilot-3", "route": "R12", "statuses": {"ors": "ok"}}
+{"cycle": "pilot-3", "route": "R13", "statuses": {"ors": "ok"}}
+{"cycle": "pilot-3", "route": "R14", "statuses": {"ors": "ok"}}
+{"cycle": "pilot-3", "route": "R15", "statuses": {"ors": "ok"}}
+{"cycle": "pilot-3", "route": "R16", "statuses": {"ors": "ok"}}
+{"cycle": "pilot-3", "route": "R17", "statuses": {"ors": "ok"}}
+{"cycle": "pilot-3", "route": "R18", "statuses": {"ors": "ok"}}
+{"cycle": "pilot-3", "route": "R19", "statuses": {"ors": "ok"}}
+{"cycle": "pilot-3", "route": "R20", "statuses": {"ors": "ok"}}
+{"cycle": "pilot-3", "requests": 20, "success": 20, "csv": "data/raw/2026-10-24.csv"}

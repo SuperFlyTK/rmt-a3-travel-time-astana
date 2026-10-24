@@ -1,0 +1,3 @@
+timestamp_utc,timestamp_astana,cycle_id,route_id,provider,duration_s,duration_no_traffic_s,distance_m,status,http_code,error,request_id,latency_s,geometry_file,raw_file,phase
+2026-10-24T02:36:34.653179+00:00,2026-10-24T07:36:34.653179+05:00,preflight-astana-1,R01,ors,,,,http_error,406,HTTP_406,63848e29-c1fc-4d6f-a1b4-a20796256daf,0.344,,,preflight
+2026-10-24T02:37:08.242645+00:00,2026-10-24T07:37:08.242645+05:00,preflight-astana-2,R01,ors,929.8,,13895.8,ok,200,,4ca8ae02-35a6-4f91-9923-1d106bbe8e8b,0.312,data/preflight/geometry/preflight-astana-2_R01_ors.json,data/preflight/responses/preflight-astana-2_R01_ors.json,preflight

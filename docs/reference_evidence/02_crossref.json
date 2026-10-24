@@ -1,0 +1,582 @@
+{
+  "status": "ok",
+  "message-type": "work",
+  "message-version": "1.0.0",
+  "message": {
+    "indexed": {
+      "date-parts": [
+        [
+          2026,
+          10,
+          13
+        ]
+      ],
+      "date-time": "2026-10-13T13:50:54Z",
+      "timestamp": 1791899454974,
+      "version": "4.3.4"
+    },
+    "reference-count": 57,
+    "publisher": "Informa UK Limited",
+    "issue": "10",
+    "license": [
+      {
+        "start": {
+          "date-parts": [
+            [
+              2026,
+              2,
+              11
+            ]
+          ],
+          "date-time": "2026-02-11T00:00:00Z",
+          "timestamp": 1770768000000
+        },
+        "content-version": "tdm",
+        "delay-in-days": 0,
+        "URL": "https://doi.org/10.1080/policies-text-data-mining"
+      }
+    ],
+    "content-domain": {
+      "domain": [
+        "www.tandfonline.com"
+      ],
+      "crossmark-restriction": true
+    },
+    "short-container-title": [
+      "International Journal of Geographical Information Science"
+    ],
+    "published-print": {
+      "date-parts": [
+        [
+          2026,
+          10,
+          3
+        ]
+      ]
+    },
+    "DOI": "10.1080/13658816.2026.2628193",
+    "type": "journal-article",
+    "created": {
+      "date-parts": [
+        [
+          2026,
+          2,
+          12
+        ]
+      ],
+      "date-time": "2026-02-12T07:24:39Z",
+      "timestamp": 1770881079000
+    },
+    "page": "3412-3428",
+    "update-policy": "https://doi.org/10.1080/tandf_crossmark_01",
+    "source": "Crossref",
+    "is-referenced-by-count": 1,
+    "title": [
+      "Travel time prediction from sparse open data"
+    ],
+    "prefix": "10.1080",
+    "volume": "40",
+    "author": [
+      {
+        "ORCID": "https://orcid.org/0000-0003-1851-6411",
+        "authenticated-orcid": false,
+        "given": "Geoff",
+        "family": "Boeing",
+        "sequence": "first",
+        "affiliation": [
+          {
+            "name": "Department of Urban Planning and Spatial Analysis, University of Southern California",
+            "place": [
+              "Los Angeles, USA"
+            ]
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0001-6984-4373",
+        "authenticated-orcid": false,
+        "given": "Yuquan",
+        "family": "Zhou",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Department of Urban Planning and Spatial Analysis, University of Southern California",
+            "place": [
+              "Los Angeles, USA"
+            ]
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "member": "301",
+    "published-online": {
+      "date-parts": [
+        [
+          2026,
+          2,
+          11
+        ]
+      ]
+    },
+    "reference": [
+      {
+        "key": "e_1_3_4_2_1",
+        "first-page": "49",
+        "article-title": "Estimating free flow speed using google maps api: accuracy, limitations, and applications",
+        "volume": "50",
+        "author": "Alsobky A.",
+        "year": "2020",
+        "unstructured": "Alsobky, A., and Mousa, R., 2020. Estimating free flow speed using google maps api: accuracy, limitations, and applications. Advances in Transportation Studies, 50, 49–64.",
+        "journal-title": "Advances in Transportation Studies"
+      },
+      {
+        "key": "e_1_3_4_3_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1111/gean.70009"
+      },
+      {
+        "key": "e_1_3_4_4_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1214/ss/1009213726"
+      },
+      {
+        "key": "e_1_3_4_5_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.tra.2012.01.003"
+      },
+      {
+        "key": "e_1_3_4_6_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.trc.2016.07.004"
+      },
+      {
+        "key": "e_1_3_4_7_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.landurbplan.2020.103919"
+      },
+      {
+        "key": "e_1_3_4_8_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.trc.2020.102920"
+      },
+      {
+        "key": "e_1_3_4_9_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.jtrangeo.2020.102905"
+      },
+      {
+        "key": "e_1_3_4_10_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1136/bmjopen-2022-062178"
+      },
+      {
+        "key": "e_1_3_4_11_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1080/13658816.2018.1557662"
+      },
+      {
+        "key": "e_1_3_4_12_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.jtrangeo.2021.102993"
+      },
+      {
+        "issue": "2019",
+        "key": "e_1_3_4_13_1",
+        "first-page": "1",
+        "article-title": "Description of the ghs urban centre database",
+        "volume": "1",
+        "author": "Florczyk A.",
+        "year": "2015",
+        "unstructured": "Florczyk, A., et al., 2015. Description of the ghs urban centre database. Public Release, 1 (2019), 1–75.",
+        "journal-title": "Public Release,"
+      },
+      {
+        "key": "e_1_3_4_14_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.5194/isprs-archives-XLVIII-4-W7-2023-53-2023"
+      },
+      {
+        "key": "e_1_3_4_15_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/S2214-109X(22)00070-5"
+      },
+      {
+        "key": "e_1_3_4_16_1",
+        "unstructured": "Global Human Settlement Layer 2019. GHS Urban Centre Database (R2019A). https://human-settlement.emergency.copernicus.eu/download.php?ds=ucdb. accessed on: 2023-09-23."
+      },
+      {
+        "key": "e_1_3_4_17_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/HPCC/SmartCity/DSS.2018.00232"
+      },
+      {
+        "key": "e_1_3_4_18_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1177/0739456X10363278"
+      },
+      {
+        "key": "e_1_3_4_19_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1080/01944363.2020.1725602"
+      },
+      {
+        "key": "e_1_3_4_20_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1177/0361198118776139"
+      },
+      {
+        "key": "e_1_3_4_21_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.jtrangeo.2020.102770"
+      },
+      {
+        "key": "e_1_3_4_22_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1080/01944363.2024.2323470"
+      },
+      {
+        "key": "e_1_3_4_23_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.trb.2013.03.008"
+      },
+      {
+        "key": "e_1_3_4_24_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.jtrangeo.2021.103107"
+      },
+      {
+        "key": "e_1_3_4_25_1",
+        "volume-title": "The geography of urban transportation",
+        "author": "Johnston R.A.",
+        "year": "2004",
+        "unstructured": "Johnston, R.A., 2004. The urban transportation planning process. In: Hanson, S. and Giuliano, G., eds. The geography of urban transportation. New York: The Guilford Press, 3rd ed.",
+        "edition": "3"
+      },
+      {
+        "key": "e_1_3_4_26_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1080/19475683.2017.1304448"
+      },
+      {
+        "key": "e_1_3_4_27_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.trc.2019.02.014"
+      },
+      {
+        "key": "e_1_3_4_28_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1080/15230406.2021.1960609"
+      },
+      {
+        "key": "e_1_3_4_29_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1177/2399808317736528"
+      },
+      {
+        "key": "e_1_3_4_30_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.5194/isprs-archives-XLVIII-4-W7-2023-109-2023"
+      },
+      {
+        "key": "e_1_3_4_31_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1038/s42256-019-0138-9"
+      },
+      {
+        "key": "e_1_3_4_32_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1177/2399808320974027"
+      },
+      {
+        "key": "e_1_3_4_33_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.compenvurbsys.2019.101418"
+      },
+      {
+        "key": "e_1_3_4_34_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1068/a4230"
+      },
+      {
+        "key": "e_1_3_4_35_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1177/23998083221131044"
+      },
+      {
+        "key": "e_1_3_4_36_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.engappai.2022.105550"
+      },
+      {
+        "key": "e_1_3_4_37_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.landurbplan.2019.103708"
+      },
+      {
+        "key": "e_1_3_4_38_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.3390/su13137454"
+      },
+      {
+        "key": "e_1_3_4_39_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.jtrangeo.2013.06.011"
+      },
+      {
+        "key": "e_1_3_4_40_1",
+        "unstructured": "SCAG 2025. Transportation models. https://scag.ca.gov/transportation-models. Accessed: 2025-11-02."
+      },
+      {
+        "key": "e_1_3_4_41_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.5198/jtlu.v1i2.25"
+      },
+      {
+        "key": "e_1_3_4_42_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1049/iet-its.2018.5069"
+      },
+      {
+        "key": "e_1_3_4_43_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1007/s11116-018-9862-y"
+      },
+      {
+        "key": "e_1_3_4_44_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/MDM.2019.00-47"
+      },
+      {
+        "key": "e_1_3_4_45_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.apgeog.2021.102461"
+      },
+      {
+        "key": "e_1_3_4_46_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.cities.2005.07.004"
+      },
+      {
+        "key": "e_1_3_4_47_1",
+        "unstructured": "Uber Technologies Inc 2020. Uber Movement. https://movement.uber.com. accessed on: 2023-09-17."
+      },
+      {
+        "key": "e_1_3_4_48_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1007/s00521-023-08726-3"
+      },
+      {
+        "key": "e_1_3_4_49_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.ifacol.2020.12.2365"
+      },
+      {
+        "key": "e_1_3_4_50_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1007/s10479-022-04518-5"
+      },
+      {
+        "key": "e_1_3_4_51_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1068/b37096"
+      },
+      {
+        "key": "e_1_3_4_52_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1080/19475683.2011.625977"
+      },
+      {
+        "key": "e_1_3_4_53_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.landurbplan.2020.103841"
+      },
+      {
+        "key": "e_1_3_4_54_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.trc.2016.10.011"
+      },
+      {
+        "key": "e_1_3_4_55_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.32866/5115"
+      },
+      {
+        "key": "e_1_3_4_56_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1080/01944363.2020.1850321"
+      },
+      {
+        "key": "e_1_3_4_57_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.apgeog.2012.12.003"
+      },
+      {
+        "key": "e_1_3_4_58_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.trc.2015.02.019"
+      }
+    ],
+    "container-title": [
+      "International Journal of Geographical Information Science"
+    ],
+    "original-title": [],
+    "language": "en",
+    "link": [
+      {
+        "URL": "https://www.tandfonline.com/doi/pdf/10.1080/13658816.2026.2628193",
+        "content-type": "application/pdf",
+        "content-version": "vor",
+        "intended-application": "text-mining"
+      },
+      {
+        "URL": "https://www.tandfonline.com/doi/full-xml/10.1080/13658816.2026.2628193",
+        "content-type": "application/xml",
+        "content-version": "vor",
+        "intended-application": "text-mining"
+      },
+      {
+        "URL": "https://www.tandfonline.com/doi/pdf/10.1080/13658816.2026.2628193",
+        "content-type": "unspecified",
+        "content-version": "vor",
+        "intended-application": "similarity-checking"
+      }
+    ],
+    "deposited": {
+      "date-parts": [
+        [
+          2026,
+          10,
+          13
+        ]
+      ],
+      "date-time": "2026-10-13T13:11:15Z",
+      "timestamp": 1791897075000
+    },
+    "score": 1,
+    "resource": {
+      "primary": {
+        "URL": "https://www.tandfonline.com/doi/full/10.1080/13658816.2026.2628193"
+      }
+    },
+    "subtitle": [],
+    "short-title": [],
+    "issued": {
+      "date-parts": [
+        [
+          2026,
+          2,
+          11
+        ]
+      ]
+    },
+    "references-count": 57,
+    "journal-issue": {
+      "issue": "10",
+      "published-print": {
+        "date-parts": [
+          [
+            2026,
+            10,
+            3
+          ]
+        ]
+      }
+    },
+    "alternative-id": [
+      "10.1080/13658816.2026.2628193"
+    ],
+    "URL": "https://doi.org/10.1080/13658816.2026.2628193",
+    "relation": {},
+    "ISSN": [
+      "1365-8816",
+      "1362-3087"
+    ],
+    "issn-type": [
+      {
+        "value": "1365-8816",
+        "type": "print"
+      },
+      {
+        "value": "1362-3087",
+        "type": "electronic"
+      }
+    ],
+    "subject": [],
+    "published": {
+      "date-parts": [
+        [
+          2026,
+          2,
+          11
+        ]
+      ]
+    },
+    "assertion": [
+      {
+        "value": "The publishing and review policy for this title is described in its Aims & Scope.",
+        "order": 1,
+        "name": "peerreview_statement",
+        "label": "Peer Review Statement"
+      },
+      {
+        "value": "http://www.tandfonline.com/action/journalInformation?show=aimsScope&journalCode=tgis20",
+        "URL": "http://www.tandfonline.com/action/journalInformation?show=aimsScope&journalCode=tgis20",
+        "order": 2,
+        "name": "aims_and_scope_url",
+        "label": "Aim & Scope"
+      },
+      {
+        "value": "2025-05-05",
+        "order": 0,
+        "name": "received",
+        "label": "Received",
+        "group": {
+          "name": "publication_history",
+          "label": "Publication History"
+        }
+      },
+      {
+        "value": "2026-02-03",
+        "order": 1,
+        "name": "revised",
+        "label": "Revised",
+        "group": {
+          "name": "publication_history",
+          "label": "Publication History"
+        }
+      },
+      {
+        "value": "2026-02-03",
+        "order": 2,
+        "name": "accepted",
+        "label": "Accepted",
+        "group": {
+          "name": "publication_history",
+          "label": "Publication History"
+        }
+      },
+      {
+        "value": "2026-02-11",
+        "order": 3,
+        "name": "published",
+        "label": "Published",
+        "group": {
+          "name": "publication_history",
+          "label": "Publication History"
+        }
+      }
+    ]
+  }
+}

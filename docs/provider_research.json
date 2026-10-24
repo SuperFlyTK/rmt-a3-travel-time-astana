@@ -1,0 +1,390 @@
+{
+  "accessed_date": "2026-10-24",
+  "scope": "Public primary-source research only. No routing API requests, account operations, or credential reads.",
+  "language": "en",
+  "status": "Evidence register, not a legal opinion or verification of individual account entitlements.",
+  "critical_findings": [
+    "TomTom current public Routing allowance is 20,000 requests/month. The older 2,500/day claim is not the current public pricing; record an account-specific legacy allowance only if observed in that account.",
+    "TomTom Portal Terms 11.4 restrict storage of Results to permitted client caching under cache-control headers. Clause 11.6.1 restricts secondary/derived databases. Clause 11.6.10 requires prior written approval for comparison/benchmarking with similar competitor products. Omitting geometry does not resolve these explicit restrictions.",
+    "2GIS documentation gives a one-time demo key valid for one month and 1,000 total Routing units. The parent agent reports this account UI shows 5/minute and 1,000/month; this account observation is separate from public documentation. Published subscription throughput of 600 units/minute must not replace the observed demo cap.",
+    "2GIS public WebAPI offer lists Routing API and restricts extraction/storage/reuse/distribution outside that contract. Applicability of the Russian offer to this Kazakhstan demo account has not been independently established. No explicit permission for a public numerical-only research dataset was found.",
+    "ORS current terms license results CC-BY-SA 4.0 with ORS/HeiGIT and OpenStreetMap attribution. Do not cite the old staging page's CC-BY 4.0 language as current terms.",
+    "The public ORS API has no live traffic; use as a non-live-traffic control, not a second traffic-aware provider.",
+    "Comparable OD coordinates do not ensure identical recommended paths; similar length alone is not proof of identical geometry. These API outputs cannot establish accuracy without ground truth."
+  ],
+  "plan_arithmetic": {
+    "kind": "Calculated schedule arithmetic, not collected observations",
+    "routes": 20,
+    "every_15_minutes": {
+      "cycles_per_day": 96,
+      "requests_per_provider_per_day": 1920,
+      "requests_per_provider_per_48h": 3840
+    },
+    "every_30_minutes": {
+      "cycles_per_day": 48,
+      "requests_per_provider_per_day": 960,
+      "requests_per_provider_per_48h": 1920
+    },
+    "pilot_3_cycles_requests_per_provider": 60,
+    "conclusions": [
+      "Neither 15-minute nor 30-minute all-day collection over 48 hours fits a 1,000-unit 2GIS demo budget.",
+      "Even hourly collection for 48 hours uses 960 units before a 60-request pilot and checks.",
+      "At an observed 5/minute limit, 20 independent 2GIS route calls cannot all be sent in one minute. Providers can still be paired closely for each individual route by pacing pairs, if that design change is preregistered.",
+      "Multi-pair 2GIS requests still bill one route per OD pair; do not assume batching bypasses the per-minute unit limit.",
+      "20,000 TomTom monthly requests can fit the proposed 48-hour volume but do not imply permission for comparison or storage.",
+      "ORS 1,920/day leaves only 80 calls/day below its 2,000/day cap; include pilot, checks, retries and other use in the budget."
+    ]
+  },
+  "providers": {
+    "tomtom": {
+      "provider_owner": "TomTom",
+      "api_version": "TomTom Maps Routing API v1",
+      "docs_last_edit": "2026-08-07",
+      "endpoint": "https://api.tomtom.com/routing/1/calculateRoute/{origin_lat},{origin_lon}:{destination_lat},{destination_lon}/json",
+      "method": "GET",
+      "auth": "Query parameter key; redact request URLs in logs",
+      "request": {
+        "travelMode": "car",
+        "routeType": "fastest",
+        "traffic": true,
+        "departAt": "now",
+        "computeTravelTimeFor": "all",
+        "routeRepresentation": "polyline",
+        "maxAlternatives": 0
+      },
+      "schema": {
+        "route": "routes[0]",
+        "duration_s": "routes[0].summary.travelTimeInSeconds",
+        "distance_m": "routes[0].summary.lengthInMeters",
+        "duration_no_traffic_s": "routes[0].summary.noTrafficTravelTimeInSeconds",
+        "duration_historic_s": "routes[0].summary.historicTrafficTravelTimeInSeconds",
+        "duration_live_s": "routes[0].summary.liveTrafficIncidentsTravelTimeInSeconds",
+        "traffic_delay_s": "routes[0].summary.trafficDelayInSeconds",
+        "geometry": "routes[0].legs[].points[]: latitude, longitude",
+        "success": "HTTP 200 and nonempty routes with finite positive duration and distance"
+      },
+      "traffic_notes": [
+        "Calculation considers current traffic and typical speeds for day/time.",
+        "traffic=false excludes current data for path selection but historic speeds remain; documentation also warns travelTimeInSeconds still includes traffic delay.",
+        "computeTravelTimeFor=all adds no-traffic, historic and live travel times. Use the explicit noTraffic field instead of subtracting or relabelling the standard duration."
+      ],
+      "algorithm": {
+        "statement": "The reviewed API documentation does not specify the deployed shortest-path algorithm or disclose all edge weights.",
+        "do_not_claim": [
+          "Dijkstra",
+          "A*",
+          "Contraction Hierarchies",
+          "a particular learned ETA model"
+        ],
+        "conceptual_model_only": "A road graph can represent route cost as a sum of edge travel times; this is an explanatory abstraction, not a recovered TomTom implementation."
+      },
+      "quota": {
+        "public_free_routing_requests_per_month": 20000,
+        "account_effective_limit": "Must be checked in account; not read by this researcher",
+        "old_2500_per_day": "Historical offer; not current public pricing",
+        "no_credit_card_needed_for_free_allowance": true,
+        "notes": "Public migration documentation says free requests are tracked monthly per API in MyTomTom."
+      },
+      "rights": {
+        "authoritative_page": "https://docs.tomtom.com/legal/terms-and-conditions",
+        "client_rendered_source": "https://docs.tomtom.com/_astro/LegalTabs.CZQaVJ02.js",
+        "read_method": "web.run returned page shell; the same page's public HTML and referenced static JS were fetched without authentication to read its legal text.",
+        "clauses": {
+          "11.4": "Storage/caching of Results is prohibited except allowed client caching under returned cache-control headers and maximum age.",
+          "11.6.1": "Restricts derivative works and secondary/derived databases using delivered content.",
+          "11.6.10": "Comparison or benchmarking together with similar competitor products requires explicit written TomTom approval."
+        },
+        "numerical_fields_exception_found": false,
+        "raw_geometry_public_distribution_permission_found": false,
+        "conclusion": "Do not treat the planned public comparison dataset, or a geometry-free version of it, as authorized by the standard terms.",
+        "applicability": "Portal terms say separate written agreements can supersede them; no separate agreement was inspected."
+      },
+      "sources": [
+        {
+          "id": "tt_route",
+          "url": "https://docs.tomtom.com/routing-api/documentation/tomtom-maps/v1/calculate-route",
+          "supports": "Endpoint, parameters, traffic semantics, response fields and units"
+        },
+        {
+          "id": "tt_pricing",
+          "url": "https://docs.tomtom.com/pricing",
+          "supports": "Current free Routing allowance 20K monthly"
+        },
+        {
+          "id": "tt_migration",
+          "url": "https://docs.tomtom.com/platform/documentation/status-and-support/migrating-to-mytomtom",
+          "supports": "Migration and free monthly API request tracking",
+          "page_last_edit": "2026-10-15"
+        },
+        {
+          "id": "tt_terms",
+          "url": "https://docs.tomtom.com/legal/terms-and-conditions",
+          "supports": "Storage, derived-database and comparison restrictions"
+        },
+        {
+          "id": "tt_terms_public_component",
+          "url": "https://docs.tomtom.com/_astro/LegalTabs.CZQaVJ02.js",
+          "supports": "Actual text rendered by the official legal page",
+          "local_copy": "work/tomtom-legal-public.js"
+        }
+      ]
+    },
+    "dgis": {
+      "provider_owner": "2GIS; exact contracting entity depends on applicable account agreement",
+      "api_version": "Routing endpoint 7.0.0/global; reference page embeds an OpenAPI document titled 2GIS Navigation API 6.0.0, so record endpoint version separately from schema title.",
+      "endpoint": "https://routing.api.2gis.com/routing/7.0.0/global",
+      "method": "POST",
+      "auth": "Query parameter key; redact request URLs in logs",
+      "request": {
+        "points": [
+          {
+            "type": "stop",
+            "lon": "origin_lon",
+            "lat": "origin_lat"
+          },
+          {
+            "type": "stop",
+            "lon": "destination_lon",
+            "lat": "destination_lat"
+          }
+        ],
+        "transport": "driving",
+        "route_mode": "fastest",
+        "traffic_mode": "jam",
+        "output": "detailed",
+        "locale": "en"
+      },
+      "schema": {
+        "success": "HTTP 200, status=OK, type=result, nonempty result",
+        "route": "result[0]",
+        "duration_s": "result[0].total_duration",
+        "distance_m": "result[0].total_distance",
+        "route_id": "result[0].route_id if returned",
+        "algorithm_label": "result[0].algorithm is a mode description such as 'with traffic jams', not a disclosed shortest-path algorithm",
+        "geometry": "result[0].maneuvers.*.outcoming_path.geometry.*.selection (WKT); also begin_pedestrian_path.geometry.selection/end_pedestrian_path.geometry.selection when present",
+        "geometry_note": "Collections can be keyed objects in documented examples; do not assume every geometry container is a JSON list. WKT can include a third coordinate.",
+        "duration_no_traffic_s": null,
+        "no_traffic_note": "No paired same-route no-traffic duration field identified in the reviewed jam response schema. Leave missing; do not synthesize it from another provider."
+      },
+      "traffic_notes": [
+        "Current traffic at request time is used by default for non-public-transport routes.",
+        "traffic_mode=statistics with utc requests predicted duration using statistical traffic for a specified time.",
+        "The overview states that congestion is included in calculation, but detailed congestion levels are not provided.",
+        "output=summary omits route geometry. route_mode=shortest ignores congestion and changes the route objective; it is not an interchangeable no-traffic baseline for the fastest route."
+      ],
+      "algorithm": {
+        "statement": "The reviewed documentation discloses fastest/shortest objectives and traffic modes, not the deployed shortest-path implementation or proprietary weights.",
+        "do_not_claim": [
+          "Dijkstra",
+          "A*",
+          "Contraction Hierarchies"
+        ],
+        "conceptual_model_only": "A time-dependent road-graph cost is a useful general model, not a statement of 2GIS internals."
+      },
+      "quota": {
+        "public_demo_validity": "one month from creation; one demo key only",
+        "public_demo_routing_total_units": 1000,
+        "public_demo_max_route_distance_km": 50,
+        "public_paid_subscription_units_per_minute": 600,
+        "account_observation_reported_by_parent": {
+          "demo_units_per_minute": 5,
+          "demo_units_per_month_display": 1000,
+          "independently_read_by_this_agent": false
+        },
+        "billing_unit": "One calculated route for each OD pair. Alternatives within one pair are not billed additionally.",
+        "note": "The public 600/minute subscription table must not override a stricter account-specific demo limit."
+      },
+      "rights": {
+        "applicable_account_terms_not_fully_resolved": true,
+        "platform_id": {
+          "url": "https://law.2gis.ru/en/platform-id",
+          "clauses": "2.2-2.4",
+          "note": "Separate service terms apply on actual service use; the sign-in agreement alone does not grant routing-data publication rights."
+        },
+        "platform_manager": {
+          "url": "https://law.2gis.ru/en/platform-manager",
+          "clause": "5.2",
+          "note": "Broad restrictions on extracted/derived materials, but 'Service' is defined as the account/key manager; do not assume this clause alone settles all Routing API rights."
+        },
+        "russian_webapi_offer": {
+          "url": "https://law.2gis.ru/offer-license-agreement-webapi",
+          "clause": "3.1",
+          "note": "Explicitly lists Routing API among Methods; restricts extracting/storing products or information from them and subsequent use outside the agreement; no caching provided. Kazakhstan-demo applicability is not independently verified."
+        },
+        "kazakhstan_api_page": {
+          "url": "https://law.2gis.kz/api-rules/ru",
+          "note": "Reviewed page mainly concerns older Maps/widget/API arrangements; not treated as definitive modern Routing 7 demo contract."
+        },
+        "numerical_only_storage_or_publication_exception_found": false,
+        "raw_geometry_publication_permission_found": false,
+        "conclusion": "No verified permission for public raw or numerical-only research dataset. Do not assert that deleting geometry grants such permission."
+      },
+      "sources": [
+        {
+          "id": "dgis_overview",
+          "url": "https://docs.2gis.com/en/api/navigation/routing/overview",
+          "supports": "Features, traffic and geometry descriptions, 50 km demo bound"
+        },
+        {
+          "id": "dgis_start",
+          "url": "https://docs.2gis.com/en/api/navigation/routing/start",
+          "supports": "Endpoint and response duration/distance units"
+        },
+        {
+          "id": "dgis_examples",
+          "url": "https://docs.2gis.com/en/api/navigation/routing/examples/routing",
+          "supports": "Current traffic, statistics/utc, summary/detailed and shortest objective"
+        },
+        {
+          "id": "dgis_reference",
+          "url": "https://docs.2gis.com/en/api/navigation/routing/reference/routing",
+          "supports": "Request/response schema and geometry paths"
+        },
+        {
+          "id": "dgis_pricing",
+          "url": "https://docs.2gis.com/en/platform-manager/subscription/pricing",
+          "supports": "Demo 1000 total, billing per OD pair, subscription throughput"
+        },
+        {
+          "id": "dgis_keys",
+          "url": "https://docs.2gis.com/en/platform-manager/subscription/keys",
+          "supports": "One demo key, validity one month"
+        },
+        {
+          "id": "dgis_key_limits",
+          "url": "https://docs.2gis.com/en/platform-manager/subscription/managing-keys",
+          "supports": "Account-specific minute/day/month key limits"
+        }
+      ]
+    },
+    "ors": {
+      "provider_owner": "HeiGIT gGmbH",
+      "api_version": "Hosted Directions v2; backend documentation version 10.0.1 at access",
+      "endpoint": "https://api.heigit.org/openrouteservice/v2/directions/driving-car",
+      "method": "POST",
+      "auth": "Authorization header containing the API key itself, without Bearer prefix",
+      "request": {
+        "coordinates": [
+          [
+            "origin_lon",
+            "origin_lat"
+          ],
+          [
+            "destination_lon",
+            "destination_lat"
+          ]
+        ],
+        "units": "m",
+        "instructions": false,
+        "geometry": true
+      },
+      "schema": {
+        "json_response_route": "routes[0]",
+        "duration_s": "routes[0].summary.duration",
+        "distance_m": "routes[0].summary.distance (units=m requested)",
+        "geometry_json": "routes[0].geometry is an encoded polyline",
+        "geojson_alternative_endpoint": "https://api.heigit.org/openrouteservice/v2/directions/driving-car/geojson",
+        "geometry_geojson": "features[0].geometry.coordinates, longitude-latitude coordinate order",
+        "summary_geojson": "features[0].properties.summary",
+        "duration_no_traffic_s": null,
+        "no_traffic_note": "The returned duration is already a non-live-traffic estimate; no distinct paired traffic/no-traffic output is supplied.",
+        "success": "HTTP 200 and positive route summary values; response container depends on requested JSON/GeoJSON format."
+      },
+      "traffic_notes": [
+        "A maintainer stated on 2026-02-19 that hosted ORS contains no live data or live traffic.",
+        "Self-hosted ORS can theoretically integrate separately acquired statistical traffic. This is not a capability of the public free endpoint.",
+        "The current host migrated to api.heigit.org in April 2026; use the /openrouteservice prefix. Deprecated-host quotas differ from the dashboard."
+      ],
+      "algorithm": {
+        "statement": "The open backend documents graph preprocessing and several algorithm families. Do not equate its Matrix-specific RPHAST/Dijkstra documentation with a verified algorithm for each hosted Directions request.",
+        "speeds": "Driving speeds use OSM speed tags or road-class/country defaults with road-surface and other adjustments; not live congestion.",
+        "conceptual_formula": "For a selected path, a simplified travel-time model is sum(edge_length/edge_speed) plus applicable penalties; the published speeds documentation explains how profile speeds are determined.",
+        "unknown": "Exact backend build/configuration and algorithm selected for this live request are not independently observed."
+      },
+      "quota": {
+        "standard_free": true,
+        "directions_per_24h": 2000,
+        "directions_per_rolling_60_seconds": 40,
+        "reset": "Daily window starts from first request after reset; not necessarily local midnight.",
+        "error_daily_limit": 403,
+        "error_minute_limit": 429,
+        "metadata_headers": [
+          "x-ratelimit-remaining",
+          "x-ratelimit-reset"
+        ]
+      },
+      "rights": {
+        "terms_url": "https://account.heigit.org/info/tos",
+        "public_client_component": "https://account.heigit.org/chunk-TC2R7MR4.js",
+        "read_method": "Current client-rendered official terms were read from the public static component referenced by the account site's scripts, without authentication.",
+        "results_license": "CC-BY-SA 4.0",
+        "attribution": "© openrouteservice by HeiGIT | Data from OpenStreetMap",
+        "note": "Apply the results license and required attribution to both copied results and adaptations; do not label provider outputs as solely the team's unrestricted data. Source-code licensing is separate.",
+        "specific_indefinite_geometry_database_confirmation": "A 2026-09-21 maintainer response redirected that detailed question to support rather than giving a public case-specific ruling.",
+        "personal_data": "Terms prohibit sending personal data apart from account-management information; use public non-personal coordinates.",
+        "stale_source_warning": "The old staging terms say CC-BY 4.0 and are not current authority.",
+        "local_evidence": [
+          "work/ors-legal-public.js",
+          "work/ors-terms-extracted.txt"
+        ]
+      },
+      "sources": [
+        {
+          "id": "ors_terms",
+          "url": "https://account.heigit.org/info/tos",
+          "supports": "Current CC-BY-SA 4.0, attribution, personal-data and account terms"
+        },
+        {
+          "id": "ors_license_confirmation",
+          "url": "https://ask.openrouteservice.org/t/free-plan-in-an-app-with-a-paid-tier-license-cc-by-sa-4-0-personal-data-and-attribution-questions/8079",
+          "supports": "Maintainer confirms CC-BY-SA 4.0 and Standard commercial use",
+          "statement_date": "2026-10-12"
+        },
+        {
+          "id": "ors_storage_question",
+          "url": "https://ask.openrouteservice.org/t/persistent-storage-and-commercial-reuse-of-directions-api-route-geometry/8057",
+          "supports": "Specific indefinite-storage query referred to support, not answered publicly",
+          "statement_date": "2026-09-21"
+        },
+        {
+          "id": "ors_no_live_traffic",
+          "url": "https://ask.openrouteservice.org/t/isochrone-trafic-data/7875",
+          "supports": "Maintainer says public ORS has no live traffic",
+          "statement_date": "2026-02-19"
+        },
+        {
+          "id": "ors_host",
+          "url": "https://ask.openrouteservice.org/t/deprecating-api-openrouteservice-org-in-favour-of-api-heigit-org/7912",
+          "supports": "Current endpoint base and old-host migration"
+        },
+        {
+          "id": "ors_quotas",
+          "url": "https://giscience.github.io/openrouteservice/frequently-asked-questions",
+          "supports": "2000/24h,40/min,reset and HTTP statuses; Matrix-specific algorithm caveat"
+        },
+        {
+          "id": "ors_formats",
+          "url": "https://giscience.github.io/openrouteservice/api-reference/endpoints/directions/requests-and-return-types",
+          "supports": "JSON/GeoJSON return formats"
+        },
+        {
+          "id": "ors_speeds",
+          "url": "https://giscience.github.io/openrouteservice/v9.10.0/technical-details/travel-speeds/",
+          "supports": "Published speed model; explicitly versioned documentation, not proof of all current hosted internals"
+        },
+        {
+          "id": "ors_preparation",
+          "url": "https://giscience.github.io/openrouteservice/run-instance/configuration/engine/profiles/build",
+          "supports": "Backend preprocessing and CH/Core-ALT configuration; not per-request algorithm proof"
+        }
+      ]
+    }
+  },
+  "research_limitations": [
+    "No account credentials, API keys, private agreements or API responses were read.",
+    "Provider legal interpretations are kept narrower than the available texts. Applicable custom terms can differ.",
+    "A successful HTTP 200 proves technical access, not a right to publish or benchmark the result.",
+    "Public numeric-result storage exceptions were not inferred from silence.",
+    "The mathematical solver of a proprietary API cannot be established from its 'algorithm' label or the fact that it returns a fastest route."
+  ]
+}

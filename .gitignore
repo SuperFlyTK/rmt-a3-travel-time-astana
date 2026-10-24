@@ -15,3 +15,5 @@ RMT_Assignment_*.docx
 работ*.docx
 API_checks.json
 README_SETUP.txt
+data/.collector.lock
+data/.collection_state.json.*.tmp

@@ -1,0 +1,677 @@
+{
+  "status": "ok",
+  "message-type": "work",
+  "message-version": "1.0.0",
+  "message": {
+    "indexed": {
+      "date-parts": [
+        [
+          2026,
+          10,
+          9
+        ]
+      ],
+      "date-time": "2026-10-09T14:48:45Z",
+      "timestamp": 1791557325264,
+      "version": "4.3.4"
+    },
+    "publisher-location": "New York, NY, USA",
+    "reference-count": 39,
+    "publisher": "ACM",
+    "license": [
+      {
+        "start": {
+          "date-parts": [
+            [
+              2021,
+              10,
+              26
+            ]
+          ],
+          "date-time": "2021-10-26T00:00:00Z",
+          "timestamp": 1635206400000
+        },
+        "content-version": "vor",
+        "delay-in-days": 0,
+        "URL": "https://www.acm.org/publications/policies/copyright_policy#Background"
+      }
+    ],
+    "content-domain": {
+      "domain": [
+        "dl.acm.org"
+      ],
+      "crossmark-restriction": true
+    },
+    "short-container-title": [],
+    "published-print": {
+      "date-parts": [
+        [
+          2021,
+          10,
+          26
+        ]
+      ]
+    },
+    "DOI": "10.1145/3459637.3481916",
+    "type": "proceedings-article",
+    "created": {
+      "date-parts": [
+        [
+          2021,
+          11,
+          15
+        ]
+      ],
+      "date-time": "2021-11-15T10:53:43Z",
+      "timestamp": 1636973623000
+    },
+    "page": "3767-3776",
+    "update-policy": "https://doi.org/10.1145/crossmark-policy",
+    "source": "Crossref",
+    "is-referenced-by-count": 189,
+    "title": [
+      "ETA Prediction with Graph Neural Networks in Google Maps"
+    ],
+    "prefix": "10.1145",
+    "author": [
+      {
+        "given": "Austin",
+        "family": "Derrow-Pinion",
+        "sequence": "first",
+        "affiliation": [
+          {
+            "name": "DeepMind, Mountain View, CA, USA"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Jennifer",
+        "family": "She",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "DeepMind, Mountain View, CA, USA"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "David",
+        "family": "Wong",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Waymo, Mountain View, CA, USA"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Oliver",
+        "family": "Lange",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Google, Seattle, WA, USA"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Todd",
+        "family": "Hester",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Amazon, Seattle, WA, USA"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Luis",
+        "family": "Perez",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Facebook AI, Menlo Park, CA, USA"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Marc",
+        "family": "Nunkesser",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Google, Seattle, WA, USA"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Seongjae",
+        "family": "Lee",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Google, Seattle, WA, USA"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Xueying",
+        "family": "Guo",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Google, Seattle, WA, USA"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Brett",
+        "family": "Wiltshire",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "DeepMind, Mountain View, CA, USA"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Peter W.",
+        "family": "Battaglia",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "DeepMind, London, United Kingdom"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Vishal",
+        "family": "Gupta",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "DeepMind, Mountain View, CA, USA"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Ang",
+        "family": "Li",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "DeepMind, Mountain View, CA, USA"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Zhongwen",
+        "family": "Xu",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Sea AI Lab, Singapore, Singapore"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Alvaro",
+        "family": "Sanchez-Gonzalez",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "DeepMind, London, United Kingdom"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Yujia",
+        "family": "Li",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "DeepMind, London, United Kingdom"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Petar",
+        "family": "Velickovic",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "DeepMind, London, United Kingdom"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "member": "320",
+    "published-online": {
+      "date-parts": [
+        [
+          2021,
+          10,
+          30
+        ]
+      ]
+    },
+    "reference": [
+      {
+        "key": "e_1_3_2_2_1_1",
+        "unstructured": "Peter W Battaglia Jessica B Hamrick Victor Bapst Alvaro Sanchez-Gonzalez Vinicius Zambaldi Mateusz Malinowski Andrea Tacchetti David Raposo Adam Santoro Ryan Faulkner etal 2018. Relational inductive biases deep learning and graph networks. arXiv preprint arXiv:1806.01261 (2018).  Peter W Battaglia Jessica B Hamrick Victor Bapst Alvaro Sanchez-Gonzalez Vinicius Zambaldi Mateusz Malinowski Andrea Tacchetti David Raposo Adam Santoro Ryan Faulkner et al. 2018. Relational inductive biases deep learning and graph networks. arXiv preprint arXiv:1806.01261 (2018)."
+      },
+      {
+        "key": "e_1_3_2_2_2_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/MSP.2017.2693418"
+      },
+      {
+        "key": "e_1_3_2_2_3_1",
+        "volume-title": "Lin (Eds.)",
+        "volume": "33",
+        "author": "Cao Defu",
+        "year": "2020",
+        "unstructured": "Defu Cao , Yujing Wang , Juanyong Duan , Ce Zhang , Xia Zhu , Congrui Huang , Yunhai Tong , Bixiong Xu , Jing Bai , Jie Tong , and Qi Zhang . 2020 . Spectral Temporal Graph Neural Network for Multivariate Time-series Forecasting. In Advances in Neural Information Processing Systems,, H. Larochelle, M. Ranzato, R. Hadsell, M. F. Balcan, and H . Lin (Eds.) , Vol. 33 . Curran Associates, Inc., 17766--17778. https://proceedings.neurips.cc/paper/ 2020/file/cdf6581cb7aca4b7e19ef136c6e601a5-Paper.pdf Defu Cao, Yujing Wang, Juanyong Duan, Ce Zhang, Xia Zhu, Congrui Huang, Yunhai Tong, Bixiong Xu, Jing Bai, Jie Tong, and Qi Zhang. 2020. Spectral Temporal Graph Neural Network for Multivariate Time-series Forecasting. In Advances in Neural Information Processing Systems,, H. Larochelle, M. Ranzato, R. Hadsell, M. F. Balcan, and H. Lin (Eds.), Vol. 33. Curran Associates, Inc., 17766--17778. https://proceedings.neurips.cc/paper/2020/file/cdf6581cb7aca4b7e19ef136c6e601a5-Paper.pdf"
+      },
+      {
+        "key": "e_1_3_2_2_4_1",
+        "volume-title": "Fastgcn: fast learning with graph convolutional networks via importance sampling. arXiv preprint arXiv:1801.10247",
+        "author": "Chen Jie",
+        "year": "2018",
+        "unstructured": "Jie Chen , Tengfei Ma , and Cao Xiao . 2018. Fastgcn: fast learning with graph convolutional networks via importance sampling. arXiv preprint arXiv:1801.10247 ( 2018 ). Jie Chen, Tengfei Ma, and Cao Xiao. 2018. Fastgcn: fast learning with graph convolutional networks via importance sampling. arXiv preprint arXiv:1801.10247 (2018)."
+      },
+      {
+        "key": "e_1_3_2_2_5_1",
+        "volume-title": "Principal neighbourhood aggregation for graph nets. arXiv preprint arXiv:2004.05718",
+        "author": "Corso Gabriele",
+        "year": "2020",
+        "unstructured": "Gabriele Corso , Luca Cavalleri , Dominique Beaini , Pietro Liò , and Petar Velivc ković. 2020. Principal neighbourhood aggregation for graph nets. arXiv preprint arXiv:2004.05718 ( 2020 ). Gabriele Corso, Luca Cavalleri, Dominique Beaini, Pietro Liò, and Petar Velivc ković. 2020. Principal neighbourhood aggregation for graph nets. arXiv preprint arXiv:2004.05718 (2020)."
+      },
+      {
+        "key": "e_1_3_2_2_6_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/3394486.3403320"
+      },
+      {
+        "key": "e_1_3_2_2_7_1",
+        "volume-title": "CompactETA: A Fast Inference System for Travel Time Prediction",
+        "author": "Fu Kun",
+        "unstructured": "Kun Fu , Fanlin Meng , Jieping Ye , and Zheng Wang . 2020. CompactETA: A Fast Inference System for Travel Time Prediction . Association for Computing Machinery , New York, NY, USA , 3337--3345. https://doi.org/10.1145/3394486.3403386 10.1145/3394486.3403386 Kun Fu, Fanlin Meng, Jieping Ye, and Zheng Wang. 2020. CompactETA: A Fast Inference System for Travel Time Prediction. Association for Computing Machinery, New York, NY, USA, 3337--3345. https://doi.org/10.1145/3394486.3403386"
+      },
+      {
+        "key": "e_1_3_2_2_8_1",
+        "volume-title": "Neural message passing for quantum chemistry. arXiv preprint arXiv:1704.01212",
+        "author": "Gilmer Justin",
+        "year": "2017",
+        "unstructured": "Justin Gilmer , Samuel S Schoenholz , Patrick F Riley , Oriol Vinyals , and George E Dahl . 2017. Neural message passing for quantum chemistry. arXiv preprint arXiv:1704.01212 ( 2017 ). Justin Gilmer, Samuel S Schoenholz, Patrick F Riley, Oriol Vinyals, and George E Dahl. 2017. Neural message passing for quantum chemistry. arXiv preprint arXiv:1704.01212 (2017)."
+      },
+      {
+        "key": "e_1_3_2_2_9_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.5555/3294771.3294869"
+      },
+      {
+        "key": "e_1_3_2_2_10_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.2200/S01045ED1V01Y202009AIM046"
+      },
+      {
+        "key": "e_1_3_2_2_11_1",
+        "volume-title": "Relational inductive bias for physical construction in humans and machines. arXiv preprint arXiv:1806.01203",
+        "author": "Hamrick Jessica B",
+        "year": "2018",
+        "unstructured": "Jessica B Hamrick , Kelsey R Allen , Victor Bapst , Tina Zhu , Kevin R McKee , Joshua B Tenenbaum , and Peter W Battaglia . 2018. Relational inductive bias for physical construction in humans and machines. arXiv preprint arXiv:1806.01203 ( 2018 ). Jessica B Hamrick, Kelsey R Allen, Victor Bapst, Tina Zhu, Kevin R McKee, Joshua B Tenenbaum, and Peter W Battaglia. 2018. Relational inductive bias for physical construction in humans and machines. arXiv preprint arXiv:1806.01203 (2018)."
+      },
+      {
+        "key": "e_1_3_2_2_12_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/3340531.3412732"
+      },
+      {
+        "key": "e_1_3_2_2_13_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1109/ICDE48307.2020.00126"
+      },
+      {
+        "key": "e_1_3_2_2_14_1",
+        "volume-title": "Adam: A method for stochastic optimization. arXiv preprint arXiv:1412.6980",
+        "author": "Kingma Diederik P",
+        "year": "2014",
+        "unstructured": "Diederik P Kingma and Jimmy Ba . 2014 . Adam: A method for stochastic optimization. arXiv preprint arXiv:1412.6980 (2014). Diederik P Kingma and Jimmy Ba. 2014. Adam: A method for stochastic optimization. arXiv preprint arXiv:1412.6980 (2014)."
+      },
+      {
+        "key": "e_1_3_2_2_15_1",
+        "volume-title": "Semi-supervised classification with graph convolutional networks. arXiv preprint arXiv:1609.02907",
+        "author": "Kipf Thomas N",
+        "year": "2016",
+        "unstructured": "Thomas N Kipf and Max Welling . 2016a. Semi-supervised classification with graph convolutional networks. arXiv preprint arXiv:1609.02907 ( 2016 ). Thomas N Kipf and Max Welling. 2016a. Semi-supervised classification with graph convolutional networks. arXiv preprint arXiv:1609.02907 (2016)."
+      },
+      {
+        "key": "e_1_3_2_2_16_1",
+        "volume-title": "Variational graph auto-encoders. arXiv preprint arXiv:1611.07308",
+        "author": "Kipf Thomas N",
+        "year": "2016",
+        "unstructured": "Thomas N Kipf and Max Welling . 2016b. Variational graph auto-encoders. arXiv preprint arXiv:1611.07308 ( 2016 ). Thomas N Kipf and Max Welling. 2016b. Variational graph auto-encoders. arXiv preprint arXiv:1611.07308 (2016)."
+      },
+      {
+        "key": "e_1_3_2_2_17_1",
+        "volume-title": "Diffusion convolutional recurrent neural network: Data-driven traffic forecasting. arXiv preprint arXiv:1707.01926",
+        "author": "Li Yaguang",
+        "year": "2017",
+        "unstructured": "Yaguang Li , Rose Yu , Cyrus Shahabi , and Yan Liu . 2017. Diffusion convolutional recurrent neural network: Data-driven traffic forecasting. arXiv preprint arXiv:1707.01926 ( 2017 ). Yaguang Li, Rose Yu, Cyrus Shahabi, and Yan Liu. 2017. Diffusion convolutional recurrent neural network: Data-driven traffic forecasting. arXiv preprint arXiv:1707.01926 (2017)."
+      },
+      {
+        "key": "e_1_3_2_2_18_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/3394486.3403280"
+      },
+      {
+        "key": "e_1_3_2_2_19_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/3340531.3411940"
+      },
+      {
+        "key": "e_1_3_2_2_20_1",
+        "volume-title": "2020 a. Temporal graph networks for deep learning on dynamic graphs. arXiv preprint arXiv:2006.10637",
+        "author": "Rossi Emanuele",
+        "year": "2020",
+        "unstructured": "Emanuele Rossi , Ben Chamberlain , Fabrizio Frasca , Davide Eynard , Federico Monti , and Michael Bronstein . 2020 a. Temporal graph networks for deep learning on dynamic graphs. arXiv preprint arXiv:2006.10637 ( 2020 ). Emanuele Rossi, Ben Chamberlain, Fabrizio Frasca, Davide Eynard, Federico Monti, and Michael Bronstein. 2020 a. Temporal graph networks for deep learning on dynamic graphs. arXiv preprint arXiv:2006.10637 (2020)."
+      },
+      {
+        "key": "e_1_3_2_2_21_1",
+        "volume-title": "2020 b",
+        "author": "Rossi Emanuele",
+        "year": "2004",
+        "unstructured": "Emanuele Rossi , Fabrizio Frasca , Ben Chamberlain , Davide Eynard , Michael Bronstein , and Federico Monti . 2020 b . SIGN : Scalable Inception Graph Neural Networks . arXiv preprint arXiv: 2004 .11198 (2020). Emanuele Rossi, Fabrizio Frasca, Ben Chamberlain, Davide Eynard, Michael Bronstein, and Federico Monti. 2020 b. SIGN: Scalable Inception Graph Neural Networks. arXiv preprint arXiv:2004.11198 (2020)."
+      },
+      {
+        "key": "e_1_3_2_2_22_1",
+        "doi-asserted-by": "crossref",
+        "unstructured": "Aravind Sankar Yozen Liu Jun Yu and Neil Shah. 2021. Graph Neural Networks for Friend Ranking in Large-scale Social Platforms. (2021).  Aravind Sankar Yozen Liu Jun Yu and Neil Shah. 2021. Graph Neural Networks for Friend Ranking in Large-scale Social Platforms. (2021).",
+        "DOI": "10.1145/3442381.3450120"
+      },
+      {
+        "key": "e_1_3_2_2_23_1",
+        "volume-title": "Machine learning for spatiotemporal sequence forecasting: A survey. arXiv preprint arXiv:1808.06865",
+        "author": "Shi Xingjian",
+        "year": "2018",
+        "unstructured": "Xingjian Shi and Dit-Yan Yeung . 2018. Machine learning for spatiotemporal sequence forecasting: A survey. arXiv preprint arXiv:1808.06865 ( 2018 ). Xingjian Shi and Dit-Yan Yeung. 2018. Machine learning for spatiotemporal sequence forecasting: A survey. arXiv preprint arXiv:1808.06865 (2018)."
+      },
+      {
+        "key": "e_1_3_2_2_24_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/3394486.3403276"
+      },
+      {
+        "key": "e_1_3_2_2_25_1",
+        "volume-title": "Graph attention networks. arXiv preprint arXiv:1710.10903",
+        "author": "Petar Velivc",
+        "year": "2017",
+        "unstructured": "Petar Velivc ković, Guillem Cucurull , Arantxa Casanova , Adriana Romero , Pietro Lio , and Yoshua Bengio . 2017. Graph attention networks. arXiv preprint arXiv:1710.10903 ( 2017 ). Petar Velivc ković, Guillem Cucurull, Arantxa Casanova, Adriana Romero, Pietro Lio, and Yoshua Bengio. 2017. Graph attention networks. arXiv preprint arXiv:1710.10903 (2017)."
+      },
+      {
+        "key": "e_1_3_2_2_26_1",
+        "unstructured": "Petar Velickovic William Fedus William L Hamilton Pietro Liò Yoshua Bengio and R Devon Hjelm. 2019. Deep graph infomax. (2019).  Petar Velickovic William Fedus William L Hamilton Pietro Liò Yoshua Bengio and R Devon Hjelm. 2019. Deep graph infomax. (2019)."
+      },
+      {
+        "key": "e_1_3_2_2_27_1",
+        "volume-title": "Neural execution of graph algorithms. arXiv preprint arXiv:1910.10593",
+        "author": "Petar Velivc",
+        "year": "2019",
+        "unstructured": "Petar Velivc ković, Rex Ying , Matilde Padovano , Raia Hadsell , and Charles Blundell . 2019. Neural execution of graph algorithms. arXiv preprint arXiv:1910.10593 ( 2019 ). Petar Velivc ković, Rex Ying, Matilde Padovano, Raia Hadsell, and Charles Blundell. 2019. Neural execution of graph algorithms. arXiv preprint arXiv:1910.10593 (2019)."
+      },
+      {
+        "key": "e_1_3_2_2_28_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1609/aaai.v32i1.11877"
+      },
+      {
+        "key": "e_1_3_2_2_29_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.5555/3367243.3367303"
+      },
+      {
+        "key": "e_1_3_2_2_30_1",
+        "volume-title": "Inductive Representation Learning on Temporal Graphs. arXiv preprint arXiv:2002.07962",
+        "author": "Xu Da",
+        "year": "2020",
+        "unstructured": "Da Xu , Chuanwei Ruan , Evren Korpeoglu , Sushant Kumar , and Kannan Achan . 2020. Inductive Representation Learning on Temporal Graphs. arXiv preprint arXiv:2002.07962 ( 2020 ). Da Xu, Chuanwei Ruan, Evren Korpeoglu, Sushant Kumar, and Kannan Achan. 2020. Inductive Representation Learning on Temporal Graphs. arXiv preprint arXiv:2002.07962 (2020)."
+      },
+      {
+        "key": "e_1_3_2_2_31_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.5555/3327144.3327166"
+      },
+      {
+        "key": "e_1_3_2_2_32_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/3292500.3340404"
+      },
+      {
+        "key": "e_1_3_2_2_33_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/3219819.3219890"
+      },
+      {
+        "key": "e_1_3_2_2_34_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.5555/3304222.3304273"
+      },
+      {
+        "key": "e_1_3_2_2_35_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/3318464.3389771"
+      },
+      {
+        "key": "e_1_3_2_2_36_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.5555/3294996.3295098"
+      },
+      {
+        "key": "e_1_3_2_2_37_1",
+        "volume-title": "Gaan: Gated attention networks for learning on large and spatiotemporal graphs. arXiv preprint arXiv:1803.07294",
+        "author": "Zhang Jiani",
+        "year": "2018",
+        "unstructured": "Jiani Zhang , Xingjian Shi , Junyuan Xie , Hao Ma , Irwin King , and Dit-Yan Yeung . 2018 . Gaan: Gated attention networks for learning on large and spatiotemporal graphs. arXiv preprint arXiv:1803.07294 (2018). Jiani Zhang, Xingjian Shi, Junyuan Xie, Hao Ma, Irwin King, and Dit-Yan Yeung. 2018. Gaan: Gated attention networks for learning on large and spatiotemporal graphs. arXiv preprint arXiv:1803.07294 (2018)."
+      },
+      {
+        "key": "e_1_3_2_2_38_1",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1145/3394486.3403127"
+      },
+      {
+        "key": "e_1_3_2_2_39_1",
+        "volume-title": "GMAN: A Graph Multi-Attention Network for Traffic Prediction. In The Thirty-Fourth AAAI Conference on Artificial Intelligence, AAAI",
+        "author": "Zheng Chuanpan",
+        "year": "2020",
+        "unstructured": "Chuanpan Zheng , Xiaoliang Fan , Cheng Wang , and Jianzhong Qi . 2020 . GMAN: A Graph Multi-Attention Network for Traffic Prediction. In The Thirty-Fourth AAAI Conference on Artificial Intelligence, AAAI 2020, The Thirty-Second Innovative Applications of Artificial Intelligence Conference, IAAI 2020, The Tenth AAAI Symposium on Educational Advances in Artificial Intelligence, EAAI 2020, New York, NY, USA, February 7-12, 2020. AAAI Press , 1234--1241. https://aaai.org/ojs/index.php/AAAI/article/view/5477 Chuanpan Zheng, Xiaoliang Fan, Cheng Wang, and Jianzhong Qi. 2020. GMAN: A Graph Multi-Attention Network for Traffic Prediction. In The Thirty-Fourth AAAI Conference on Artificial Intelligence, AAAI 2020, The Thirty-Second Innovative Applications of Artificial Intelligence Conference, IAAI 2020, The Tenth AAAI Symposium on Educational Advances in Artificial Intelligence, EAAI 2020, New York, NY, USA, February 7-12, 2020. AAAI Press, 1234--1241. https://aaai.org/ojs/index.php/AAAI/article/view/5477"
+      }
+    ],
+    "event": {
+      "name": "CIKM '21: The 30th ACM International Conference on Information and Knowledge Management",
+      "location": "Virtual Event Queensland Australia",
+      "acronym": "CIKM '21",
+      "sponsor": [
+        "SIGWEB ACM Special Interest Group on Hypertext, Hypermedia, and Web",
+        "SIGIR ACM Special Interest Group on Information Retrieval"
+      ]
+    },
+    "container-title": [
+      "Proceedings of the 30th ACM International Conference on Information &amp; Knowledge Management"
+    ],
+    "original-title": [],
+    "link": [
+      {
+        "URL": "https://dl.acm.org/doi/10.1145/3459637.3481916",
+        "content-type": "unspecified",
+        "content-version": "vor",
+        "intended-application": "text-mining"
+      },
+      {
+        "URL": "https://dl.acm.org/doi/pdf/10.1145/3459637.3481916",
+        "content-type": "unspecified",
+        "content-version": "vor",
+        "intended-application": "similarity-checking"
+      }
+    ],
+    "deposited": {
+      "date-parts": [
+        [
+          2025,
+          6,
+          17
+        ]
+      ],
+      "date-time": "2025-06-17T16:48:58Z",
+      "timestamp": 1750178938000
+    },
+    "score": 1,
+    "resource": {
+      "primary": {
+        "URL": "https://dl.acm.org/doi/10.1145/3459637.3481916"
+      }
+    },
+    "subtitle": [],
+    "short-title": [],
+    "issued": {
+      "date-parts": [
+        [
+          2021,
+          10,
+          26
+        ]
+      ]
+    },
+    "references-count": 39,
+    "alternative-id": [
+      "10.1145/3459637.3481916",
+      "10.1145/3459637"
+    ],
+    "URL": "https://doi.org/10.1145/3459637.3481916",
+    "relation": {},
+    "subject": [],
+    "published": {
+      "date-parts": [
+        [
+          2021,
+          10,
+          26
+        ]
+      ]
+    },
+    "assertion": [
+      {
+        "value": "2021-10-30",
+        "order": 2,
+        "name": "published",
+        "label": "Published",
+        "group": {
+          "name": "publication_history",
+          "label": "Publication History"
+        }
+      }
+    ]
+  }
+}

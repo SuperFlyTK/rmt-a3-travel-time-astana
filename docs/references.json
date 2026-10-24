@@ -1,0 +1,1203 @@
+[
+  {
+    "doi": "10.1016/j.cstp.2025.101508",
+    "url": "https://doi.org/10.1016/j.cstp.2025.101508",
+    "free_url": "https://eprints.whiterose.ac.uk/id/eprint/228392/1/1-s2.0-S2213624X25001452-main.pdf",
+    "source_metadata": {
+      "a2_source_file": "RMT_A2_Team_AkhanovYerdaulet_ShadiyarbekSyrym_SabyrzhanAkylbek.pdf",
+      "a2_source_sha256": "30c9fd531d2baa062541427930c3a82da927fea757f16af0d131016260b5b2ed",
+      "a2_reference_page": 9,
+      "doi_annotation_rect": [
+        62.5,
+        715.8898,
+        202.08,
+        727.8898
+      ],
+      "free_url_annotation_rect": [
+        209.65,
+        715.8898,
+        246.42,
+        727.8898
+      ],
+      "crossref": {
+        "url": "https://api.crossref.org/works/10.1016%2Fj.cstp.2025.101508",
+        "retrieved_at_utc": "2026-10-24T02:33:32.456585+00:00",
+        "status": 200,
+        "final_url": "https://api.crossref.org/works/10.1016%2Fj.cstp.2025.101508",
+        "content_type": "application/json",
+        "evidence_file": "docs/reference_evidence/01_crossref.json"
+      },
+      "crossref_publication_dates": {
+        "published": {
+          "date-parts": [
+            [
+              2025,
+              9
+            ]
+          ]
+        },
+        "published-print": {
+          "date-parts": [
+            [
+              2025,
+              9
+            ]
+          ]
+        },
+        "issued": {
+          "date-parts": [
+            [
+              2025,
+              9
+            ]
+          ]
+        }
+      },
+      "free_source_check": {
+        "requested_url": "https://eprints.whiterose.ac.uk/id/eprint/228392/1/1-s2.0-S2213624X25001452-main.pdf",
+        "retrieved_at_utc": "2026-10-24T02:33:42.127270+00:00",
+        "status": 200,
+        "final_url": "https://eprints.whiterose.ac.uk/id/eprint/228392/1/1-s2.0-S2213624X25001452-main.pdf",
+        "content_type": "application/pdf",
+        "byte_count": 2591028,
+        "sha256": "437f44c0720652c5070268fb558b2e31f7318f52dc51cc95b6029be273ac289e",
+        "page_count": 13,
+        "format": "pdf",
+        "doi_found_on_first_page": true,
+        "title_tokens_in_first_page": true
+      },
+      "comparison_with_a2": "Title, authors, journal, DOI and cited publication year confirmed, allowing case, punctuation and diacritic normalization.",
+      "verified_at_utc": "2026-10-24T02:35:44.710384+00:00",
+      "verification_scope": "Bibliographic identity and publicly readable source checked; this does not mean all scientific claims in the article were independently replicated.",
+      "publisher_page_check": {
+        "url": "https://linkinghub.elsevier.com/retrieve/pii/S2213624X25001452",
+        "method": "web.run public publisher page open or publisher-indexed search result",
+        "status": "http_403",
+        "note": "Publisher page blocked automated retrieval; publisher-deposited Crossref metadata and the White Rose full paper independently match."
+      },
+      "a2_free_url_preserved": true
+    },
+    "authors": [
+      {
+        "family": "Bastarianto",
+        "given": "Faza Fawzan"
+      },
+      {
+        "family": "Hancock",
+        "given": "Thomas O."
+      },
+      {
+        "family": "Ilahi",
+        "given": "Anugrah"
+      },
+      {
+        "family": "Manley",
+        "given": "Ed"
+      },
+      {
+        "family": "Choudhury",
+        "given": "Charisma Farheen"
+      }
+    ],
+    "year": 2025,
+    "title": "‘Mind the Gap’—The impact of discrepancies between Google Maps API and reported travel data in the Global South",
+    "journal": "Case Studies on Transport Policy",
+    "volume": "21",
+    "issue": "",
+    "pages": "",
+    "article_number": "101508",
+    "publisher_url": "https://linkinghub.elsevier.com/retrieve/pii/S2213624X25001452",
+    "verification_status": "verified_crossref_and_free_fulltext",
+    "id": "A2-01",
+    "accessed_date": "2026-10-24",
+    "authors_text": "Bastarianto, F.F., Hancock, T.O., Ilahi, A., Manley, E. and Choudhury, C.F.",
+    "citation": "Bastarianto, F.F., Hancock, T.O., Ilahi, A., Manley, E. and Choudhury, C.F. (2025) '‘Mind the Gap’—The impact of discrepancies between Google Maps API and reported travel data in the Global South', Case Studies on Transport Policy, 21, 101508."
+  },
+  {
+    "doi": "10.1080/13658816.2026.2628193",
+    "url": "https://doi.org/10.1080/13658816.2026.2628193",
+    "free_url": "https://escholarship.org/content/qt4cm065kz/qt4cm065kz.pdf?v=lg",
+    "source_metadata": {
+      "a2_source_file": "RMT_A2_Team_AkhanovYerdaulet_ShadiyarbekSyrym_SabyrzhanAkylbek.pdf",
+      "a2_source_sha256": "30c9fd531d2baa062541427930c3a82da927fea757f16af0d131016260b5b2ed",
+      "a2_reference_page": 9,
+      "doi_annotation_rect": [
+        62.5,
+        673.8898,
+        223.01,
+        685.8898
+      ],
+      "free_url_annotation_rect": [
+        230.58,
+        673.8898,
+        267.35,
+        685.8898
+      ],
+      "crossref": {
+        "url": "https://api.crossref.org/works/10.1080%2F13658816.2026.2628193",
+        "retrieved_at_utc": "2026-10-24T02:33:33.618102+00:00",
+        "status": 200,
+        "final_url": "https://api.crossref.org/works/10.1080%2F13658816.2026.2628193",
+        "content_type": "application/json",
+        "evidence_file": "docs/reference_evidence/02_crossref.json"
+      },
+      "crossref_publication_dates": {
+        "published": {
+          "date-parts": [
+            [
+              2026,
+              2,
+              11
+            ]
+          ]
+        },
+        "published-online": {
+          "date-parts": [
+            [
+              2026,
+              2,
+              11
+            ]
+          ]
+        },
+        "published-print": {
+          "date-parts": [
+            [
+              2026,
+              10,
+              3
+            ]
+          ]
+        },
+        "issued": {
+          "date-parts": [
+            [
+              2026,
+              2,
+              11
+            ]
+          ]
+        }
+      },
+      "free_source_check": {
+        "requested_url": "https://escholarship.org/content/qt4cm065kz/qt4cm065kz.pdf?v=lg",
+        "direct_http_attempt": {
+          "requested_url": "https://escholarship.org/content/qt4cm065kz/qt4cm065kz.pdf?v=lg",
+          "retrieved_at_utc": "2026-10-24T02:33:42.128596+00:00",
+          "error": "HTTP Error 403: Forbidden"
+        },
+        "web_reader_check": {
+          "method": "web.run open",
+          "status": "pdf_text_read",
+          "page_count": 19,
+          "doi_title_authors_match": true,
+          "checked_date": "2026-10-24",
+          "note": "The same A2 PDF URL was readable in the public web reader despite direct urllib returning HTTP 403. Availability depends on retrieval client; no authentication was used."
+        },
+        "repository_landing_url": "https://escholarship.org/uc/item/4cm065kz"
+      },
+      "comparison_with_a2": "Title, authors, journal, DOI and cited publication year confirmed, allowing case, punctuation and diacritic normalization.",
+      "verified_at_utc": "2026-10-24T02:35:44.710384+00:00",
+      "verification_scope": "Bibliographic identity and publicly readable source checked; this does not mean all scientific claims in the article were independently replicated.",
+      "publisher_page_check": {
+        "url": "https://www.tandfonline.com/doi/abs/10.1080/13658816.2026.2628193",
+        "method": "web.run public publisher page open or publisher-indexed search result",
+        "status": "indexed_publisher_record_read",
+        "note": "Publisher record confirms authors, volume 40 issue 10, pages 3412-3428, online publication 11 February 2026."
+      },
+      "a2_free_url_preserved": true
+    },
+    "authors": [
+      {
+        "family": "Boeing",
+        "given": "Geoff"
+      },
+      {
+        "family": "Zhou",
+        "given": "Yuquan"
+      }
+    ],
+    "year": 2026,
+    "title": "Travel time prediction from sparse open data",
+    "journal": "International Journal of Geographical Information Science",
+    "volume": "40",
+    "issue": "10",
+    "pages": "3412-3428",
+    "article_number": "",
+    "publisher_url": "https://www.tandfonline.com/doi/full/10.1080/13658816.2026.2628193",
+    "verification_status": "verified_crossref_and_free_fulltext_web_reader",
+    "id": "A2-02",
+    "accessed_date": "2026-10-24",
+    "authors_text": "Boeing, G. and Zhou, Y.",
+    "citation": "Boeing, G. and Zhou, Y. (2026) 'Travel time prediction from sparse open data', International Journal of Geographical Information Science, 40(10), pp. 3412–3428."
+  },
+  {
+    "doi": "10.1145/3459637.3481916",
+    "url": "https://doi.org/10.1145/3459637.3481916",
+    "free_url": "https://luisperez.me/files/eta-prediction.pdf",
+    "source_metadata": {
+      "a2_source_file": "RMT_A2_Team_AkhanovYerdaulet_ShadiyarbekSyrym_SabyrzhanAkylbek.pdf",
+      "a2_source_sha256": "30c9fd531d2baa062541427930c3a82da927fea757f16af0d131016260b5b2ed",
+      "a2_reference_page": 9,
+      "doi_annotation_rect": [
+        62.5,
+        605.8898,
+        195.01,
+        617.8898
+      ],
+      "free_url_annotation_rect": [
+        202.58,
+        605.8898,
+        239.35,
+        617.8898
+      ],
+      "crossref": {
+        "url": "https://api.crossref.org/works/10.1145%2F3459637.3481916",
+        "retrieved_at_utc": "2026-10-24T02:33:34.460166+00:00",
+        "status": 200,
+        "final_url": "https://api.crossref.org/works/10.1145%2F3459637.3481916",
+        "content_type": "application/json",
+        "evidence_file": "docs/reference_evidence/03_crossref.json"
+      },
+      "crossref_publication_dates": {
+        "published": {
+          "date-parts": [
+            [
+              2021,
+              10,
+              26
+            ]
+          ]
+        },
+        "published-online": {
+          "date-parts": [
+            [
+              2021,
+              10,
+              30
+            ]
+          ]
+        },
+        "published-print": {
+          "date-parts": [
+            [
+              2021,
+              10,
+              26
+            ]
+          ]
+        },
+        "issued": {
+          "date-parts": [
+            [
+              2021,
+              10,
+              26
+            ]
+          ]
+        }
+      },
+      "free_source_check": {
+        "requested_url": "https://luisperez.me/files/eta-prediction.pdf",
+        "retrieved_at_utc": "2026-10-24T02:33:42.469291+00:00",
+        "status": 200,
+        "final_url": "https://luisperez.me/files/eta-prediction.pdf",
+        "content_type": "application/pdf",
+        "byte_count": 6970061,
+        "sha256": "e54c4c8ac1d27d1ff8c194517718f63891b61a97015b52184d512a0a6cb71335",
+        "page_count": 10,
+        "format": "pdf",
+        "doi_found_on_first_page": true,
+        "title_tokens_in_first_page": true
+      },
+      "comparison_with_a2": "Title, authors, journal, DOI and cited publication year confirmed, allowing case, punctuation and diacritic normalization.",
+      "verified_at_utc": "2026-10-24T02:35:44.710384+00:00",
+      "verification_scope": "Bibliographic identity and publicly readable source checked; this does not mean all scientific claims in the article were independently replicated.",
+      "publisher_page_check": {
+        "url": "https://dl.acm.org/doi/10.1145/3459637.3481916",
+        "method": "web.run public publisher page open or publisher-indexed search result",
+        "status": "http_403",
+        "note": "Publisher page blocked automated retrieval; publisher-deposited Crossref metadata and the author-hosted published PDF independently match."
+      },
+      "normalization_note": "Crossref omits diacritics in Velickovic; author-hosted published PDF and A2 give Veličković.",
+      "a2_free_url_preserved": true
+    },
+    "authors": [
+      {
+        "family": "Derrow-Pinion",
+        "given": "Austin"
+      },
+      {
+        "family": "She",
+        "given": "Jennifer"
+      },
+      {
+        "family": "Wong",
+        "given": "David"
+      },
+      {
+        "family": "Lange",
+        "given": "Oliver"
+      },
+      {
+        "family": "Hester",
+        "given": "Todd"
+      },
+      {
+        "family": "Perez",
+        "given": "Luis"
+      },
+      {
+        "family": "Nunkesser",
+        "given": "Marc"
+      },
+      {
+        "family": "Lee",
+        "given": "Seongjae"
+      },
+      {
+        "family": "Guo",
+        "given": "Xueying"
+      },
+      {
+        "family": "Wiltshire",
+        "given": "Brett"
+      },
+      {
+        "family": "Battaglia",
+        "given": "Peter W."
+      },
+      {
+        "family": "Gupta",
+        "given": "Vishal"
+      },
+      {
+        "family": "Li",
+        "given": "Ang"
+      },
+      {
+        "family": "Xu",
+        "given": "Zhongwen"
+      },
+      {
+        "family": "Sanchez-Gonzalez",
+        "given": "Alvaro"
+      },
+      {
+        "family": "Li",
+        "given": "Yujia"
+      },
+      {
+        "family": "Veličković",
+        "given": "Petar"
+      }
+    ],
+    "year": 2021,
+    "title": "ETA Prediction with Graph Neural Networks in Google Maps",
+    "journal": "Proceedings of the 30th ACM International Conference on Information & Knowledge Management",
+    "volume": "",
+    "issue": "",
+    "pages": "3767-3776",
+    "article_number": "",
+    "publisher_url": "https://dl.acm.org/doi/10.1145/3459637.3481916",
+    "verification_status": "verified_crossref_and_free_fulltext",
+    "id": "A2-03",
+    "accessed_date": "2026-10-24",
+    "authors_text": "Derrow-Pinion, A., She, J., Wong, D., Lange, O., Hester, T., Perez, L., Nunkesser, M., Lee, S., Guo, X., Wiltshire, B., Battaglia, P.W., Gupta, V., Li, A., Xu, Z., Sanchez-Gonzalez, A., Li, Y. and Veličković, P.",
+    "citation": "Derrow-Pinion, A., She, J., Wong, D., Lange, O., Hester, T., Perez, L., Nunkesser, M., Lee, S., Guo, X., Wiltshire, B., Battaglia, P.W., Gupta, V., Li, A., Xu, Z., Sanchez-Gonzalez, A., Li, Y. and Veličković, P. (2021) 'ETA Prediction with Graph Neural Networks in Google Maps', Proceedings of the 30th ACM International Conference on Information & Knowledge Management, pp. 3767–3776."
+  },
+  {
+    "doi": "10.3390/su17188194",
+    "url": "https://doi.org/10.3390/su17188194",
+    "free_url": "https://mdpi-res.com/d_attachment/sustainability/sustainability-17-08194/article_deploy/sustainability-17-08194.pdf",
+    "source_metadata": {
+      "a2_source_file": "RMT_A2_Team_AkhanovYerdaulet_ShadiyarbekSyrym_SabyrzhanAkylbek.pdf",
+      "a2_source_sha256": "30c9fd531d2baa062541427930c3a82da927fea757f16af0d131016260b5b2ed",
+      "a2_reference_page": 9,
+      "doi_annotation_rect": [
+        62.5,
+        550.8898,
+        172.18,
+        562.8898
+      ],
+      "free_url_annotation_rect": [
+        179.75,
+        550.8898,
+        216.52,
+        562.8898
+      ],
+      "crossref": {
+        "url": "https://api.crossref.org/works/10.3390%2Fsu17188194",
+        "retrieved_at_utc": "2026-10-24T02:33:35.458220+00:00",
+        "status": 200,
+        "final_url": "https://api.crossref.org/works/10.3390%2Fsu17188194",
+        "content_type": "application/json",
+        "evidence_file": "docs/reference_evidence/04_crossref.json"
+      },
+      "crossref_publication_dates": {
+        "published": {
+          "date-parts": [
+            [
+              2025,
+              9,
+              11
+            ]
+          ]
+        },
+        "published-online": {
+          "date-parts": [
+            [
+              2025,
+              9,
+              11
+            ]
+          ]
+        },
+        "issued": {
+          "date-parts": [
+            [
+              2025,
+              9,
+              11
+            ]
+          ]
+        }
+      },
+      "free_source_check": {
+        "requested_url": "https://mdpi-res.com/d_attachment/sustainability/sustainability-17-08194/article_deploy/sustainability-17-08194.pdf",
+        "retrieved_at_utc": "2026-10-24T02:33:43.924623+00:00",
+        "status": 200,
+        "final_url": "https://mdpi-res.com/d_attachment/sustainability/sustainability-17-08194/article_deploy/sustainability-17-08194.pdf",
+        "content_type": "application/pdf",
+        "byte_count": 3277752,
+        "sha256": "772aa764fefbcecc548647050327d3f2af597ace46fa1161856c7438ff54dbfa",
+        "page_count": 32,
+        "format": "pdf",
+        "doi_found_on_first_page": true,
+        "title_tokens_in_first_page": true
+      },
+      "comparison_with_a2": "Title, authors, journal, DOI and cited publication year confirmed, allowing case, punctuation and diacritic normalization.",
+      "verified_at_utc": "2026-10-24T02:35:44.710384+00:00",
+      "verification_scope": "Bibliographic identity and publicly readable source checked; this does not mean all scientific claims in the article were independently replicated.",
+      "publisher_page_check": {
+        "url": "https://www.mdpi.com/2071-1050/17/18/8194",
+        "method": "web.run public publisher page open or publisher-indexed search result",
+        "status": "http_429",
+        "note": "HTML publisher page rate limited; publisher-hosted PDF retrieved successfully and matches DOI, title and all three authors."
+      },
+      "a2_free_url_preserved": true
+    },
+    "authors": [
+      {
+        "family": "Elnaggar",
+        "given": "Ghada Ragheb"
+      },
+      {
+        "family": "Al-Hourani",
+        "given": "Shireen"
+      },
+      {
+        "family": "Abutaha",
+        "given": "Rimal"
+      }
+    ],
+    "year": 2025,
+    "title": "Real-Time Urban Congestion Monitoring in Jeddah, Saudi Arabia, Using the Google Maps API: A Data-Driven Framework for Middle Eastern Cities",
+    "journal": "Sustainability",
+    "volume": "17",
+    "issue": "18",
+    "pages": "",
+    "article_number": "8194",
+    "publisher_url": "https://www.mdpi.com/2071-1050/17/18/8194",
+    "verification_status": "verified_crossref_and_free_fulltext",
+    "id": "A2-04",
+    "accessed_date": "2026-10-24",
+    "authors_text": "Elnaggar, G.R., Al-Hourani, S. and Abutaha, R.",
+    "citation": "Elnaggar, G.R., Al-Hourani, S. and Abutaha, R. (2025) 'Real-Time Urban Congestion Monitoring in Jeddah, Saudi Arabia, Using the Google Maps API: A Data-Driven Framework for Middle Eastern Cities', Sustainability, 17(18), 8194."
+  },
+  {
+    "doi": "10.5194/isprs-archives-XLVIII-4-W7-2023-53-2023",
+    "url": "https://doi.org/10.5194/isprs-archives-XLVIII-4-W7-2023-53-2023",
+    "free_url": "https://isprs-archives.copernicus.org/articles/XLVIII-4-W7-2023/53/2023/isprs-archives-XLVIII-4-W7-2023-53-2023.pdf",
+    "source_metadata": {
+      "a2_source_file": "RMT_A2_Team_AkhanovYerdaulet_ShadiyarbekSyrym_SabyrzhanAkylbek.pdf",
+      "a2_source_sha256": "30c9fd531d2baa062541427930c3a82da927fea757f16af0d131016260b5b2ed",
+      "a2_reference_page": 9,
+      "doi_annotation_rect": [
+        62.5,
+        482.8898,
+        303.18,
+        494.8898
+      ],
+      "free_url_annotation_rect": [
+        310.75,
+        482.8898,
+        347.52,
+        494.8898
+      ],
+      "crossref": {
+        "url": "https://api.crossref.org/works/10.5194%2Fisprs-archives-XLVIII-4-W7-2023-53-2023",
+        "retrieved_at_utc": "2026-10-24T02:33:36.434926+00:00",
+        "status": 200,
+        "final_url": "https://api.crossref.org/works/10.5194%2Fisprs-archives-XLVIII-4-W7-2023-53-2023",
+        "content_type": "application/json",
+        "evidence_file": "docs/reference_evidence/05_crossref.json"
+      },
+      "crossref_publication_dates": {
+        "published": {
+          "date-parts": [
+            [
+              2023,
+              6,
+              22
+            ]
+          ]
+        },
+        "published-online": {
+          "date-parts": [
+            [
+              2023,
+              6,
+              22
+            ]
+          ]
+        },
+        "issued": {
+          "date-parts": [
+            [
+              2023,
+              6,
+              22
+            ]
+          ]
+        }
+      },
+      "free_source_check": {
+        "requested_url": "https://isprs-archives.copernicus.org/articles/XLVIII-4-W7-2023/53/2023/isprs-archives-XLVIII-4-W7-2023-53-2023.pdf",
+        "retrieved_at_utc": "2026-10-24T02:33:44.424112+00:00",
+        "status": 200,
+        "final_url": "https://isprs-archives.copernicus.org/articles/XLVIII-4-W7-2023/53/2023/isprs-archives-XLVIII-4-W7-2023-53-2023.pdf",
+        "content_type": "application/pdf",
+        "byte_count": 2566237,
+        "sha256": "745467052b950281242b60fc21197249ab4800b96fa8c5006ae87d18b4bfa29e",
+        "page_count": 8,
+        "format": "pdf",
+        "doi_found_on_first_page": true,
+        "title_tokens_in_first_page": true
+      },
+      "comparison_with_a2": "Title, authors, journal, DOI and cited publication year confirmed, allowing case, punctuation and diacritic normalization.",
+      "verified_at_utc": "2026-10-24T02:35:44.710384+00:00",
+      "verification_scope": "Bibliographic identity and publicly readable source checked; this does not mean all scientific claims in the article were independently replicated.",
+      "publisher_page_check": {
+        "url": "https://isprs-archives.copernicus.org/articles/XLVIII-4-W7-2023/53/2023/",
+        "method": "web.run public publisher page open or publisher-indexed search result",
+        "status": "publisher_page_read",
+        "note": "Official publisher HTML and PDF match the article."
+      },
+      "normalization_note": "Title case normalized from the publisher/Crossref uppercase form; wording unchanged.",
+      "a2_free_url_preserved": true
+    },
+    "authors": [
+      {
+        "family": "Fu",
+        "given": "X."
+      },
+      {
+        "family": "Kakkar",
+        "given": "D."
+      },
+      {
+        "family": "Chen",
+        "given": "J."
+      },
+      {
+        "family": "Moynihan",
+        "given": "K. M."
+      },
+      {
+        "family": "Hegland",
+        "given": "T. A."
+      },
+      {
+        "family": "Blossom",
+        "given": "J."
+      }
+    ],
+    "year": 2023,
+    "title": "A comparative study of methods for drive time estimation on geospatial big data: A case study in USA",
+    "journal": "The International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences",
+    "volume": "XLVIII-4/W7-2023",
+    "issue": "",
+    "pages": "53-60",
+    "article_number": "",
+    "publisher_url": "https://isprs-archives.copernicus.org/articles/XLVIII-4-W7-2023/53/2023/",
+    "verification_status": "verified_crossref_and_free_fulltext",
+    "id": "A2-05",
+    "accessed_date": "2026-10-24",
+    "authors_text": "Fu, X., Kakkar, D., Chen, J., Moynihan, K.M., Hegland, T.A. and Blossom, J.",
+    "citation": "Fu, X., Kakkar, D., Chen, J., Moynihan, K.M., Hegland, T.A. and Blossom, J. (2023) 'A comparative study of methods for drive time estimation on geospatial big data: A case study in USA', The International Archives of the Photogrammetry, Remote Sensing and Spatial Information Sciences, XLVIII-4/W7-2023, pp. 53–60."
+  },
+  {
+    "doi": "10.5194/gmd-15-5481-2022",
+    "url": "https://doi.org/10.5194/gmd-15-5481-2022",
+    "free_url": "https://gmd.copernicus.org/articles/15/5481/2022/gmd-15-5481-2022.pdf",
+    "source_metadata": {
+      "a2_source_file": "RMT_A2_Team_AkhanovYerdaulet_ShadiyarbekSyrym_SabyrzhanAkylbek.pdf",
+      "a2_source_sha256": "30c9fd531d2baa062541427930c3a82da927fea757f16af0d131016260b5b2ed",
+      "a2_reference_page": 9,
+      "doi_annotation_rect": [
+        62.5,
+        440.8898,
+        201.23,
+        452.8898
+      ],
+      "free_url_annotation_rect": [
+        208.8,
+        440.8898,
+        245.57,
+        452.8898
+      ],
+      "crossref": {
+        "url": "https://api.crossref.org/works/10.5194%2Fgmd-15-5481-2022",
+        "retrieved_at_utc": "2026-10-24T02:33:37.305157+00:00",
+        "status": 200,
+        "final_url": "https://api.crossref.org/works/10.5194%2Fgmd-15-5481-2022",
+        "content_type": "application/json",
+        "evidence_file": "docs/reference_evidence/06_crossref.json"
+      },
+      "crossref_publication_dates": {
+        "published": {
+          "date-parts": [
+            [
+              2022,
+              7,
+              19
+            ]
+          ]
+        },
+        "published-online": {
+          "date-parts": [
+            [
+              2022,
+              7,
+              19
+            ]
+          ]
+        },
+        "issued": {
+          "date-parts": [
+            [
+              2022,
+              7,
+              19
+            ]
+          ]
+        }
+      },
+      "free_source_check": {
+        "requested_url": "https://gmd.copernicus.org/articles/15/5481/2022/gmd-15-5481-2022.pdf",
+        "retrieved_at_utc": "2026-10-24T02:33:44.525480+00:00",
+        "status": 200,
+        "final_url": "https://gmd.copernicus.org/articles/15/5481/2022/gmd-15-5481-2022.pdf",
+        "content_type": "application/pdf",
+        "byte_count": 374602,
+        "sha256": "69040245bac3cd41ee4045c2eee74a4ac93986b81e1ef92725b5c4acd161b18f",
+        "page_count": 7,
+        "format": "pdf",
+        "doi_found_on_first_page": true,
+        "title_tokens_in_first_page": true
+      },
+      "comparison_with_a2": "Title, authors, journal, DOI and cited publication year confirmed, allowing case, punctuation and diacritic normalization.",
+      "verified_at_utc": "2026-10-24T02:35:44.710384+00:00",
+      "verification_scope": "Bibliographic identity and publicly readable source checked; this does not mean all scientific claims in the article were independently replicated.",
+      "publisher_page_check": {
+        "url": "https://gmd.copernicus.org/articles/15/5481/2022/",
+        "method": "web.run public publisher page open or publisher-indexed search result",
+        "status": "publisher_page_read",
+        "note": "Official publisher HTML and PDF match the article."
+      },
+      "a2_free_url_preserved": true
+    },
+    "authors": [
+      {
+        "family": "Hodson",
+        "given": "Timothy O."
+      }
+    ],
+    "year": 2022,
+    "title": "Root-mean-square error (RMSE) or mean absolute error (MAE): when to use them or not",
+    "journal": "Geoscientific Model Development",
+    "volume": "15",
+    "issue": "14",
+    "pages": "5481-5487",
+    "article_number": "",
+    "publisher_url": "https://gmd.copernicus.org/articles/15/5481/2022/",
+    "verification_status": "verified_crossref_and_free_fulltext",
+    "id": "A2-06",
+    "accessed_date": "2026-10-24",
+    "authors_text": "Hodson, T.O.",
+    "citation": "Hodson, T.O. (2022) 'Root-mean-square error (RMSE) or mean absolute error (MAE): when to use them or not', Geoscientific Model Development, 15(14), pp. 5481–5487."
+  },
+  {
+    "doi": "10.3390/data10080119",
+    "url": "https://doi.org/10.3390/data10080119",
+    "free_url": "https://mdpi-res.com/d_attachment/data/data-10-00119/article_deploy/data-10-00119.pdf",
+    "source_metadata": {
+      "a2_source_file": "RMT_A2_Team_AkhanovYerdaulet_ShadiyarbekSyrym_SabyrzhanAkylbek.pdf",
+      "a2_source_sha256": "30c9fd531d2baa062541427930c3a82da927fea757f16af0d131016260b5b2ed",
+      "a2_reference_page": 9,
+      "doi_annotation_rect": [
+        62.5,
+        398.8898,
+        181.11,
+        410.8898
+      ],
+      "free_url_annotation_rect": [
+        188.68,
+        398.8898,
+        225.45,
+        410.8898
+      ],
+      "crossref": {
+        "url": "https://api.crossref.org/works/10.3390%2Fdata10080119",
+        "retrieved_at_utc": "2026-10-24T02:33:38.157927+00:00",
+        "status": 200,
+        "final_url": "https://api.crossref.org/works/10.3390%2Fdata10080119",
+        "content_type": "application/json",
+        "evidence_file": "docs/reference_evidence/07_crossref.json"
+      },
+      "crossref_publication_dates": {
+        "published": {
+          "date-parts": [
+            [
+              2025,
+              7,
+              23
+            ]
+          ]
+        },
+        "published-online": {
+          "date-parts": [
+            [
+              2025,
+              7,
+              23
+            ]
+          ]
+        },
+        "issued": {
+          "date-parts": [
+            [
+              2025,
+              7,
+              23
+            ]
+          ]
+        }
+      },
+      "free_source_check": {
+        "requested_url": "https://mdpi-res.com/d_attachment/data/data-10-00119/article_deploy/data-10-00119.pdf",
+        "retrieved_at_utc": "2026-10-24T02:33:45.511449+00:00",
+        "status": 200,
+        "final_url": "https://mdpi-res.com/d_attachment/data/data-10-00119/article_deploy/data-10-00119.pdf",
+        "content_type": "application/pdf",
+        "byte_count": 5298934,
+        "sha256": "835f8aea3cc728fe419c3bd33c56973d9efaa77227a3c9ddc088af3c3c8561b3",
+        "page_count": 16,
+        "format": "pdf",
+        "doi_found_on_first_page": true,
+        "title_tokens_in_first_page": true
+      },
+      "comparison_with_a2": "Title, authors, journal, DOI and cited publication year confirmed, allowing case, punctuation and diacritic normalization.",
+      "verified_at_utc": "2026-10-24T02:35:44.710384+00:00",
+      "verification_scope": "Bibliographic identity and publicly readable source checked; this does not mean all scientific claims in the article were independently replicated.",
+      "publisher_page_check": {
+        "url": "https://www.mdpi.com/2306-5729/10/8/119",
+        "method": "web.run public publisher page open or publisher-indexed search result",
+        "status": "http_429",
+        "note": "HTML publisher page rate limited; publisher-hosted PDF retrieved successfully and matches DOI, title and authors."
+      },
+      "a2_free_url_preserved": true
+    },
+    "authors": [
+      {
+        "family": "Mansurova",
+        "given": "Aigerim"
+      },
+      {
+        "family": "Mussina",
+        "given": "Aigerim"
+      },
+      {
+        "family": "Aubakirov",
+        "given": "Sanzhar"
+      },
+      {
+        "family": "Nugumanova",
+        "given": "Aliya"
+      },
+      {
+        "family": "Yedilkhan",
+        "given": "Didar"
+      }
+    ],
+    "year": 2025,
+    "title": "From Raw GPS to GTFS: A Real-World Open Dataset for Bus Travel Time Prediction",
+    "journal": "Data",
+    "volume": "10",
+    "issue": "8",
+    "pages": "",
+    "article_number": "119",
+    "publisher_url": "https://www.mdpi.com/2306-5729/10/8/119",
+    "verification_status": "verified_crossref_and_free_fulltext",
+    "id": "A2-07",
+    "accessed_date": "2026-10-24",
+    "authors_text": "Mansurova, A., Mussina, A., Aubakirov, S., Nugumanova, A. and Yedilkhan, D.",
+    "citation": "Mansurova, A., Mussina, A., Aubakirov, S., Nugumanova, A. and Yedilkhan, D. (2025) 'From Raw GPS to GTFS: A Real-World Open Dataset for Bus Travel Time Prediction', Data, 10(8), 119."
+  },
+  {
+    "doi": "10.1093/tse/tdac058",
+    "url": "https://doi.org/10.1093/tse/tdac058",
+    "free_url": "https://researchmgt.monash.edu/ws/portalfiles/portal/528840794/488448406_oa.pdf",
+    "source_metadata": {
+      "a2_source_file": "RMT_A2_Team_AkhanovYerdaulet_ShadiyarbekSyrym_SabyrzhanAkylbek.pdf",
+      "a2_source_sha256": "30c9fd531d2baa062541427930c3a82da927fea757f16af0d131016260b5b2ed",
+      "a2_reference_page": 9,
+      "doi_annotation_rect": [
+        62.5,
+        356.8898,
+        171.89,
+        368.8898
+      ],
+      "free_url_annotation_rect": [
+        179.46,
+        356.8898,
+        216.23,
+        368.8898
+      ],
+      "crossref": {
+        "url": "https://api.crossref.org/works/10.1093%2Ftse%2Ftdac058",
+        "retrieved_at_utc": "2026-10-24T02:33:39.007496+00:00",
+        "status": 200,
+        "final_url": "https://api.crossref.org/works/10.1093%2Ftse%2Ftdac058",
+        "content_type": "application/json",
+        "evidence_file": "docs/reference_evidence/08_crossref.json"
+      },
+      "crossref_publication_dates": {
+        "published": {
+          "date-parts": [
+            [
+              2022,
+              12,
+              21
+            ]
+          ]
+        },
+        "published-online": {
+          "date-parts": [
+            [
+              2022,
+              12,
+              21
+            ]
+          ]
+        },
+        "published-print": {
+          "date-parts": [
+            [
+              2023,
+              6,
+              1
+            ]
+          ]
+        },
+        "issued": {
+          "date-parts": [
+            [
+              2022,
+              12,
+              21
+            ]
+          ]
+        }
+      },
+      "free_source_check": {
+        "requested_url": "https://researchmgt.monash.edu/ws/portalfiles/portal/528840794/488448406_oa.pdf",
+        "retrieved_at_utc": "2026-10-24T02:33:45.756387+00:00",
+        "status": 200,
+        "final_url": "https://researchmgt.monash.edu/ws/portalfiles/portal/528840794/488448406_oa.pdf",
+        "content_type": "application/pdf",
+        "byte_count": 962570,
+        "sha256": "4ec1d805883c06f295bed134bdc09dc2d2194b994e2a0a884ed03ade2b7c2b52",
+        "page_count": 19,
+        "format": "pdf",
+        "doi_found_on_first_page": true,
+        "title_tokens_in_first_page": true
+      },
+      "comparison_with_a2": "Title, authors, journal, DOI and cited publication year confirmed, allowing case, punctuation and diacritic normalization.",
+      "verified_at_utc": "2026-10-24T02:35:44.710384+00:00",
+      "verification_scope": "Bibliographic identity and publicly readable source checked; this does not mean all scientific claims in the article were independently replicated.",
+      "publisher_page_check": {
+        "url": "https://academic.oup.com/tse/article/5/3/tdac058/6955836",
+        "method": "web.run public publisher page open or publisher-indexed search result",
+        "status": "indexed_publisher_record_read",
+        "note": "OUP identifies Volume 5 Issue 3 June 2023, with advance publication on 21 December 2022. Monash institutional record agrees with the 2023 issue citation."
+      },
+      "year_basis": "Final journal issue year 2023, consistent with A2; advance online publication 21 December 2022 retained in raw Crossref metadata.",
+      "year_confirmation_urls": [
+        "https://academic.oup.com/tse/article/5/3/tdac058/6955836",
+        "https://academic.oup.com/tse/issue/5/3",
+        "https://research.monash.edu/en/publications/short-term-traffic-forecasting-model-prevailing-trends-and-guidel/"
+      ],
+      "a2_free_url_preserved": true
+    },
+    "authors": [
+      {
+        "family": "Soon",
+        "given": "Kian Lun"
+      },
+      {
+        "family": "Chan",
+        "given": "Robin Kuok Cheong"
+      },
+      {
+        "family": "Lim",
+        "given": "Joanne Mun-Yee"
+      },
+      {
+        "family": "Parthiban",
+        "given": "Rajendran"
+      }
+    ],
+    "year": 2023,
+    "title": "Short-term traffic forecasting model: prevailing trends and guidelines",
+    "journal": "Transportation Safety and Environment",
+    "volume": "5",
+    "issue": "3",
+    "pages": "",
+    "article_number": "tdac058",
+    "publisher_url": "https://academic.oup.com/tse/article/doi/10.1093/tse/tdac058/6955836",
+    "verification_status": "verified_crossref_and_free_fulltext",
+    "id": "A2-08",
+    "accessed_date": "2026-10-24",
+    "authors_text": "Soon, K.L., Chan, R.K.C., Lim, J.M.-Y. and Parthiban, R.",
+    "citation": "Soon, K.L., Chan, R.K.C., Lim, J.M.-Y. and Parthiban, R. (2023) 'Short-term traffic forecasting model: prevailing trends and guidelines', Transportation Safety and Environment, 5(3), tdac058."
+  },
+  {
+    "doi": "10.32866/001c.143380",
+    "url": "https://doi.org/10.32866/001c.143380",
+    "free_url": "https://findingspress.org/article/143380.pdf",
+    "source_metadata": {
+      "a2_source_file": "RMT_A2_Team_AkhanovYerdaulet_ShadiyarbekSyrym_SabyrzhanAkylbek.pdf",
+      "a2_source_sha256": "30c9fd531d2baa062541427930c3a82da927fea757f16af0d131016260b5b2ed",
+      "a2_reference_page": 9,
+      "doi_annotation_rect": [
+        62.5,
+        314.8898,
+        179.89,
+        326.8898
+      ],
+      "free_url_annotation_rect": [
+        187.46,
+        314.8898,
+        224.23,
+        326.8898
+      ],
+      "crossref": {
+        "url": "https://api.crossref.org/works/10.32866%2F001c.143380",
+        "retrieved_at_utc": "2026-10-24T02:33:40.224767+00:00",
+        "status": 200,
+        "final_url": "https://api.crossref.org/works/10.32866%2F001c.143380",
+        "content_type": "application/json",
+        "evidence_file": "docs/reference_evidence/09_crossref.json"
+      },
+      "crossref_publication_dates": {
+        "published": {
+          "date-parts": [
+            [
+              2025,
+              8,
+              19
+            ]
+          ]
+        },
+        "published-online": {
+          "date-parts": [
+            [
+              2025,
+              8,
+              19
+            ]
+          ]
+        },
+        "issued": {
+          "date-parts": [
+            [
+              2025,
+              8,
+              19
+            ]
+          ]
+        }
+      },
+      "free_source_check": {
+        "requested_url": "https://findingspress.org/article/143380.pdf",
+        "retrieved_at_utc": "2026-10-24T02:33:45.969946+00:00",
+        "status": 200,
+        "final_url": "https://findingspress.org/article/143380.pdf",
+        "content_type": "application/pdf",
+        "byte_count": 516866,
+        "sha256": "41e0e695623074b0312e73e72fd3fcbc348d7e919ea214480203cc111cf82043",
+        "page_count": 5,
+        "format": "pdf",
+        "doi_found_on_first_page": true,
+        "title_tokens_in_first_page": true
+      },
+      "comparison_with_a2": "Title, authors, journal, DOI and cited publication year confirmed, allowing case, punctuation and diacritic normalization.",
+      "verified_at_utc": "2026-10-24T02:35:44.710384+00:00",
+      "verification_scope": "Bibliographic identity and publicly readable source checked; this does not mean all scientific claims in the article were independently replicated.",
+      "publisher_page_check": {
+        "url": "https://findingspress.org/article/143380-exploring-the-mis-match-between-reported-and-calculated-commute-travel-times",
+        "method": "web.run public publisher page open or publisher-indexed search result",
+        "status": "publisher_page_read",
+        "note": "Official publisher full HTML and PDF match DOI, title and authors."
+      },
+      "a2_free_url_preserved": true
+    },
+    "authors": [
+      {
+        "family": "Valero",
+        "given": "Adele"
+      },
+      {
+        "family": "Negm",
+        "given": "Hisham"
+      },
+      {
+        "family": "El-Geneidy",
+        "given": "Ahmed"
+      }
+    ],
+    "year": 2025,
+    "title": "Exploring the (Mis)match between Reported and Calculated Commute Travel Times",
+    "journal": "Findings",
+    "volume": "",
+    "issue": "",
+    "pages": "",
+    "article_number": "",
+    "publisher_url": "https://findingspress.org/article/143380-exploring-the-mis-match-between-reported-and-calculated-commute-travel-times",
+    "verification_status": "verified_crossref_and_free_fulltext",
+    "id": "A2-09",
+    "accessed_date": "2026-10-24",
+    "authors_text": "Valero, A., Negm, H. and El-Geneidy, A.",
+    "citation": "Valero, A., Negm, H. and El-Geneidy, A. (2025) 'Exploring the (Mis)match between Reported and Calculated Commute Travel Times', Findings, August."
+  },
+  {
+    "doi": "10.1038/s41597-025-05440-8",
+    "url": "https://doi.org/10.1038/s41597-025-05440-8",
+    "free_url": "https://www.nature.com/articles/s41597-025-05440-8",
+    "source_metadata": {
+      "a2_source_file": "RMT_A2_Team_AkhanovYerdaulet_ShadiyarbekSyrym_SabyrzhanAkylbek.pdf",
+      "a2_source_sha256": "30c9fd531d2baa062541427930c3a82da927fea757f16af0d131016260b5b2ed",
+      "a2_reference_page": 9,
+      "doi_annotation_rect": [
+        62.5,
+        272.8898,
+        205.71,
+        284.8898
+      ],
+      "free_url_annotation_rect": [
+        213.28,
+        272.8898,
+        250.05,
+        284.8898
+      ],
+      "crossref": {
+        "url": "https://api.crossref.org/works/10.1038%2Fs41597-025-05440-8",
+        "retrieved_at_utc": "2026-10-24T02:33:41.101248+00:00",
+        "status": 200,
+        "final_url": "https://api.crossref.org/works/10.1038%2Fs41597-025-05440-8",
+        "content_type": "application/json",
+        "evidence_file": "docs/reference_evidence/10_crossref.json"
+      },
+      "crossref_publication_dates": {
+        "published": {
+          "date-parts": [
+            [
+              2025,
+              7,
+              15
+            ]
+          ]
+        },
+        "published-online": {
+          "date-parts": [
+            [
+              2025,
+              7,
+              15
+            ]
+          ]
+        },
+        "issued": {
+          "date-parts": [
+            [
+              2025,
+              7,
+              15
+            ]
+          ]
+        }
+      },
+      "free_source_check": {
+        "requested_url": "https://www.nature.com/articles/s41597-025-05440-8",
+        "retrieved_at_utc": "2026-10-24T02:33:47.969985+00:00",
+        "status": 200,
+        "final_url": "https://www.nature.com/articles/s41597-025-05440-8?error=cookies_not_supported&code=0c36715a-5b20-44c6-b215-f74f310d5abb",
+        "content_type": "text/html; charset=utf-8",
+        "byte_count": 428250,
+        "sha256": "95ba98b4a1eca6cae21eb3def617039fe37052edb98836d6fee24fcc211e78c9",
+        "format": "html",
+        "doi_found_in_html": true,
+        "has_article_body_marker": true
+      },
+      "comparison_with_a2": "Title, authors, journal, DOI and cited publication year confirmed, allowing case, punctuation and diacritic normalization.",
+      "verified_at_utc": "2026-10-24T02:35:44.710384+00:00",
+      "verification_scope": "Bibliographic identity and publicly readable source checked; this does not mean all scientific claims in the article were independently replicated.",
+      "publisher_page_check": {
+        "url": "https://www.nature.com/articles/s41597-025-05440-8",
+        "method": "web.run public publisher page open or publisher-indexed search result",
+        "status": "publisher_page_read",
+        "note": "Official full HTML and citation meta tags match DOI, title, journal and all three authors."
+      },
+      "a2_free_url_preserved": true
+    },
+    "authors": [
+      {
+        "family": "Verma",
+        "given": "Rajat"
+      },
+      {
+        "family": "Mittal",
+        "given": "Shagun"
+      },
+      {
+        "family": "Ukkusuri",
+        "given": "Satish V."
+      }
+    ],
+    "year": 2025,
+    "title": "Spatial Access of America: Multiple indicators of accessibility to opportunities",
+    "journal": "Scientific Data",
+    "volume": "12",
+    "issue": "1",
+    "pages": "",
+    "article_number": "1223",
+    "publisher_url": "https://www.nature.com/articles/s41597-025-05440-8",
+    "verification_status": "verified_crossref_and_free_fulltext",
+    "id": "A2-10",
+    "accessed_date": "2026-10-24",
+    "authors_text": "Verma, R., Mittal, S. and Ukkusuri, S.V.",
+    "citation": "Verma, R., Mittal, S. and Ukkusuri, S.V. (2025) 'Spatial Access of America: Multiple indicators of accessibility to opportunities', Scientific Data, 12(1), 1223."
+  }
+]

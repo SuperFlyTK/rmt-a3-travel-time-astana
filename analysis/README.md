@@ -2,6 +2,11 @@
 
 From the repository root, with the project dependencies installed:
 
+The initial Windows environment uses Python 3.12.14, matplotlib 3.11.2,
+python-docx 1.2.0 and tzdata 2026.5 in `.venv`. GitHub collection uses
+Python 3.11 and the standard library. The exact Python and plotting versions
+actually used for each output are recorded by the generated manifests.
+
 ```powershell
 python analysis/process.py
 python analysis/figures.py

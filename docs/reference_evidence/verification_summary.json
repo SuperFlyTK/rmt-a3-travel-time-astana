@@ -1,0 +1,14 @@
+{
+  "checked_at_utc": "2026-10-24T02:35:44.710384+00:00",
+  "references_count": 10,
+  "crossref_http_200_count": 10,
+  "direct_free_source_http_200_count": 9,
+  "free_source_verified_through_web_reader_count": 1,
+  "substantive_a2_identity_mismatches": [],
+  "clarifications": [
+    "Soon et al.: retain final issue year 2023; online-first date is 21 December 2022.",
+    "Veličković: retain published-paper diacritics omitted by Crossref.",
+    "Some publisher HTML pages block or rate-limit automated clients; Crossref and publicly readable full papers remain verified.",
+    "Boeing/Zhou PDF readable through web reader but direct urllib returned403."
+  ]
+}

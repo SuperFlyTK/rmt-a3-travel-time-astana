@@ -1,0 +1,518 @@
+{
+  "status": "ok",
+  "message-type": "work",
+  "message-version": "1.0.0",
+  "message": {
+    "indexed": {
+      "date-parts": [
+        [
+          2026,
+          9,
+          25
+        ]
+      ],
+      "date-time": "2026-09-25T18:03:34Z",
+      "timestamp": 1790359414849,
+      "version": "4.1.0"
+    },
+    "reference-count": 31,
+    "publisher": "MDPI AG",
+    "issue": "8",
+    "license": [
+      {
+        "start": {
+          "date-parts": [
+            [
+              2025,
+              7,
+              23
+            ]
+          ],
+          "date-time": "2025-07-23T00:00:00Z",
+          "timestamp": 1753228800000
+        },
+        "content-version": "vor",
+        "delay-in-days": 0,
+        "URL": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    ],
+    "funder": [
+      {
+        "name": "Committee of Science of the Ministry of Science and Higher Education of the Republic of Kazakhstan",
+        "award": [
+          "BR24992852"
+        ],
+        "award-info": [
+          {
+            "award-number": [
+              "BR24992852"
+            ]
+          }
+        ]
+      }
+    ],
+    "content-domain": {
+      "domain": [],
+      "crossmark-restriction": false
+    },
+    "short-container-title": [
+      "Data"
+    ],
+    "DOI": "10.3390/data10080119",
+    "type": "journal-article",
+    "created": {
+      "date-parts": [
+        [
+          2025,
+          7,
+          23
+        ]
+      ],
+      "date-time": "2025-07-23T08:02:06Z",
+      "timestamp": 1753257726000
+    },
+    "page": "119",
+    "update-policy": "https://doi.org/10.3390/mdpi_crossmark_policy",
+    "source": "Crossref",
+    "is-referenced-by-count": 11,
+    "title": [
+      "From Raw GPS to GTFS: A Real-World Open Dataset for Bus Travel Time Prediction"
+    ],
+    "prefix": "10.3390",
+    "volume": "10",
+    "author": [
+      {
+        "ORCID": "https://orcid.org/0009-0003-1978-9574",
+        "authenticated-orcid": false,
+        "given": "Aigerim",
+        "family": "Mansurova",
+        "sequence": "first",
+        "affiliation": [
+          {
+            "name": "Big Data and Blockchain Technologies Research and Innovation Center, Astana IT University, 020000 Astana, Kazakhstan"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-7043-0810",
+        "authenticated-orcid": false,
+        "given": "Aigerim",
+        "family": "Mussina",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Department of Computer Science, Al-Farabi Kazakh National University, 71 al-Farabi Avenue, 050040 Almaty, Kazakhstan"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Sanzhar",
+        "family": "Aubakirov",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Department of Computer Science, Al-Farabi Kazakh National University, 71 al-Farabi Avenue, 050040 Almaty, Kazakhstan"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0001-5522-4421",
+        "authenticated-orcid": false,
+        "given": "Aliya",
+        "family": "Nugumanova",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Big Data and Blockchain Technologies Research and Innovation Center, Astana IT University, 020000 Astana, Kazakhstan"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-6343-5277",
+        "authenticated-orcid": false,
+        "given": "Didar",
+        "family": "Yedilkhan",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Smart City Research and Innovation Center, Astana IT University, 020000 Astana, Kazakhstan"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "member": "1968",
+    "published-online": {
+      "date-parts": [
+        [
+          2025,
+          7,
+          23
+        ]
+      ]
+    },
+    "reference": [
+      {
+        "key": "ref_1",
+        "unstructured": "United Nations, Department of Economic and Social Affairs (2019). World Urbanisation Prospects: The 2018 Revision (ST/ESA/SER.A/420), United Nations."
+      },
+      {
+        "key": "ref_2",
+        "unstructured": "World Population Review (2025, July 15). Most Urbanized Countries 2025. Available online: https://worldpopulationreview.com/country-rankings/most-urbanized-countries."
+      },
+      {
+        "key": "ref_3",
+        "doi-asserted-by": "crossref",
+        "first-page": "102727",
+        "DOI": "10.1016/j.jtrangeo.2020.102727",
+        "article-title": "Resilience of Urban Transportation Systems. Concept, Characteristics, and Methods",
+        "volume": "85",
+        "author": "Ribeiro",
+        "year": "2020",
+        "journal-title": "J. Transp. Geogr."
+      },
+      {
+        "key": "ref_4",
+        "doi-asserted-by": "crossref",
+        "first-page": "1",
+        "DOI": "10.1007/s12469-024-00367-6",
+        "article-title": "Scaling up public transport usage: A systematic literature review of service quality, satisfaction and attitude towards bus transport systems in developing countries",
+        "volume": "17",
+        "author": "Sogbe",
+        "year": "2025",
+        "journal-title": "Public Transp."
+      },
+      {
+        "key": "ref_5",
+        "doi-asserted-by": "crossref",
+        "first-page": "e1457",
+        "DOI": "10.1002/widm.1457",
+        "article-title": "A Review of Bus Arrival Time Prediction Using Artificial Intelligence",
+        "volume": "12",
+        "author": "Singh",
+        "year": "2022",
+        "journal-title": "WIREs Data Min. Knowl. Discov."
+      },
+      {
+        "key": "ref_6",
+        "doi-asserted-by": "crossref",
+        "first-page": "174",
+        "DOI": "10.1109/MITS.2020.2990175",
+        "article-title": "Bus Travel Time Prediction Based on Ensemble Learning Methods",
+        "volume": "14",
+        "author": "Zhong",
+        "year": "2022",
+        "journal-title": "IEEE Intell. Transp. Syst. Mag."
+      },
+      {
+        "key": "ref_7",
+        "doi-asserted-by": "crossref",
+        "unstructured": "Fayyaz, S., Kiavash, S., Liu, X.C., and Porter, R.J. (2016). A genetic-algorithm and regression-based model for analyzing fare payment structure and transit dwell time. Transportation Research Board 95th Annual Meeting, Transportation Research Board. No. 16-4815.",
+        "DOI": "10.3141/2595-01"
+      },
+      {
+        "key": "ref_8",
+        "doi-asserted-by": "crossref",
+        "first-page": "308",
+        "DOI": "10.1016/j.trc.2017.04.002",
+        "article-title": "Bus travel time prediction using a time-space discretization approach",
+        "volume": "79",
+        "author": "Kumar",
+        "year": "2017",
+        "journal-title": "Transp. Res. Part C Emerg. Technol."
+      },
+      {
+        "key": "ref_9",
+        "doi-asserted-by": "crossref",
+        "first-page": "42372",
+        "DOI": "10.1109/ACCESS.2020.2976574",
+        "article-title": "A Bus Arrival Time Prediction Method Based on Position Calibration and LSTM",
+        "volume": "8",
+        "author": "Han",
+        "year": "2020",
+        "journal-title": "IEEE Access"
+      },
+      {
+        "key": "ref_10",
+        "doi-asserted-by": "crossref",
+        "first-page": "11917",
+        "DOI": "10.1109/ACCESS.2020.2965094",
+        "article-title": "Bus Arrival Time Prediction Based on LSTM and Spatial-Temporal Feature Vector",
+        "volume": "8",
+        "author": "Liu",
+        "year": "2020",
+        "journal-title": "IEEE Access"
+      },
+      {
+        "key": "ref_11",
+        "doi-asserted-by": "crossref",
+        "unstructured": "Nadeeshan, S., and Perera, A.S. (2021, January 27–29). Multi-Step Bidirectional LSTM for Low Frequent Bus Travel Time Prediction. Proceedings of the 2021 Moratuwa Engineering Research Conference (MERCon), Moratuwa, Sri Lanka.",
+        "DOI": "10.1109/MERCon52712.2021.9525709"
+      },
+      {
+        "key": "ref_12",
+        "doi-asserted-by": "crossref",
+        "first-page": "523",
+        "DOI": "10.1049/iet-its.2018.5339",
+        "article-title": "Evaluating alternative methods to estimate bus running times by archived automatic vehicle location data",
+        "volume": "13",
+        "author": "Pili",
+        "year": "2019",
+        "journal-title": "IET Intell. Transp. Syst."
+      },
+      {
+        "key": "ref_13",
+        "doi-asserted-by": "crossref",
+        "unstructured": "Osman, O., Rakha, H., and Mittal, A. (2021). Application of Long Short Term Memory Networks for Long- and Short-Term Bus Travel Time Prediction, preprint.",
+        "DOI": "10.20944/preprints202104.0269.v1"
+      },
+      {
+        "key": "ref_14",
+        "doi-asserted-by": "crossref",
+        "first-page": "115",
+        "DOI": "10.1177/0361198118776139",
+        "article-title": "Network Scale Travel Time Prediction Using Deep Learning",
+        "volume": "2672",
+        "author": "Hou",
+        "year": "2018",
+        "journal-title": "Transp. Res. Rec. J. Transp. Res. Board"
+      },
+      {
+        "key": "ref_15",
+        "doi-asserted-by": "crossref",
+        "unstructured": "Yuan, Y., Shao, C., Cao, Z., He, Z., Zhu, C., Wang, Y., and Jang, V. (2020). Bus Dynamic Travel Time Prediction: Using a Deep Feature Extraction Framework Based on RNN and DNN. Electronics, 9.",
+        "DOI": "10.3390/electronics9111876"
+      },
+      {
+        "key": "ref_16",
+        "doi-asserted-by": "crossref",
+        "unstructured": "Yin, Z., and Zhang, B. (2023). Bus Travel Time Prediction Based on the Similarity in Drivers’ Driving Styles. Future Internet, 15.",
+        "DOI": "10.3390/fi15070222"
+      },
+      {
+        "key": "ref_17",
+        "doi-asserted-by": "crossref",
+        "unstructured": "Kwesiga, D.K., Guin, A., and Hunter, M. (2025). Analysis of bus dwell times from automated passenger count data and the impact of dwell-time variability on the performance of transit signal priority. Public Transp., 1–23.",
+        "DOI": "10.1007/s12469-025-00393-y"
+      },
+      {
+        "key": "ref_18",
+        "first-page": "1",
+        "article-title": "Computer vision for transit travel time prediction: An end-to-end framework using roadside urban imagery",
+        "volume": "17",
+        "author": "Abdelhalim",
+        "year": "2024",
+        "journal-title": "Public Transp."
+      },
+      {
+        "key": "ref_19",
+        "doi-asserted-by": "crossref",
+        "first-page": "481",
+        "DOI": "10.1007/978-3-030-95470-3_36",
+        "article-title": "Public Transport Arrival Time Prediction Based on GTFS Data",
+        "volume": "Volume 13164",
+        "author": "Nicosia",
+        "year": "2022",
+        "journal-title": "Machine Learning, Optimization, and Data Science"
+      },
+      {
+        "key": "ref_20",
+        "doi-asserted-by": "crossref",
+        "unstructured": "Wu, J., Wu, Q., Shen, J., and Cai, C. (2020). Towards Attention-Based Convolutional Long Short-Term Memory for Travel Time Prediction of Bus Journeys. Sensors, 20.",
+        "DOI": "10.3390/s20123354"
+      },
+      {
+        "key": "ref_21",
+        "doi-asserted-by": "crossref",
+        "unstructured": "BV, S.K., Fedujwar, R., and Agarwal, A. (2024, January 3–7). Travel Time Variability of Bus Routes in Delhi Using Real-Time GTFS Data. Proceedings of the 2024 16th International Conference on COMmunication Systems & NETworkS (COMSNETS), Bengaluru, India.",
+        "DOI": "10.1109/COMSNETS59351.2024.10427234"
+      },
+      {
+        "key": "ref_22",
+        "doi-asserted-by": "crossref",
+        "unstructured": "Ratneswaran, S., and Thayasivam, U. (2023, January 24–28). An Improved Bus Travel Time Prediction Using Multi-Model Ensemble Approach for Heterogeneous Traffic Conditions. Proceedings of the 2023 IEEE 26th International Conference on Intelligent Transportation Systems (ITSC), Bilbao, Spain.",
+        "DOI": "10.1109/ITSC57777.2023.10421794"
+      },
+      {
+        "key": "ref_23",
+        "unstructured": "(2025, March 24). Reference-General Transit Feed Specification. Available online: https://gtfs.org/documentation/schedule/reference/."
+      },
+      {
+        "key": "ref_24",
+        "doi-asserted-by": "crossref",
+        "unstructured": "Liu, D., Guo, J., Gu, Y., King, M., Han, L.D., and Brakewood, C. (2025). Analyzing Transit Systems Using General Transit Feed Specification (GTFS) by Generating Spatiotemporal Transit Networks. Information, 16.",
+        "DOI": "10.3390/info16010024"
+      },
+      {
+        "key": "ref_25",
+        "unstructured": "Goldstein, B., and Dyson, L. (2013). Beyond Transparency: Open Data and the Future of Civic Innovation, Code for America Press."
+      },
+      {
+        "key": "ref_26",
+        "doi-asserted-by": "crossref",
+        "first-page": "1034",
+        "DOI": "10.1038/s41597-024-03873-1",
+        "article-title": "Bus arrival and departure time updates in the Greater Sydney Area",
+        "volume": "11",
+        "author": "Xian",
+        "year": "2024",
+        "journal-title": "Sci. Data"
+      },
+      {
+        "key": "ref_27",
+        "doi-asserted-by": "crossref",
+        "first-page": "e03729",
+        "DOI": "10.1016/j.heliyon.2020.e03729",
+        "article-title": "Visualizing public transit system operation with GTFS data: A case study of Calgary, Canada",
+        "volume": "6",
+        "author": "Prommaharaj",
+        "year": "2020",
+        "journal-title": "Heliyon"
+      },
+      {
+        "key": "ref_28",
+        "doi-asserted-by": "crossref",
+        "first-page": "33",
+        "DOI": "10.3141/2216-04",
+        "article-title": "Development of key performance indicator to compare regularity of service between urban bus operators",
+        "volume": "2216",
+        "author": "Trompet",
+        "year": "2011",
+        "journal-title": "Transp. Res. Rec."
+      },
+      {
+        "key": "ref_29",
+        "doi-asserted-by": "crossref",
+        "first-page": "695",
+        "DOI": "10.1016/j.trc.2010.12.008",
+        "article-title": "Commercial bus speed diagnosis based on GPS-monitored data",
+        "volume": "19",
+        "author": "Gibson",
+        "year": "2011",
+        "journal-title": "Transp. Res. Part C Emerg. Technol."
+      },
+      {
+        "key": "ref_30",
+        "unstructured": "Furth, P.G., Hemily, B., Muller, T.H., and Strathman, J.G. (2006). Using Archived AVL-APC Data to Improve Transit Performance and Management, Transportation Research Board. No. Project H-28."
+      },
+      {
+        "key": "ref_31",
+        "doi-asserted-by": "crossref",
+        "first-page": "1",
+        "DOI": "10.1038/sdata.2016.18",
+        "article-title": "The FAIR Guiding Principles for scientific data management and stewardship",
+        "volume": "3",
+        "author": "Wilkinson",
+        "year": "2016",
+        "journal-title": "Sci. Data"
+      }
+    ],
+    "container-title": [
+      "Data"
+    ],
+    "original-title": [],
+    "language": "en",
+    "link": [
+      {
+        "URL": "https://www.mdpi.com/2306-5729/10/8/119/pdf",
+        "content-type": "unspecified",
+        "content-version": "vor",
+        "intended-application": "similarity-checking"
+      }
+    ],
+    "deposited": {
+      "date-parts": [
+        [
+          2025,
+          10,
+          9
+        ]
+      ],
+      "date-time": "2025-10-09T18:14:22Z",
+      "timestamp": 1760033662000
+    },
+    "score": 1,
+    "resource": {
+      "primary": {
+        "URL": "https://www.mdpi.com/2306-5729/10/8/119"
+      }
+    },
+    "subtitle": [],
+    "short-title": [],
+    "issued": {
+      "date-parts": [
+        [
+          2025,
+          7,
+          23
+        ]
+      ]
+    },
+    "references-count": 31,
+    "journal-issue": {
+      "issue": "8",
+      "published-online": {
+        "date-parts": [
+          [
+            2025,
+            8
+          ]
+        ]
+      }
+    },
+    "alternative-id": [
+      "data10080119"
+    ],
+    "URL": "https://doi.org/10.3390/data10080119",
+    "relation": {},
+    "ISSN": [
+      "2306-5729"
+    ],
+    "issn-type": [
+      {
+        "value": "2306-5729",
+        "type": "electronic"
+      }
+    ],
+    "subject": [],
+    "published": {
+      "date-parts": [
+        [
+          2025,
+          7,
+          23
+        ]
+      ]
+    }
+  },
+  "_public_copy_note": "Abstract omitted; bibliographic metadata retained."
+}

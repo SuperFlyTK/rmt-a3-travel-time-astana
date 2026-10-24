@@ -1,0 +1,479 @@
+{
+  "status": "ok",
+  "message-type": "work",
+  "message-version": "1.0.0",
+  "message": {
+    "indexed": {
+      "date-parts": [
+        [
+          2026,
+          6,
+          3
+        ]
+      ],
+      "date-time": "2026-06-03T06:19:49Z",
+      "timestamp": 1780467589124,
+      "version": "3.54.1"
+    },
+    "reference-count": 32,
+    "publisher": "MDPI AG",
+    "issue": "18",
+    "license": [
+      {
+        "start": {
+          "date-parts": [
+            [
+              2025,
+              9,
+              11
+            ]
+          ],
+          "date-time": "2025-09-11T00:00:00Z",
+          "timestamp": 1757548800000
+        },
+        "content-version": "vor",
+        "delay-in-days": 0,
+        "URL": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    ],
+    "funder": [
+      {
+        "name": "Princess Nourah bint Abdulrahman University",
+        "award": [
+          "PNURSP2025R914"
+        ],
+        "award-info": [
+          {
+            "award-number": [
+              "PNURSP2025R914"
+            ]
+          }
+        ]
+      }
+    ],
+    "content-domain": {
+      "domain": [],
+      "crossmark-restriction": false
+    },
+    "short-container-title": [
+      "Sustainability"
+    ],
+    "DOI": "10.3390/su17188194",
+    "type": "journal-article",
+    "created": {
+      "date-parts": [
+        [
+          2025,
+          9,
+          11
+        ]
+      ],
+      "date-time": "2025-09-11T15:10:46Z",
+      "timestamp": 1757603446000
+    },
+    "page": "8194",
+    "update-policy": "https://doi.org/10.3390/mdpi_crossmark_policy",
+    "source": "Crossref",
+    "is-referenced-by-count": 3,
+    "title": [
+      "Real-Time Urban Congestion Monitoring in Jeddah, Saudi Arabia, Using the Google Maps API: A Data-Driven Framework for Middle Eastern Cities"
+    ],
+    "prefix": "10.3390",
+    "volume": "17",
+    "author": [
+      {
+        "ORCID": "https://orcid.org/0000-0001-7727-5828",
+        "authenticated-orcid": false,
+        "given": "Ghada Ragheb",
+        "family": "Elnaggar",
+        "sequence": "first",
+        "affiliation": [
+          {
+            "name": "Department of Industrial and Systems Engineering, College of Engineering, Princess Nourah bint Abdulrahman University, P.O. Box 84428, Riyadh 11671, Saudi Arabia"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0001-8531-0822",
+        "authenticated-orcid": false,
+        "given": "Shireen",
+        "family": "Al-Hourani",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Department of Quantitative Studies, University Canada West, Vancouver, BC V6Z 0E5, Canada"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-8359-7222",
+        "authenticated-orcid": false,
+        "given": "Rimal",
+        "family": "Abutaha",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Industrial Engineering Department, King Abdulaziz University, Jeddah 21589, Saudi Arabia"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "member": "1968",
+    "published-online": {
+      "date-parts": [
+        [
+          2025,
+          9,
+          11
+        ]
+      ]
+    },
+    "reference": [
+      {
+        "key": "ref_1",
+        "doi-asserted-by": "crossref",
+        "unstructured": "Kim, J., Jeon, W., and Kim, S. (2024). Analyzing the relationship between user feedback and traffic accidents through crowdsourced data. Sustainability, 16.",
+        "DOI": "10.3390/su16229867"
+      },
+      {
+        "key": "ref_2",
+        "doi-asserted-by": "crossref",
+        "first-page": "102140",
+        "DOI": "10.1016/j.asej.2023.102140",
+        "article-title": "The use of crowdsourcing data for analyzing pedestrian safety in urban areas",
+        "volume": "14",
+        "author": "Telima",
+        "year": "2023",
+        "journal-title": "Ain Shams Eng. J."
+      },
+      {
+        "key": "ref_3",
+        "doi-asserted-by": "crossref",
+        "first-page": "101935",
+        "DOI": "10.1016/j.pmcj.2024.101935",
+        "article-title": "Traffic count estimation using crowd-sourced trajectory data in the absence of dedicated infrastructure",
+        "volume": "102",
+        "author": "Dey",
+        "year": "2024",
+        "journal-title": "Pervasive Mob. Comput."
+      },
+      {
+        "key": "ref_4",
+        "doi-asserted-by": "crossref",
+        "first-page": "40",
+        "DOI": "10.1145/3057281",
+        "article-title": "Computing urban traffic congestions by incorporating sparse GPS probe data and social media data",
+        "volume": "35",
+        "author": "Wang",
+        "year": "2017",
+        "journal-title": "ACM Trans. Inf. Syst."
+      },
+      {
+        "key": "ref_5",
+        "doi-asserted-by": "crossref",
+        "first-page": "3010",
+        "DOI": "10.1109/TITS.2018.2870948",
+        "article-title": "Efficient traffic estimation with multi-sourced data by parallel coupled hidden Markov model",
+        "volume": "20",
+        "author": "Wang",
+        "year": "2019",
+        "journal-title": "IEEE Trans. Intell. Transp. Syst."
+      },
+      {
+        "key": "ref_6",
+        "doi-asserted-by": "crossref",
+        "unstructured": "Kim, Y., Song, S., Lee, H., Choi, D., Lim, J., Bok, K., and Yoo, J. (2023). Regional traffic event detection using data crowdsourcing. Appl. Sci., 13.",
+        "DOI": "10.20944/preprints202307.1369.v1"
+      },
+      {
+        "key": "ref_7",
+        "doi-asserted-by": "crossref",
+        "unstructured": "Minh, Q.T., Phan, T.N., and Bao, T.L.T. (2024, January 30–31). Traffic Information Extraction And Estimation in Developing Countries. Proceedings of the 2024 9th International Conference on Applying New Technology in Green Buildings (ATiGB), Danang, Vietnam.",
+        "DOI": "10.1109/ATiGB63471.2024.10717830"
+      },
+      {
+        "key": "ref_8",
+        "doi-asserted-by": "crossref",
+        "unstructured": "Liu, Y., and Feng, T. (2023). The Effect of Crowdsourced Police Enforcement Data on Traffic Speed: A Case Study of The Netherlands. Appl. Sci., 13.",
+        "DOI": "10.3390/app132111822"
+      },
+      {
+        "key": "ref_9",
+        "doi-asserted-by": "crossref",
+        "first-page": "104754",
+        "DOI": "10.1016/j.ijdrr.2024.104754",
+        "article-title": "Multi-crowdsourced data fusion for modeling link-level traffic resilience to adverse weather events",
+        "volume": "112",
+        "author": "Hu",
+        "year": "2024",
+        "journal-title": "Int. J. Disaster Risk Reduct."
+      },
+      {
+        "key": "ref_10",
+        "doi-asserted-by": "crossref",
+        "unstructured": "Althuwaynee, O.F.S., Marchesini, I., Guzzetti, F., Rossi, M., Melillo, M., Salvati, P., Donnini, M., and Bucci, F. (2024, January 14–19). Automated Extraction of Roads Traffic Flow from Open Google Maps Data. Proceedings of the EGU General Assembly 2024, Vienna, Austria.",
+        "DOI": "10.5194/egusphere-egu24-10366"
+      },
+      {
+        "key": "ref_11",
+        "doi-asserted-by": "crossref",
+        "unstructured": "Richter, P., and Kumpošt, P. (2023, January 25–26). Identifying Critical Locations on Road Networks Using Google Traffic Data. Proceedings of the 2023 Smart Cities Symposium Prague (SCSP), Prague, Czech Republic.",
+        "DOI": "10.1109/SCSP58044.2023.10146212"
+      },
+      {
+        "key": "ref_12",
+        "doi-asserted-by": "crossref",
+        "unstructured": "Nair, D.J., Gilles, F., Chand, S., Saxena, N., and Dixit, V. (2019). Characterizing multicity urban traffic conditions using crowdsourced data. PLoS ONE, 14.",
+        "DOI": "10.1371/journal.pone.0215728"
+      },
+      {
+        "key": "ref_13",
+        "doi-asserted-by": "crossref",
+        "first-page": "1",
+        "DOI": "10.4018/IJSI.293270",
+        "article-title": "Traffic data collection and visualization tool for knowledge discovery using Google maps",
+        "volume": "10",
+        "author": "Hossain",
+        "year": "2022",
+        "journal-title": "Int. J. Softw. Innov."
+      },
+      {
+        "key": "ref_14",
+        "doi-asserted-by": "crossref",
+        "first-page": "100404",
+        "DOI": "10.1016/j.dajour.2024.100404",
+        "article-title": "A spatiotemporal analysis of traffic congestion patterns using clustering algorithms: A case study of Casablanca",
+        "volume": "10",
+        "author": "Rouky",
+        "year": "2024",
+        "journal-title": "Decis. Anal. J."
+      },
+      {
+        "key": "ref_15",
+        "first-page": "265",
+        "article-title": "Spatiotemporal traffic database construction with Google real-time traffic information and spatiotemporal congestion pattern analysis: A case study of Montgomery county, Maryland, U.S.A",
+        "volume": "56",
+        "author": "Ji",
+        "year": "2021",
+        "journal-title": "J. Korean Geogr. Soc."
+      },
+      {
+        "key": "ref_16",
+        "doi-asserted-by": "crossref",
+        "unstructured": "Dao, M.-S., Nguyen, N.-T., Kiran, R.U., and Zettsu, K. (2020, January 17–20). Insights from Urban Sensing Data: From Chaos to Predicted Congestion Patterns. Proceedings of the International Conference on Data Mining Workshops (ICDWM), Sorrento, Italy.",
+        "DOI": "10.1109/ICDMW51313.2020.00093"
+      },
+      {
+        "key": "ref_17",
+        "doi-asserted-by": "crossref",
+        "unstructured": "Arp, L., van Vreumingen, D., Gawehns, D., and Baratchi, M. (July, January 30). Dynamic macro scale traffic flow optimisation using crowd-sourced urban movement data. Proceedings of the 2020 21st IEEE International Conference on Mobile Data Management (MDM), Versailles, France.",
+        "DOI": "10.1109/MDM48529.2020.00039"
+      },
+      {
+        "key": "ref_18",
+        "doi-asserted-by": "crossref",
+        "first-page": "1301",
+        "DOI": "10.1093/ijlct/ctae078",
+        "article-title": "Integrating intelligent and sustainable transportation systems in Jeddah: A multidimensional approach for urban mobility enhancement",
+        "volume": "19",
+        "author": "Alamoudi",
+        "year": "2024",
+        "journal-title": "Int. J. Low-Carbon Technol."
+      },
+      {
+        "key": "ref_19",
+        "doi-asserted-by": "crossref",
+        "first-page": "688",
+        "DOI": "10.21275/SR23213115217",
+        "article-title": "GIS based traffic flow analysis in King Abdulaziz University, Saudi Arabia",
+        "volume": "12",
+        "author": "Ali",
+        "year": "2023",
+        "journal-title": "Int. J. Sci. Res. (IJSR)"
+      },
+      {
+        "key": "ref_20",
+        "doi-asserted-by": "crossref",
+        "first-page": "1109",
+        "DOI": "10.32604/csse.2023.035135",
+        "article-title": "An intelligent adaptive dynamic algorithm for a smart traffic system",
+        "volume": "46",
+        "author": "Alsheikhy",
+        "year": "2023",
+        "journal-title": "Comput. Syst. Sci. Eng."
+      },
+      {
+        "key": "ref_21",
+        "first-page": "7",
+        "article-title": "Traffic congestion evaluation using GIS case study: Jeddah city",
+        "volume": "138",
+        "year": "2016",
+        "journal-title": "Int. J. Comput. Appl."
+      },
+      {
+        "key": "ref_22",
+        "doi-asserted-by": "crossref",
+        "first-page": "1455",
+        "DOI": "10.3390/su13031455",
+        "article-title": "The impact assessment of increasing population density on jeddah road transportation using spatial-temporal analysis",
+        "volume": "13",
+        "author": "Aljoufie",
+        "year": "2021",
+        "journal-title": "Sustainability"
+      },
+      {
+        "key": "ref_23",
+        "unstructured": "Mishra, S., and Murthy, T.S. (2024). A predictive and optimization approach for enhanced urban mobility using spatiotemporal data. arXiv."
+      },
+      {
+        "key": "ref_24",
+        "doi-asserted-by": "crossref",
+        "unstructured": "Yusuf, O., Rasheed, A., Lindseth, F., and Slaastuen, M. (2024, January 15–17). Unveiling Urban Mobility Patterns: A Data-Driven Analysis of Public Transit. Proceedings of the 2024 International Conference on Control, Automation and Diagnosis (ICCAD), Paris, France.",
+        "DOI": "10.1109/ICCAD60883.2024.10553660"
+      },
+      {
+        "key": "ref_25",
+        "doi-asserted-by": "crossref",
+        "unstructured": "Belcastro, L., Marozzo, F., Orsino, A., Talia, D., and Trunfio, P. (2023, January 1–3). Using the Compute Continuum for Data Analysis: Edge-cloud Integration for Urban Mobility. Proceedings of the 2023 31st Euromicro International Conference on Parallel, Distributed and Network-Based Processing (PDP), Naples, Italy.",
+        "DOI": "10.1109/PDP59025.2023.00058"
+      },
+      {
+        "key": "ref_26",
+        "doi-asserted-by": "crossref",
+        "unstructured": "Delgado, A., and Calegari, D. (2023, January 3–6). Process Mining for Improving Urban Mobility in Smart Cities: Challenges and Application with Open Data. Proceedings of the 56th Hawaii International Conference on System Sciences, Montevideo, Uruguay.",
+        "DOI": "10.24251/HICSS.2023.216"
+      },
+      {
+        "key": "ref_27",
+        "doi-asserted-by": "crossref",
+        "first-page": "211",
+        "DOI": "10.1016/j.ifacol.2021.08.079",
+        "article-title": "Study of urban-traffic congestion based on Google maps API: The case of Boston",
+        "volume": "54",
+        "year": "2021",
+        "journal-title": "IFAC-PapersOnLine"
+      },
+      {
+        "key": "ref_28",
+        "first-page": "1618",
+        "article-title": "Urban traffic congestion and its association with gas station density: Insights from Google maps data",
+        "volume": "35",
+        "author": "Hasabi",
+        "year": "2024",
+        "journal-title": "Indones. J. Electr. Eng. Comput. Sci."
+      },
+      {
+        "key": "ref_29",
+        "unstructured": "(2023, March 25). Jeddah Municipality, Available online: https://www.jeddah.gov.sa/index.php."
+      },
+      {
+        "key": "ref_30",
+        "unstructured": "(2023, March 25). Saudi Ministry of Transport, Available online: https://mot.gov.sa/en/home."
+      },
+      {
+        "key": "ref_31",
+        "unstructured": "The Saudi Gazette (2023, March 25). Jeddah Traffic Congestion Statistics. Available online: https://www.tomtom.com/traffic-index/jeddah-traffic/."
+      },
+      {
+        "key": "ref_32",
+        "unstructured": "(2023, March 25). Wego Travel Guide for Saudi Arabia. Available online: https://sa.wego.com/en."
+      }
+    ],
+    "container-title": [
+      "Sustainability"
+    ],
+    "original-title": [],
+    "language": "en",
+    "link": [
+      {
+        "URL": "https://www.mdpi.com/2071-1050/17/18/8194/pdf",
+        "content-type": "unspecified",
+        "content-version": "vor",
+        "intended-application": "similarity-checking"
+      }
+    ],
+    "deposited": {
+      "date-parts": [
+        [
+          2025,
+          10,
+          9
+        ]
+      ],
+      "date-time": "2025-10-09T18:44:05Z",
+      "timestamp": 1760035445000
+    },
+    "score": 1,
+    "resource": {
+      "primary": {
+        "URL": "https://www.mdpi.com/2071-1050/17/18/8194"
+      }
+    },
+    "subtitle": [],
+    "short-title": [],
+    "issued": {
+      "date-parts": [
+        [
+          2025,
+          9,
+          11
+        ]
+      ]
+    },
+    "references-count": 32,
+    "journal-issue": {
+      "issue": "18",
+      "published-online": {
+        "date-parts": [
+          [
+            2025,
+            9
+          ]
+        ]
+      }
+    },
+    "alternative-id": [
+      "su17188194"
+    ],
+    "URL": "https://doi.org/10.3390/su17188194",
+    "relation": {},
+    "ISSN": [
+      "2071-1050"
+    ],
+    "issn-type": [
+      {
+        "value": "2071-1050",
+        "type": "electronic"
+      }
+    ],
+    "subject": [],
+    "published": {
+      "date-parts": [
+        [
+          2025,
+          9,
+          11
+        ]
+      ]
+    }
+  },
+  "_public_copy_note": "Abstract omitted; bibliographic metadata retained."
+}

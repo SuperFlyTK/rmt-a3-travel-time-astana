@@ -1,0 +1,1836 @@
+{
+  "status": "ok",
+  "message-type": "work",
+  "message-version": "1.0.0",
+  "message": {
+    "indexed": {
+      "date-parts": [
+        [
+          2026,
+          9,
+          17
+        ]
+      ],
+      "date-time": "2026-09-17T19:09:58Z",
+      "timestamp": 1789672198588,
+      "version": "4.0.1"
+    },
+    "reference-count": 155,
+    "publisher": "Oxford University Press (OUP)",
+    "issue": "3",
+    "license": [
+      {
+        "start": {
+          "date-parts": [
+            [
+              2022,
+              12,
+              22
+            ]
+          ],
+          "date-time": "2022-12-22T00:00:00Z",
+          "timestamp": 1671667200000
+        },
+        "content-version": "vor",
+        "delay-in-days": 1,
+        "URL": "https://creativecommons.org/licenses/by-nc/4.0/"
+      }
+    ],
+    "funder": [
+      {
+        "DOI": "10.13039/501100003093",
+        "name": "MOHE",
+        "doi-asserted-by": "publisher",
+        "award": [
+          "FRGS/1/2019/TK08/MUSM/03/1"
+        ],
+        "award-info": [
+          {
+            "award-number": [
+              "FRGS/1/2019/TK08/MUSM/03/1"
+            ]
+          }
+        ],
+        "id": [
+          {
+            "id": "10.13039/501100003093",
+            "id-type": "DOI",
+            "asserted-by": "publisher"
+          }
+        ]
+      }
+    ],
+    "content-domain": {
+      "domain": [],
+      "crossmark-restriction": false
+    },
+    "short-container-title": [],
+    "published-print": {
+      "date-parts": [
+        [
+          2023,
+          6,
+          1
+        ]
+      ]
+    },
+    "DOI": "10.1093/tse/tdac058",
+    "type": "journal-article",
+    "created": {
+      "date-parts": [
+        [
+          2022,
+          12,
+          22
+        ]
+      ],
+      "date-time": "2022-12-22T11:38:14Z",
+      "timestamp": 1671709094000
+    },
+    "source": "Crossref",
+    "is-referenced-by-count": 10,
+    "title": [
+      "Short-term traffic forecasting model: prevailing trends and guidelines"
+    ],
+    "prefix": "10.1093",
+    "volume": "5",
+    "author": [
+      {
+        "given": "Kian Lun",
+        "family": "Soon",
+        "sequence": "first",
+        "affiliation": [
+          {
+            "name": "School of Engineering, Monash University, Malaysia , Bandar Sunday 47500 , Malaysia"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Robin Kuok Cheong",
+        "family": "Chan",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "School of Engineering, Monash University, Malaysia , Bandar Sunday 47500 , Malaysia"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-1326-8634",
+        "authenticated-orcid": false,
+        "given": "Joanne Mun-Yee",
+        "family": "Lim",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "School of Engineering, Monash University, Malaysia , Bandar Sunday 47500 , Malaysia"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Rajendran",
+        "family": "Parthiban",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "School of Engineering, Monash University, Malaysia , Bandar Sunday 47500 , Malaysia"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "member": "286",
+    "published-online": {
+      "date-parts": [
+        [
+          2022,
+          12,
+          21
+        ]
+      ]
+    },
+    "reference": [
+      {
+        "key": "2024010315582151200_bib1",
+        "first-page": "1",
+        "article-title": "Analysis of freeway traffic time-series data by using Box-Jenkins techniques",
+        "author": "Ahmed",
+        "year": "1979",
+        "journal-title": "Transp Res Rec"
+      },
+      {
+        "key": "2024010315582151200_bib2",
+        "doi-asserted-by": "crossref",
+        "first-page": "533",
+        "DOI": "10.1080/0144164042000195072",
+        "article-title": "Short-term traffic forecasting: overview of objectives and methods",
+        "volume": "24",
+        "author": "Vlahogianni",
+        "year": "2004",
+        "journal-title": "Transp Rev"
+      },
+      {
+        "key": "2024010315582151200_bib3",
+        "doi-asserted-by": "crossref",
+        "first-page": "126",
+        "DOI": "10.1111/0885-9507.00219",
+        "article-title": "Neural networks in civil engineering: 1989-2000",
+        "volume": "16",
+        "author": "Adeli",
+        "year": "2001",
+        "journal-title": "Comput Civ Infrastruct Eng"
+      },
+      {
+        "key": "2024010315582151200_bib4",
+        "doi-asserted-by": "crossref",
+        "first-page": "3",
+        "DOI": "10.1016/j.trc.2014.01.005",
+        "article-title": "Short-term traffic forecasting: where we are and where we're going",
+        "volume": "43",
+        "author": "Vlahogianni",
+        "year": "2014",
+        "journal-title": "Transp Res Part C Emerg Technol"
+      },
+      {
+        "key": "2024010315582151200_bib5",
+        "doi-asserted-by": "crossref",
+        "first-page": "786",
+        "DOI": "10.1080/01441647.2018.1442887",
+        "article-title": "Spatiotemporal traffic forecasting: review and proposed directions",
+        "volume": "38",
+        "author": "Ermagun",
+        "year": "2018",
+        "journal-title": "Transp Rev"
+      },
+      {
+        "key": "2024010315582151200_bib6",
+        "doi-asserted-by": "crossref",
+        "first-page": "93",
+        "DOI": "10.1109/MITS.2018.2806634",
+        "article-title": "Road Traffic Forecasting: recent Advances and New Challenges",
+        "volume": "10",
+        "author": "Lana",
+        "year": "2018",
+        "journal-title": "IEEE Intell Transp Syst Mag"
+      },
+      {
+        "key": "2024010315582151200_bib7",
+        "doi-asserted-by": "crossref",
+        "first-page": "571",
+        "DOI": "10.1016/j.jss.2006.07.009",
+        "article-title": "Lessons from applying the systematic literature review process within the software engineering domain",
+        "volume": "80",
+        "author": "Brereton",
+        "year": "2007",
+        "journal-title": "J Syst Softw"
+      },
+      {
+        "key": "2024010315582151200_bib8",
+        "article-title": "Procedures for Performing Systematic Reviews",
+        "author": "Kitchenham",
+        "year": "2004"
+      },
+      {
+        "key": "2024010315582151200_bib9",
+        "doi-asserted-by": "crossref",
+        "first-page": "749",
+        "DOI": "10.1080/01441647.2014.981884",
+        "article-title": "The Adoption of Liquefied Natural Gas as a Ship Fuel: a Systematic Review of Perspectives and Challenges",
+        "volume": "34",
+        "author": "Wang",
+        "year": "2014",
+        "journal-title": "Transp Rev"
+      },
+      {
+        "key": "2024010315582151200_bib10",
+        "doi-asserted-by": "crossref",
+        "first-page": "63",
+        "DOI": "10.1007/s41019-020-00151-z",
+        "article-title": "A Survey of Traffic Prediction: from Spatio-Temporal Data to Intelligent Transportation",
+        "volume": "6",
+        "author": "Yuan",
+        "year": "2021",
+        "journal-title": "Data Sci Eng"
+      },
+      {
+        "key": "2024010315582151200_bib11",
+        "doi-asserted-by": "crossref",
+        "first-page": "90",
+        "DOI": "10.1007/978-3-319-93710-6_11",
+        "article-title": "Using Deep Learning to Predict Short Term Traffic Flow: a Systematic Literature Review",
+        "volume-title": "Intelligent Transport Systems – From Research and Development to the Market Uptake",
+        "author": "Ali",
+        "year": "2018"
+      },
+      {
+        "key": "2024010315582151200_bib12",
+        "first-page": "1",
+        "article-title": "Deep Learning on Traffic Prediction: methods, Analysis and Future Directions",
+        "author": "Yin",
+        "year": "2021",
+        "journal-title": "IEEE Trans Intell Transp Syst"
+      },
+      {
+        "key": "2024010315582151200_bib13",
+        "doi-asserted-by": "crossref",
+        "first-page": "3170",
+        "DOI": "10.1109/TITS.2017.2774289",
+        "article-title": "Real-time prediction of seasonal heteroscedasticity in vehicular traffic flow series",
+        "volume": "19",
+        "author": "Huang",
+        "year": "2018",
+        "journal-title": "IEEE Trans Intell Transp Syst"
+      },
+      {
+        "key": "2024010315582151200_bib14",
+        "doi-asserted-by": "crossref",
+        "first-page": "43",
+        "DOI": "10.1016/S0169-2070(96)00699-1",
+        "article-title": "Should we use neural networks or statistical models for short-term motorway traffic forecasting?",
+        "volume": "13",
+        "author": "Kirby",
+        "year": "1997",
+        "journal-title": "Int J Forecast"
+      },
+      {
+        "key": "2024010315582151200_bib15",
+        "doi-asserted-by": "crossref",
+        "first-page": "4714",
+        "DOI": "10.1109/TIE.2012.2213556",
+        "article-title": "An intelligent particle swarm optimization for short-term traffic flow forecasting using on-road sensor systems",
+        "volume": "60",
+        "author": "Chan",
+        "year": "2013",
+        "journal-title": "IEEE Trans Ind Electron"
+      },
+      {
+        "key": "2024010315582151200_bib16",
+        "doi-asserted-by": "crossref",
+        "first-page": "263",
+        "DOI": "10.1109/TCST.2011.2180386",
+        "article-title": "Prediction of short-term traffic variables using intelligent swarm-based neural networks",
+        "volume": "21",
+        "author": "Chan",
+        "year": "2013",
+        "journal-title": "IEEE Trans Control Syst Technol"
+      },
+      {
+        "key": "2024010315582151200_bib17",
+        "first-page": "294",
+        "article-title": "Short-term traffic flow prediction with optimized Multi-kernel Support Vector Machine",
+        "volume-title": "2017 IEEE Congr Evol Comput CEC 2017 - Proc",
+        "author": "Ling",
+        "year": "2017"
+      },
+      {
+        "key": "2024010315582151200_bib18",
+        "doi-asserted-by": "crossref",
+        "first-page": "79",
+        "DOI": "10.1016/j.trc.2014.02.005",
+        "article-title": "New Bayesian combination method for short-term traffic flow forecasting",
+        "volume": "43",
+        "author": "Wang",
+        "year": "2014",
+        "journal-title": "Transp Res Part C Emerg Technol"
+      },
+      {
+        "key": "2024010315582151200_bib19",
+        "doi-asserted-by": "crossref",
+        "first-page": "337",
+        "DOI": "10.1260/2046-0430.4.3.337",
+        "article-title": "Short Term Prediction of Freeway Exiting Volume Based on SVM and KNN",
+        "volume": "4",
+        "author": "Wang",
+        "year": "2015",
+        "journal-title": "Int J Transp Sci Technol"
+      },
+      {
+        "key": "2024010315582151200_bib20",
+        "doi-asserted-by": "crossref",
+        "first-page": "653",
+        "DOI": "10.1016/j.sbspro.2013.08.076",
+        "article-title": "An Improved K-nearest Neighbor Model for Short-term Traffic Flow Prediction",
+        "volume": "96",
+        "author": "Zhang",
+        "year": "2013",
+        "journal-title": "Procedia - Soc Behav Sci"
+      },
+      {
+        "key": "2024010315582151200_bib21",
+        "first-page": "6270",
+        "article-title": "A novel short-term traffic forecast model based on travel distance estimation and ARIMA",
+        "author": "Zhao",
+        "year": "2016"
+      },
+      {
+        "key": "2024010315582151200_bib22",
+        "doi-asserted-by": "crossref",
+        "first-page": "176",
+        "DOI": "10.1016/j.trpro.2015.09.067",
+        "article-title": "On the short-term prediction of traffic state: an application on urban freeways in ROME",
+        "volume": "10",
+        "author": "Mannini",
+        "year": "2015",
+        "journal-title": "Transp Res Procedia"
+      },
+      {
+        "key": "2024010315582151200_bib23",
+        "article-title": "Network Model for Traffic Flow Prediction",
+        "author": "Abhishek",
+        "year": "2016"
+      },
+      {
+        "key": "2024010315582151200_bib24",
+        "first-page": "178",
+        "article-title": "Hybrid genetic algorithm and time delay neural network model for forecasting traffic flow",
+        "volume-title": "Proc 2nd IEEE Int Conf Eng Technol ICETECH 2016",
+        "author": "Abhishek",
+        "year": "2016"
+      },
+      {
+        "key": "2024010315582151200_bib25",
+        "doi-asserted-by": "crossref",
+        "first-page": "2001",
+        "DOI": "10.1109/TITS.2018.2854913",
+        "article-title": "Adaptive multi-kernel SVM with spatial-temporal correlation for short-term traffic flow prediction",
+        "volume": "20",
+        "author": "Feng",
+        "year": "2019",
+        "journal-title": "IEEE Trans Intell Transp Syst"
+      },
+      {
+        "key": "2024010315582151200_bib26",
+        "doi-asserted-by": "crossref",
+        "first-page": "9347",
+        "DOI": "10.1109/ACCESS.2018.2805299",
+        "article-title": "Ensemble learning multiple LSSVR with improved harmony search algorithm for short-term traffic flow forecasting",
+        "volume": "6",
+        "author": "Chen",
+        "year": "2018",
+        "journal-title": "IEEE Access"
+      },
+      {
+        "key": "2024010315582151200_bib27",
+        "first-page": "253",
+        "article-title": "Short-term traffic flow forecast based on parallel long short-term memory neural network",
+        "volume": "2017-Novem",
+        "author": "Qiao",
+        "year": "2017",
+        "journal-title": "Proc IEEE Int Conf Softw Eng Serv Sci ICSESS"
+      },
+      {
+        "key": "2024010315582151200_bib28",
+        "doi-asserted-by": "crossref",
+        "first-page": "168",
+        "DOI": "10.1016/j.trc.2016.11.001",
+        "article-title": "Short-term traffic flow prediction using time-varying Vasicek model",
+        "volume": "74",
+        "author": "Rajabzadeh",
+        "year": "2017",
+        "journal-title": "Transp Res Part C Emerg Technol"
+      },
+      {
+        "key": "2024010315582151200_bib29",
+        "doi-asserted-by": "crossref",
+        "first-page": "4134",
+        "DOI": "10.1109/TITS.2018.2882814",
+        "article-title": "Tunable and Transferable RBF Model for Short-Term Traffic Forecasting",
+        "volume": "20",
+        "author": "Cai",
+        "year": "2019",
+        "journal-title": "IEEE Trans Intell Transp Syst"
+      },
+      {
+        "key": "2024010315582151200_bib30",
+        "doi-asserted-by": "crossref",
+        "first-page": "779",
+        "DOI": "10.1007/s11771-015-2582-y",
+        "article-title": "A two-stage short-term traffic flow prediction method based on AVL and AKNN techniques",
+        "volume": "22",
+        "author": "Meng",
+        "year": "2015",
+        "journal-title": "J Cent South Univ"
+      },
+      {
+        "key": "2024010315582151200_bib31",
+        "first-page": "7030",
+        "article-title": "A short-term traffic flow prediction method based on wavelet analysis and neural network",
+        "volume-title": "Proc 28th Chinese Control Decis Conf CCDC 2016",
+        "author": "Yanchong",
+        "year": "2016"
+      },
+      {
+        "key": "2024010315582151200_bib32",
+        "doi-asserted-by": "crossref",
+        "first-page": "476",
+        "DOI": "10.1016/j.trc.2017.10.010",
+        "article-title": "Probe data-driven travel time forecasting for urban expressways by matching similar spatiotemporal traffic patterns",
+        "volume": "85",
+        "author": "Zhang",
+        "year": "2017",
+        "journal-title": "Transp Res Part C Emerg Technol"
+      },
+      {
+        "key": "2024010315582151200_bib33",
+        "doi-asserted-by": "crossref",
+        "first-page": "68",
+        "DOI": "10.1049/iet-its.2016.0208",
+        "article-title": "LSTM network: a deep learning approach for Short-term traffic forecast",
+        "volume": "11",
+        "author": "Zhao",
+        "year": "2017",
+        "journal-title": "IET Intell Transp Syst"
+      },
+      {
+        "key": "2024010315582151200_bib34",
+        "first-page": "624",
+        "article-title": "A K-nearest neighbor locally search regression algorithm for short-term traffic flow forecasting",
+        "volume": "2018-March",
+        "author": "Cai",
+        "year": "2018",
+        "journal-title": "Proc 2017 9th Int Conf Model Identif Control ICMIC 2017"
+      },
+      {
+        "key": "2024010315582151200_bib35",
+        "first-page": "1",
+        "article-title": "Short-term traffic flow prediction with LSTM recurrent neural network",
+        "volume": "2018-March",
+        "author": "Kang",
+        "year": "2017",
+        "journal-title": "IEEE Conference on Intelligent Transportation Systems, Proceedings, ITSC"
+      },
+      {
+        "key": "2024010315582151200_bib36",
+        "doi-asserted-by": "crossref",
+        "first-page": "2029",
+        "DOI": "10.1002/atr.1443",
+        "article-title": "Short-term highway traffic flow prediction based on a hybrid strategy considering temporal–spatial information",
+        "volume": "50",
+        "author": "Li",
+        "year": "2016",
+        "journal-title": "J Adv Transp"
+      },
+      {
+        "key": "2024010315582151200_bib37",
+        "doi-asserted-by": "crossref",
+        "first-page": "557",
+        "DOI": "10.1109/TITS.2015.2491365",
+        "article-title": "A Hybrid Method for Short-Term Traffic Congestion Forecasting Using Genetic Algorithms and Cross Entropy",
+        "volume": "17",
+        "author": "Lopez-Garcia",
+        "year": "2016",
+        "journal-title": "IEEE Trans Intell Transp Syst"
+      },
+      {
+        "key": "2024010315582151200_bib38",
+        "doi-asserted-by": "crossref",
+        "first-page": "75629",
+        "DOI": "10.1109/ACCESS.2018.2879055",
+        "article-title": "Short-Term Traffic Flow Forecasting by Selecting Appropriate Predictions Based on Pattern Matching",
+        "volume": "6",
+        "author": "Ma",
+        "year": "2018",
+        "journal-title": "IEEE Access"
+      },
+      {
+        "key": "2024010315582151200_bib39",
+        "doi-asserted-by": "crossref",
+        "first-page": "1",
+        "DOI": "10.1016/j.trc.2017.02.024",
+        "article-title": "Deep learning for short-term traffic flow prediction",
+        "volume": "79",
+        "author": "Polson",
+        "year": "2017",
+        "journal-title": "Transp Res Part C Emerg Technol"
+      },
+      {
+        "key": "2024010315582151200_bib40",
+        "doi-asserted-by": "crossref",
+        "first-page": "428",
+        "DOI": "10.1080/15472450.2015.1091735",
+        "article-title": "Traffic flow forecasting based on a hybrid model",
+        "volume": "20",
+        "author": "Wang",
+        "year": "2016",
+        "journal-title": "J Intell Transp Syst Technol Planning, Oper"
+      },
+      {
+        "key": "2024010315582151200_bib41",
+        "doi-asserted-by": "crossref",
+        "first-page": "479",
+        "DOI": "10.26599/TST.2018.9010045",
+        "article-title": "A hybrid forecasting framework based on support vector regression with a modified genetic algorithm and a random forest for traffic flow prediction",
+        "volume": "23",
+        "author": "Zhang",
+        "year": "2018",
+        "journal-title": "Tsinghua Sci Technol"
+      },
+      {
+        "key": "2024010315582151200_bib42",
+        "first-page": "816",
+        "article-title": "A three-stage framework for motorway travel time prediction",
+        "volume-title": "2014 17th IEEE Int Conf Intell Transp Syst ITSC 2014",
+        "author": "Xiong",
+        "year": "2014"
+      },
+      {
+        "key": "2024010315582151200_bib43",
+        "doi-asserted-by": "crossref",
+        "first-page": "184",
+        "DOI": "10.1016/j.trpro.2016.05.019",
+        "article-title": "Short Term Traffic Prediction on the UK Motorway Network Using Neural Networks",
+        "volume": "13",
+        "author": "Goves",
+        "year": "2016",
+        "journal-title": "Transp Res Procedia"
+      },
+      {
+        "key": "2024010315582151200_bib44",
+        "doi-asserted-by": "crossref",
+        "first-page": "155",
+        "DOI": "10.1007/s11063-015-9409-6",
+        "article-title": "A Short-term Traffic Flow Forecasting Method Based on the Hybrid PSO-SVR",
+        "volume": "43",
+        "author": "Hu",
+        "year": "2016",
+        "journal-title": "Neural Process Lett"
+      },
+      {
+        "key": "2024010315582151200_bib45",
+        "doi-asserted-by": "crossref",
+        "first-page": "105486",
+        "DOI": "10.1016/j.asoc.2019.105486",
+        "article-title": "Coordinated Traffic Light Control in Cooperative Green Vehicle Routing for Pheromone-based Multi-Agent Systems",
+        "volume": "81",
+        "author": "Soon",
+        "year": "2019",
+        "journal-title": "Appl Soft Comput J"
+      },
+      {
+        "key": "2024010315582151200_bib46",
+        "doi-asserted-by": "crossref",
+        "first-page": "21",
+        "DOI": "10.1016/j.trc.2015.11.002",
+        "article-title": "A spatiotemporal correlative k-nearest neighbor model for short-term traffic multistep forecasting",
+        "volume": "62",
+        "author": "Cai",
+        "year": "2016",
+        "journal-title": "Transp Res Part C Emerg Technol"
+      },
+      {
+        "key": "2024010315582151200_bib47",
+        "doi-asserted-by": "crossref",
+        "first-page": "538",
+        "DOI": "10.1016/j.compenvurbsys.2012.08.005",
+        "article-title": "Non-parametric regression for space-time forecasting under missing data",
+        "volume": "36",
+        "author": "Haworth",
+        "year": "2012",
+        "journal-title": "Comput Environ Urban Syst"
+      },
+      {
+        "key": "2024010315582151200_bib48",
+        "doi-asserted-by": "crossref",
+        "first-page": "108",
+        "DOI": "10.1016/j.trc.2013.05.008",
+        "article-title": "Efficient missing data imputing for traffic flow by considering temporal and spatial dependence",
+        "volume": "34",
+        "author": "Li",
+        "year": "2013",
+        "journal-title": "Transp Res Part C Emerg Technol"
+      },
+      {
+        "key": "2024010315582151200_bib49",
+        "doi-asserted-by": "crossref",
+        "first-page": "51",
+        "DOI": "10.1049/iet-its.2013.0052",
+        "article-title": "Missing traffic data: comparison of imputation methods",
+        "volume": "8",
+        "author": "Li",
+        "year": "2014",
+        "journal-title": "IET Intell Transp Syst"
+      },
+      {
+        "key": "2024010315582151200_bib50",
+        "doi-asserted-by": "crossref",
+        "first-page": "512",
+        "DOI": "10.1109/TITS.2009.2026312",
+        "article-title": "PPCA-based missing data imputation for traffic flow volume: a systematical approach",
+        "volume": "10",
+        "author": "Qu",
+        "year": "2009",
+        "journal-title": "IEEE Trans Intell Transp Syst"
+      },
+      {
+        "key": "2024010315582151200_bib51",
+        "doi-asserted-by": "crossref",
+        "DOI": "10.3390/ijgi6070187",
+        "article-title": "A two-step method for missing spatio-temporal data reconstruction",
+        "volume": "6",
+        "author": "Cheng",
+        "year": "2017",
+        "journal-title": "ISPRS Int J Geo-Information"
+      },
+      {
+        "key": "2024010315582151200_bib52",
+        "doi-asserted-by": "crossref",
+        "first-page": "186",
+        "DOI": "10.1016/j.compenvurbsys.2018.05.009",
+        "article-title": "Short-term traffic forecasting: an adaptive ST-KNN model that considers spatial heterogeneity",
+        "volume": "71",
+        "author": "Cheng",
+        "year": "2018",
+        "journal-title": "Comput Environ Urban Syst"
+      },
+      {
+        "key": "2024010315582151200_bib53",
+        "doi-asserted-by": "crossref",
+        "first-page": "596",
+        "DOI": "10.1177/0013164404272502",
+        "article-title": "A Comparison of Missing-Data Procedures for Arima Time-Series Analysis",
+        "volume": "65",
+        "author": "Velicer",
+        "year": "2005",
+        "journal-title": "Educ Psychol Meas"
+      },
+      {
+        "key": "2024010315582151200_bib54",
+        "doi-asserted-by": "crossref",
+        "first-page": "54",
+        "DOI": "10.1016/j.physa.2015.09.105",
+        "article-title": "Tensor based missing traffic data completion with spatial-temporal correlation",
+        "volume": "446",
+        "author": "Ran",
+        "year": "2016",
+        "journal-title": "Phys A Stat Mech its Appl"
+      },
+      {
+        "key": "2024010315582151200_bib55",
+        "doi-asserted-by": "crossref",
+        "first-page": "208",
+        "DOI": "10.1109/TPAMI.2012.39",
+        "article-title": "Tensor completion for estimating missing values in visual data",
+        "volume": "35",
+        "author": "Liu",
+        "year": "2013",
+        "journal-title": "IEEE Trans Pattern Anal Mach Intell"
+      },
+      {
+        "key": "2024010315582151200_bib56",
+        "doi-asserted-by": "crossref",
+        "first-page": "102730",
+        "DOI": "10.1016/j.trc.2020.102730",
+        "article-title": "A spatiotemporal approach for traffic data imputation with complicated missing patterns",
+        "volume": "119",
+        "author": "Li",
+        "year": "2020",
+        "journal-title": "Transp Res Part C Emerg Technol"
+      },
+      {
+        "key": "2024010315582151200_bib57",
+        "doi-asserted-by": "crossref",
+        "first-page": "37",
+        "DOI": "10.1080/00031305.2017.1380080",
+        "article-title": "Forecasting at Scale",
+        "volume": "72",
+        "author": "Taylor",
+        "year": "2018",
+        "journal-title": "Am Stat"
+      },
+      {
+        "key": "2024010315582151200_bib58",
+        "doi-asserted-by": "crossref",
+        "first-page": "2933",
+        "DOI": "10.1109/TITS.2018.2869768",
+        "article-title": "Missing value imputation for traffic-related time series data based on a multi-view learning method",
+        "volume": "20",
+        "author": "Li",
+        "year": "2019",
+        "journal-title": "IEEE Trans Intell Transp Syst"
+      },
+      {
+        "key": "2024010315582151200_bib59",
+        "first-page": "1",
+        "article-title": "Short-Term Traffic Prediction Based on Dynamic Tensor Completion",
+        "author": "Tan",
+        "year": "2016"
+      },
+      {
+        "key": "2024010315582151200_bib60",
+        "doi-asserted-by": "crossref",
+        "first-page": "166",
+        "DOI": "10.1016/j.trc.2018.03.001",
+        "article-title": "A hybrid deep learning based traffic flow prediction method and its understanding",
+        "volume": "90",
+        "author": "Wu",
+        "year": "2018",
+        "journal-title": "Transp Res Part C Emerg Technol"
+      },
+      {
+        "key": "2024010315582151200_bib61",
+        "doi-asserted-by": "crossref",
+        "first-page": "303",
+        "DOI": "10.1016/S0968-090X(02)00009-8",
+        "article-title": "Comparison of parametric and nonparametric models for traffic flow forecasting",
+        "volume": "10",
+        "author": "Smith",
+        "year": "2002",
+        "journal-title": "Transp Res Part C Emerg Technol"
+      },
+      {
+        "key": "2024010315582151200_bib62",
+        "doi-asserted-by": "crossref",
+        "first-page": "2191",
+        "DOI": "10.1109/TITS.2014.2311123",
+        "article-title": "Deep architecture for traffic flow prediction: deep belief networks with multitask learning",
+        "volume": "15",
+        "author": "Huang",
+        "year": "2014",
+        "journal-title": "IEEE Trans Intell Transp Syst"
+      },
+      {
+        "key": "2024010315582151200_bib63",
+        "doi-asserted-by": "crossref",
+        "DOI": "10.1007/978-3-642-24797-2",
+        "volume-title": "Supervised Sequence Labelling with Recurrent Neural Networks",
+        "author": "Graves",
+        "year": "2012"
+      },
+      {
+        "key": "2024010315582151200_bib64",
+        "doi-asserted-by": "crossref",
+        "first-page": "3550",
+        "DOI": "10.1109/TITS.2018.2835523",
+        "article-title": "PCNN: deep Convolutional Networks for Short-Term Traffic Congestion Prediction",
+        "volume": "19",
+        "author": "Chen",
+        "year": "2018",
+        "journal-title": "IEEE Trans Intell Transp Syst"
+      },
+      {
+        "key": "2024010315582151200_bib65",
+        "article-title": "Short Term Traffic Prediction Models",
+        "author": "van Hinsbergen",
+        "year": "2007"
+      },
+      {
+        "key": "2024010315582151200_bib66",
+        "doi-asserted-by": "crossref",
+        "first-page": "297",
+        "DOI": "10.1002/asmb.1937",
+        "article-title": "Real-Time Road Traffic Forecasting Using Regime-Switching Space-Time Models and Adaptive LASSO",
+        "volume": "28",
+        "author": "Kamarianakis",
+        "year": "2012",
+        "journal-title": "Appl Stoch Model Bus Ind"
+      },
+      {
+        "key": "2024010315582151200_bib67",
+        "doi-asserted-by": "crossref",
+        "first-page": "1423",
+        "DOI": "10.1016/j.net.2017.06.014",
+        "article-title": "Gas detonation cell width prediction model based on support vector regression",
+        "volume": "49",
+        "author": "Yu",
+        "year": "2017",
+        "journal-title": "Nucl Eng Technol"
+      },
+      {
+        "key": "2024010315582151200_bib68",
+        "doi-asserted-by": "crossref",
+        "DOI": "10.1017/CBO9780511804441",
+        "volume-title": "Convex Optimization",
+        "author": "Boyd",
+        "year": "2004"
+      },
+      {
+        "key": "2024010315582151200_bib69",
+        "doi-asserted-by": "crossref",
+        "first-page": "53",
+        "DOI": "10.1016/j.ins.2017.06.017",
+        "article-title": "Multi-target support vector regression via correlation regressor chains",
+        "volume": "415–416",
+        "author": "Melki",
+        "year": "2017",
+        "journal-title": "Inf Sci (Ny)"
+      },
+      {
+        "key": "2024010315582151200_bib70",
+        "first-page": "493",
+        "article-title": "Short-term traffic volume prediction using classification and regression trees",
+        "volume-title": "IEEE Intell Veh Symp Proc",
+        "author": "Xu",
+        "year": "2013"
+      },
+      {
+        "key": "2024010315582151200_bib71",
+        "doi-asserted-by": "crossref",
+        "first-page": "250",
+        "DOI": "10.1109/TITS.2013.2278614",
+        "article-title": "Modeling and forecasting the urban volume using stochastic differential equations",
+        "volume": "15",
+        "author": "Tahmasbi",
+        "year": "2014",
+        "journal-title": "IEEE Trans Intell Transp Syst"
+      },
+      {
+        "key": "2024010315582151200_bib72",
+        "doi-asserted-by": "crossref",
+        "first-page": "33",
+        "DOI": "10.1016/j.trc.2013.10.007",
+        "article-title": "A space-time diurnal method for short-term freeway travel time prediction",
+        "volume": "43",
+        "author": "Zou",
+        "year": "2014",
+        "journal-title": "Transp Res Part C Emerg Technol"
+      },
+      {
+        "key": "2024010315582151200_bib73",
+        "doi-asserted-by": "crossref",
+        "first-page": "755",
+        "DOI": "10.1016/j.sbspro.2013.11.170",
+        "article-title": "Short Term Traffic Flow Prediction for a Non Urban Highway Using Artificial Neural Network",
+        "volume": "104",
+        "author": "Kumar",
+        "year": "2013",
+        "journal-title": "Procedia - Soc Behav Sci"
+      },
+      {
+        "key": "2024010315582151200_bib74",
+        "first-page": "1073",
+        "article-title": "Short-term urban traffic flow prediction using deep spatio-temporal residual networks",
+        "volume-title": "Proc 13th IEEE Conf Ind Electron Appl ICIEA 2018",
+        "author": "Wu",
+        "year": "2018"
+      },
+      {
+        "key": "2024010315582151200_bib75",
+        "first-page": "143",
+        "article-title": "Short term traffic flow prediction based on on-line sequential extreme learning machine",
+        "volume": "2",
+        "author": "Ma",
+        "year": "2016",
+        "journal-title": "Proc 8th Int Conf Adv Comput Intell ICACI 2016"
+      },
+      {
+        "key": "2024010315582151200_bib76",
+        "doi-asserted-by": "crossref",
+        "first-page": "31820",
+        "DOI": "10.1109/ACCESS.2018.2845863",
+        "article-title": "Improved deep hybrid networks for urban traffic flow prediction using trajectory data",
+        "volume": "6",
+        "author": "Duan",
+        "year": "2018",
+        "journal-title": "IEEE Access"
+      },
+      {
+        "key": "2024010315582151200_bib77",
+        "doi-asserted-by": "crossref",
+        "first-page": "78",
+        "DOI": "10.1016/j.future.2018.06.021",
+        "article-title": "A novel fuzzy deep-learning approach to traffic flow prediction with uncertain spatial-temporal data features",
+        "volume": "89",
+        "author": "Chen",
+        "year": "2018",
+        "journal-title": "Futur Gener Comput Syst"
+      },
+      {
+        "key": "2024010315582151200_bib78",
+        "doi-asserted-by": "crossref",
+        "first-page": "1",
+        "DOI": "10.1371/journal.pone.0176853",
+        "article-title": "Using temporal detrending to observe the spatial correlation of traffic",
+        "volume": "12",
+        "author": "Ermagun",
+        "year": "2017",
+        "journal-title": "PLoS One"
+      },
+      {
+        "key": "2024010315582151200_bib79",
+        "article-title": "Spatiotemporal context awareness for urban traffic modeling and prediction: sparse representation based variable selection",
+        "volume": "10",
+        "author": "Yang",
+        "year": "2015",
+        "journal-title": "PLoS One"
+      },
+      {
+        "key": "2024010315582151200_bib80",
+        "doi-asserted-by": "crossref",
+        "DOI": "10.3115/v1/W14-4012",
+        "article-title": "On the Properties of Neural Machine Translation: encoder_Decoder Approaches",
+        "volume-title": "SSST@EMNLP",
+        "author": "Cho",
+        "year": "2014"
+      },
+      {
+        "key": "2024010315582151200_bib81",
+        "doi-asserted-by": "crossref",
+        "first-page": "9690",
+        "DOI": "10.1109/ACCESS.2017.2788639",
+        "article-title": "Traffic State Spatial-Temporal Characteristic Analysis and Short-Term Forecasting Based on Manifold Similarity",
+        "volume": "6",
+        "author": "Liu",
+        "year": "2017",
+        "journal-title": "IEEE Access"
+      },
+      {
+        "key": "2024010315582151200_bib82",
+        "first-page": "253",
+        "article-title": "Hybrid process neural network based on spatio-temporal similarities for short-term traffic flow prediction",
+        "volume-title": "IEEE Conf Intell Transp Syst Proceedings, ITSC",
+        "author": "Hu",
+        "year": "2008"
+      },
+      {
+        "key": "2024010315582151200_bib83",
+        "doi-asserted-by": "crossref",
+        "first-page": "474",
+        "DOI": "10.1049/iet-its.2017.0059",
+        "article-title": "Feature selection-based approach for urban short-term travel speed prediction",
+        "volume": "12",
+        "author": "Zheng",
+        "year": "2018",
+        "journal-title": "IET Intell Transp Syst"
+      },
+      {
+        "key": "2024010315582151200_bib84",
+        "first-page": "2251",
+        "article-title": "Scalable deep traffic flow neural networks for urban traffic congestion prediction",
+        "volume": "2017-May",
+        "author": "Fouladgar",
+        "year": "2017",
+        "journal-title": "Proc Int Jt Conf Neural Networks"
+      },
+      {
+        "key": "2024010315582151200_bib85",
+        "doi-asserted-by": "crossref",
+        "first-page": "107",
+        "DOI": "10.1038/169107a0",
+        "article-title": "Effect of weather on traffic flow",
+        "volume": "169",
+        "author": "Tanner",
+        "year": "1952",
+        "journal-title": "Nature"
+      },
+      {
+        "key": "2024010315582151200_bib86",
+        "doi-asserted-by": "crossref",
+        "first-page": "531",
+        "DOI": "10.1049/iet-its.2016.0257",
+        "article-title": "Rainfall-integrated traffic speed prediction using deep learning method",
+        "volume": "11",
+        "author": "Jia",
+        "year": "2017",
+        "journal-title": "IET Intell Transp Syst"
+      },
+      {
+        "key": "2024010315582151200_bib87",
+        "doi-asserted-by": "crossref",
+        "first-page": "70",
+        "DOI": "10.1109/MITS.2019.2903431",
+        "article-title": "Traffic speed prediction under non-recurrent congestion: based on lstm method and beidou navigation satellite system data",
+        "volume": "11",
+        "author": "Zhao",
+        "year": "2019",
+        "journal-title": "IEEE Intell Transp Syst Mag"
+      },
+      {
+        "key": "2024010315582151200_bib88",
+        "first-page": "1655",
+        "article-title": "Deep Spatio-Temporal Residual Networks for Citywide Crowd Flows Prediction",
+        "volume-title": "Proceedings of the Thirty-First AAAI Conference on Artificial Intelligence",
+        "author": "Zhang",
+        "year": "2017"
+      },
+      {
+        "key": "2024010315582151200_bib89",
+        "doi-asserted-by": "crossref",
+        "first-page": "179",
+        "DOI": "10.1207/s15516709cog1402_1",
+        "article-title": "Finding Structure in Time",
+        "volume": "14",
+        "author": "Elman",
+        "year": "1990",
+        "journal-title": "Cogn Sci"
+      },
+      {
+        "key": "2024010315582151200_bib90",
+        "doi-asserted-by": "crossref",
+        "first-page": "67",
+        "DOI": "10.1007/978-1-4302-5990-9_4",
+        "article-title": "Support Vector Regression",
+        "volume-title": "Efficient Learning Machines: Theories, Concepts, and Applications for Engineers and System Designers",
+        "author": "Awad",
+        "year": "2015"
+      },
+      {
+        "key": "2024010315582151200_bib91",
+        "doi-asserted-by": "crossref",
+        "first-page": "6",
+        "DOI": "10.1109/LSP.2020.3037527",
+        "article-title": "Meta-MSNet: meta-Learning Based Multi-Source Data Fusion for Traffic Flow Prediction",
+        "volume": "28",
+        "author": "Fang",
+        "year": "2021",
+        "journal-title": "IEEE Signal Process Lett"
+      },
+      {
+        "key": "2024010315582151200_bib92",
+        "doi-asserted-by": "crossref",
+        "first-page": "1321",
+        "DOI": "10.1109/ACCESS.2020.3034551",
+        "article-title": "A Multiscale-Grid-Based Stacked Bidirectional GRU Neural Network Model for Predicting Traffic Speeds of Urban Expressways",
+        "volume": "9",
+        "author": "Chen",
+        "year": "2021",
+        "journal-title": "IEEE Access"
+      },
+      {
+        "key": "2024010315582151200_bib93",
+        "doi-asserted-by": "crossref",
+        "first-page": "219",
+        "DOI": "10.1109/TITS.2019.2955794",
+        "article-title": "TrafficGAN: network-Scale Deep Traffic Prediction with Generative Adversarial Nets",
+        "volume": "22",
+        "author": "Zhang",
+        "year": "2021",
+        "journal-title": "IEEE Trans Intell Transp Syst"
+      },
+      {
+        "key": "2024010315582151200_bib94",
+        "doi-asserted-by": "crossref",
+        "first-page": "4883",
+        "DOI": "10.1109/TITS.2019.2950416",
+        "article-title": "Traffic Graph Convolutional Recurrent Neural Network: a Deep Learning Framework for Network-Scale Traffic Learning and Forecasting",
+        "volume": "21",
+        "author": "Cui",
+        "year": "2020",
+        "journal-title": "IEEE Trans Intell Transp Syst"
+      },
+      {
+        "key": "2024010315582151200_bib95",
+        "doi-asserted-by": "crossref",
+        "first-page": "6505",
+        "DOI": "10.1109/ACCESS.2019.2963784",
+        "article-title": "PSO-ELM: a Hybrid Learning Model for Short-Term Traffic Flow Forecasting",
+        "volume": "8",
+        "author": "Cai",
+        "year": "2020",
+        "journal-title": "IEEE Access"
+      },
+      {
+        "key": "2024010315582151200_bib96",
+        "doi-asserted-by": "crossref",
+        "first-page": "22",
+        "DOI": "10.1504/IJES.2020.105287",
+        "article-title": "Traffic flow combination forecasting method based on improved LSTM and ARIMA",
+        "volume": "12",
+        "author": "Liu",
+        "year": "2020",
+        "journal-title": "Int J Embed Syst"
+      },
+      {
+        "key": "2024010315582151200_bib97",
+        "doi-asserted-by": "crossref",
+        "first-page": "101",
+        "DOI": "10.1109/TVT.2019.2952605",
+        "article-title": "EnLSTM-WPEO: short-term traffic flow prediction by ensemble LSTM, NNCT weight integration, and population extremal optimization",
+        "volume": "69",
+        "author": "Zhao",
+        "year": "2020",
+        "journal-title": "IEEE Trans Veh Technol"
+      },
+      {
+        "key": "2024010315582151200_bib98",
+        "doi-asserted-by": "crossref",
+        "first-page": "143025",
+        "DOI": "10.1109/ACCESS.2019.2941280",
+        "article-title": "Short-term traffic flow prediction method for urban road sections based on space-time analysis and GRU",
+        "volume": "7",
+        "author": "Dai",
+        "year": "2019",
+        "journal-title": "IEEE Access"
+      },
+      {
+        "key": "2024010315582151200_bib99",
+        "doi-asserted-by": "crossref",
+        "first-page": "98053",
+        "DOI": "10.1109/ACCESS.2019.2929692",
+        "article-title": "T-LSTM: a long short-term memory neural network enhanced by temporal information for traffic flow prediction",
+        "volume": "7",
+        "author": "Mou",
+        "year": "2019",
+        "journal-title": "IEEE Access"
+      },
+      {
+        "key": "2024010315582151200_bib100",
+        "doi-asserted-by": "crossref",
+        "first-page": "30050",
+        "DOI": "10.1109/ACCESS.2019.2902185",
+        "article-title": "A Novel Spatio-Temporal Model for City-Scale Traffic Speed Prediction",
+        "volume": "7",
+        "author": "Niu",
+        "year": "2019",
+        "journal-title": "IEEE Access"
+      },
+      {
+        "key": "2024010315582151200_bib101",
+        "doi-asserted-by": "crossref",
+        "first-page": "12301",
+        "DOI": "10.1109/TVT.2019.2947080",
+        "article-title": "Short-Term Traffic Prediction Based on DeepCluster in Large-Scale Road Networks",
+        "volume": "68",
+        "author": "Han",
+        "year": "2019",
+        "journal-title": "IEEE Trans Veh Technol"
+      },
+      {
+        "key": "2024010315582151200_bib102",
+        "first-page": "57",
+        "article-title": "Short-Term Traffic Prediction Using Long Short-Term Memory Neural Networks",
+        "volume-title": "Proc - 2018 IEEE Int Congr Big Data, BigData Congr 2018 - Part 2018 IEEE World Congr Serv",
+        "author": "Abbas",
+        "year": "2018"
+      },
+      {
+        "key": "2024010315582151200_bib103",
+        "first-page": "91",
+        "article-title": "Short-term traffic flow forecasting using a distributed spatial-temporal k nearest neighbors model",
+        "volume-title": "Proc - 21st IEEE Int Conf Comput Sci Eng CSE 2018",
+        "author": "Agafonov",
+        "year": "2018"
+      },
+      {
+        "key": "2024010315582151200_bib104",
+        "first-page": "181",
+        "volume-title": "Short-Term Prediction of the Traffic Status in Urban Places Using Neural Network Models: Proceedings of 4th Conference on Sustainable Urban Mobility (CSUM2018), 24 - 25 May",
+        "author": "Ayfantopoulou",
+        "year": "2019"
+      },
+      {
+        "key": "2024010315582151200_bib105",
+        "doi-asserted-by": "crossref",
+        "first-page": "143",
+        "DOI": "10.1049/iet-its.2017.0144",
+        "article-title": "Short-term traffic flow prediction using fuzzy information granulation approach under different time intervals",
+        "volume": "12",
+        "author": "Guo",
+        "year": "2018",
+        "journal-title": "IET Intell Transp Syst"
+      },
+      {
+        "key": "2024010315582151200_bib106",
+        "first-page": "1",
+        "article-title": "A framework for short-term traffic flow forecasting using the combination of wavelet transformation and artificial neural networks",
+        "volume": "23",
+        "author": "Mousavizadeh",
+        "year": "2018",
+        "journal-title": "J Intell Transp Syst"
+      },
+      {
+        "key": "2024010315582151200_bib107",
+        "first-page": "1279",
+        "article-title": "Long Short-Term Memory Recurrent Neural Network for Urban Traffic Prediction: a Case Study of Seoul",
+        "volume": "2018-Novem",
+        "author": "Lee",
+        "year": "2018",
+        "journal-title": "IEEE Conf Intell Transp Syst Proceedings, ITSC"
+      },
+      {
+        "key": "2024010315582151200_bib108",
+        "article-title": "Short-Term Traffic Speed Forecasting Based on Attention Convolutional Neural Network for Arterials",
+        "volume": "33",
+        "author": "Liu",
+        "year": "2018",
+        "journal-title": "Comput Civ Infrastruct Eng"
+      },
+      {
+        "key": "2024010315582151200_bib109",
+        "first-page": "13",
+        "article-title": "Improved UGRNN for short-term traffic flow prediction with multi-feature sequence inputs",
+        "volume": "2018-Janua",
+        "author": "Qu",
+        "year": "2018",
+        "journal-title": "Int Conf Inf Netw"
+      },
+      {
+        "key": "2024010315582151200_bib110",
+        "doi-asserted-by": "crossref",
+        "first-page": "297",
+        "DOI": "10.1016/j.neucom.2018.08.067",
+        "article-title": "LSTM-based traffic flow prediction with missing data",
+        "volume": "318",
+        "author": "Tian",
+        "year": "2018",
+        "journal-title": "Neurocomputing"
+      },
+      {
+        "key": "2024010315582151200_bib111",
+        "doi-asserted-by": "crossref",
+        "DOI": "10.1049/iet-its.2017.0236",
+        "article-title": "Wavelet-based short-term forecasting with improved threshold recognition for urban expressway traffic conditions",
+        "volume": "12",
+        "author": "Xiangxue",
+        "year": "2018",
+        "journal-title": "IET Intell Transp Syst"
+      },
+      {
+        "key": "2024010315582151200_bib112",
+        "doi-asserted-by": "crossref",
+        "first-page": "3043",
+        "DOI": "10.1007/s13369-018-3390-0",
+        "article-title": "Data-Driven Short-Term Forecasting for Urban Road Network Traffic Based on Data Processing and LSTM-RNN",
+        "volume": "44",
+        "author": "Xiangxue",
+        "year": "2018",
+        "journal-title": "Arab J Sci Eng"
+      },
+      {
+        "key": "2024010315582151200_bib113",
+        "doi-asserted-by": "crossref",
+        "first-page": "320",
+        "DOI": "10.1016/j.neucom.2018.12.016",
+        "article-title": "Traffic flow prediction using LSTM with feature enhancement",
+        "volume": "332",
+        "author": "Yang",
+        "year": "2019",
+        "journal-title": "Neurocomputing"
+      },
+      {
+        "key": "2024010315582151200_bib114",
+        "first-page": "1",
+        "article-title": "Traffic flow forecasting based on hybrid deep learning framework",
+        "volume": "2018-Janua",
+        "author": "Du",
+        "year": "2017",
+        "journal-title": "Proc 2017 12th Int Conf Intell Syst Knowl Eng ISKE 2017"
+      },
+      {
+        "key": "2024010315582151200_bib115",
+        "first-page": "2554",
+        "article-title": "A short-term traffic flow prediction model based on EMD and GPSO-SVM",
+        "volume-title": "Proc 2017 IEEE 2nd Adv Inf Technol Electron Autom Control Conf IAEAC 2017",
+        "author": "Duo",
+        "year": "2017"
+      },
+      {
+        "key": "2024010315582151200_bib116",
+        "doi-asserted-by": "crossref",
+        "first-page": "582",
+        "DOI": "10.1016/j.proeng.2017.04.417",
+        "article-title": "Traffic Flow Prediction using Kalman Filtering Technique",
+        "volume": "187",
+        "author": "Kumar",
+        "year": "2017",
+        "journal-title": "Procedia Eng"
+      },
+      {
+        "key": "2024010315582151200_bib117",
+        "doi-asserted-by": "crossref",
+        "first-page": "2804",
+        "DOI": "10.1109/CAC.2017.8243253",
+        "article-title": "Short-term traffic flow prediction using a methodology based on ARIMA and RBF-ANN",
+        "volume-title": "2017 Chinese Automation Congress (CAC)",
+        "author": "Li",
+        "year": "2017"
+      },
+      {
+        "key": "2024010315582151200_bib118",
+        "first-page": "1",
+        "article-title": "Short-term travel time prediction by deep learning: a comparison of different LSTM-DNN models",
+        "volume-title": "2017 IEEE 20th International Conference on Intelligent Transportation Systems (ITSC)",
+        "author": "Liu",
+        "year": "2017"
+      },
+      {
+        "key": "2024010315582151200_bib119",
+        "doi-asserted-by": "crossref",
+        "first-page": "1430",
+        "DOI": "10.1016/j.trpro.2017.05.169",
+        "article-title": "Lane-based short-term urban traffic forecasting with GA designed ANN and LWR models",
+        "volume": "25",
+        "author": "Raza",
+        "year": "2017",
+        "journal-title": "Transp Res Procedia"
+      },
+      {
+        "key": "2024010315582151200_bib120",
+        "doi-asserted-by": "crossref",
+        "first-page": "301",
+        "DOI": "10.1016/j.eswa.2017.04.015",
+        "article-title": "Topology-regularized universal vector autoregression for traffic forecasting in large urban areas",
+        "volume": "82",
+        "author": "Schimbinschi",
+        "year": "2017",
+        "journal-title": "Expert Syst Appl"
+      },
+      {
+        "key": "2024010315582151200_bib121",
+        "first-page": "48",
+        "article-title": "Flow-aware WPT k-nearest neighbours regression for short-term traffic prediction",
+        "volume-title": "Proc - IEEE Symp Comput Commun",
+        "author": "Sun",
+        "year": "2017"
+      },
+      {
+        "key": "2024010315582151200_bib122",
+        "first-page": "1",
+        "article-title": "Traffic Volume Forecasting",
+        "author": "Wagner-muns",
+        "year": "2017"
+      },
+      {
+        "key": "2024010315582151200_bib123",
+        "doi-asserted-by": "crossref",
+        "first-page": "154",
+        "DOI": "10.1111/mice.12221",
+        "article-title": "Short-Term Traffic Speed Prediction for an Urban Corridor",
+        "volume": "32",
+        "author": "Yao",
+        "year": "2017",
+        "journal-title": "Comput Civ Infrastruct Eng"
+      },
+      {
+        "key": "2024010315582151200_bib124",
+        "first-page": "132",
+        "article-title": "Long short-Term memory model for traffic congestion prediction with online open data",
+        "volume-title": "IEEE Conf Intell Transp Syst Proceedings, ITSC",
+        "author": "Chen",
+        "year": "2016"
+      },
+      {
+        "key": "2024010315582151200_bib125",
+        "doi-asserted-by": "crossref",
+        "first-page": "59",
+        "DOI": "10.1016/j.proeng.2016.01.234",
+        "article-title": "Traffic Flow Forecasting by a Least Squares Support Vector Machine with a Fruit Fly Optimization Algorithm",
+        "volume": "137",
+        "author": "Cong",
+        "year": "2016",
+        "journal-title": "Procedia Eng"
+      },
+      {
+        "key": "2024010315582151200_bib126",
+        "first-page": "1294",
+        "article-title": "Swarm Support Vector Machine",
+        "author": "Duo",
+        "year": "2016"
+      },
+      {
+        "key": "2024010315582151200_bib127",
+        "first-page": "324",
+        "article-title": "Using LSTM and GRU neural network methods for traffic flow prediction",
+        "volume-title": "Proc - 2016 31st Youth Acad Annu Conf Chinese Assoc Autom YAC 2016",
+        "author": "Fu",
+        "year": "2017"
+      },
+      {
+        "key": "2024010315582151200_bib128",
+        "doi-asserted-by": "crossref",
+        "first-page": "183",
+        "DOI": "10.1016/j.trc.2016.10.019",
+        "article-title": "Short-term speed predictions exploiting big data on large urban road networks",
+        "volume": "73",
+        "author": "Fusco",
+        "year": "2016",
+        "journal-title": "Transp Res Part C Emerg Technol"
+      },
+      {
+        "key": "2024010315582151200_bib129",
+        "doi-asserted-by": "crossref",
+        "first-page": "61",
+        "DOI": "10.1016/j.trc.2015.08.017",
+        "article-title": "Short-term traffic flow rate forecasting based on identifying similar traffic patterns",
+        "volume": "66",
+        "author": "Habtemichael",
+        "year": "2016",
+        "journal-title": "Transp Res Part C Emerg Technol"
+      },
+      {
+        "key": "2024010315582151200_bib130",
+        "doi-asserted-by": "crossref",
+        "first-page": "105",
+        "DOI": "10.1007/978-3-319-19150-8_4",
+        "article-title": "The Traffic Flow Prediction Using Bayesian and Neural Networks",
+        "author": "Pamuła",
+        "year": "2016",
+        "journal-title": "Studies in Systems, Decision and Control"
+      },
+      {
+        "key": "2024010315582151200_bib131",
+        "doi-asserted-by": "crossref",
+        "first-page": "2123",
+        "DOI": "10.1109/TITS.2015.2513411",
+        "article-title": "Short-Term Traffic Prediction Based on Dynamic Tensor Completion",
+        "volume": "17",
+        "author": "Tan",
+        "year": "2016",
+        "journal-title": "IEEE Trans Intell Transp Syst"
+      },
+      {
+        "key": "2024010315582151200_bib132",
+        "first-page": "1",
+        "article-title": "A novel work zone short-term vehicle-type specific traffic speed prediction model through the hybrid EMD–ARIMA framework",
+        "volume": "4",
+        "author": "Wang",
+        "year": "2015",
+        "journal-title": "Transp B Transp Dyn"
+      },
+      {
+        "key": "2024010315582151200_bib133",
+        "doi-asserted-by": "crossref",
+        "first-page": "1111",
+        "DOI": "10.1002/atr.1392",
+        "article-title": "Short-term traffic flow prediction with linear conditional Gaussian Bayesian network",
+        "volume": "50",
+        "author": "Zhu",
+        "year": "2016",
+        "journal-title": "J Adv Transp"
+      },
+      {
+        "key": "2024010315582151200_bib134",
+        "first-page": "1670",
+        "article-title": "Short-term traffic flow forecasting: multi-metric KNN with related station discovery",
+        "volume-title": "2015 12th Int Conf Fuzzy Syst Knowl Discov FSKD 2015",
+        "author": "Hong",
+        "year": "2016"
+      },
+      {
+        "key": "2024010315582151200_bib135",
+        "doi-asserted-by": "crossref",
+        "first-page": "1761",
+        "DOI": "10.1109/TITS.2014.2371993",
+        "article-title": "Traffic Flow Forecasting for Urban Work Zones",
+        "volume": "16",
+        "author": "Hou",
+        "year": "2015",
+        "journal-title": "IEEE Trans Intell Transp Syst"
+      },
+      {
+        "key": "2024010315582151200_bib136",
+        "doi-asserted-by": "crossref",
+        "first-page": "646",
+        "DOI": "10.1049/iet-its.2014.0213",
+        "article-title": "Speed pattern recognition technique for short-term traffic forecasting based on traffic dynamics",
+        "volume": "9",
+        "author": "Kehagias",
+        "year": "2015",
+        "journal-title": "IET Intell Transp Syst"
+      },
+      {
+        "key": "2024010315582151200_bib137",
+        "doi-asserted-by": "crossref",
+        "first-page": "1",
+        "DOI": "10.1007/s12544-015-0170-8",
+        "article-title": "Short-term traffic flow prediction using seasonal ARIMA model with limited input data",
+        "volume": "7",
+        "author": "Kumar",
+        "year": "2015",
+        "journal-title": "Eur Transp Res Rev"
+      },
+      {
+        "key": "2024010315582151200_bib138",
+        "first-page": "153",
+        "article-title": "Predicting short-term traffic flow by long short-term memory recurrent neural network",
+        "volume-title": "Proc - 2015 IEEE Int Conf Smart City, SmartCity 2015, Held Jointly with 8th IEEE Int Conf Soc Comput Networking, Soc 2015, 5th IEEE Int Conf Sustain Comput Communic",
+        "author": "Tian",
+        "year": "2015"
+      },
+      {
+        "key": "2024010315582151200_bib139",
+        "doi-asserted-by": "crossref",
+        "first-page": "784",
+        "DOI": "10.1109/TITS.2013.2287512",
+        "article-title": "Negative binomial additive models for short-term traffic flow forecasting in Urban areas",
+        "volume": "15",
+        "author": "Daraghmi",
+        "year": "2014",
+        "journal-title": "IEEE Trans Intell Transp Syst"
+      },
+      {
+        "key": "2024010315582151200_bib140",
+        "doi-asserted-by": "crossref",
+        "first-page": "82",
+        "DOI": "10.1016/j.trc.2014.02.016",
+        "article-title": "Dynamic travel time prediction using data clustering and genetic programming",
+        "volume": "42",
+        "author": "Elhenawy",
+        "year": "2014",
+        "journal-title": "Transp Res Part C Emerg Technol"
+      },
+      {
+        "key": "2024010315582151200_bib141",
+        "doi-asserted-by": "crossref",
+        "first-page": "50",
+        "DOI": "10.1016/j.trc.2014.02.006",
+        "article-title": "Adaptive Kalman filter approach for stochastic short-term traffic flow rate prediction and uncertainty quantification",
+        "volume": "43",
+        "author": "Guo",
+        "year": "2014",
+        "journal-title": "Transp Res Part C Emerg Technol"
+      },
+      {
+        "key": "2024010315582151200_bib142",
+        "doi-asserted-by": "crossref",
+        "first-page": "151",
+        "DOI": "10.1016/j.trc.2014.05.015",
+        "article-title": "Local online kernel ridge regression for forecasting of urban travel times",
+        "volume": "46",
+        "author": "Haworth",
+        "year": "2014",
+        "journal-title": "Transp Res Part C Emerg Technol"
+      },
+      {
+        "key": "2024010315582151200_bib143",
+        "doi-asserted-by": "crossref",
+        "first-page": "1639",
+        "DOI": "10.1007/s00521-014-1646-5",
+        "article-title": "Short-term prediction of traffic flow using a binary neural network",
+        "volume": "25",
+        "author": "Hodge",
+        "year": "2014",
+        "journal-title": "Neural Comput Appl"
+      },
+      {
+        "key": "2024010315582151200_bib144",
+        "first-page": "516",
+        "article-title": "Urban expressway short-term traffic state forecasting",
+        "volume-title": "Proc - 2014 Int Conf Mechatronics Control ICMC 2014",
+        "author": "Liu",
+        "year": "2015"
+      },
+      {
+        "key": "2024010315582151200_bib145",
+        "first-page": "2379",
+        "article-title": "An improved least square support vector regression algorithm for traffic flow forecasting",
+        "volume-title": "2014 17th IEEE Int Conf Intell Transp Syst ITSC 2014",
+        "author": "Lou",
+        "year": "2014"
+      },
+      {
+        "key": "2024010315582151200_bib146",
+        "doi-asserted-by": "crossref",
+        "first-page": "95",
+        "DOI": "10.1016/j.trc.2014.02.007",
+        "article-title": "A Hidden Markov Model for short term prediction of traffic conditions on freeways",
+        "volume": "43",
+        "author": "Qi",
+        "year": "2014",
+        "journal-title": "Transp Res Part C Emerg Technol"
+      },
+      {
+        "key": "2024010315582151200_bib147",
+        "doi-asserted-by": "crossref",
+        "first-page": "2457",
+        "DOI": "10.1109/TITS.2014.2315794",
+        "article-title": "Accurate and interpretable bayesian MARS for traffic flow prediction",
+        "volume": "15",
+        "author": "Xu",
+        "year": "2014",
+        "journal-title": "IEEE Trans Intell Transp Syst"
+      },
+      {
+        "key": "2024010315582151200_bib148",
+        "doi-asserted-by": "crossref",
+        "first-page": "127",
+        "DOI": "10.1016/j.trc.2014.02.013",
+        "article-title": "Hierarchical fuzzy rule-based system optimized with genetic algorithms for short term traffic congestion prediction",
+        "volume": "43",
+        "author": "Zhang",
+        "year": "2014",
+        "journal-title": "Transp Res Part C Emerg Technol"
+      },
+      {
+        "key": "2024010315582151200_bib149",
+        "doi-asserted-by": "crossref",
+        "first-page": "65",
+        "DOI": "10.1016/j.trc.2013.11.011",
+        "article-title": "A hybrid short-term traffic flow forecasting method based on spectral analysis and statistical volatility model",
+        "volume": "43",
+        "author": "Zhang",
+        "year": "2014",
+        "journal-title": "Transp Res Part C Emerg Technol"
+      },
+      {
+        "key": "2024010315582151200_bib150",
+        "doi-asserted-by": "crossref",
+        "first-page": "139",
+        "DOI": "10.1016/j.trc.2014.06.011",
+        "article-title": "Traffic volume forecasting based on radial basis function neural network with the consideration of traffic flows at the adjacent intersections",
+        "volume": "47",
+        "author": "Zhu",
+        "year": "2014",
+        "journal-title": "Transp Res Part C Emerg Technol"
+      },
+      {
+        "key": "2024010315582151200_bib151",
+        "doi-asserted-by": "crossref",
+        "first-page": "183",
+        "DOI": "10.1007/978-3-642-32922-7_19",
+        "article-title": "Urban traffic flow forecasting using neural-statistic hybrid modeling",
+        "volume": "188 AISC",
+        "author": "Annunziato",
+        "year": "2013",
+        "journal-title": "Adv Intell Syst Comput"
+      },
+      {
+        "key": "2024010315582151200_bib152",
+        "doi-asserted-by": "crossref",
+        "first-page": "1700",
+        "DOI": "10.1109/TITS.2013.2267735",
+        "article-title": "Supervised weighting-online learning algorithm for short-term traffic flow prediction",
+        "volume": "14",
+        "author": "Jeong",
+        "year": "2013",
+        "journal-title": "IEEE Trans Intell Transp Syst"
+      },
+      {
+        "key": "2024010315582151200_bib153",
+        "first-page": "8125",
+        "article-title": "Short-term traffic flow forecasting model of optimized BP neural network based on genetic algorithm",
+        "volume-title": "Chinese Control Conf CCC",
+        "author": "Leng",
+        "year": "2013"
+      },
+      {
+        "key": "2024010315582151200_bib154",
+        "first-page": "3816",
+        "article-title": "Short-term forecasting model of traffic flow based on GRNN",
+        "volume-title": "2013 25th Chinese Control Decis Conf CCDC 2013",
+        "author": "Leng",
+        "year": "2013"
+      },
+      {
+        "key": "2024010315582151200_bib155",
+        "doi-asserted-by": "crossref",
+        "first-page": "871",
+        "DOI": "10.1109/TITS.2013.2247040",
+        "article-title": "Short-term traffic flow forecasting: an experimental comparison of time-series analysis and supervised learning",
+        "volume": "14",
+        "author": "Lippi",
+        "year": "2013",
+        "journal-title": "IEEE Trans Intell Transp Syst"
+      }
+    ],
+    "container-title": [
+      "Transportation Safety and Environment"
+    ],
+    "original-title": [],
+    "language": "en",
+    "link": [
+      {
+        "URL": "https://academic.oup.com/tse/advance-article-pdf/doi/10.1093/tse/tdac058/48344788/tdac058.pdf",
+        "content-type": "application/pdf",
+        "content-version": "am",
+        "intended-application": "syndication"
+      },
+      {
+        "URL": "https://academic.oup.com/tse/article-pdf/5/3/tdac058/54945984/tdac058.pdf",
+        "content-type": "application/pdf",
+        "content-version": "vor",
+        "intended-application": "syndication"
+      },
+      {
+        "URL": "https://academic.oup.com/tse/article-pdf/5/3/tdac058/54945984/tdac058.pdf",
+        "content-type": "unspecified",
+        "content-version": "vor",
+        "intended-application": "similarity-checking"
+      }
+    ],
+    "deposited": {
+      "date-parts": [
+        [
+          2024,
+          1,
+          3
+        ]
+      ],
+      "date-time": "2024-01-03T16:00:21Z",
+      "timestamp": 1704297621000
+    },
+    "score": 1,
+    "resource": {
+      "primary": {
+        "URL": "https://academic.oup.com/tse/article/doi/10.1093/tse/tdac058/6955836"
+      }
+    },
+    "subtitle": [],
+    "short-title": [],
+    "issued": {
+      "date-parts": [
+        [
+          2022,
+          12,
+          21
+        ]
+      ]
+    },
+    "references-count": 155,
+    "journal-issue": {
+      "issue": "3",
+      "published-print": {
+        "date-parts": [
+          [
+            2023,
+            6,
+            1
+          ]
+        ]
+      }
+    },
+    "URL": "https://doi.org/10.1093/tse/tdac058",
+    "relation": {},
+    "ISSN": [
+      "2631-4428"
+    ],
+    "issn-type": [
+      {
+        "value": "2631-4428",
+        "type": "electronic"
+      }
+    ],
+    "subject": [],
+    "published-other": {
+      "date-parts": [
+        [
+          2023,
+          6
+        ]
+      ]
+    },
+    "published": {
+      "date-parts": [
+        [
+          2022,
+          12,
+          21
+        ]
+      ]
+    },
+    "article-number": "tdac058"
+  },
+  "_public_copy_note": "Abstract omitted; bibliographic metadata retained."
+}

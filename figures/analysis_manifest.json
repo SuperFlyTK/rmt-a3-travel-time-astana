@@ -1,0 +1,93 @@
+{
+  "generated_at_utc": "2026-10-24T02:39:50.910534+00:00",
+  "python_version": "3.12.14",
+  "matplotlib_version": "3.11.2",
+  "script_sha256": "6a8646e8b95653db91006ece46c83232f4057a8ed71ac936c897238d6f1854ba",
+  "input_hashes": {
+    "request_quality.csv": "9f49c018a31ec0e47a60f9440307a461e3d42469b90062e50cab55a089822559",
+    "observations.csv": "31403b7d374c91769c666eadb8db597ba1e8ca44f0c28956f42b071d75bde2bb",
+    "pairs.csv": "8d6d360e89b5f5e0724e480eb350819fbcf42403c27565233776fdb9d51626c1",
+    "pair_exclusions.csv": "b7565d7af6857e5646e1f67f46e2da4f4ba675d03aeb3b4ba1e035c47d47df6a"
+  },
+  "figures": [
+    {
+      "file": "figures/analysis_request_quality.png",
+      "caption": "Recorded request outcomes by provider and collection phase. Exact duplicate rows are counted once. HTTP success does not itself imply a usable route.",
+      "sources": [
+        "results/request_quality.csv"
+      ],
+      "n_records": 20,
+      "status": "created"
+    },
+    {
+      "file": "figures/analysis_period_coverage.png",
+      "caption": "Usable observations classified by Asia/Almaty request time. Intervals include their start and exclude their end. A zero bar is observed absence, not a missing plot.",
+      "sources": [
+        "results/observations.csv"
+      ],
+      "n_records": 20,
+      "status": "created"
+    },
+    {
+      "file": "figures/analysis_provider_durations.png",
+      "caption": "Median recorded duration per provider and fixed origin–destination route. ORS is a control without live traffic. This instrument summary cannot establish peak traffic disagreement or travel-time accuracy.",
+      "sources": [
+        "results/observations.csv"
+      ],
+      "n_records": 20,
+      "status": "created"
+    },
+    {
+      "file": "figures/analysis_distance_duration.png",
+      "caption": "Recorded estimated durations plotted against returned route distances. Values are API outputs, not measured journeys. Repeated values may overlap; no jitter or artificial observations are added.",
+      "sources": [
+        "results/observations.csv"
+      ],
+      "n_records": 20,
+      "status": "created"
+    },
+    {
+      "file": "figures/analysis_request_latency.png",
+      "caption": "Recorded API request latencies by request start time. Latency is instrument performance and is distinct from estimated journey duration. Failed requests remain eligible if their timing was recorded.",
+      "sources": [
+        "results/observations.csv"
+      ],
+      "n_records": 20,
+      "status": "created"
+    },
+    {
+      "file": "figures/analysis_recorded_extract.png",
+      "caption": "Verbatim selected raw fields from the first recorded CSV rows, retained in observations.csv with source filename and line number. The rendered table is an evidence view, not a screenshot of a separate application.",
+      "sources": [
+        "results/observations.csv"
+      ],
+      "n_records": 10,
+      "status": "created"
+    },
+    {
+      "file": "figures/analysis_paired_estimates.png",
+      "status": "skipped",
+      "reason": "No synchronized valid TomTom–2GIS pairs"
+    },
+    {
+      "file": "figures/analysis_route_disagreement.png",
+      "status": "skipped",
+      "reason": "No synchronized valid TomTom–2GIS pairs"
+    },
+    {
+      "file": "figures/analysis_length_comparability.png",
+      "status": "skipped",
+      "reason": "No synchronized valid TomTom–2GIS pairs"
+    },
+    {
+      "file": "figures/analysis_synchronization.png",
+      "status": "skipped",
+      "reason": "No synchronized valid TomTom–2GIS pairs"
+    },
+    {
+      "file": "figures/analysis_signed_timeline.png",
+      "status": "skipped",
+      "reason": "No synchronized valid TomTom–2GIS pairs"
+    }
+  ]
+}

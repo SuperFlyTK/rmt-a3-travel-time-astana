@@ -1,0 +1,16 @@
+{
+  "figures": [
+    {
+      "file": "figures/pilot_console.png",
+      "caption": "Actual PowerShell view of the saved collector console log, showing the completed first ORS pilot cycle and the start of the second. Captured with .NET CopyFromScreen; this is a viewport excerpt, not a fabricated console.",
+      "sources": ["docs/pilot_console.log"],
+      "status": "created"
+    },
+    {
+      "file": "figures/raw_csv_screen.png",
+      "caption": "Actual PowerShell display of the original raw CSV header and first three records. The viewport wraps and clips long lines; the linked CSV contains the complete unchanged records.",
+      "sources": ["data/raw/2026-10-24.csv"],
+      "status": "created"
+    }
+  ]
+}

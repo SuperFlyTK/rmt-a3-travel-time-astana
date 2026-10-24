@@ -1,0 +1,918 @@
+{
+  "status": "ok",
+  "message-type": "work",
+  "message-version": "1.0.0",
+  "message": {
+    "indexed": {
+      "date-parts": [
+        [
+          2026,
+          8,
+          3
+        ]
+      ],
+      "date-time": "2026-08-03T21:54:48Z",
+      "timestamp": 1785794088362,
+      "version": "3.56.0"
+    },
+    "reference-count": 67,
+    "publisher": "Springer Science and Business Media LLC",
+    "issue": "1",
+    "license": [
+      {
+        "start": {
+          "date-parts": [
+            [
+              2025,
+              7,
+              15
+            ]
+          ],
+          "date-time": "2025-07-15T00:00:00Z",
+          "timestamp": 1752537600000
+        },
+        "content-version": "tdm",
+        "delay-in-days": 0,
+        "URL": "https://creativecommons.org/licenses/by-nc-nd/4.0"
+      },
+      {
+        "start": {
+          "date-parts": [
+            [
+              2025,
+              7,
+              15
+            ]
+          ],
+          "date-time": "2025-07-15T00:00:00Z",
+          "timestamp": 1752537600000
+        },
+        "content-version": "vor",
+        "delay-in-days": 0,
+        "URL": "https://creativecommons.org/licenses/by-nc-nd/4.0"
+      }
+    ],
+    "funder": [
+      {
+        "name": "Joint Transportation Research Program, West Lafayette, IN"
+      }
+    ],
+    "content-domain": {
+      "domain": [
+        "link.springer.com"
+      ],
+      "crossmark-restriction": false
+    },
+    "short-container-title": [
+      "Sci Data"
+    ],
+    "DOI": "10.1038/s41597-025-05440-8",
+    "type": "journal-article",
+    "created": {
+      "date-parts": [
+        [
+          2025,
+          7,
+          15
+        ]
+      ],
+      "date-time": "2025-07-15T01:59:03Z",
+      "timestamp": 1752544743000
+    },
+    "update-policy": "https://doi.org/10.1007/springer_crossmark_policy",
+    "source": "Crossref",
+    "is-referenced-by-count": 4,
+    "title": [
+      "Spatial Access of America: Multiple indicators of accessibility to opportunities"
+    ],
+    "prefix": "10.1038",
+    "volume": "12",
+    "author": [
+      {
+        "ORCID": "https://orcid.org/0000-0002-2273-8706",
+        "authenticated-orcid": false,
+        "given": "Rajat",
+        "family": "Verma",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0003-2195-7197",
+        "authenticated-orcid": false,
+        "given": "Shagun",
+        "family": "Mittal",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Satish V.",
+        "family": "Ukkusuri",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "member": "297",
+    "published-online": {
+      "date-parts": [
+        [
+          2025,
+          7,
+          15
+        ]
+      ]
+    },
+    "reference": [
+      {
+        "key": "5440_CR1",
+        "doi-asserted-by": "publisher",
+        "first-page": "141",
+        "DOI": "10.1016/j.jtrangeo.2012.03.016",
+        "volume": "25",
+        "author": "A Páez",
+        "year": "2012",
+        "unstructured": "Páez, A., Scott, D. M. & Morency, C. Measuring accessibility: Positive and normative implementations of various accessibility indicators. Journal of Transport Geography 25, 141–153 (2012).",
+        "journal-title": "Journal of Transport Geography"
+      },
+      {
+        "key": "5440_CR2",
+        "doi-asserted-by": "publisher",
+        "first-page": "127",
+        "DOI": "10.1016/j.jtrangeo.2003.10.005",
+        "volume": "12",
+        "author": "KT Geurs",
+        "year": "2004",
+        "unstructured": "Geurs, K. T. & Wee, B. van. Accessibility evaluation of land-use and transport strategies: Review and research directions. Journal of Transport Geography 12, 127–140 (2004).",
+        "journal-title": "Journal of Transport Geography"
+      },
+      {
+        "key": "5440_CR3",
+        "unstructured": "Geurs, K. T. & van Eck, J. R. R. Accessibility measures: Review and applications. Research for Man and Environment (RIVM) vol. 787 https://rivm.openrepository.com/entities/publication/c7b5ed30-3c1e-44c1-acd6-1691f55a7f98 (2001)."
+      },
+      {
+        "key": "5440_CR4",
+        "unstructured": "Haynes, K. E. & A. Stewart Fotheringham. Gravity and Spatial Interaction Models. (Sage Publications, 1985)."
+      },
+      {
+        "key": "5440_CR5",
+        "doi-asserted-by": "publisher",
+        "first-page": "103530",
+        "DOI": "10.1016/j.jtrangeo.2023.103530",
+        "volume": "107",
+        "author": "B Kapatsila",
+        "year": "2023",
+        "unstructured": "Kapatsila, B., Palacios, M. S., Grisé, E. & El-Geneidy, A. Resolving the accessibility dilemma: Comparing cumulative and gravity-based measures of accessibility in eight Canadian cities. Journal of Transport Geography 107, 103530 (2023).",
+        "journal-title": "Journal of Transport Geography"
+      },
+      {
+        "key": "5440_CR6",
+        "doi-asserted-by": "publisher",
+        "first-page": "103508",
+        "DOI": "10.1016/j.jtrangeo.2022.103508",
+        "volume": "106",
+        "author": "B Klar",
+        "year": "2023",
+        "unstructured": "Klar, B., Lee, J., Long, J. A. & Diab, E. The impacts of accessibility measure choice on public transit project evaluation: A comparative study of cumulative, gravity-based, and hybrid approaches. Journal of Transport Geography 106, 103508 (2023).",
+        "journal-title": "Journal of Transport Geography"
+      },
+      {
+        "key": "5440_CR7",
+        "doi-asserted-by": "publisher",
+        "first-page": "1739",
+        "DOI": "10.1080/13658816.2019.1591415",
+        "volume": "33",
+        "author": "X Chen",
+        "year": "2019",
+        "unstructured": "Chen, X. & Jia, P. A comparative analysis of accessibility measures by the two-step floating catchment area (2SFCA) method. International Journal of Geographical Information Science 33, 1739–1758 (2019).",
+        "journal-title": "International Journal of Geographical Information Science"
+      },
+      {
+        "key": "5440_CR8",
+        "doi-asserted-by": "publisher",
+        "first-page": "193",
+        "DOI": "10.1080/13658816.2011.574140",
+        "volume": "26",
+        "author": "M Langford",
+        "year": "2012",
+        "unstructured": "Langford, M., Fry, R. & Higgs, G. Measuring transit system accessibility using a modified two-step floating catchment technique. International Journal of Geographical Information Science 26, 193–214 (2012).",
+        "journal-title": "International Journal of Geographical Information Science"
+      },
+      {
+        "key": "5440_CR9",
+        "doi-asserted-by": "publisher",
+        "first-page": "1",
+        "DOI": "10.1016/j.jtrangeo.2012.06.014",
+        "volume": "25",
+        "author": "M Langford",
+        "year": "2012",
+        "unstructured": "Langford, M., Higgs, G. & Fry, R. Using floating catchment analysis (FCA) techniques to examine intra-urban variations in accessibility to public transport opportunities: The example of Cardiff, Wales. Journal of Transport Geography 25, 1–14 (2012).",
+        "journal-title": "Journal of Transport Geography"
+      },
+      {
+        "key": "5440_CR10",
+        "doi-asserted-by": "publisher",
+        "first-page": "1",
+        "DOI": "10.1016/S1353-8292(02)00067-9",
+        "volume": "10",
+        "author": "W Luo",
+        "year": "2004",
+        "unstructured": "Luo, W. Using a GIS-based floating catchment method to assess areas with shortage of physicians. Health and Place 10, 1–11 (2004).",
+        "journal-title": "Health and Place"
+      },
+      {
+        "key": "5440_CR11",
+        "doi-asserted-by": "publisher",
+        "first-page": "53",
+        "DOI": "10.1016/j.progress.2010.05.001",
+        "volume": "74",
+        "author": "C Curtis",
+        "year": "2010",
+        "unstructured": "Curtis, C. & Scheurer, J. Planning for sustainable accessibility: Developing tools to aid discussion and decision-making. Progress in Planning 74, 53–106 (2010).",
+        "journal-title": "Progress in Planning"
+      },
+      {
+        "key": "5440_CR12",
+        "first-page": "57",
+        "volume": "9",
+        "author": "E Papa",
+        "year": "2016",
+        "unstructured": "Papa, E., Silva, C., te Brömmelstroet, M. & Hull, A. Accessibility instruments for planning practice: A review of European experiences. Journal of Transport and Land Use 9, 57–75 (2016).",
+        "journal-title": "Journal of Transport and Land Use"
+      },
+      {
+        "key": "5440_CR13",
+        "doi-asserted-by": "publisher",
+        "unstructured": "Martens, K., Bastiaanssen, J. & Lucas, K. Measuring Transport Equity: Key Components, Framings and Metrics. Measuring Transport Equity https://doi.org/10.1016/B978-0-12-814818-1.00002-0 (Elsevier Inc., 2019).",
+        "DOI": "10.1016/B978-0-12-814818-1.00002-0"
+      },
+      {
+        "key": "5440_CR14",
+        "doi-asserted-by": "publisher",
+        "first-page": "101072",
+        "DOI": "10.1016/j.trip.2024.101072",
+        "volume": "24",
+        "author": "F Soltani Mandolakani",
+        "year": "2024",
+        "unstructured": "Soltani Mandolakani, F. & Singleton, P. A. Electric vehicle charging infrastructure deployment: A discussion of equity and justice theories and accessibility measurement. Transportation Research Interdisciplinary Perspectives 24, 101072 (2024).",
+        "journal-title": "Transportation Research Interdisciplinary Perspectives"
+      },
+      {
+        "key": "5440_CR15",
+        "first-page": "103916",
+        "volume": "179",
+        "author": "J Lucas Albuquerque-Oliveira",
+        "year": "2024",
+        "unstructured": "Lucas Albuquerque-Oliveira, J., Moraes Oliveira-Neto, F. & Pereira, R. H. M. A novel route-based accessibility measure and its association with transit ridership. Transportation Research Part A: Policy and Practice 179, 103916 (2024).",
+        "journal-title": "Transportation Research Part A: Policy and Practice"
+      },
+      {
+        "key": "5440_CR16",
+        "doi-asserted-by": "publisher",
+        "first-page": "429",
+        "DOI": "10.1007/s10109-022-00382-w",
+        "volume": "25",
+        "author": "L Liu",
+        "year": "2023",
+        "unstructured": "Liu, L., Porr, A. & Miller, H. J. Realizable accessibility: evaluating the reliability of public transit accessibility using high-resolution real-time data. J Geogr Syst 25, 429–451 (2023).",
+        "journal-title": "J Geogr Syst"
+      },
+      {
+        "key": "5440_CR17",
+        "doi-asserted-by": "publisher",
+        "first-page": "14",
+        "DOI": "10.1016/j.jtrangeo.2014.12.006",
+        "volume": "43",
+        "author": "T Neutens",
+        "year": "2015",
+        "unstructured": "Neutens, T. Accessibility, equity and health care: review and research directions for transport geographers. Journal of Transport Geography 43, 14–27 (2015).",
+        "journal-title": "Journal of Transport Geography"
+      },
+      {
+        "key": "5440_CR18",
+        "doi-asserted-by": "publisher",
+        "first-page": "110",
+        "DOI": "10.11648/j.ajhr.20241205.11",
+        "volume": "12",
+        "author": "RB Nsiah",
+        "year": "2024",
+        "unstructured": "Nsiah, R. B. et al. Mapping Health Disparities: Spatial Accessibility to Healthcare Facilities in a Rural District of Ghana Using Geographic Information Systems Techniques. Am. J. Health Res. 12, 110–123 (2024).",
+        "journal-title": "Am. J. Health Res."
+      },
+      {
+        "key": "5440_CR19",
+        "doi-asserted-by": "publisher",
+        "first-page": "3058",
+        "DOI": "10.1049/itr2.12564",
+        "volume": "18",
+        "author": "B Arslangulova",
+        "year": "2024",
+        "unstructured": "Arslangulova, B. & Galanakis, K. The accessibility of public electric vehicle (EV) charging infrastructure: Evidence from the cities of Nottingham and Frankfurt. IET Intelligent Transport Systems 18, 3058–3068 (2024).",
+        "journal-title": "IET Intelligent Transport Systems"
+      },
+      {
+        "key": "5440_CR20",
+        "doi-asserted-by": "crossref",
+        "unstructured": "Christodoulou, A., Dijkstra, L., Christidis, P., Bolsi, P. & Poelman, H. A fine resolution dataset of accessibility under different traffic conditions in European cities. Scientific Data 7 (2020).",
+        "DOI": "10.1038/s41597-020-00619-7"
+      },
+      {
+        "key": "5440_CR21",
+        "doi-asserted-by": "publisher",
+        "first-page": "1175",
+        "DOI": "10.1068/a291175",
+        "volume": "29",
+        "author": "SL Handy",
+        "year": "1997",
+        "unstructured": "Handy, S. L. & Niemeier, D. A. Measuring accessibility: An exploration of issues and alternatives. Environment and Planning A 29, 1175–1194 (1997).",
+        "journal-title": "Environment and Planning A"
+      },
+      {
+        "key": "5440_CR22",
+        "doi-asserted-by": "publisher",
+        "first-page": "191",
+        "DOI": "10.1068/b3602ed",
+        "volume": "36",
+        "author": "M Batty",
+        "year": "2009",
+        "unstructured": "Batty, M. Accessibility: In Search of a Unified Theory. Environ Plann B Plann Des 36, 191–194 (2009).",
+        "journal-title": "Environ Plann B Plann Des"
+      },
+      {
+        "key": "5440_CR23",
+        "unstructured": "Litman, T. Evaluating Accessibility for Transportation Planning. 49 https://vtpi.org/access.pdf (2007)."
+      },
+      {
+        "key": "5440_CR24",
+        "doi-asserted-by": "publisher",
+        "first-page": "73",
+        "DOI": "10.1016/j.jtrangeo.2016.03.004",
+        "volume": "52",
+        "author": "G Boisjoly",
+        "year": "2016",
+        "unstructured": "Boisjoly, G. & El-Geneidy, A. Daily fluctuations in transit and job availability: A comparative assessment of time-sensitive accessibility measures. Journal of Transport Geography 52, 73–81 (2016).",
+        "journal-title": "Journal of Transport Geography"
+      },
+      {
+        "key": "5440_CR25",
+        "doi-asserted-by": "publisher",
+        "first-page": "100",
+        "DOI": "10.1016/j.jtrangeo.2013.03.005",
+        "volume": "30",
+        "author": "J Cheng",
+        "year": "2013",
+        "unstructured": "Cheng, J. & Bertolini, L. Measuring urban job accessibility with distance decay, competition and diversity. Journal of Transport Geography 30, 100–109 (2013).",
+        "journal-title": "Journal of Transport Geography"
+      },
+      {
+        "key": "5440_CR26",
+        "doi-asserted-by": "publisher",
+        "first-page": "181",
+        "DOI": "10.1016/j.jtrangeo.2019.06.003",
+        "volume": "78",
+        "author": "AD Slovic",
+        "year": "2019",
+        "unstructured": "Slovic, A. D. et al. The long road to achieving equity: Job accessibility restrictions and overlapping inequalities in the city of São Paulo. Journal of Transport Geography 78, 181–193 (2019).",
+        "journal-title": "Journal of Transport Geography"
+      },
+      {
+        "key": "5440_CR27",
+        "first-page": "1039",
+        "volume": "11",
+        "author": "AJ Yeganeh",
+        "year": "2018",
+        "unstructured": "Yeganeh, A. J., Hall, R. P., Pearce, A. R. & Hankey, S. A social equity analysis of the U.S. public transportation system based on job accessibility. Journal of Transport and Land Use 11, 1039–1056 (2018).",
+        "journal-title": "Journal of Transport and Land Use"
+      },
+      {
+        "key": "5440_CR28",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1038/s41597-023-02890-w",
+        "volume": "11",
+        "author": "JR Verduzco Torres",
+        "year": "2024",
+        "unstructured": "Verduzco Torres, J. R. & McArthur, D. P. Public transport accessibility indicators to urban and regional services in Great Britain. Sci Data 11, 53 (2024).",
+        "journal-title": "Sci Data"
+      },
+      {
+        "key": "5440_CR29",
+        "doi-asserted-by": "publisher",
+        "unstructured": "Owen, A., Liu, S. S., Jain, S., Hockert, M. & Lind, E. Access Across America: 2022 Methodology. Data Repository for the University of Minnesota (DRUM) https://doi.org/10.13020/am7b-3n80 (2024).",
+        "DOI": "10.13020/am7b-3n80"
+      },
+      {
+        "key": "5440_CR30",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1016/j.scs.2020.102680",
+        "volume": "66",
+        "author": "F Orsi",
+        "year": "2021",
+        "unstructured": "Orsi, F. On the sustainability of electric vehicles: What about their impacts on land use? Sustainable Cities and Society 66, 102680 (2021).",
+        "journal-title": "Sustainable Cities and Society"
+      },
+      {
+        "key": "5440_CR31",
+        "doi-asserted-by": "publisher",
+        "first-page": "100019",
+        "DOI": "10.1016/j.urbmob.2022.100019",
+        "volume": "2",
+        "author": "GJ Carlton",
+        "year": "2022",
+        "unstructured": "Carlton, G. J. & Sultana, S. Electric vehicle charging station accessibility and land use clustering: A case study of the Chicago region. Journal of Urban Mobility 2, 100019 (2022).",
+        "journal-title": "Journal of Urban Mobility"
+      },
+      {
+        "key": "5440_CR32",
+        "doi-asserted-by": "publisher",
+        "first-page": "102813",
+        "DOI": "10.1016/j.trd.2021.102813",
+        "volume": "94",
+        "author": "G Falchetta",
+        "year": "2021",
+        "unstructured": "Falchetta, G. & Noussan, M. Electric vehicle charging network in Europe: An accessibility and deployment trends analysis. Transportation Research Part D: Transport and Environment 94, 102813 (2021).",
+        "journal-title": "Transportation Research Part D: Transport and Environment"
+      },
+      {
+        "key": "5440_CR33",
+        "doi-asserted-by": "publisher",
+        "first-page": "114825",
+        "DOI": "10.1016/j.rser.2024.114825",
+        "volume": "206",
+        "author": "AM Varghese",
+        "year": "2024",
+        "unstructured": "Varghese, A. M., Menon, N. & Ermagun, A. Equitable distribution of electric vehicle charging infrastructure: A systematic review. Renewable and Sustainable Energy Reviews 206, 114825 (2024).",
+        "journal-title": "Renewable and Sustainable Energy Reviews"
+      },
+      {
+        "key": "5440_CR34",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.1038/s41597-024-03689-z",
+        "volume": "11",
+        "author": "C Fink",
+        "year": "2024",
+        "unstructured": "Fink, C., Willberg, E., Klein, R., Heikinheimo, V. & Toivonen, T. A travel time matrix data set for the Helsinki region 2023 that is sensitive to time, mode and interpersonal differences, and uses open data and novel open-source software. Sci Data 11, 858 (2024).",
+        "journal-title": "Sci Data"
+      },
+      {
+        "key": "5440_CR35",
+        "unstructured": "Iacono, M., Krizek, K. & El-Geneidy, A. Access to Destinations: How Close Is Close Enough? Estimating Accurate Distance Decay Functions for Multiple Modes and Different Purposes. Minnesota Department of Transportation vol. 4 76 https://hdl.handle.net/11299/151329 (2008)."
+      },
+      {
+        "key": "5440_CR36",
+        "doi-asserted-by": "publisher",
+        "first-page": "1103",
+        "DOI": "10.1007/s11116-014-9557-y",
+        "volume": "42",
+        "author": "PL Mokhtarian",
+        "year": "2015",
+        "unstructured": "Mokhtarian, P. L., Papon, F., Goulard, M. & Diana, M. What makes travel pleasant and/or tiring? An investigation based on the French National Travel Survey. Transportation 42, 1103–1128 (2015).",
+        "journal-title": "Transportation"
+      },
+      {
+        "key": "5440_CR37",
+        "doi-asserted-by": "publisher",
+        "first-page": "103552",
+        "DOI": "10.1016/j.jtrangeo.2023.103552",
+        "volume": "107",
+        "author": "M Šveda",
+        "year": "2023",
+        "unstructured": "Šveda, M. & Madajová, M. S. Estimating distance decay of intra-urban trips using mobile phone data: The case of Bratislava, Slovakia. Journal of Transport Geography 107, 103552 (2023).",
+        "journal-title": "Journal of Transport Geography"
+      },
+      {
+        "key": "5440_CR38",
+        "doi-asserted-by": "crossref",
+        "unstructured": "Pan, X. et al. Evaluating the accessibility of healthcare facilities using an integrated catchment area approach. International Journal of Environmental Research and Public Health 15, (2018).",
+        "DOI": "10.3390/ijerph15092051"
+      },
+      {
+        "key": "5440_CR39",
+        "doi-asserted-by": "publisher",
+        "first-page": "107",
+        "DOI": "10.1016/j.jtrangeo.2014.02.001",
+        "volume": "35",
+        "author": "M Halás",
+        "year": "2014",
+        "unstructured": "Halás, M., Klapka, P. & Kladivo, P. Distance-decay functions for daily travel-to-work flows. Journal of Transport Geography 35, 107–119 (2014).",
+        "journal-title": "Journal of Transport Geography"
+      },
+      {
+        "key": "5440_CR40",
+        "doi-asserted-by": "publisher",
+        "first-page": "242",
+        "DOI": "10.2307/213456",
+        "volume": "59",
+        "author": "BE Newling",
+        "year": "1969",
+        "unstructured": "Newling, B. E. The Spatial Variation of Urban Population Densities. Geographical Review 59, 242 (1969).",
+        "journal-title": "Geographical Review"
+      },
+      {
+        "key": "5440_CR41",
+        "doi-asserted-by": "publisher",
+        "first-page": "230",
+        "DOI": "10.1177/0160017610387296",
+        "volume": "34",
+        "author": "A Reggiani",
+        "year": "2011",
+        "unstructured": "Reggiani, A., Bucci, P. & Russo, G. Accessibility and impedance forms: Empirical applications to the German commuting network. International Regional Science Review 34, 230–252 (2011).",
+        "journal-title": "International Regional Science Review"
+      },
+      {
+        "key": "5440_CR42",
+        "doi-asserted-by": "publisher",
+        "first-page": "791",
+        "DOI": "10.1038/s43588-021-00160-6",
+        "volume": "1",
+        "author": "F Xu",
+        "year": "2021",
+        "unstructured": "Xu, F., Li, Y., Jin, D., Lu, J. & Song, C. Emergence of urban growth patterns from human mobility behavior. Nature Computational Science 1, 791–800 (2021).",
+        "journal-title": "Nature Computational Science"
+      },
+      {
+        "key": "5440_CR43",
+        "first-page": "2337",
+        "volume": "4",
+        "author": "H Suprayitno",
+        "year": "2018",
+        "unstructured": "Suprayitno, H. Searching the Correct and Appropriate Deterrence Function General Formula for Calculating Gravity Trip Distribution Model. IPTEK The Journal of Engineering 4, 2337–8530 (2018).",
+        "journal-title": "IPTEK The Journal of Engineering"
+      },
+      {
+        "key": "5440_CR44",
+        "doi-asserted-by": "publisher",
+        "first-page": "103711",
+        "DOI": "10.1016/j.jtrangeo.2023.103711",
+        "volume": "112",
+        "author": "LEAde Melo",
+        "year": "2023",
+        "unstructured": "Melo, L. E. Ade & Isler, C. A. Integrating link count data for enhanced estimation of deterrence functions: A case study of short-term bicycle network interventions. Journal of Transport Geography 112, 103711 (2023).",
+        "journal-title": "Journal of Transport Geography"
+      },
+      {
+        "key": "5440_CR45",
+        "doi-asserted-by": "publisher",
+        "first-page": "865",
+        "DOI": "10.1068/b29120",
+        "volume": "30",
+        "author": "W Luo",
+        "year": "2003",
+        "unstructured": "Luo, W. & Wang, F. Measures of spatial accessibility to health care in a GIS environment: Synthesis and a case study in the Chicago region. Environment and Planning B: Planning and Design 30, 865–884 (2003).",
+        "journal-title": "Environment and Planning B: Planning and Design"
+      },
+      {
+        "key": "5440_CR46",
+        "unstructured": "El-Geneidy, A. M. & Levinson, D. M. Access to Destinations: Development of Accessibility Measures. Technical Report 125 https://hdl.handle.net/11299/638 (2006)."
+      },
+      {
+        "key": "5440_CR47",
+        "doi-asserted-by": "publisher",
+        "first-page": "77",
+        "DOI": "10.1016/j.jtrangeo.2017.08.009",
+        "volume": "64",
+        "author": "LA Merlin",
+        "year": "2017",
+        "unstructured": "Merlin, L. A. & Hu, L. Does competition matter in measures of job accessibility? Explaining employment in Los Angeles. Journal of Transport Geography 64, 77–88 (2017).",
+        "journal-title": "Journal of Transport Geography"
+      },
+      {
+        "key": "5440_CR48",
+        "doi-asserted-by": "publisher",
+        "first-page": "1104",
+        "DOI": "10.1080/00045608.2012.657146",
+        "volume": "102",
+        "author": "F Wang",
+        "year": "2012",
+        "unstructured": "Wang, F. Measurement, Optimization, and Impact of Health Care Accessibility: A Methodological Review. Annals of the Association of American Geographers 102, 1104–1112 (2012).",
+        "journal-title": "Annals of the Association of American Geographers"
+      },
+      {
+        "key": "5440_CR49",
+        "doi-asserted-by": "publisher",
+        "first-page": "1100",
+        "DOI": "10.1016/j.healthplace.2009.06.002",
+        "volume": "15",
+        "author": "W Luo",
+        "year": "2009",
+        "unstructured": "Luo, W. & Qi, Y. An enhanced two-step floating catchment area (E2SFCA) method for measuring spatial accessibility to primary care physicians. Health and Place 15, 1100–1107 (2009).",
+        "journal-title": "Health and Place"
+      },
+      {
+        "key": "5440_CR50",
+        "doi-asserted-by": "publisher",
+        "first-page": "30",
+        "DOI": "10.1016/j.healthplace.2013.07.012",
+        "volume": "24",
+        "author": "PL Delamater",
+        "year": "2013",
+        "unstructured": "Delamater, P. L. Spatial accessibility in suboptimally configured health care systems: A modified two-step floating catchment area (M2SFCA) metric. Health and Place 24, 30–43 (2013).",
+        "journal-title": "Health and Place"
+      },
+      {
+        "key": "5440_CR51",
+        "doi-asserted-by": "crossref",
+        "unstructured": "Bauer, J. & Groneberg, D. A. Measuring spatial accessibility of health care providers-introduction of a variable distance decay function within the floating catchment area (FCA) method. PLoS ONE 11, (2016).",
+        "DOI": "10.1371/journal.pone.0159148"
+      },
+      {
+        "key": "5440_CR52",
+        "doi-asserted-by": "publisher",
+        "first-page": "1073",
+        "DOI": "10.1080/13658816.2011.624987",
+        "volume": "26",
+        "author": "N Wan",
+        "year": "2012",
+        "unstructured": "Wan, N., Zou, B. & Sternberg, T. A three-step floating catchment area method for analyzing spatial access to health services. International Journal of Geographical Information Science 26, 1073–1089 (2012).",
+        "journal-title": "International Journal of Geographical Information Science"
+      },
+      {
+        "key": "5440_CR53",
+        "doi-asserted-by": "publisher",
+        "first-page": "7713",
+        "DOI": "10.3390/app14177713",
+        "volume": "14",
+        "author": "S Sun",
+        "year": "2024",
+        "unstructured": "Sun, S., Sun, Q., Zhang, F. & Ma, J. A Spatial Accessibility Study of Public Hospitals: A Multi-Mode Gravity-Based Two-Step Floating Catchment Area Method. Applied Sciences 14, 7713 (2024).",
+        "journal-title": "Applied Sciences"
+      },
+      {
+        "key": "5440_CR54",
+        "unstructured": "Bureau, U. S. C. Redefining Urban Areas following the 2020 Census. Census.gov https://www.census.gov/newsroom/blogs/random-samplings/2022/12/redefining-urban-areas-following-2020-census.html."
+      },
+      {
+        "key": "5440_CR55",
+        "doi-asserted-by": "publisher",
+        "unstructured": "Luxen, D. & Vetter, C. Real-time routing with OpenStreetMap data. in GIS: Proceedings of the ACM International Symposium on Advances in Geographic Information Systems 513–516 https://doi.org/10.1145/2093973.2094062 (ACM, 2011).",
+        "DOI": "10.1145/2093973.2094062"
+      },
+      {
+        "key": "5440_CR56",
+        "doi-asserted-by": "publisher",
+        "first-page": "e0180698",
+        "DOI": "10.1371/journal.pone.0180698",
+        "volume": "12",
+        "author": "C Barrington-Leigh",
+        "year": "2017",
+        "unstructured": "Barrington-Leigh, C. & Millard-Ball, A. The world’s user-generated road map is more than 80% complete. PloS one 12, e0180698 (2017).",
+        "journal-title": "PloS one"
+      },
+      {
+        "key": "5440_CR57",
+        "doi-asserted-by": "publisher",
+        "first-page": "127",
+        "DOI": "10.48088/ejg.a.bar.13.2.127.138",
+        "volume": "13",
+        "author": "A Bartzokas-Tsiompras",
+        "year": "2022",
+        "unstructured": "Bartzokas-Tsiompras, A. Utilizing OpenStreetMap data to measure and compare pedestrian street lengths in 992 cities around the world. European Journal of Geography 13, 127–141 (2022).",
+        "journal-title": "European Journal of Geography"
+      },
+      {
+        "key": "5440_CR58",
+        "doi-asserted-by": "crossref",
+        "unstructured": "Mooney, P. & Minghini, M. A review of OpenStreetMap data. in Mapping and the Citizen Sensor 37–59 (Ubiquity Press, London, 2017).",
+        "DOI": "10.5334/bbf.c"
+      },
+      {
+        "key": "5440_CR59",
+        "doi-asserted-by": "publisher",
+        "first-page": "566",
+        "DOI": "10.1287/trsc.2014.0579",
+        "volume": "51",
+        "author": "D Delling",
+        "year": "2017",
+        "unstructured": "Delling, D., Goldberg, A. V., Pajor, T. & Werneck, R. F. Customizable route planning in road networks. Transportation Science 51, 566–591 (2017).",
+        "journal-title": "Transportation Science"
+      },
+      {
+        "key": "5440_CR60",
+        "unstructured": "Bast, H. et al. Route planning in transportation networks. Lecture Notes in Computer Science (including subseries Lecture Notes in Artificial Intelligence and Lecture Notes in Bioinformatics) vol. 9220 LNCS (2016)."
+      },
+      {
+        "key": "5440_CR61",
+        "doi-asserted-by": "publisher",
+        "first-page": "104061",
+        "DOI": "10.1016/j.jtrangeo.2024.104061",
+        "volume": "122",
+        "author": "R Verma",
+        "year": "2025",
+        "unstructured": "Verma, R. & Ukkusuri, S. V. What determines travel time and distance decay in spatial interaction and accessibility? Journal of Transport Geography 122, 104061 (2025).",
+        "journal-title": "Journal of Transport Geography"
+      },
+      {
+        "key": "5440_CR62",
+        "doi-asserted-by": "publisher",
+        "unstructured": "Verma, R., Mittal, S. & Ukkusuri, S. Spatial Access of America: Multiple indicators of accessibility to opportunities. https://doi.org/10.6084/m9.figshare.28330463 (2025).",
+        "DOI": "10.6084/m9.figshare.28330463"
+      },
+      {
+        "key": "5440_CR63",
+        "doi-asserted-by": "publisher",
+        "first-page": "288",
+        "DOI": "10.3390/ijgi12070288",
+        "volume": "12",
+        "author": "R Hosseini",
+        "year": "2023",
+        "unstructured": "Hosseini, R. et al. A Novel Method for Extracting and Analyzing the Geometry Properties of the Shortest Pedestrian Paths Focusing on Open Geospatial Data. ISPRS International Journal of Geo-Information 12, 288 (2023).",
+        "journal-title": "ISPRS International Journal of Geo-Information"
+      },
+      {
+        "key": "5440_CR64",
+        "doi-asserted-by": "publisher",
+        "DOI": "10.5281/zenodo.7060438",
+        "author": "C Fink",
+        "year": "2022",
+        "unstructured": "Fink, C., Klumpenhouwer, W., Saraiva, M., Pereira, R. & Tenkanen, H. r5py: Rapid Realistic Routing with R5 in Python. Zenodo https://doi.org/10.5281/zenodo.7060438 (2022)."
+      },
+      {
+        "key": "5440_CR65",
+        "doi-asserted-by": "publisher",
+        "first-page": "45",
+        "DOI": "10.3141/2653-06",
+        "volume": "2653",
+        "author": "MW Conway",
+        "year": "2017",
+        "unstructured": "Conway, M. W., Byrd, A. & van der Linden, M. Evidence-Based Transit and Land Use Sketch Planning Using Interactive Accessibility Methods on Combined Schedule and Headway-Based Networks. Transportation Research Record 2653, 45–53 (2017).",
+        "journal-title": "Transportation Research Record"
+      },
+      {
+        "key": "5440_CR66",
+        "doi-asserted-by": "publisher",
+        "first-page": "471",
+        "DOI": "10.1177/0309133307083294",
+        "volume": "31",
+        "author": "SJ Dark",
+        "year": "2007",
+        "unstructured": "Dark, S. J. & Bram, D. The modifiable areal unit problem (MAUP) in physical geography. Progress in physical geography 31, 471–479 (2007).",
+        "journal-title": "Progress in physical geography"
+      },
+      {
+        "key": "5440_CR67",
+        "doi-asserted-by": "publisher",
+        "first-page": "103500",
+        "DOI": "10.1016/j.jtrangeo.2022.103500",
+        "volume": "106",
+        "author": "R Javanmard",
+        "year": "2023",
+        "unstructured": "Javanmard, R., Lee, J., Kim, J., Liu, L. & Diab, E. The impacts of the modifiable areal unit problem (MAUP) on social equity analysis of public transit reliability. Journal of Transport Geography 106, 103500 (2023).",
+        "journal-title": "Journal of Transport Geography"
+      }
+    ],
+    "container-title": [
+      "Scientific Data"
+    ],
+    "original-title": [],
+    "language": "en",
+    "link": [
+      {
+        "URL": "https://www.nature.com/articles/s41597-025-05440-8.pdf",
+        "content-type": "application/pdf",
+        "content-version": "vor",
+        "intended-application": "text-mining"
+      },
+      {
+        "URL": "https://www.nature.com/articles/s41597-025-05440-8",
+        "content-type": "text/html",
+        "content-version": "vor",
+        "intended-application": "text-mining"
+      },
+      {
+        "URL": "https://www.nature.com/articles/s41597-025-05440-8.pdf",
+        "content-type": "application/pdf",
+        "content-version": "vor",
+        "intended-application": "similarity-checking"
+      }
+    ],
+    "deposited": {
+      "date-parts": [
+        [
+          2025,
+          9,
+          7
+        ]
+      ],
+      "date-time": "2025-09-07T10:36:21Z",
+      "timestamp": 1757241381000
+    },
+    "score": 1,
+    "resource": {
+      "primary": {
+        "URL": "https://www.nature.com/articles/s41597-025-05440-8"
+      }
+    },
+    "subtitle": [],
+    "short-title": [],
+    "issued": {
+      "date-parts": [
+        [
+          2025,
+          7,
+          15
+        ]
+      ]
+    },
+    "references-count": 67,
+    "journal-issue": {
+      "issue": "1",
+      "published-online": {
+        "date-parts": [
+          [
+            2025,
+            12
+          ]
+        ]
+      }
+    },
+    "alternative-id": [
+      "5440"
+    ],
+    "URL": "https://doi.org/10.1038/s41597-025-05440-8",
+    "relation": {
+      "references": [
+        {
+          "id-type": "doi",
+          "id": "10.5281/zenodo.7060438",
+          "asserted-by": "subject"
+        }
+      ]
+    },
+    "ISSN": [
+      "2052-4463"
+    ],
+    "issn-type": [
+      {
+        "value": "2052-4463",
+        "type": "electronic"
+      }
+    ],
+    "subject": [],
+    "published": {
+      "date-parts": [
+        [
+          2025,
+          7,
+          15
+        ]
+      ]
+    },
+    "assertion": [
+      {
+        "value": "17 February 2025",
+        "order": 1,
+        "name": "received",
+        "label": "Received",
+        "group": {
+          "name": "ArticleHistory",
+          "label": "Article History"
+        }
+      },
+      {
+        "value": "19 June 2025",
+        "order": 2,
+        "name": "accepted",
+        "label": "Accepted",
+        "group": {
+          "name": "ArticleHistory",
+          "label": "Article History"
+        }
+      },
+      {
+        "value": "15 July 2025",
+        "order": 3,
+        "name": "first_online",
+        "label": "First Online",
+        "group": {
+          "name": "ArticleHistory",
+          "label": "Article History"
+        }
+      },
+      {
+        "value": "The authors declare no competing interests.",
+        "order": 1,
+        "name": "Ethics",
+        "group": {
+          "name": "EthicsHeading",
+          "label": "Competing interests"
+        }
+      }
+    ],
+    "article-number": "1223"
+  }
+}
