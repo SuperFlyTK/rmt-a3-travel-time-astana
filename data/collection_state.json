@@ -1,7 +1,7 @@
 {
-  "next_route": 16,
+  "next_route": 0,
   "counts": {
-    "ors": 198,
+    "ors": 202,
     "google_demo": 41
   },
   "completed_cycles": [
@@ -2916,6 +2916,67 @@
       "started_at_utc": "2026-10-24T16:43:21.212644+00:00",
       "recorded_attempts": 4,
       "completed_at_utc": "2026-10-24T16:43:28.094575+00:00"
+    },
+    "worker-40109396997-20261024T165821Z": {
+      "cycle": "worker-40109396997-20261024T165821Z",
+      "mode": "scheduled",
+      "providers": [
+        "ors"
+      ],
+      "routes": [
+        {
+          "route_id": "R17",
+          "name": "Bogenbay Batyr Avenue central OSM road node -> Syganak Street central OSM road node",
+          "origin_lat": "51.1759492",
+          "origin_lon": "71.4119752",
+          "destination_lat": "51.127132",
+          "destination_lon": "71.404443",
+          "expected_length_m": "5453.6",
+          "expected_length_basis": "haversine_spherical_straight_line_lower_bound_R6371008.8m_not_observed_route_length",
+          "origin_source": "https://www.openstreetmap.org/node/2700917908",
+          "destination_source": "https://www.openstreetmap.org/node/6539356792"
+        },
+        {
+          "route_id": "R18",
+          "name": "Syganak Street central OSM road node -> Bogenbay Batyr Avenue central OSM road node",
+          "origin_lat": "51.127132",
+          "origin_lon": "71.404443",
+          "destination_lat": "51.1759492",
+          "destination_lon": "71.4119752",
+          "expected_length_m": "5453.6",
+          "expected_length_basis": "haversine_spherical_straight_line_lower_bound_R6371008.8m_not_observed_route_length",
+          "origin_source": "https://www.openstreetmap.org/node/6539356792",
+          "destination_source": "https://www.openstreetmap.org/node/2700917908"
+        },
+        {
+          "route_id": "R19",
+          "name": "Kenesary Street central OSM road node -> Nurly Zhol railway-station bus-stop vicinity",
+          "origin_lat": "51.1653831",
+          "origin_lon": "71.4263266",
+          "destination_lat": "51.1125215",
+          "destination_lon": "71.5327441",
+          "expected_length_m": "9469.6",
+          "expected_length_basis": "haversine_spherical_straight_line_lower_bound_R6371008.8m_not_observed_route_length",
+          "origin_source": "https://www.openstreetmap.org/node/12343653048",
+          "destination_source": "https://www.openstreetmap.org/node/4894180331"
+        },
+        {
+          "route_id": "R20",
+          "name": "Nurly Zhol railway-station bus-stop vicinity -> Kenesary Street central OSM road node",
+          "origin_lat": "51.1125215",
+          "origin_lon": "71.5327441",
+          "destination_lat": "51.1653831",
+          "destination_lon": "71.4263266",
+          "expected_length_m": "9469.6",
+          "expected_length_basis": "haversine_spherical_straight_line_lower_bound_R6371008.8m_not_observed_route_length",
+          "origin_source": "https://www.openstreetmap.org/node/4894180331",
+          "destination_source": "https://www.openstreetmap.org/node/12343653048"
+        }
+      ],
+      "status": "reserved",
+      "reserved_at_utc": "2026-10-24T16:58:21.546023+00:00",
+      "config_sha256": "13bbad038474fe8b63d1904825cd614d2805ca97b6cfda07f7d18b79f2c4955e",
+      "spacing_s": 2.1
     }
   },
   "google_followup": {
