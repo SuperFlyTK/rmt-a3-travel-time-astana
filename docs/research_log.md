@@ -8,3 +8,4 @@
 | 2026-10-24T07:38:04+05:00 | local collector | pilot-1; 20 recorded attempts; 20 API responses with expected schema | 0 unsuccessful requests | Raw values retained; full plan reserved before HTTP; unused reservation not refunded |
 | 2026-10-24T07:43:45+05:00 | local collector | pilot-2; 20 recorded attempts; 20 API responses with expected schema | 0 unsuccessful requests | Raw values retained; full plan reserved before HTTP; unused reservation not refunded |
 | 2026-10-24T07:49:25+05:00 | local collector | pilot-3; 20 recorded attempts; 20 API responses with expected schema | 0 unsuccessful requests | Raw values retained; full plan reserved before HTTP; unused reservation not refunded |
+| 2026-10-24T07:51:49+05:00 | GitHub Actions | gh-40055914780; 4 recorded attempts; 4 API responses with expected schema | 0 unsuccessful requests | Raw values retained; full plan reserved before HTTP; unused reservation not refunded |
