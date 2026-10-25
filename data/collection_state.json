@@ -1,8 +1,8 @@
 {
   "next_route": 8,
   "counts": {
-    "ors": 550,
-    "google_demo": 81
+    "ors": 570,
+    "google_demo": 101
   },
   "completed_cycles": [
     "preflight-astana-1",
@@ -8510,6 +8510,264 @@
       "started_at_utc": "2026-10-25T12:15:28.467738+00:00",
       "recorded_attempts": 4,
       "completed_at_utc": "2026-10-25T12:15:35.655624+00:00"
+    },
+    "google-followup-20261025-peak": {
+      "cycle": "google-followup-20261025-peak",
+      "mode": "exploratory",
+      "providers": [
+        "ors"
+      ],
+      "routes": [
+        {
+          "route_id": "R01",
+          "name": "Turan Avenue near Khan Shatyr -> Kabanbay Batyr Avenue near airport T1",
+          "origin_lat": "51.1322667",
+          "origin_lon": "71.4066887",
+          "destination_lat": "51.0287707",
+          "destination_lon": "71.4632052",
+          "expected_length_m": "12166.6",
+          "expected_length_basis": "haversine_spherical_straight_line_lower_bound_R6371008.8m_not_observed_route_length",
+          "origin_source": "https://www.openstreetmap.org/node/4922159712",
+          "destination_source": "https://www.openstreetmap.org/node/7886353132"
+        },
+        {
+          "route_id": "R02",
+          "name": "Kabanbay Batyr Avenue near airport T1 -> Turan Avenue near Khan Shatyr",
+          "origin_lat": "51.0287707",
+          "origin_lon": "71.4632052",
+          "destination_lat": "51.1322667",
+          "destination_lon": "71.4066887",
+          "expected_length_m": "12166.6",
+          "expected_length_basis": "haversine_spherical_straight_line_lower_bound_R6371008.8m_not_observed_route_length",
+          "origin_source": "https://www.openstreetmap.org/node/7886353132",
+          "destination_source": "https://www.openstreetmap.org/node/4922159712"
+        },
+        {
+          "route_id": "R03",
+          "name": "Mangilik El Avenue near EXPO exhibition centre -> Nurly Zhol railway-station bus-stop vicinity",
+          "origin_lat": "51.0924613",
+          "origin_lon": "71.4257531",
+          "destination_lat": "51.1125215",
+          "destination_lon": "71.5327441",
+          "expected_length_m": "7796.3",
+          "expected_length_basis": "haversine_spherical_straight_line_lower_bound_R6371008.8m_not_observed_route_length",
+          "origin_source": "https://www.openstreetmap.org/node/2641042247",
+          "destination_source": "https://www.openstreetmap.org/node/4894180331"
+        },
+        {
+          "route_id": "R04",
+          "name": "Nurly Zhol railway-station bus-stop vicinity -> Mangilik El Avenue near EXPO exhibition centre",
+          "origin_lat": "51.1125215",
+          "origin_lon": "71.5327441",
+          "destination_lat": "51.0924613",
+          "destination_lon": "71.4257531",
+          "expected_length_m": "7796.3",
+          "expected_length_basis": "haversine_spherical_straight_line_lower_bound_R6371008.8m_not_observed_route_length",
+          "origin_source": "https://www.openstreetmap.org/node/4894180331",
+          "destination_source": "https://www.openstreetmap.org/node/2641042247"
+        },
+        {
+          "route_id": "R05",
+          "name": "Turan Avenue near Khan Shatyr -> Saryarka Avenue central OSM road node",
+          "origin_lat": "51.1322667",
+          "origin_lon": "71.4066887",
+          "destination_lat": "51.1693654",
+          "destination_lon": "71.4080255",
+          "expected_length_m": "4126.2",
+          "expected_length_basis": "haversine_spherical_straight_line_lower_bound_R6371008.8m_not_observed_route_length",
+          "origin_source": "https://www.openstreetmap.org/node/4922159712",
+          "destination_source": "https://www.openstreetmap.org/node/5843971377"
+        },
+        {
+          "route_id": "R06",
+          "name": "Saryarka Avenue central OSM road node -> Turan Avenue near Khan Shatyr",
+          "origin_lat": "51.1693654",
+          "origin_lon": "71.4080255",
+          "destination_lat": "51.1322667",
+          "destination_lon": "71.4066887",
+          "expected_length_m": "4126.2",
+          "expected_length_basis": "haversine_spherical_straight_line_lower_bound_R6371008.8m_not_observed_route_length",
+          "origin_source": "https://www.openstreetmap.org/node/5843971377",
+          "destination_source": "https://www.openstreetmap.org/node/4922159712"
+        },
+        {
+          "route_id": "R07",
+          "name": "Mangilik El Avenue near EXPO exhibition centre -> Abay Avenue central OSM road node",
+          "origin_lat": "51.0924613",
+          "origin_lon": "71.4257531",
+          "destination_lat": "51.1690436",
+          "destination_lon": "71.4321538",
+          "expected_length_m": "8527.3",
+          "expected_length_basis": "haversine_spherical_straight_line_lower_bound_R6371008.8m_not_observed_route_length",
+          "origin_source": "https://www.openstreetmap.org/node/2641042247",
+          "destination_source": "https://www.openstreetmap.org/node/3306022439"
+        },
+        {
+          "route_id": "R08",
+          "name": "Abay Avenue central OSM road node -> Mangilik El Avenue near EXPO exhibition centre",
+          "origin_lat": "51.1690436",
+          "origin_lon": "71.4321538",
+          "destination_lat": "51.0924613",
+          "destination_lon": "71.4257531",
+          "expected_length_m": "8527.3",
+          "expected_length_basis": "haversine_spherical_straight_line_lower_bound_R6371008.8m_not_observed_route_length",
+          "origin_source": "https://www.openstreetmap.org/node/3306022439",
+          "destination_source": "https://www.openstreetmap.org/node/2641042247"
+        },
+        {
+          "route_id": "R09",
+          "name": "Bogenbay Batyr Avenue central OSM road node -> Kabanbay Batyr Avenue near airport T1",
+          "origin_lat": "51.1759492",
+          "origin_lon": "71.4119752",
+          "destination_lat": "51.0287707",
+          "destination_lon": "71.4632052",
+          "expected_length_m": "16751.9",
+          "expected_length_basis": "haversine_spherical_straight_line_lower_bound_R6371008.8m_not_observed_route_length",
+          "origin_source": "https://www.openstreetmap.org/node/2700917908",
+          "destination_source": "https://www.openstreetmap.org/node/7886353132"
+        },
+        {
+          "route_id": "R10",
+          "name": "Kabanbay Batyr Avenue near airport T1 -> Bogenbay Batyr Avenue central OSM road node",
+          "origin_lat": "51.0287707",
+          "origin_lon": "71.4632052",
+          "destination_lat": "51.1759492",
+          "destination_lon": "71.4119752",
+          "expected_length_m": "16751.9",
+          "expected_length_basis": "haversine_spherical_straight_line_lower_bound_R6371008.8m_not_observed_route_length",
+          "origin_source": "https://www.openstreetmap.org/node/7886353132",
+          "destination_source": "https://www.openstreetmap.org/node/2700917908"
+        },
+        {
+          "route_id": "R11",
+          "name": "Kenesary Street central OSM road node -> Syganak Street central OSM road node",
+          "origin_lat": "51.1653831",
+          "origin_lon": "71.4263266",
+          "destination_lat": "51.127132",
+          "destination_lon": "71.404443",
+          "expected_length_m": "4519.0",
+          "expected_length_basis": "haversine_spherical_straight_line_lower_bound_R6371008.8m_not_observed_route_length",
+          "origin_source": "https://www.openstreetmap.org/node/12343653048",
+          "destination_source": "https://www.openstreetmap.org/node/6539356792"
+        },
+        {
+          "route_id": "R12",
+          "name": "Syganak Street central OSM road node -> Kenesary Street central OSM road node",
+          "origin_lat": "51.127132",
+          "origin_lon": "71.404443",
+          "destination_lat": "51.1653831",
+          "destination_lon": "71.4263266",
+          "expected_length_m": "4519.0",
+          "expected_length_basis": "haversine_spherical_straight_line_lower_bound_R6371008.8m_not_observed_route_length",
+          "origin_source": "https://www.openstreetmap.org/node/6539356792",
+          "destination_source": "https://www.openstreetmap.org/node/12343653048"
+        },
+        {
+          "route_id": "R13",
+          "name": "Saryarka Avenue central OSM road node -> Nurly Zhol railway-station bus-stop vicinity",
+          "origin_lat": "51.1693654",
+          "origin_lon": "71.4080255",
+          "destination_lat": "51.1125215",
+          "destination_lon": "71.5327441",
+          "expected_length_m": "10754.5",
+          "expected_length_basis": "haversine_spherical_straight_line_lower_bound_R6371008.8m_not_observed_route_length",
+          "origin_source": "https://www.openstreetmap.org/node/5843971377",
+          "destination_source": "https://www.openstreetmap.org/node/4894180331"
+        },
+        {
+          "route_id": "R14",
+          "name": "Nurly Zhol railway-station bus-stop vicinity -> Saryarka Avenue central OSM road node",
+          "origin_lat": "51.1125215",
+          "origin_lon": "71.5327441",
+          "destination_lat": "51.1693654",
+          "destination_lon": "71.4080255",
+          "expected_length_m": "10754.5",
+          "expected_length_basis": "haversine_spherical_straight_line_lower_bound_R6371008.8m_not_observed_route_length",
+          "origin_source": "https://www.openstreetmap.org/node/4894180331",
+          "destination_source": "https://www.openstreetmap.org/node/5843971377"
+        },
+        {
+          "route_id": "R15",
+          "name": "Abay Avenue central OSM road node -> National EXPO Museum bus-stop vicinity",
+          "origin_lat": "51.1690436",
+          "origin_lon": "71.4321538",
+          "destination_lat": "51.0862285",
+          "destination_lon": "71.4163157",
+          "expected_length_m": "9274.7",
+          "expected_length_basis": "haversine_spherical_straight_line_lower_bound_R6371008.8m_not_observed_route_length",
+          "origin_source": "https://www.openstreetmap.org/node/3306022439",
+          "destination_source": "https://www.openstreetmap.org/node/13926684562"
+        },
+        {
+          "route_id": "R16",
+          "name": "National EXPO Museum bus-stop vicinity -> Abay Avenue central OSM road node",
+          "origin_lat": "51.0862285",
+          "origin_lon": "71.4163157",
+          "destination_lat": "51.1690436",
+          "destination_lon": "71.4321538",
+          "expected_length_m": "9274.7",
+          "expected_length_basis": "haversine_spherical_straight_line_lower_bound_R6371008.8m_not_observed_route_length",
+          "origin_source": "https://www.openstreetmap.org/node/13926684562",
+          "destination_source": "https://www.openstreetmap.org/node/3306022439"
+        },
+        {
+          "route_id": "R17",
+          "name": "Bogenbay Batyr Avenue central OSM road node -> Syganak Street central OSM road node",
+          "origin_lat": "51.1759492",
+          "origin_lon": "71.4119752",
+          "destination_lat": "51.127132",
+          "destination_lon": "71.404443",
+          "expected_length_m": "5453.6",
+          "expected_length_basis": "haversine_spherical_straight_line_lower_bound_R6371008.8m_not_observed_route_length",
+          "origin_source": "https://www.openstreetmap.org/node/2700917908",
+          "destination_source": "https://www.openstreetmap.org/node/6539356792"
+        },
+        {
+          "route_id": "R18",
+          "name": "Syganak Street central OSM road node -> Bogenbay Batyr Avenue central OSM road node",
+          "origin_lat": "51.127132",
+          "origin_lon": "71.404443",
+          "destination_lat": "51.1759492",
+          "destination_lon": "71.4119752",
+          "expected_length_m": "5453.6",
+          "expected_length_basis": "haversine_spherical_straight_line_lower_bound_R6371008.8m_not_observed_route_length",
+          "origin_source": "https://www.openstreetmap.org/node/6539356792",
+          "destination_source": "https://www.openstreetmap.org/node/2700917908"
+        },
+        {
+          "route_id": "R19",
+          "name": "Kenesary Street central OSM road node -> Nurly Zhol railway-station bus-stop vicinity",
+          "origin_lat": "51.1653831",
+          "origin_lon": "71.4263266",
+          "destination_lat": "51.1125215",
+          "destination_lon": "71.5327441",
+          "expected_length_m": "9469.6",
+          "expected_length_basis": "haversine_spherical_straight_line_lower_bound_R6371008.8m_not_observed_route_length",
+          "origin_source": "https://www.openstreetmap.org/node/12343653048",
+          "destination_source": "https://www.openstreetmap.org/node/4894180331"
+        },
+        {
+          "route_id": "R20",
+          "name": "Nurly Zhol railway-station bus-stop vicinity -> Kenesary Street central OSM road node",
+          "origin_lat": "51.1125215",
+          "origin_lon": "71.5327441",
+          "destination_lat": "51.1653831",
+          "destination_lon": "71.4263266",
+          "expected_length_m": "9469.6",
+          "expected_length_basis": "haversine_spherical_straight_line_lower_bound_R6371008.8m_not_observed_route_length",
+          "origin_source": "https://www.openstreetmap.org/node/4894180331",
+          "destination_source": "https://www.openstreetmap.org/node/12343653048"
+        }
+      ],
+      "status": "reserved",
+      "reserved_at_utc": "2026-10-25T12:30:00.374439+00:00",
+      "config_sha256": "13bbad038474fe8b63d1904825cd614d2805ca97b6cfda07f7d18b79f2c4955e",
+      "spacing_s": 2.1,
+      "google_followup_reserved_requests": 20,
+      "protocol_sha256": "530fe72cbec4021bd6eacc9bb64ad4f3383f2c61db9386e465a0b6558a96fe88",
+      "window_start_utc": "2026-10-25T12:30:00+00:00",
+      "window_end_utc": "2026-10-25T12:40:00+00:00",
+      "period": "peak"
     }
   },
   "google_followup": {
@@ -8540,6 +8798,11 @@
         "recorded_attempts": 20,
         "completed_at_utc": "2026-10-25T05:00:43.703698+00:00",
         "n_valid_pairs": 20
+      },
+      "google-followup-20261025-peak": {
+        "status": "reserved",
+        "cycle_id": "google-followup-20261025-peak",
+        "reserved_at_utc": "2026-10-25T12:30:00.374405+00:00"
       }
     }
   }
